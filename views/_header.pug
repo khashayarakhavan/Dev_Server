@@ -1,0 +1,31 @@
+header.header
+  nav.nav.nav--tours
+    a.nav__el(href='/') All tours
+  .header__logo
+    img(src='/img/logo-white.png' alt='Natours logo')
+  nav.nav.nav--user
+    if user
+      a.nav__el.nav__el--logout Log out
+      a.nav__el(href='/me')
+        if (process.env.NODE_ENV === 'production')
+          - const sourceProd=  user.photoWeb ? `${user.photoWeb}` : `img/users/${user.photo}`;
+          img.nav__user-img(src=`${sourceProd}` alt=`Photo of ${user.name}`)
+          span= user.name.split(' ')[0] /* split only first name of user using split by space function. */
+        
+        else
+          - const source=  user.photoWeb ? `${user.photoWeb}` : `img/users/${user.photo}`;
+          img.nav__user-img(src=`${source}` alt=`Photo of ${user.name}`)
+          span= user.name.split(' ')[0] /* split only first name of user using split by space function. */
+      //- a.nav__el(href='/auth/google')
+      //-   span= `Continue with`
+      //-   img.nav__user-img(src=`https://w7.pngwing.com/pngs/249/19/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png` alt=`Sign in to Google`)
+
+    
+        
+    else
+      a.nav__el(href='/auth/google')
+        img.nav__user-img(src=`https://w7.pngwing.com/pngs/249/19/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png` alt=`Sign in to Google`)
+      a.nav__el(href='/login') Log in
+      a.nav__el.nav__el--cta(href='/sign-up') Sign up
+
+    
