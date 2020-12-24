@@ -20,6 +20,7 @@ import LazyCard from '../../interactions/LazyCard/lazyCard.component';
 import TabbedCard from '../../interactions/TabbedCard/tabbedCard.component';
 import ToolTip from '../../interactions/ToolTip/toolTip.component';
 import RichTextCard from '../../interactions/richTextCard/richTextCard.component';
+import CountryPicker from '../../interactions/CountryPicker/countryPicker.component';
 
 
 
@@ -40,6 +41,7 @@ const BasePage = ({ menuOpen, toggleMenuOpen }) => {
         <TabbedCard />
         <ToolTip />
         <RichTextCard />
+        <CountryPicker />
         {/* <SlideUpDialog /> */}
       </Content>
     </Phone>

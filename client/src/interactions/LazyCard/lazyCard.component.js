@@ -8,7 +8,7 @@ import {Row, Avatar, Name, Card, List} from './lazyCard.styles';
 
 
 //Code
-const LazyLoadRow = ({ name, likes, background }) => (
+export const LazyLoadRow = ({ name, likes, background }) => (
   <>
     <Row isLoading>
       <Avatar />
