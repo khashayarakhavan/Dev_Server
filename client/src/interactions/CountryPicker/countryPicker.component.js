@@ -7,6 +7,7 @@ import json from './countryCodes.json';
 //Styles
 import {
   Dialog,
+  List,
   Row,
   RowLazy,
   Flag,
@@ -45,7 +46,7 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
       <Avatar />
       <Name />
     </RowLazy>
-    <LazyLoad height={56}>
+    <LazyLoad height={50}>
       <RowLazy
         onClick={() => {
           setOpen(false);
@@ -53,7 +54,7 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
         }}
       >
         <Flag src={getFlag(code)} />
-        <span>{name}</span>
+        <span>{name.substring(0, 15)}</span>
       </RowLazy>
     </LazyLoad>
   </>
@@ -61,9 +62,18 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
 
 export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
   <Dialog open={open}>
-    {json.map((country) => (
-      <LazyLoadRow key={country.dial_code} code={country.code} name={country.name} open={open} setOpen={setOpen} setCountry={setCountry} />
-    ))}
+    <List>
+      {json.map((country) => (
+        <LazyLoadRow
+          key={country.dial_code}
+          code={country.code}
+          name={country.name}
+          open={open}
+          setOpen={setOpen}
+          setCountry={setCountry}
+        />
+      ))}
+    </List>
   </Dialog>
 );
 
