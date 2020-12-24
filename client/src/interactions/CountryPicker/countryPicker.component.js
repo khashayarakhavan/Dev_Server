@@ -11,6 +11,8 @@ import {
   Row,
   RowLazy,
   Flag,
+  FlagContainer,
+  Image,
   Card,
   Input,
   Placeholder,
@@ -53,7 +55,10 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
           setCountry(name);
         }}
       >
-        <Flag src={getFlag(code)} />
+        {/* <Image style={{ background: `url(${getFlag(code)})` }} /> */}
+        <FlagContainer>
+          <Flag src={getFlag(code)} />
+        </FlagContainer>
         <span>{name.substring(0, 15)}</span>
       </RowLazy>
     </LazyLoad>

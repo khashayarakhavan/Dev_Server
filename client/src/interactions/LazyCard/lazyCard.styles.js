@@ -72,13 +72,12 @@ export const Name = styled.div`
   flex: 1 1 auto;
   margin-left: 1rem;
   width: 90px;
+
   height: min-content;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: ${rgba("white", 0.85)};
-  
-  
+  color: ${rgba("white", 0.85)};  
 `;
 
 export const loadingRow = css`
@@ -94,6 +93,8 @@ export const loadingRow = css`
 
   & > ${Name} {
     height: 18px;
+    ${'' /* width: 10px;
+    background: red; */}
     ${'' /* height: 38px; */}
     color: black;
   }

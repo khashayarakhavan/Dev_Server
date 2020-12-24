@@ -11,7 +11,9 @@ export const List = styled.div`
   position: relative;
   overflow: auto;
   height: 220px;
-  background: lightyellow;
+
+  background: ${colors.neutrals.light};
+
   font-size: 14px;
   ${"" /* padding: 2rem; */}
 
@@ -45,6 +47,8 @@ export const Card = styled.div`
   bottom: 80%;
   right: 20%;
   background: #7245c7;
+  display: grid;
+  height: 10rem;
   
   width: 200px;
   border-radius: 3rem;
@@ -55,6 +59,11 @@ export const Card = styled.div`
 
 export const Input = styled.button`
   color: ${rgba("white", 0.85)};
+  ${"" /* position: absolute;
+  ${'' /* */} */}
+  align-self: center;
+  justify-self: center; 
+
   background: transparent;
 `;
 
@@ -68,8 +77,35 @@ export const Row = styled.button`
   width: 100%;
 `;
 
+export const FlagContainer = styled.div`
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: grid;
+  ${'' /* background: red; */}
+`;
 export const Flag = styled.img`
   width: 30px;
+  height: 30px;
+  transform: scaleY(1.6) scaleX(1.4);
+  justify-self: center;
+  align-self: center;
+`;
+export const Image = styled.div`
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  justify-self: center;
+  background-size: contain;
+  background-position: center;
+  ${"" /* 
+  background-repeat: no-repeat; */}
+  ${"" /* background-origin: padding-box; */}
+  ${"" /* background-attachment: fixed; */}
+
+    
+
 `;
 
 const openStyles = css`
@@ -83,12 +119,13 @@ export const Dialog = styled.div`
   visibility: hidden;
   opacity: 0;
   overflow: auto;
-  ${"" /* border-radius: 3rem; */}
-  top: 90%;
+  border-radius: 2rem;
+  top: 100%;
   width: 100%;
-  ${"" /* height: 260px; */}
+
+  ${"" /* height: 260px; */
+  }
   transform: translateY(1rem);
-  background: #fff;
   background: transparent;
   transition-property: visibility, opacity, transform;
   transform-duration: 0.35s;
@@ -108,13 +145,12 @@ export const Avatar = styled.div`
   font-weight: 500;
   text-transform: uppercase;
   color: white;
-  ${"" /* background: ${(p) => p.background }; */}
 `;
 
 export const Name = styled.div`
   flex: 1 1 auto;
   margin-left: 1rem;
-  width: 20px;
+  width: 10px;
   height: min-content;
   white-space: nowrap;
   overflow: hidden;
@@ -122,39 +158,60 @@ export const Name = styled.div`
   color: ${rgba("white", 0.85)};
 `;
 
+
+const getRandomNumberBetween = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 export const loadingRow = css`
   position: absolute;
+  ${"" /* background: pink; */}
+  ${"" /* */}
   z-index: 0;
+  ${'' /* background: red; */}
+  width: unset;
+  ${"" /* width: 80%; */}
+  ${"" /* width: 70%; */}
 
   & > div {
-    background: ${rgba("white", 0.125)};
     background: ${rgba(colors.accent.ochreFire, 0.9125)};
+    ${"" /* background: red; */}
+    ${"" /* width: 50%; */}
   }
 
   & > ${Name} {
     height: 18px;
-    ${"" /* height: 38px; */}
+    width: ${getRandomNumberBetween(10, 150)}px;
+    width: 50px;
+    ${"" /* background: blue; */}
     color: black;
   }
 `;
 
+
+
 export const RowLazy = styled.button`
   position: relative;
   height: 50px;
-  display: flex;
-  z-index: 1;
-
-  padding: 2rem;
-  align-items: center;
-  justify-content: space-between;
-  justify-content: flex-start;
-  border: none;
-  border: red 10px solid;
   width: 100%;
-  background: pink;
-  ${"" /* height: 8px; */}
-  ${"" /* background: ${colors.neutrals.darkest}; */}
-  margin: 0rem;
+  z-index: 1;
+  ${"" /* width: 50%; */}
+  ${"" /* width: 100%; */}
+  padding: 2rem;
+
+  background: ${colors.neutrals.light};
+
+  ${"" /* margin: 1rem; */}
+  ${"" /* background: lightyellow; */}
+  ${"" /* background: green; */}
+  ${"" /* background: transparent; */}
+
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
   ${(p) => p.isLoading && loadingRow}
 `;
 
