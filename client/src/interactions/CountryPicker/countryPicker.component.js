@@ -25,22 +25,22 @@ import {
 //Code
 export const getFlag = (code) => `https://countryflags.io/${code}/flat/64.png`;
 
-// export const CountryDialog = ({ open, setOpen, setCountry }) => (
-//   <Dialog open={open}>
-//     {json.map((country) => (
-//       <Row
+export const CountryDialog = ({ open, setOpen, setCountry }) => (
+  <Dialog open={open}>
+    {json.map((country) => (
+      <Row
         
-//         onClick={() => {
-//           setOpen(false);
-//           setCountry(country.name);
-//         }}
-//       >
-//         <Flag src={getFlag(country.code)} />
-//         <span>{country.name}</span>
-//       </Row>
-//     ))}
-//   </Dialog>
-// );
+        onClick={() => {
+          setOpen(false);
+          setCountry(country.name);
+        }}
+      >
+        <Flag src={getFlag(country.code)} />
+        <span>{country.name}</span>
+      </Row>
+    ))}
+  </Dialog>
+);
 
 export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
   <>

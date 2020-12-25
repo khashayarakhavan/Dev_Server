@@ -58,6 +58,32 @@ const SlideUpDialog = () => {
   );
 };
 
+export const SlideUp4Email = ({popUpOpen, togglePopUp}) => {
+  return (
+    <>
+      <Overlay isOpen={popUpOpen} onClick={togglePopUp} />
+      <Dialog isOpen={popUpOpen}>
+        <DialogContent>
+          <Header>
+            <Title>Need a Call?</Title>
+            <span className="material-icons" onClick={() => togglePopUp(false)}>
+              close
+            </span>
+          </Header>
+          <Message>Please Enter Your Phone Number </Message>
+          <CodeRow>
+            <CodeInput placeholder="0" />
+            <CodeDash>-</CodeDash>
+            <CodeInput placeholder="0" />
+            <CodeDash>-</CodeDash>
+          </CodeRow>
+          <GradientButton onClick={togglePopUp}>Submit</GradientButton>
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+}
+
 
 
 //Export

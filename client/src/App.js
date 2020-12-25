@@ -21,6 +21,7 @@ import GlobalStyle from './design/global.styles';
 import GlobalConstants from './design/constants.styles';
 //Test Page
 import TestPage from './pages/testPage/testPage.page';
+import EmailMePage from './pages/emailMe/emailMe.page';
 
 import {
   invertTheme, noChange,
@@ -80,6 +81,7 @@ const App = ({ checkUserSession, currentUser, darkMode }) => {
                   <Route exact path="/landing" component={LandingPage} />
                   <Route exact path="/vegeloper" component={Vegeloper} />
                   <Route exact path="/test" component={TestPage} />
+                  <Route exact path="/email" component={EmailMePage} />
                   <Route path="/shop" component={ShopPage} />
                   <Route path="/jquery" component={SetTimeOut} />
                   <Route exact path="/checkout" component={CheckoutPage} />
