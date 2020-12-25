@@ -20,6 +20,7 @@ import {
   Placeholder,
   Avatar,
   Name,
+  Overlay,
 } from "./countryPicker.styles";
 // import LazyLoadRow from '../LazyCard/lazyCard.component';
 
@@ -46,10 +47,6 @@ export const CountryDialog = ({ open, setOpen, setCountry }) => (
 
 export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
   <>
-    {/* <RowLazy isLoading>
-      <Avatar />
-      <Name />
-    </RowLazy> */}
     <SkeletonRow>
       <Skeleton
         width="30px"
@@ -81,20 +78,23 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
 );
 
 export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
-  <Dialog open={open}>
-    <List>
-      {json.map((country) => (
-        <LazyLoadRow
-          key={country.dial_code}
-          code={country.code}
-          name={country.name}
-          open={open}
-          setOpen={setOpen}
-          setCountry={setCountry}
-        />
-      ))}
-    </List>
-  </Dialog>
+  <>
+    <Overlay isOpen={open} onClick={() => setOpen(false)} />
+    <Dialog open={open}>
+      <List>
+        {json.map((country) => (
+          <LazyLoadRow
+            key={country.dial_code}
+            code={country.code}
+            name={country.name}
+            open={open}
+            setOpen={setOpen}
+            setCountry={setCountry}
+          />
+        ))}
+      </List>
+    </Dialog>
+  </>
 );
 
 

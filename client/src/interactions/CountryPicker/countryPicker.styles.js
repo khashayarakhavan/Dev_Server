@@ -262,3 +262,22 @@ export const SkeletonRow = styled.div`
   align-items: center;
 `;
 
+export const Overlay = styled.div`
+  position: fixed;
+  ${'' /* transform: translate3d(0, 0, 0); */}
+  ${'' /* transform: ${(p) => (p.isOpen ? 'translate3d(0, 0, 0)' : 'unset')}; */}
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: ${rgba("black", 0.05)};
+  visibility: ${(p) => (p.isOpen ? "visible" : "hidden")};
+  opacity: ${(p) => (p.isOpen ? 1 : 0)};
+  transition-property: visibility opacity;
+  transition-duration: 0.45s;
+`;
+
+
