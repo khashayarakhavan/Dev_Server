@@ -51,10 +51,15 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
       <Name />
     </RowLazy> */}
     <SkeletonRow>
-      <Skeleton width="40px" height="40px" margin="0 1rem 0 1rem" />
+      <Skeleton
+        width="30px"
+        height="30px"
+        borderRadius="50%"
+        margin="1rem 1rem 0 2rem"
+      />
       <div>
         {/* <Skeleton width="130px" margin="0 0 0.6rem" /> */}
-        <Skeleton width="80px" />
+        <Skeleton margin="1rem 0 0 .5rem" width="80px" />
       </div>
     </SkeletonRow>
 
@@ -69,7 +74,7 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
         <FlagContainer>
           <Flag src={getFlag(code)} />
         </FlagContainer>
-        <span>{name.substring(0, 15)}</span>
+        <span style={{marginLeft: "1.5rem"}}>{name.substring(0, 15)}</span>
       </RowLazy>
     </LazyLoad>
   </>

@@ -244,7 +244,7 @@ export const Skeleton = styled.div`
   width: ${(props) => props.width || "120px"};
   height: ${(props) => props.height || "12px"};
   margin: ${(props) => props.margin || 0};
-  border-radius: ${borderRadius};
+  border-radius: ${(props) => props.borderRadius || borderRadius};
   background: ${skeletonColor};
 
   &::before {
@@ -256,7 +256,7 @@ export const SkeletonRow = styled.div`
   ${'' /* position: relative; */}
   position: absolute;
   width: 100%;
-  height: 50px;
+  ${'' /* height: 50px; */}
   z-index: 0;
   display: flex;
   align-items: center;
