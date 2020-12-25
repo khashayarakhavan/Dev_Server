@@ -2,7 +2,7 @@
 import React from 'react';
 //Libraries
 import Lottie from "react-lottie";
-import  {useViewport} from "../../../design/viewPort";
+// import  {useViewport} from "../../../design/viewPort";
 //State
 import { connect } from 'react-redux';
 //Selectors

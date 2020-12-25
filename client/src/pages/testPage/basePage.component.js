@@ -21,6 +21,7 @@ import TabbedCard from '../../interactions/TabbedCard/tabbedCard.component';
 import ToolTip from '../../interactions/ToolTip/toolTip.component';
 import RichTextCard from '../../interactions/richTextCard/richTextCard.component';
 import CountryPicker from '../../interactions/CountryPicker/countryPicker.component';
+import Skeleton from '../../interactions/Skeleton/skeletonScreen.component';
 
 
 
@@ -42,6 +43,7 @@ const BasePage = ({ menuOpen, toggleMenuOpen }) => {
         <ToolTip />
         <RichTextCard />
         <CountryPicker />
+        <Skeleton />
         {/* <SlideUpDialog /> */}
       </Content>
     </Phone>

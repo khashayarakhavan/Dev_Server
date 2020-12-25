@@ -28,7 +28,7 @@ import {
 
   ThemeLight
 } from "./design/themes";
-import { ViewportProvider } from './design/viewPort';
+// import { ViewportProvider } from './design/viewPort';
 import LogRocket from "logrocket";
 
 LogRocket.init("rwd1ni/vegeloper");
@@ -59,7 +59,7 @@ const App = ({ checkUserSession, currentUser, darkMode }) => {
   }, [checkUserSession]);
 
   return (
-    <ViewportProvider>
+    <>
       <ThemeProvider theme={ThemeLight}>
         <ThemeProvider theme={darkMode ? invertTheme : noChange}>
           <div>
@@ -107,7 +107,7 @@ const App = ({ checkUserSession, currentUser, darkMode }) => {
           </div>
         </ThemeProvider>
       </ThemeProvider>
-    </ViewportProvider>
+    </>
   );
 };
 
