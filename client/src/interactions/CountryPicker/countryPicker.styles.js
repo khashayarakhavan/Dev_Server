@@ -1,5 +1,5 @@
 //Libraries
-import styled, {css} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 import { rgba } from "polished";
 //Design
 import colors from '../../design/colors';
@@ -215,4 +215,50 @@ export const RowLazy = styled.button`
   ${(p) => p.isLoading && loadingRow}
 `;
 
+
+
+
+const skeletonColor = "#e0daeb";
+const borderRadius = "3px";
+
+const glimmer = keyframes`
+  0% { transform: rotate(10deg) translate(-200%, -50%); }
+  100% { transform: rotate(10deg) translate(200%, -50%); }
+`;
+
+export const skeletonShimmer = css`
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 200px;
+  background: ${rgba("#190932", 0.05)};
+  animation: ${glimmer} 1.25s infinite linear;
+`;
+
+export const Skeleton = styled.div`
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  width: ${(props) => props.width || "120px"};
+  height: ${(props) => props.height || "12px"};
+  margin: ${(props) => props.margin || 0};
+  border-radius: ${borderRadius};
+  background: ${skeletonColor};
+
+  &::before {
+    ${skeletonShimmer};
+  }
+`;
+
+export const SkeletonRow = styled.div`
+  ${'' /* position: relative; */}
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+`;
 

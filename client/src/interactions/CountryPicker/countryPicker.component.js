@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import LazyLoad from "react-lazy-load";
 //JSON
 import json from './countryCodes.json';
+//Components
+import {Skeleton, SkeletonRow} from './countryPicker.styles';
 //Styles
 import {
   Dialog,
@@ -44,10 +46,18 @@ export const CountryDialog = ({ open, setOpen, setCountry }) => (
 
 export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
   <>
-    <RowLazy isLoading>
+    {/* <RowLazy isLoading>
       <Avatar />
       <Name />
-    </RowLazy>
+    </RowLazy> */}
+    <SkeletonRow>
+      <Skeleton width="40px" height="40px" margin="0 1rem 0 1rem" />
+      <div>
+        {/* <Skeleton width="130px" margin="0 0 0.6rem" /> */}
+        <Skeleton width="80px" />
+      </div>
+    </SkeletonRow>
+
     <LazyLoad height={50}>
       <RowLazy
         onClick={() => {
