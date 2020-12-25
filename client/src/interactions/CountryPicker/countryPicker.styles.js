@@ -280,4 +280,9 @@ export const Overlay = styled.div`
   transition-duration: 0.45s;
 `;
 
+export const CountryName = styled.span`
+ margin-Left: 1.5rem;
+ white-space: nowrap;
+`;
+
 

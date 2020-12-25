@@ -21,6 +21,7 @@ import {
   Avatar,
   Name,
   Overlay,
+  CountryName,
 } from "./countryPicker.styles";
 // import LazyLoadRow from '../LazyCard/lazyCard.component';
 
@@ -71,7 +72,9 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
         <FlagContainer>
           <Flag src={getFlag(code)} />
         </FlagContainer>
-        <span style={{marginLeft: "1.5rem"}}>{name.substring(0, 15)}</span>
+        <CountryName>
+          {name.substring(0, 15)}
+        </CountryName>
       </RowLazy>
     </LazyLoad>
   </>

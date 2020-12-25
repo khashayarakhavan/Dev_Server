@@ -1,5 +1,6 @@
 //Framework
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 //State Mangement
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -25,7 +26,6 @@ import Skeleton from '../../interactions/Skeleton/skeletonScreen.component';
 
 
 
-
 const BasePage = ({ menuOpen, toggleMenuOpen }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -40,10 +40,15 @@ const BasePage = ({ menuOpen, toggleMenuOpen }) => {
         <Burger onClick={toggleMenuOpen} className="uil uil-bars" />
         <LazyCard />
         <TabbedCard />
-        <ToolTip />
+        <Link to={"/email"} className="emailMe">
+          <ToolTip />
+        </Link>
+        <Link to={"/"} className="homePage">
+        <Skeleton />
+        </Link>
+
         <RichTextCard />
         <CountryPicker />
-        <Skeleton />
         {/* <SlideUpDialog /> */}
       </Content>
     </Phone>
