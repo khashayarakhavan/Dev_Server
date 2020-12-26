@@ -11,10 +11,10 @@ const duration ={
 
 
 export const Card = styled.div`
-  position: relative;
   position: absolute;
-  top: 10%;
-  left: 30%;
+  position: relative;
+  ${'' /* top: 10%;
+  left: 30%; */}
 
 
   overflow: hidden;

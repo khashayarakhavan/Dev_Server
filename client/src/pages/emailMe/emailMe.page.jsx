@@ -17,7 +17,7 @@ import {
 import {ScreenContainer, Content} from '../../design/containers.styles';
 //Components
 import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
-import {SlideUp4Email} from '../../interactions/SlideUp/slideUp.component';
+import { SlideUpHiPal } from "../../interactions/SlideUp/slideUp.component";
 import EmailMeContent from './emailMe.component';
 
 //Code
@@ -27,7 +27,7 @@ const EmailMePage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
     <ScreenContainer>
       {/* #ABSOLUTE ITEMS */}
       <ModernNav toggleMenuOpen={toggleMenuOpen} />
-      <SlideUp4Email popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
+      <SlideUpHiPal popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
 
       {/* #VISIBLE CONTENT */}
       <Content open={menuOpen}>

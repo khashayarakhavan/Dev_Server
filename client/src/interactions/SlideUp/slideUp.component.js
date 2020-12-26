@@ -58,7 +58,7 @@ const SlideUpDialog = () => {
   );
 };
 
-export const SlideUp4Email = ({popUpOpen, togglePopUp}) => {
+export const SlideUpHiPal = ({popUpOpen, togglePopUp}) => {
   return (
     <>
       <Overlay isOpen={popUpOpen} onClick={togglePopUp} />

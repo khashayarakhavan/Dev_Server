@@ -17,8 +17,8 @@ import {
 import {ScreenContainer, Content} from '../../design/containers.styles';
 //Components
 import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
-import {SlideUp4Email} from '../../interactions/SlideUp/slideUp.component';
-import HiPalContent from './hiPal.component';
+import {SlideUpHiPal} from '../../interactions/SlideUp/slideUp.component';
+import HiPalContent from './hiPal.content';
 
 //Code
 const HiPalPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
@@ -27,7 +27,7 @@ const HiPalPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
     <ScreenContainer>
       {/* #ABSOLUTE ITEMS */}
       <ModernNav toggleMenuOpen={toggleMenuOpen} />
-      <SlideUp4Email popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
+      <SlideUpHiPal popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
 
       {/* #VISIBLE CONTENT */}
       <Content open={menuOpen}>
