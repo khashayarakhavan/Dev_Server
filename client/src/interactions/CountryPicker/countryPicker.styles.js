@@ -232,8 +232,10 @@ export const skeletonShimmer = css`
   top: 0;
   left: 0;
   width: 100px;
+  width: 80px;
   height: 200px;
-  background: ${rgba("#190932", 0.05)};
+  background: ${rgba("#190932", 0.95)};
+  background: ${colors.accent.lightest};
   animation: ${glimmer} 1.25s infinite linear;
 `;
 
