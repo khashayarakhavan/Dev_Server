@@ -22,6 +22,7 @@ import GlobalConstants from './design/constants.styles';
 //Test Page
 import TestPage from './pages/testPage/testPage.page';
 import EmailMePage from './pages/emailMe/emailMe.page';
+import HiPalPage from './pages/hiPal/hiPal.page';
 
 import {
   invertTheme, noChange,
@@ -82,6 +83,7 @@ const App = ({ checkUserSession, currentUser, darkMode }) => {
                   <Route exact path="/vegeloper" component={Vegeloper} />
                   <Route exact path="/test" component={TestPage} />
                   <Route exact path="/email" component={EmailMePage} />
+                  <Route exact path="/hiPal" component={HiPalPage} />
                   <Route path="/shop" component={ShopPage} />
                   <Route path="/jquery" component={SetTimeOut} />
                   <Route exact path="/checkout" component={CheckoutPage} />

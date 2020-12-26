@@ -41,16 +41,16 @@ export const Header = (props) => {
         <LogoText>vegeloper</LogoText>
       </LogoContainer>
       <MenuButtonsContainer>
-        <MenuButtonOrange variant="active" to="/sayHi">
-          /say
-          <PrussianBlue_To_Orange>Hi</PrussianBlue_To_Orange>
+        <MenuButtonOrange variant="active" to="/hiPal">
+          /hi
+          <PrussianBlue_To_Orange>Pal</PrussianBlue_To_Orange>
       
         </MenuButtonOrange>
         <MenuButton to="/aboutMe">
           /about
           <PrussianBlue_To_Orange>Me</PrussianBlue_To_Orange>
         </MenuButton>
-        <MenuButton to="/myWorks">
+        <MenuButton to="/test">
           /my
           <PrussianBlue_To_Orange>Works</PrussianBlue_To_Orange>
         </MenuButton>
