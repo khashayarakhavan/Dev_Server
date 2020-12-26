@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
 export const RichTextContainer = styled.div`
-  width: 850px;
+  grid-column: cover-start / cover-end;
+  grid-column: center-start / center-end;
+  position: relative;
+  width: 100%;
+  ${'' /* width: 850px; */}
+  ${'' /* background: red; */}
   font-size: 14px;
   display: flex;
+  justify-content: flex-end;
   justify-content: space-between;
   margin: 30px auto;
 
-  grid-column: full-start / full-end;
 
-  position: relative;
 
   margin-top: 5rem;
   margin-bottom: 5rem;
