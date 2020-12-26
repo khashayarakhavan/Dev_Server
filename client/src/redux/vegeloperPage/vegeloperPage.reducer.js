@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   popUpOpen: false,
   error: null,
   darkMode: false,
+  emailRichText: null,
 };
 
 const VegeloperPageReducer = (state = INITIAL_STATE, action) => {
@@ -15,6 +16,12 @@ const VegeloperPageReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         menuOpen: !state.menuOpen,
+      };
+    case VegeloperPageActionTypes.EMAIL_RICH_TEXT:
+      console.log("Hello from Email Rich :D");
+      return {
+        ...state,
+        emailRichText: action.payload,
       };
     case VegeloperPageActionTypes.TOGGLE_POP_UP:
       if (action.payload === false || action.payload === true) {
@@ -29,8 +36,8 @@ const VegeloperPageReducer = (state = INITIAL_STATE, action) => {
           ...state,
           popUpOpen: !state.popUpOpen,
         };
-      };
-      
+      }
+
     case VegeloperPageActionTypes.TOGGLE_DARK_MODE:
       console.log("Hello from DARK MODE :D");
       return {

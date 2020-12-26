@@ -8,3 +8,10 @@ export const togglePopUp = value => ({
   type: VegeloperPageActionTypes.TOGGLE_POP_UP,
   payload: value,
 });
+export const emailRichText = value => ({
+  type: VegeloperPageActionTypes.EMAIL_RICH_TEXT,
+  payload: value,
+});
+
+
+// const res = await axios.post("/api/surveys", values);

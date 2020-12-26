@@ -9,7 +9,10 @@ import { createStructuredSelector } from "reselect";
 import { selectMenuOpen } from "../../redux/vegeloperPage/vegeloperPage.selectors";
 //Actions
 // import { checkUserSession } from "./redux/user/user.actions";
-import { toggleMenuOpen } from "../../redux/vegeloperPage/vegeloperPage.actions";
+import {
+  toggleMenuOpen,
+  emailRichText,
+} from "../../redux/vegeloperPage/vegeloperPage.actions";
 //Libraries
 import styled, { css } from "styled-components";
 import { rgba } from "polished";
@@ -26,8 +29,20 @@ import Skeleton from '../../interactions/Skeleton/skeletonScreen.component';
 
 
 
-const BasePage = ({ menuOpen, toggleMenuOpen }) => {
+const BasePage = ({ menuOpen, toggleMenuOpen, emailRichText }) => {
   const [open, setOpen] = useState(false);
+
+  const bookBtn = document.getElementById("book-tour");
+
+  if (bookBtn) {
+    bookBtn.addEventListener("click", (e) => {
+      e.target.textContent = "Processing...";
+      /* javascript automatically converts the kebab-cased variables to camelCased variable  */
+      /* so here instead of tour-id we use tourId alongwith ES6 destructuring */
+      // const { tourId } = e.target.dataset;
+      // bookTour(tourId);
+    });
+  }
   return (
     <Phone>
       <Nav>
@@ -39,15 +54,17 @@ const BasePage = ({ menuOpen, toggleMenuOpen }) => {
       <Content open={menuOpen}>
         <Burger onClick={toggleMenuOpen} className="uil uil-bars" />
         <LazyCard />
+        <button id="book-tour">Click to process</button>
         <TabbedCard />
         <Link to={"/email"} className="emailMe">
           <ToolTip />
         </Link>
         <Link to={"/"} className="homePage">
-        <Skeleton />
+          <Skeleton />
         </Link>
 
         <RichTextCard />
+        <button onClick={() => emailRichText()}>Send Email!</button>
         <CountryPicker />
         {/* <SlideUpDialog /> */}
       </Content>
@@ -63,6 +80,7 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => ({
   // checkUserSession: () => dispatch(checkUserSession()),
   toggleMenuOpen: () => dispatch(toggleMenuOpen()),
+  emailRichText: (value) => dispatch(emailRichText(value)),
 });
 
 
