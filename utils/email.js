@@ -4,6 +4,7 @@ const pug = require('pug');
 const htmlToText = require('html-to-text');
 const mailGun = require('nodemailer-mailgun-transport');
 const keys = require('../config/keys');
+const {AMP} = require("../services/emailTemplates/AMP");
 
 const authProd = {
   auth: {
@@ -66,8 +67,8 @@ module.exports = class Email {
       from: this.from,
       to: this.to,
       subject,
-      html,
-      text: htmlToText.fromString(html)
+      html: AMP(),
+      text: htmlToText.fromString(html),
     };
 
     // 3) Create a transport and send emails

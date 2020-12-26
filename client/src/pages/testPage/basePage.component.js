@@ -1,5 +1,6 @@
 //Framework
 import React, { useState } from "react";
+import axios from 'axios';
 import { Link } from "react-router-dom";
 //State Mangement
 import { connect } from "react-redux";
@@ -31,7 +32,15 @@ import Skeleton from '../../interactions/Skeleton/skeletonScreen.component';
 
 const BasePage = ({ menuOpen, toggleMenuOpen, emailRichText }) => {
   const [open, setOpen] = useState(false);
+  
+  const  handleClick = async () => {
+    console.log('Hello from handleclick');
+    const res = await axios.post('/api/v1/email');
+    console.log('Hello from handleclick /basePage : ',res.data);
+  // const text = res.data.map(fact => fact.text);
 
+  return res.data;
+}
   const bookBtn = document.getElementById("book-tour");
 
   if (bookBtn) {
@@ -64,7 +73,7 @@ const BasePage = ({ menuOpen, toggleMenuOpen, emailRichText }) => {
         </Link>
 
         <RichTextCard />
-        <button onClick={() => emailRichText()}>Send Email!</button>
+        <button onClick={handleClick}>Send Email!</button>
         <CountryPicker />
         {/* <SlideUpDialog /> */}
       </Content>

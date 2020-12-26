@@ -18,6 +18,7 @@ const keys = require('./config/keys');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./routes/tourRoutes');
+const emailRouter = require("./routes/emailRoutes");
 const userRouter = require('./routes/userRoutes');
 // const APIRouter = require('./routes/authRoutes2');
 const authRouter = require('./routes/authRoutes');
@@ -141,6 +142,8 @@ app.use((req, res, next) => {
 // 3) ROUTES
 // app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/email', emailRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/auth', authRouter);
 app.use('/api/v1/reviews', reviewRouter);
