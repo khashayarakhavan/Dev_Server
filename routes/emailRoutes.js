@@ -12,14 +12,14 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   // req.logout();
   // res.redirect("/");
-  console.log('@@ServerSide ! Received rich text from request is :');
-  console.log('body is : ', req.body);
-  console.log('posted_data is : ', req.body.posted_data);
-  console.log('my_text is : ', req.body.my_text);
+  // console.log('@@ServerSide ! Received rich text from request is :');
+  // console.log('body is : ', req.body);
+  // console.log('posted_data is : ', req.body.posted_data);
+  // console.log('my_text is : ', req.body.my_text);
   
-  // console.log(req.body);
+  console.log('received data in /api/v1/email is : ', req.body.data);
   const newUser = {email: 'akhavan.khashayar@gmail.com', name: 'aftoflBig5', }
-  // await new Email(newUser, 'url').sendWelcome();
+  await new Email(newUser, 'url', req.body.data).sendWelcome();
   
   
   res.send('WOW! Received it.');

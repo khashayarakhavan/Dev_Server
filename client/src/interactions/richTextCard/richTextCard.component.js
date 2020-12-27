@@ -25,7 +25,7 @@ import italicIcon from "../../assets/SVG/italic.svg";
 import underlineIcon from "../../assets/SVG/underline.svg";
 
 
-export const RichTextCard = ( { updateRichTextState }) => {
+export const RichTextCard = ( {sendDataToServer, updateRichTextState }) => {
   const [editorLocalState, setEditorLocalState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -175,16 +175,16 @@ export const RichTextCard = ( { updateRichTextState }) => {
   const handleSubmit = async () => {
     console.log('hello from handleSubmit :D ', converted2RawContent);
     updateRichTextState(converted2RawContent);
-    // sendDataToServer("/api/v1/email", converted2RawContent);
-    try {
-      const response = await axios.post("/api/v1/email", {
-        posted_data: "dalam kalti mashan",
-        my_text: converted2RawContent,
-      });
-      console.log("👉 Returned data:", response);
-    } catch (e) {
-      console.log(`😱 Axios request failed: ${e}`);
-    } 
+    sendDataToServer("/api/v1/email", converted2RawContent);
+    // try {
+    //   const response = await axios.post("/api/v1/email", {
+    //     posted_data: "dalam kalti mashan",
+    //     my_text: converted2RawContent,
+    //   });
+    //   console.log("👉 Returned data:", response);
+    // } catch (e) {
+    //   console.log(`😱 Axios request failed: ${e}`);
+    // } 
   };
 
    
@@ -242,8 +242,8 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
   updateRichTextState: (value) => dispatch(emailRichText(value)),
-  sendDataToServer: (URL,obj) => dispatch(sendDataToServer({ URL, obj })),
-
+  sendDataToServer: (URL, data) => dispatch(sendDataToServer(URL, data)),
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RichTextCard);

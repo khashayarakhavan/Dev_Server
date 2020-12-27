@@ -21,8 +21,9 @@ const authDev = {
 };
 
 module.exports = class Email {
-  constructor(user, url) {
+  constructor(user, url, richText) {
     this.to = user.email;
+    this.richText = richText;
     this.firstName = user.name.split(' ')[0];
     this.url = url;
     this.from = `AftoflBig5 <${process.env.EMAIL_FROM}>`;
@@ -85,7 +86,8 @@ module.exports = class Email {
 
   async sendWelcome() 
    {
-    await this.send('welcome', 'Welcome to the Natours Family!');
+    console.log('from sendWelcome method in email util. the received richText is : ', this.richText);
+    // await this.send('welcome', 'Welcome to the Natours Family!');
     console.log("EMAIL SENT :D ");
   }
 
