@@ -11,7 +11,10 @@ import DOMPurify from "dompurify";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"; 
 import axios from "axios";
 //Actions
-import {emailRichText} from "../../redux/vegeloperPage/vegeloperPage.actions";
+import {
+  emailRichText,
+  sendDataToServer,
+} from "../../redux/vegeloperPage/vegeloperPage.actions";
 
 //Styles
 import { Card, Header, Image, Text } from "./richTextCard.styles";
@@ -169,20 +172,20 @@ export const RichTextCard = ( { updateRichTextState }) => {
     }
    };
   
-   const handleSubmit = async () => {
+  const handleSubmit = async () => {
     console.log('hello from handleSubmit :D ', converted2RawContent);
     updateRichTextState(converted2RawContent);
-
+    // sendDataToServer("/api/v1/email", converted2RawContent);
     try {
-    const response = await axios.post("/api/v1/email", {
-      posted_data: "dalam kalti mashan",
-      my_text: converted2RawContent,
-    });
-  console.log("👉 Returned data:", response);
-} catch (e) {
-  console.log(`😱 Axios request failed: ${e}`);
-}
-   };
+      const response = await axios.post("/api/v1/email", {
+        posted_data: "dalam kalti mashan",
+        my_text: converted2RawContent,
+      });
+      console.log("👉 Returned data:", response);
+    } catch (e) {
+      console.log(`😱 Axios request failed: ${e}`);
+    } 
+  };
 
    
 
@@ -238,8 +241,9 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-
   updateRichTextState: (value) => dispatch(emailRichText(value)),
+  sendDataToServer: (URL,obj) => dispatch(sendDataToServer({ URL, obj })),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RichTextCard);

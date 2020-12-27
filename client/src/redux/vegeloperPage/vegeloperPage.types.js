@@ -3,6 +3,7 @@ const VegeloperPageActionTypes = {
   TOGGLE_POP_UP: "TOGGLE_POP_UP",
   TOGGLE_MENU_OPEN: "TOGGLE_MENU_OPEN",
   EMAIL_RICH_TEXT: "EMAIL_RICH_TEXT",
+  SEND_DATA_SERVER_START: "SEND_DATA_SERVER_START",
 };
 
 export default VegeloperPageActionTypes;

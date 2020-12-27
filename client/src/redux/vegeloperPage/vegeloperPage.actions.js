@@ -12,6 +12,10 @@ export const emailRichText = value => ({
   type: VegeloperPageActionTypes.EMAIL_RICH_TEXT,
   payload: value,
 });
+export const sendDataToServer = data => ({
+  type: VegeloperPageActionTypes.SEND_DATA_SERVER_START,
+  payload: data,
+});
 
 
 // const res = await axios.post("/api/surveys", values);
