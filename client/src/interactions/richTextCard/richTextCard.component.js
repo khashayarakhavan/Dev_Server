@@ -17,47 +17,68 @@ import italicIcon from "../../assets/SVG/italic.svg";
 import underlineIcon from "../../assets/SVG/underline.svg";
 
 
-
 export const RichTextCard = () => {
   const [editorLocalState, setEditorLocalState] = useState(() =>
     EditorState.createEmpty()
   );
+  const [converted2HtmlContent, setConverted2HtmlContent] = useState(null);
+  const [converted2RawContent, setConverted2RawContent] = useState(null);
+  const [converted2PlainTextContent, setConverted2PlainTextContent] = useState(null);
 
-    useEffect(() => {
-      const rawEditorData = getSavedEditorData();
-      if (rawEditorData !== null) {
-        const contentState = convertFromRaw(rawEditorData);
-        setEditorLocalState(EditorState.createWithContent(contentState));
-      }
-    },[]);
+  useEffect(() => {
+    const rawEditorData = getSavedEditorData();
+    if (rawEditorData !== null) {
+      const contentState = convertFromRaw(rawEditorData); //Convert to HTML from RAW
+      setEditorLocalState(EditorState.createWithContent(contentState));
+      setConverted2HtmlContent(editorLocalState);
+    }
+  },[]);
 
-   const [converted2HtmlContent, setConverted2HtmlContent] = useState(null);
-   const [converted2RawContent, setConvertedRawContent] = useState(null);
+ 
 
    //Handle changes in the editor
    const handleEditorChange = (state) => {
-     console.log('Hey this is the state: ',state);
+     console.log("Hey this is the state: ", state);
      setEditorLocalState(state);
-     convertContentToRAW();
-     convertContentToHTML();
+     convertContentToRAW(); // convert text to raw and save it in memory.
+     convertContentToHTML(); // convert text to raw and save it in memory.
+     convertContentToPlainText(); // convert text to plain text and save it in state & memory.
      console.log(converted2HtmlContent);
-     console.log('JSON is here: ',converted2RawContent);
+     console.log("JSON is here: ", converted2RawContent);
+     console.log("plainText is here: ", converted2PlainTextContent);
    };
    //Convert editor content to HTML
    const convertContentToRAW = () => {
-     let raw = convertToRaw(editorLocalState.getCurrentContent());
-     saveEditorContent(raw);
-     setConvertedRawContent(raw);
+     let raw = convertToRaw(editorLocalState.getCurrentContent()); // convert text to JSON
+     setConverted2RawContent(raw);
+     saveEditorContent(raw); //save JSON in local memory.
    };
+   
+
+   //Convert editor content to Plain Text
+   const convertContentToPlainText = () => {
+     const blocks = convertToRaw(editorLocalState.getCurrentContent()).blocks;
+     const plainText = blocks
+       .map((block) => (!block.text.trim() && "\n") || block.text)
+       .join("\n");
+
+     setConverted2PlainTextContent(plainText);
+     saveEditorContentAsPlainText(plainText); //save plain string in local memory.
+     return plainText;
+   };;
    
    //Save JSON to Database;
    const saveEditorContent = (data) => {
       localStorage.setItem('editorData', JSON.stringify(data))
    };
+   //Save Plain Text in local memory or external database;
+   const saveEditorContentAsPlainText = (plainText) => {
+     localStorage.setItem("editorContentAsPlainText", plainText);
+   };
 
    //Load JSON from Database;
    const getSavedEditorData = () => {
-     const savedData = localStorage.getItem('editroData');
+     const savedData = localStorage.getItem('editorData');
      return savedData ? JSON.parse(savedData) : null;
    };
    //Handle Key command
@@ -81,10 +102,35 @@ export const RichTextCard = () => {
   
      return allTexts;
    };
+   //Render Content As Plain Text
+   const renderContentAsPlainText = () => {
+    //  const currentText = converted2PlainTextContent;
+     const blocks = convertToRaw(editorLocalState.getCurrentContent()).blocks;
+     const currentText = blocks
+       .map((block) => (!block.text.trim() && "\n") || block.text)
+       .join("\n");
+  
+     return currentText;
+   };
+   //Render Content As HTML dangerously
+   const renderContentAsHTML = () => {
+     let currentContentAsHTML = convertToHTML(
+       editorLocalState.getCurrentContent()
+     );
+    //  const blocks = convertToRaw(editorLocalState.getCurrentContent()).blocks;
+    //  const currentText = blocks
+    //    .map((block) => (!block.text.trim() && "\n") || block.text)
+    //    .join("\n");
+  
+     return currentContentAsHTML;
+   };
 
    const convertContentToHTML = () => {
+    //Simple implementation:
     //  let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
-     let currentContentAsHTML = convertToHTML({
+    
+    //Advanced optional props:
+    let currentContentAsHTML = convertToHTML({
        styleToHTML: (style) => {
          if (style === "BOLD") {
            return <span style={{ color: "blue" }} />;
@@ -121,12 +167,8 @@ export const RichTextCard = () => {
       </Header>
       <Editor
         className="editor"
-        // value={editorLocalState}
         editorState={editorLocalState}
         onEditorStateChange={handleEditorChange}
-        // onEditorStateChange={onChange}
-        // onEditorStateChange={onChange}
-        // onChage={setEditorLocalState}
         placeholder="Type your message"
         toolbar={{
           options: ["inline"],
@@ -139,12 +181,24 @@ export const RichTextCard = () => {
           },
         }}
       />
+      <p style={{ fontSize: "14px", color: "red" }}>
+        This one uses HTML tags dangerously set inside the div.
+      </p>
       <div
         className="preview"
-        dangerouslySetInnerHTML={createMarkup(converted2HtmlContent)}
-        style={{fontSize: '14px'}}
+        dangerouslySetInnerHTML={createMarkup(renderContentAsHTML())}
+        style={{ fontSize: "14px" }}
       ></div>
-      <pre style={{fontSize: '14px'}}>{renderContentAsRawJs()}</pre>
+      <p style={{ fontSize: "14px", color: "red" }}>
+        This one uses mapping over all blocks{" "}
+      </p>
+      <pre style={{ fontSize: "14px", whiteSpace: "normal" }}>
+        {renderContentAsRawJs()}
+      </pre>
+      <p style={{ fontSize: "14px", color: "red" }}>
+        This one maps over all plainText and keeps spaces between{" "}
+      </p>
+      <pre style={{ fontSize: "14px" }}>{renderContentAsPlainText()}</pre>
     </Card>
   );
 };
@@ -152,33 +206,3 @@ export const RichTextCard = () => {
 export default RichTextCard;
 
 
-// import React, { Component } from "react";
-
-// import { Editor } from "react-draft-wysiwyg";
-
-// class ControlledEditor extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       editorState: EditorState.createEmpty(),
-//     };
-//   }
-
-//   onEditorStateChange: Function = (editorState) => {
-//     this.setState({
-//       editorState,
-//     });
-//   };
-
-//   render() {
-//     const { editorState } = this.state;
-//     return (
-//       <Editor
-//         editorState={editorState}
-//         wrapperClassName="demo-wrapper"
-//         editorClassName="demo-editor"
-        
-//       />
-//     );
-//   }
-// }
