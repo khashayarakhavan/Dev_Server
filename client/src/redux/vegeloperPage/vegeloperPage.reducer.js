@@ -19,6 +19,8 @@ const VegeloperPageReducer = (state = INITIAL_STATE, action) => {
       };
     case VegeloperPageActionTypes.EMAIL_RICH_TEXT:
       console.log("Hello from Email Rich :D");
+      console.log(`This is the rich text ${action.payload}`);
+    
       return {
         ...state,
         emailRichText: action.payload,

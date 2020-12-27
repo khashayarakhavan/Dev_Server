@@ -1,15 +1,19 @@
-//Basics
+//Framework
 import React, { useState , useEffect} from "react";
+//State Mangement
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+//Libraries
 import { EditorState , RichUtils, convertToRaw, convertFromRaw} from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import { convertToHTML } from "draft-convert";
 import DOMPurify from "dompurify";
-// import "react-draft-wysiwyg.css";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"; 
+//Actions
+import {emailRichText} from "../../redux/vegeloperPage/vegeloperPage.actions";
 
 //Styles
 import { Card, Header, Image, Text } from "./richTextCard.styles";
-
 //Assets
 import vegeloperImage from "../../assets/SVG/Vegeloper.svg";
 import boldIcon from "../../assets/SVG/bold.svg";
@@ -17,7 +21,8 @@ import italicIcon from "../../assets/SVG/italic.svg";
 import underlineIcon from "../../assets/SVG/underline.svg";
 
 
-export const RichTextCard = () => {
+export const RichTextCard = (props) => {
+  const {emailRichText} = props;
   const [editorLocalState, setEditorLocalState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -151,12 +156,16 @@ export const RichTextCard = () => {
      setConverted2HtmlContent(currentContentAsHTML);
    };
 
-   const createMarkup = (html) => {
+   const createSanitizedMarkup = (html) => {
     return {
       __html: DOMPurify.sanitize(html)
     }
    };
   
+   const handleSubmit = () => {
+    console.log('hello from handleSubmit :D ');
+    emailRichText(renderContentAsPlainText());
+   };
 
  
   return (
@@ -181,12 +190,15 @@ export const RichTextCard = () => {
           },
         }}
       />
+      <button style={{ fontSize: "14px", color: "pink", background: "lightyellow" }} onClick={handleSubmit}>
+        Send
+      </button>
       <p style={{ fontSize: "14px", color: "red" }}>
         This one uses HTML tags dangerously set inside the div.
       </p>
       <div
         className="preview"
-        dangerouslySetInnerHTML={createMarkup(renderContentAsHTML())}
+        dangerouslySetInnerHTML={createSanitizedMarkup(renderContentAsHTML())}
         style={{ fontSize: "14px" }}
       ></div>
       <p style={{ fontSize: "14px", color: "red" }}>
@@ -202,7 +214,16 @@ export const RichTextCard = () => {
     </Card>
   );
 };
+const mapStateToProps = createStructuredSelector({
+  // Empty
+});
 
-export default RichTextCard;
+const mapDispatchToProps = (dispatch) => ({
+
+  emailRichText: (value) => dispatch(emailRichText(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RichTextCard);
+
 
 
