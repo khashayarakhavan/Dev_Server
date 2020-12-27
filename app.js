@@ -134,6 +134,7 @@ app.use(compression());
 // Test middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
+  console.log('from middleware : ',req.body.my_text)
   // log(req.cookies);
   // log(req.requestTime);
   next();

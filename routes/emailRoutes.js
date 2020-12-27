@@ -12,9 +12,14 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   // req.logout();
   // res.redirect("/");
-  console.log('Received email request', req);
+  console.log('@@ServerSide ! Received rich text from request is :');
+  console.log('body is : ', req.body);
+  console.log('posted_data is : ', req.body.posted_data);
+  console.log('my_text is : ', req.body.my_text);
+  
+  // console.log(req.body);
   const newUser = {email: 'akhavan.khashayar@gmail.com', name: 'aftoflBig5', }
-  await new Email(newUser, 'url').sendWelcome();
+  // await new Email(newUser, 'url').sendWelcome();
   
   
   res.send('WOW! Received it.');

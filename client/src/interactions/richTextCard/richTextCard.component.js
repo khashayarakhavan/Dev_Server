@@ -9,6 +9,7 @@ import { Editor } from "react-draft-wysiwyg";
 import { convertToHTML } from "draft-convert";
 import DOMPurify from "dompurify";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"; 
+import axios from "axios";
 //Actions
 import {emailRichText} from "../../redux/vegeloperPage/vegeloperPage.actions";
 
@@ -21,8 +22,7 @@ import italicIcon from "../../assets/SVG/italic.svg";
 import underlineIcon from "../../assets/SVG/underline.svg";
 
 
-export const RichTextCard = (props) => {
-  const {emailRichText} = props;
+export const RichTextCard = ( { updateRichTextState }) => {
   const [editorLocalState, setEditorLocalState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -32,31 +32,38 @@ export const RichTextCard = (props) => {
 
   useEffect(() => {
     const rawEditorData = getSavedEditorData();
+    
+    
     if (rawEditorData !== null) {
       const contentState = convertFromRaw(rawEditorData); //Convert to HTML from RAW
       setEditorLocalState(EditorState.createWithContent(contentState));
+
       setConverted2HtmlContent(editorLocalState);
+      setConverted2RawContent(rawEditorData);
+
+      updateRichTextState(rawEditorData);
     }
-  },[]);
+  }, []);
 
  
 
    //Handle changes in the editor
    const handleEditorChange = (state) => {
-     console.log("Hey this is the state: ", state);
      setEditorLocalState(state);
-     convertContentToRAW(); // convert text to raw and save it in memory.
-     convertContentToHTML(); // convert text to raw and save it in memory.
-     convertContentToPlainText(); // convert text to plain text and save it in state & memory.
-     console.log(converted2HtmlContent);
-     console.log("JSON is here: ", converted2RawContent);
-     console.log("plainText is here: ", converted2PlainTextContent);
+     const RawJSON = convertContentToRawJSON();
+     setConverted2RawContent(RawJSON);
+     saveEditorContent(RawJSON); //save JSON in local memory.
+     //  convertContentToHTML(); // convert text to raw and save it in memory.
+     //  convertContentToPlainText(); // convert text to plain text and save it in state & memory.
+     //  console.log(converted2HtmlContent);
+     //  console.log("JSON is here: ", converted2RawContent);
+     //  console.log("plainText is here: ", converted2PlainTextContent);
    };
+
    //Convert editor content to HTML
-   const convertContentToRAW = () => {
-     let raw = convertToRaw(editorLocalState.getCurrentContent()); // convert text to JSON
-     setConverted2RawContent(raw);
-     saveEditorContent(raw); //save JSON in local memory.
+   const convertContentToRawJSON = () => {
+     let JSONobj = convertToRaw(editorLocalState.getCurrentContent()); // convert text to JSON
+     return JSONobj;
    };
    
 
@@ -70,7 +77,7 @@ export const RichTextCard = (props) => {
      setConverted2PlainTextContent(plainText);
      saveEditorContentAsPlainText(plainText); //save plain string in local memory.
      return plainText;
-   };;
+   };
    
    //Save JSON to Database;
    const saveEditorContent = (data) => {
@@ -162,11 +169,22 @@ export const RichTextCard = (props) => {
     }
    };
   
-   const handleSubmit = () => {
-    console.log('hello from handleSubmit :D ');
-    emailRichText(renderContentAsPlainText());
-    emailRichText(renderContentAsHTML());
+   const handleSubmit = async () => {
+    console.log('hello from handleSubmit :D ', converted2RawContent);
+    updateRichTextState(converted2RawContent);
+
+    try {
+    const response = await axios.post("/api/v1/email", {
+      posted_data: "dalam kalti mashan",
+      my_text: converted2RawContent,
+    });
+  console.log("👉 Returned data:", response);
+} catch (e) {
+  console.log(`😱 Axios request failed: ${e}`);
+}
    };
+
+   
 
  
   return (
@@ -221,7 +239,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
 
-  emailRichText: (value) => dispatch(emailRichText(value)),
+  updateRichTextState: (value) => dispatch(emailRichText(value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RichTextCard);

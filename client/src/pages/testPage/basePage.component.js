@@ -34,18 +34,61 @@ import Skeleton from '../../interactions/Skeleton/skeletonScreen.component';
 
 
 const BasePage = ({ menuOpen, toggleMenuOpen, richText, emailRichText }) => {
+
   useEffect(() => {
-    console.log(`@FROM TESTPAGE!!! this is rich text: ${richText}`);
+    if (richText) {
+      console.log(`@FROM TESTPAGE!!! this is rich text: `, richText.blocks[0].text);
+    }
   }, [richText]);
+
   const [open, setOpen] = useState(false);
   
   const handleClick = async () => {
     console.log("Hello from handleclick");
-    const res = await axios.post("/api/v1/email");
-    console.log("Hello from handleclick /basePage : ", res.data);
+    var myDataObj = richText;
+    var formData = new FormData();
+
+    for (var key in myDataObj) {
+      formData.append(key, myDataObj[key]);
+    }
+
+    // try {
+    //   const res = await axios.post("/api/v1/email", formData);
+    //   console.log(res.data);
+    // } catch (err) {
+    //   console.log('error is : ',err);
+    // }
+
+    
+try {
+  const response = await axios.post("/api/v1/email", {
+    posted_data: formData,
+    my_text: richText,
+  });
+  console.log("👉 Returned data:", response);
+} catch (e) {
+  console.log(`😱 Axios request failed: ${e}`);
+}
+
+    // axios
+    //   .post("/api/v1/email", formData, {
+    //     params: { action: "update-user" },
+    //     headers: { "Content-Type": "multipart/form-data" },
+    //     // baseURL: "http://localhost:5000",
+    //   })
+    //   .then((data) => console.log(data))
+    //   .catch((err) => {
+    //     console.log(err);
+    //     return null;
+    //   });
+    // const res = await axios.post("/api/v1/email", richText);
+    // const res = await axios.post("/api/v1/email", {
+    //   richText: richText.stringify()
+    // });
+    // console.log("Hello from handleclick /basePage : ", res.data);
     // const text = res.data.map(fact => fact.text);
 
-    return res.data;
+    // return res.data;
   };
   const bookBtn = document.getElementById("book-tour");
 
