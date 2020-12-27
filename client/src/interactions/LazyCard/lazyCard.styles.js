@@ -9,15 +9,13 @@ const colorBackground = '#270f4b'
 export const Card = styled.div`
   position: absolute;
   top: 10rem;
-  left: 10rem;
+  left: 35%;
   width: 300px;
   padding: 2rem 1.5rem;
   ${"" /* */}
   border-radius: 3rem;
   background: ${colorBackground};
-  background: ${colors.neutrals.darkest};
-
- 
+  background: ${colors.neutrals.darkest}; 
 `;
 
 export const List = styled.div`

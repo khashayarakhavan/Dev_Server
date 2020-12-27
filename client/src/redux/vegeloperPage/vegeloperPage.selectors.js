@@ -10,3 +10,7 @@ export const selectPopUpOpen = createSelector(
   [selectVegeloper],
   (pageState) => pageState.popUpOpen
 );
+export const selectRichText = createSelector(
+  [selectVegeloper],
+  (pageState) => pageState.emailRichText
+);

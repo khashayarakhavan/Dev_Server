@@ -165,6 +165,7 @@ export const RichTextCard = (props) => {
    const handleSubmit = () => {
     console.log('hello from handleSubmit :D ');
     emailRichText(renderContentAsPlainText());
+    emailRichText(renderContentAsHTML());
    };
 
  

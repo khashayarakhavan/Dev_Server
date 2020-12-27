@@ -80,6 +80,17 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
   </>
 );
 
+export const HashGenerator = (key) => {
+  let hash = 0;
+  if (key) {
+      for (let i = 0; i < key.length; i++) {
+        hash = Math.floor(hash + key.charCodeAt(i) * 10*i) + Math.floor(Math.random() * (10000 - 10 + 1)) + 10;
+        hash = Math.floor(hash + Math.floor(Math.random() * (10000 - 10 + 1)) + 10 )
+      }
+    }
+    return hash;
+};
+
 export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
   <>
     <Overlay isOpen={open} onClick={() => setOpen(false)} />
@@ -87,7 +98,7 @@ export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
       <List>
         {json.map((country) => (
           <LazyLoadRow
-            key={country.dial_code}
+            key={HashGenerator(country.dial_code)}
             code={country.code}
             name={country.name}
             open={open}

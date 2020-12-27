@@ -1,5 +1,5 @@
 //Framework
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 //State Mangement
@@ -7,7 +7,10 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 //State Selector
 // import { selectCurrentUser } from "./redux/user/user.selectors";
-import { selectMenuOpen } from "../../redux/vegeloperPage/vegeloperPage.selectors";
+import {
+  selectMenuOpen,
+  selectRichText,
+} from "../../redux/vegeloperPage/vegeloperPage.selectors";
 //Actions
 // import { checkUserSession } from "./redux/user/user.actions";
 import {
@@ -30,17 +33,20 @@ import Skeleton from '../../interactions/Skeleton/skeletonScreen.component';
 
 
 
-const BasePage = ({ menuOpen, toggleMenuOpen, emailRichText }) => {
+const BasePage = ({ menuOpen, toggleMenuOpen, richText, emailRichText }) => {
+  useEffect(() => {
+    console.log(`@FROM TESTPAGE!!! this is rich text: ${richText}`);
+  }, [richText]);
   const [open, setOpen] = useState(false);
   
-  const  handleClick = async () => {
-    console.log('Hello from handleclick');
-    const res = await axios.post('/api/v1/email');
-    console.log('Hello from handleclick /basePage : ',res.data);
-  // const text = res.data.map(fact => fact.text);
+  const handleClick = async () => {
+    console.log("Hello from handleclick");
+    const res = await axios.post("/api/v1/email");
+    console.log("Hello from handleclick /basePage : ", res.data);
+    // const text = res.data.map(fact => fact.text);
 
-  return res.data;
-}
+    return res.data;
+  };
   const bookBtn = document.getElementById("book-tour");
 
   if (bookBtn) {
@@ -84,6 +90,7 @@ const BasePage = ({ menuOpen, toggleMenuOpen, emailRichText }) => {
 const mapStateToProps = createStructuredSelector({
   // currentUser: selectCurrentUser,
   menuOpen: selectMenuOpen,
+  richText: selectRichText,
 });
 
 const mapDispatchToProps = (dispatch) => ({
