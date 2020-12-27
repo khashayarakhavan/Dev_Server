@@ -64,13 +64,12 @@ import {
 
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
 import {ScrollLinkCustom} from './vegeloper.styles';
-
 const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
   
   const scrollToTop = () => {
     scroll.scrollToTop();
-    
   };
+
 
   
   return (
@@ -149,33 +148,17 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
 
 
 const mapStateToProps = createStructuredSelector({
-  // currentUser: selectCurrentUser,
   menuOpen: selectMenuOpen,
   popUpOpen: selectPopUpOpen,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // checkUserSession: () => dispatch(checkUserSession()),
   toggleMenuOpen: () => dispatch(toggleMenuOpen()),
   togglePopUp: value => dispatch(togglePopUp(value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VegeloperPage);
 
-
-// const VegeloperPage = () => (
-//   <VegeloperContainer>
-//     <Header />
-//     <HeroHeaderLeftContainer />
-//     <HeroHeaderRightContainer />
-//     <ScrollDownCTA />
-//     <Heading/>
-//     <YouTube />
-//     <ScrollHorizontal/>
-//     <Projects />
-//     <MiniCards />
-//   </VegeloperContainer>
-// );
 
 
 

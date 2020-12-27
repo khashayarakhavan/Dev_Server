@@ -67,6 +67,7 @@ import {
 } from "../../../redux/vegeloperPage/vegeloperPage.actions";
 
 // import { toggleMenuOpen } from "../../../redux";
+import MyAnimation from './lottieNew';
 
 export const HeroHeaderLeftContainer = ({ toggleMenuOpen, menuOpen, popUpOpen, togglePopUp }) => {
   // const Action_ToggleMenuOpen = props.toggleMenuOpen;
@@ -107,6 +108,7 @@ export const HeroHeaderLeftContainer = ({ toggleMenuOpen, menuOpen, popUpOpen, t
 export const HeroHeaderRightContainer = ({ popUpOpen }) => {
   let robotAnimation = (
     <Lottie options={AnimationCreateRobot} height={`100%`} />
+    // <MyAnimation height={`100%`} />
   );
 
 
