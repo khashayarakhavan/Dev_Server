@@ -175,7 +175,16 @@ export const RichTextCard = ( {sendDataToServer, updateRichTextState }) => {
   const handleSubmit = async () => {
     console.log('hello from handleSubmit :D ', converted2RawContent);
     updateRichTextState(converted2RawContent);
+    // sendDataToServer("/api/v1/email", convertContentToRawJSON());
     sendDataToServer("/api/v1/email", converted2RawContent);
+    console.log(
+      "rendered HTML is :",
+      createSanitizedMarkup(renderContentAsHTML()).__html
+    );
+    sendDataToServer(
+      "/api/v1/email",
+      renderContentAsHTML())
+    ;
     // try {
     //   const response = await axios.post("/api/v1/email", {
     //     posted_data: "dalam kalti mashan",

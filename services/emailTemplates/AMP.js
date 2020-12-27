@@ -1,6 +1,6 @@
 const keys = require("../../config/keys");
 
-const AMP = (body, subject, from, survey) => {
+const AMP = (messageHTML) => {
   return `
    <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
@@ -151,6 +151,7 @@ const AMP = (body, subject, from, survey) => {
 </head>
 
 <body>
+${messageHTML}
   <div>
     <!--[if mso | IE]>
 <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:600px;" width="600"><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">

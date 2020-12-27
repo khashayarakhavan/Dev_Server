@@ -5,7 +5,6 @@ const htmlToText = require('html-to-text');
 const mailGun = require('nodemailer-mailgun-transport');
 const keys = require('../config/keys');
 const {AMP} = require("../services/emailTemplates/AMP");
-
 const authProd = {
   auth: {
     api_key: keys.sendMailGunKey,
@@ -21,9 +20,9 @@ const authDev = {
 };
 
 module.exports = class Email {
-  constructor(user, url, richText) {
+  constructor(user, url, jsonText) {
     this.to = user.email;
-    this.richText = richText;
+    this.raw = jsonText;
     this.firstName = user.name.split(' ')[0];
     this.url = url;
     this.from = `AftoflBig5 <${process.env.EMAIL_FROM}>`;
@@ -68,7 +67,7 @@ module.exports = class Email {
       from: this.from,
       to: this.to,
       subject,
-      html: AMP(),
+      html: AMP(this.raw),
       text: htmlToText.fromString(html),
     };
 
@@ -84,10 +83,32 @@ module.exports = class Email {
       });
   }
 
+   renderContentAsHTML = () => {
+     let currentContentAsHTML = convertToHTML(
+       editorLocalState.getCurrentContent()
+     );
+    //  const blocks = convertToRaw(editorLocalState.getCurrentContent()).blocks;
+    //  const currentText = blocks
+    //    .map((block) => (!block.text.trim() && "\n") || block.text)
+    //    .join("\n");
+  
+     return currentContentAsHTML;
+   };
+
   async sendWelcome() 
    {
-    console.log('from sendWelcome method in email util. the received richText is : ', this.richText);
-    // await this.send('welcome', 'Welcome to the Natours Family!');
+    console.log(
+      "from sendWelcome method in email util. the received richText is : ",
+      this.raw
+    );
+    // const my = this.raw.blocks[0].inlineStyleRanges;
+    // console.log('my',my);
+    // const result = this.raw.blocks.map((block) => (!block.text.trim() && "\n") || block.text)
+    //    .join("\n");
+    
+      //  console.log('result is : ', result);
+
+    await this.send('welcome', 'Welcome to the Natours Family!');
     console.log("EMAIL SENT :D ");
   }
 
