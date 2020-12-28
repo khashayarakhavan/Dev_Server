@@ -1,6 +1,19 @@
 const keys = require("../../config/keys");
 
-const AMP = (messageHTML) => {
+var raw = require("nanohtml/raw");
+var html = require("nanohtml");
+
+var string = "<h1>This a regular string.</h1>";
+var el = html`
+  <body>
+    ${raw(string)}
+  </body>
+`;
+
+const AMP = (sanitizedHTML) => {
+  renderHTML = (sanitizedHTML) => {
+    return (sanitizedHTML.__html);
+  };
   return `
    <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
@@ -151,7 +164,7 @@ const AMP = (messageHTML) => {
 </head>
 
 <body>
-${messageHTML}
+
   <div>
     <!--[if mso | IE]>
 <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:600px;" width="600"><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
@@ -176,6 +189,7 @@ ${messageHTML}
                         <tbody>
                           <tr>
                             <td style='width:216px;'>
+                            
                               <img alt='Thank you for contacting us. ' height='189'
                                 src='https://res.cloudinary.com/khashi-dev/image/upload/v1608983912/Vegeloper_vgjdax.svg'
                                 style='border:none;display:block;font-size:13px;height:189px;outline:none;text-decoration:none;width:100%;'
@@ -191,7 +205,9 @@ ${messageHTML}
                       <div
                         style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
                         Thank you 🎉
+                        ${renderHTML(sanitizedHTML)}
                       </div>
+                      
                     </td>
                   </tr>
                   <tr>

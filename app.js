@@ -10,6 +10,9 @@ const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const cors = require('cors');
+//Template Engine
+const exphbs = require("express-handlebars");
+const helpers = require("./helpers");
 
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -22,12 +25,15 @@ const emailRouter = require("./routes/emailRoutes");
 const userRouter = require('./routes/userRoutes');
 // const APIRouter = require('./routes/authRoutes2');
 const authRouter = require('./routes/authRoutes');
-
+const routeHome = require('./routes/home');
+const routeAbout = require('./routes/about');
 // const authRouter = require('./routes/APIRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
+
 const bookingRouter = require('./routes/bookingRoutes');
 const bookingController = require('./controllers/bookingController');
+
 
 const { log } = console;
 
@@ -35,8 +41,19 @@ const app = express();
 
 require('./utils/passport');
 
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+//Pug
+// app.set('view engine', 'pug'); 
+// app.set('views', path.join(__dirname, 'views'));
+
+// use express-handlebars view engine and set views template directory
+const hbs = exphbs.create({
+  partialsDir: __dirname + '/views/partials',
+  helpers: helpers()
+})
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+app.set("views", __dirname + "/views");
 
 // Cookie session -->
 app.use(bodyParser.json());
@@ -56,6 +73,7 @@ app.use(passport.session());
 // to use a non-json or so called `raw` parsing using express.raw
 // or you can use `bodyParser.raw` method from body-parser NPM package to do the same job.
 // Stripe webhook, BEFORE body-parser, because stripe needs the body as stream
+
 app.post(
   '/webhook-checkout',
   bodyParser.raw({ type: 'application/json' }),
@@ -142,6 +160,8 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 // app.use('/', viewRouter);
+app.get("/hbs", (req, res, next) => routeHome(req, res, next));
+app.get("/about", (req, res, next) => routeAbout(req, res, next));
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/email', emailRouter);
@@ -152,7 +172,7 @@ app.use('/api/v1/bookings', bookingRouter);
 // app.use('/api/', APIRouter);
 
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "developement") {
   // Express will serve up production assets and files like main.js & main.css
   app.use(express.static("client/build"));
 

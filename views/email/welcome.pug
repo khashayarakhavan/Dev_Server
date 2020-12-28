@@ -4,6 +4,29 @@ block content
   p Hi #{firstName},
   p Welcome to Aftofl Demo website, I am glad to have you 🎉🙏
   p We're all a 5big familiy here, so make sure to upload your user photo so we get to know you a bit better!
+    - var content = "<b>Nodejsera</b>"
+    //- - var content2 = `${rawHTML.__html.toString()}`
+    
+  //- p This is your message, please check it : !{rawHTML.__html.toString()}
+  //- p This is your message, please check it : !{rawHTML.__html}
+  //- p This is your message, please check it : #{rawHTML.__html}
+  p This is your message, please check it : #{content}
+  //- p This is your message, please check it : #{content2}
+  p This is your message, please check it : !{content}
+  //- p This is your message, please check it : !{content2}
+  p This is your message, please check it : !{rawHTML.toString()}
+  p This is your message, please check it : #{rawHTML}
+  div!= rawHTML
+  //- section= rawHTML
+  
+  //- .quote
+  //- p Joel: !{rawHTML.__html}
+
+  //- - var content2 = rawHTML.__html.toString()
+  //- //- - var contentNew = `${rawHTML.__html.toString()}`
+  //- - var contentNew = `${content2}`
+  //- - console.log('@@PUG@@', contentNew)
+
   table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
     tbody
       tr
