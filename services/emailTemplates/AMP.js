@@ -11,9 +11,9 @@ var el = html`
 `;
 
 const AMP = (sanitizedHTML) => {
-  renderHTML = (sanitizedHTML) => {
-    return (sanitizedHTML.__html);
-  };
+  // renderHTML = (sanitizedHTML) => {
+  //   return (sanitizedHTML.__html);
+  // };
   return `
    <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
@@ -205,7 +205,7 @@ const AMP = (sanitizedHTML) => {
                       <div
                         style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
                         Thank you 🎉
-                        ${renderHTML(sanitizedHTML)}
+                        ${sanitizedHTML}
                       </div>
                       
                     </td>

@@ -30,6 +30,7 @@ const routeAbout = require('./routes/about');
 // const authRouter = require('./routes/APIRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
+const indexRouter = require("./routes/emailRoutes");
 
 const bookingRouter = require('./routes/bookingRoutes');
 const bookingController = require('./controllers/bookingController');
@@ -47,9 +48,12 @@ require('./utils/passport');
 
 // use express-handlebars view engine and set views template directory
 const hbs = exphbs.create({
-  partialsDir: __dirname + '/views/partials',
-  helpers: helpers()
-})
+  // partialsDir: path.join(__dirname, 'views/partials'),
+  // layoutsDir: path.join(__dirname, "views/layouts"),
+  defaultLayout: false,
+  partialsDir: __dirname + "/views/partials",
+  helpers: helpers(),
+});
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
@@ -165,6 +169,7 @@ app.get("/about", (req, res, next) => routeAbout(req, res, next));
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/email', emailRouter);
+app.use("/mail", indexRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/auth', authRouter);
 app.use('/api/v1/reviews', reviewRouter);
@@ -176,7 +181,7 @@ if (process.env.NODE_ENV === "developement") {
   // Express will serve up production assets and files like main.js & main.css
   app.use(express.static("client/build"));
 
-  // Express will serve up index.html if route isn't recognized
+  // Express will serve up index.de if route isn't recognized
   const path = require("path");
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));

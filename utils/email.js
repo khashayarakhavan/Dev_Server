@@ -5,6 +5,10 @@ const htmlToText = require('html-to-text');
 const mailGun = require('nodemailer-mailgun-transport');
 const keys = require('../config/keys');
 const {AMP} = require("../services/emailTemplates/AMP");
+const hbs = require('nodemailer-express-handlebars');
+const path = require('path');
+
+// const Handlebars = require("handlebars");
 // import React from "react";
 // import createDOMPurify from "dompurify";
 // import { JSDOM } from "jsdom";
@@ -41,20 +45,20 @@ const authDev = {
     domain: keys.sendMailGunDomain
   }
 };
-function htmlEntities(str) {
+// function htmlEntities(str) {
 
-    return String(str)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
+//     return String(str)
+//       .replace(/&/g, "&amp;")
+//       .replace(/</g, "&lt;")
+//       .replace(/>/g, "&gt;")
+//       .replace(/"/g, "&quot;");
+//   }
 
 module.exports = class Email {
-  constructor(user, url, rawHTML) {
+  constructor(user, url, dalam) {
     //  console.log(rawHTML);
     this.to = user.email;
-    this.rawHTML = rawHTML;
+    this.rawHTML = dalam;
     this.firstName = user.name.split(" ")[0];
     this.url = url;
     this.from = `AftoflBig5 <${process.env.EMAIL_FROM}>`;
@@ -91,24 +95,44 @@ module.exports = class Email {
         },
       });
     }
-  } // <-- SMTP Transporter
+  }
 
+  
   
   // Send the actual email
   async send(template, subject) {
     // 1) Render HTML based on a pug template
-    console.log("@@HERE is this is this.html :", this.rawHTML);
-    const transformedTags = htmlEntities(this.rawHTML.__html);
-    console.log('transofrmed tags are : ',transformedTags);
-    const templateHTML = pug.renderFile(
-      `${__dirname}/../views/email/${template}.pug`,
-      {
-        firstName: this.firstName,
-        url: this.url,
-        subject,
-        rawHTML: transformedTags,
-      }
-    );
+    // console.log("@@HERE is this is this.html :", this.rawHTML);
+    // const transformedTags = htmlEntities(this.rawHTML.__html);
+    // console.log("transofrmed tags are : ", transformedTags);
+    
+    //Generate HTML
+    // var template = Handlebars.compile(source);
+    // var context = { title: "My New Post", body: "This is my first post!" };
+   
+   //Context
+    // var context = {
+    //   firstName: this.firstName,
+    //   url: this.url,
+    //   subject,
+    //   rawHTML: transformedTags,
+    // };
+
+
+
+    // var templateHTML = template(context);
+
+    // console.log("@@HBS !!! is here: ", templateHTML);
+
+    // const templateHTML = pug.renderFile(
+    //   `${__dirname}/../views/email/${template}.pug`,
+    //   {
+    //     firstName: this.firstName,
+    //     url: this.url,
+    //     subject,
+    //     rawHTML: transformedTags,
+    //   }
+    // );
     // const templateHTML = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
     //   firstName: this.firstName,
     //   url: this.url,
@@ -116,23 +140,50 @@ module.exports = class Email {
     //   html: this.rawHTML,
     // });
 
-    // 2) Define email options
+    // 2) Define mailer/Transporter
+    // let mailer = this.newTransport();
+    //  var hbsOptions = {
+    //    extName: ".handlebars" /* or '.handlebars' */,
+    //    viewPath: "views/"
+    //   //  layoutsDir: path.join(__dirname, "..", "views", "email"),
+    //   //  defaultLayout: "template",
+    //   //  partialsDir: __dirname + "/../views/email/partials/",
+    //   //  partialsDir: path.join(__dirname, "..", "views", "email", "partials"),
+    //  };
+    //  console.log('the path is : ', hbsOptions.viewPath)
+    // mailer.use("compile", hbs());
+    // mailer.use(
+    //   "compile",
+    //   hbs({
+    //     viewpath: "views/email",
+    //     extName: '.handlebars'
+    //   })
+    // );
+
+    // 3) Define email options
     const mailOptions = {
       from: this.from,
       to: this.to,
       subject,
-      // html: AMP(this.rawHTML),
-      html: templateHTML,
-      text: htmlToText.fromString(templateHTML),
+
+      html: AMP(this.rawHTML),
+      // html: templateHTML,
+      // text: htmlToText.fromString(templateHTML),
     };
 
-    // 3) Create a transport and send emails
-    await this.newTransport().sendMail(mailOptions, function (err, data) {
+    // <-- SMTP Transporter
+
+    // 3) HERE we exactly send it via email provider.
+    // await this.newTransport().sendMail(mailOptions, function (err, data) {
+    await this.newTransport().sendMail(mailOptions, function (err, response) {
       // CallBack function for sending email
       if (err) {
         console.log("the error is : ", err); // Log if there is any error
       } else {
-        console.log("Email sent with Nodemailer via MailTrap Service", data); // log the response from mail service to show the result of sent emails.
+        console.log(
+          "Email sent with Nodemailer via MailTrap Service",
+          response
+        ); // log the response from mail service to show the result of sent emails.
       }
     });
   }
