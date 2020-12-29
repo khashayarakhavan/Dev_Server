@@ -214,10 +214,10 @@ const AMP2 = (richText) => {
                           <tr>
                             <td style='width:216px;'>
                             
-                              <img alt='Thank you for contacting us. ' height='189'
-                                src='https://res.cloudinary.com/khashi-dev/image/upload/v1608983912/Vegeloper_vgjdax.svg'
-                                style='border:none;display:block;font-size:13px;height:189px;outline:none;text-decoration:none;width:100%;'
-                                width='216' />
+                              <img alt='Thank you for contacting us. ' height='150' 
+                                src='https://res.cloudinary.com/khashi-dev/image/upload/v1608983912/Vegeloper_vgjdax.png'
+                                style='border:none;display:block;font-size:13px;outline:none;text-decoration:none;width:100%;'
+                                width='150px' />
                             </td>
                           </tr>
                         </tbody>
@@ -553,4 +553,4 @@ const AMP2 = (richText) => {
     `;
 };
 
-module.exports = { AMP };
+module.exports = { AMP2 };

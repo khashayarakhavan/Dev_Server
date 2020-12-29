@@ -5,6 +5,7 @@ const htmlToText = require('html-to-text');
 const mailGun = require('nodemailer-mailgun-transport');
 const keys = require('../config/keys');
 const {AMP} = require("../services/emailTemplates/AMP");
+const {AMP2} = require("../services/emailTemplates/AMP2");
 // const hbs = require('nodemailer-express-handlebars');
 const path = require('path');
 const hbs = require("hbs");
@@ -104,130 +105,62 @@ module.exports = class Email {
 
   // Send the actual email
   async send(template, subject) {
-    // 1) Render HTML based on a pug template
-    // console.log("@@HERE is this is this.html :", this.rawHTML);
-    // const transformedTags = htmlEntities(this.rawHTML.__html);
-    // console.log("transofrmed tags are : ", transformedTags);
-
-    //Generate HTML
-    // var template = Handlebars.compile(source);
-    // var context = { title: "My New Post", body: "This is my first post!" };
-
-    //Context
-    // var context = {
-    //   firstName: this.firstName,
-    //   url: this.url,
-    //   subject,
-    //   rawHTML: transformedTags,
-    // };
-
-    // var templateHTML = template(context);
-
-    // console.log("@@HBS !!! is here: ", templateHTML);
-
-   
-    // const templateHTML = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
-    //   firstName: this.firstName,
-    //   url: this.url,
-    //   subject,
-    //   html: this.rawHTML,
-    // });
-
-    // 2) Define mailer/Transporter
-    // let mailer = this.newTransport();
-    //  var hbsOptions = {
-    //    extName: ".handlebars" /* or '.handlebars' */,
-    //    viewPath: "views/"
-    //   //  layoutsDir: path.join(__dirname, "..", "views", "email"),
-    //   //  defaultLayout: "template",
-    //   //  partialsDir: __dirname + "/../views/email/partials/",
-    //   //  partialsDir: path.join(__dirname, "..", "views", "email", "partials"),
-    //  };
-    //  console.log('the path is : ', hbsOptions.viewPath)
-    // mailer.use("compile", hbs());
-    // mailer.use(
-    //   "compile",
-    //   hbs({
-    //     viewpath: "views/email",
-    //     extName: '.handlebars'
-    //   })
-    // );
-
     const richText = this.pureHTML;
     const stringifyHTML = richText.toString();
     const backtickHTML = `${richText}`;
     const backStringHTML = `${stringifyHTML}`;
-    console.log('pureHTML is: ', this.pureHTML);
 
-
-    // const templateHTML = pug.renderFile(
-    //   `${__dirname}/../views/email/${template}.pug`,
-    //   {
-    //     firstName: this.firstName,
-    //     url: this.url,
-    //     subject,
-    //     //  rawHTML: transformedTags,.
-    //     pureHTML: this.pureHTML,
-    //     richText,
-    //     stringifyHTML,
-    //     backtickHTML,
-    //     backStringHTML,
-    //   }
-    // );
-
-    // const AMPrender_backStringHTML = AMP(backStringHTML);
-    // console.log("AMPrender_backStringHTML is:", backStringHTML);
-    // const AMPrender_backtickHTML = AMP(backtickHTML);
-    // console.log("AMPrender_backtickHTML is:", backtickHTML);
-    // const AMPrender_stringifyHTML = AMP(stringifyHTML);
-    // console.log("AMPrender_stringifyHTML is:", stringifyHTML);
-    // const AMPrender_richText = AMP(richText);
-    // console.log("AMPrender_richText is:", richText);
-
-    // const AMPrenderHTML = AMP(
-    //   backStringHTML,
-    //   backtickHTML,
-    //   stringifyHTML,
-    //   richText
-    // );
     const decodedHTML = ent.decode(richText);
-    console.log('decode is : ', decodedHTML);
+    console.log("decodedHTML is : ", decodedHTML);
+
+    //USING PUG TEMPLATE ENGINE -->
+    const pugContext = {
+      firstName: this.firstName,
+      url: this.url,
+      subject,
+      pureHTML: decodedHTML,
+      richText,
+      stringifyHTML,
+      backtickHTML,
+      backStringHTML,
+    };
+    const pugViewPath = `${__dirname}/../views/email/${template}.pug`;
+    const pugTemplateHTML = pug.renderFile(pugViewPath, pugContext);
+    // <-- End of PUG template
+
+    //USING Handlebars.js TEMPLATE ENGINE -->
     let element = "<div><p>dalam</p></div>";
     const templateHBS = hbs.compile(AMP(element, decodedHTML));
-
-    const finalHTML = templateHBS({
+    
+    var hbsContext = {
       title: "Handlebars",
       richText: "<strong>ridiBaba</strong>",
       richText2: decodedHTML,
-    });
-    console.log("!!!HBS is : ", finalHTML); // <h1>Handlebars</h1>
+    };
+    const hbsTemplateHTML = templateHBS(hbsContext);
+    // <-- End of Handlebars template
 
-    // const renderedFile = app.render("email", { name: "dalam" }, (err, html) => {
-    //   if (err) return console.error("!!!ERROR IS : ", err);
-    //   // do whatever you want here with `html`
-    //   // console.log("!!!HTML IS : ", html);
-    //   return html;
-    // });
+    //Pure Javascript HTML string -->
+    const ampTemplateHTML = AMP2(decodedHTML);
+    // <-- End of JS template
 
     // 3) Define email options
     const mailOptions = {
       from: this.from,
       to: this.to,
       subject,
-
-      // html: AMP(this.rawHTML),
-      // html: templateHTML,
-      html: finalHTML,
-      // html: templateHTML,
-      // text: htmlToText.fromString(templateHTML),
+      // html: pugTemplateHTML,
+      // html: hbsTemplateHTML,
+      html: ampTemplateHTML,
+      text: htmlToText.fromString(ampTemplateHTML),
     };
 
     // <-- SMTP Transporter
 
-    // 3) HERE we exactly send it via email provider.
+    //4) HERE we exactly send it via email provider.
     // await this.newTransport().sendMail(mailOptions, function (err, data) {
 
-    //SEND MAIL HERE! 
+    //SEND MAIL HERE!
     await this.newTransport().sendMail(mailOptions, function (err, response) {
       // CallBack function for sending email
       if (err) {
