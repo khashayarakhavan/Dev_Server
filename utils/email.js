@@ -5,8 +5,12 @@ const htmlToText = require('html-to-text');
 const mailGun = require('nodemailer-mailgun-transport');
 const keys = require('../config/keys');
 const {AMP} = require("../services/emailTemplates/AMP");
-const hbs = require('nodemailer-express-handlebars');
+// const hbs = require('nodemailer-express-handlebars');
 const path = require('path');
+const hbs = require("hbs");
+var ent = require("ent");
+var encode = require("ent/encode");
+var decode = require("ent/decode");
 
 // const Handlebars = require("handlebars");
 // import React from "react";
@@ -55,13 +59,14 @@ const authDev = {
 //   }
 
 module.exports = class Email {
-  constructor(user, url, dalam) {
+  constructor(user, pureHTML, renderedTemplateHTML) {
     //  console.log(rawHTML);
     this.to = user.email;
-    this.rawHTML = dalam;
+    this.rawHTML = renderedTemplateHTML;
     this.firstName = user.name.split(" ")[0];
-    this.url = url;
-    this.from = `AftoflBig5 <${process.env.EMAIL_FROM}>`;
+    // this.url = url;
+    this.pureHTML = pureHTML,
+      (this.from = `AftoflBig5 <${process.env.EMAIL_FROM}>`);
   }
 
   // ht
@@ -97,20 +102,18 @@ module.exports = class Email {
     }
   }
 
-  
-  
   // Send the actual email
   async send(template, subject) {
     // 1) Render HTML based on a pug template
     // console.log("@@HERE is this is this.html :", this.rawHTML);
     // const transformedTags = htmlEntities(this.rawHTML.__html);
     // console.log("transofrmed tags are : ", transformedTags);
-    
+
     //Generate HTML
     // var template = Handlebars.compile(source);
     // var context = { title: "My New Post", body: "This is my first post!" };
-   
-   //Context
+
+    //Context
     // var context = {
     //   firstName: this.firstName,
     //   url: this.url,
@@ -118,21 +121,11 @@ module.exports = class Email {
     //   rawHTML: transformedTags,
     // };
 
-
-
     // var templateHTML = template(context);
 
     // console.log("@@HBS !!! is here: ", templateHTML);
 
-    // const templateHTML = pug.renderFile(
-    //   `${__dirname}/../views/email/${template}.pug`,
-    //   {
-    //     firstName: this.firstName,
-    //     url: this.url,
-    //     subject,
-    //     rawHTML: transformedTags,
-    //   }
-    // );
+   
     // const templateHTML = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
     //   firstName: this.firstName,
     //   url: this.url,
@@ -160,13 +153,71 @@ module.exports = class Email {
     //   })
     // );
 
+    const richText = this.pureHTML;
+    const stringifyHTML = richText.toString();
+    const backtickHTML = `${richText}`;
+    const backStringHTML = `${stringifyHTML}`;
+    console.log('pureHTML is: ', this.pureHTML);
+
+
+    // const templateHTML = pug.renderFile(
+    //   `${__dirname}/../views/email/${template}.pug`,
+    //   {
+    //     firstName: this.firstName,
+    //     url: this.url,
+    //     subject,
+    //     //  rawHTML: transformedTags,.
+    //     pureHTML: this.pureHTML,
+    //     richText,
+    //     stringifyHTML,
+    //     backtickHTML,
+    //     backStringHTML,
+    //   }
+    // );
+
+    // const AMPrender_backStringHTML = AMP(backStringHTML);
+    // console.log("AMPrender_backStringHTML is:", backStringHTML);
+    // const AMPrender_backtickHTML = AMP(backtickHTML);
+    // console.log("AMPrender_backtickHTML is:", backtickHTML);
+    // const AMPrender_stringifyHTML = AMP(stringifyHTML);
+    // console.log("AMPrender_stringifyHTML is:", stringifyHTML);
+    // const AMPrender_richText = AMP(richText);
+    // console.log("AMPrender_richText is:", richText);
+
+    // const AMPrenderHTML = AMP(
+    //   backStringHTML,
+    //   backtickHTML,
+    //   stringifyHTML,
+    //   richText
+    // );
+    const decodedHTML = ent.decode(richText);
+    console.log('decode is : ', decodedHTML);
+    let element = "<div><p>dalam</p></div>";
+    const templateHBS = hbs.compile(AMP(element, decodedHTML));
+
+    const finalHTML = templateHBS({
+      title: "Handlebars",
+      richText: "<strong>ridiBaba</strong>",
+      richText2: decodedHTML,
+    });
+    console.log("!!!HBS is : ", finalHTML); // <h1>Handlebars</h1>
+
+    // const renderedFile = app.render("email", { name: "dalam" }, (err, html) => {
+    //   if (err) return console.error("!!!ERROR IS : ", err);
+    //   // do whatever you want here with `html`
+    //   // console.log("!!!HTML IS : ", html);
+    //   return html;
+    // });
+
     // 3) Define email options
     const mailOptions = {
       from: this.from,
       to: this.to,
       subject,
 
-      html: AMP(this.rawHTML),
+      // html: AMP(this.rawHTML),
+      // html: templateHTML,
+      html: finalHTML,
       // html: templateHTML,
       // text: htmlToText.fromString(templateHTML),
     };
@@ -175,6 +226,8 @@ module.exports = class Email {
 
     // 3) HERE we exactly send it via email provider.
     // await this.newTransport().sendMail(mailOptions, function (err, data) {
+
+    //SEND MAIL HERE! 
     await this.newTransport().sendMail(mailOptions, function (err, response) {
       // CallBack function for sending email
       if (err) {

@@ -1,4 +1,9 @@
 const keys = require("../../config/keys");
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { document } = new JSDOM(`...`).window;
+
+
 
 var raw = require("nanohtml/raw");
 var html = require("nanohtml");
@@ -9,11 +14,30 @@ var el = html`
     ${raw(string)}
   </body>
 `;
+const AMP = (element, richText) => {
+  const testHTML = "<p>This is test<p>";
 
-const AMP = (sanitizedHTML) => {
+  
+  return `<div>${testHTML}</div>
+  <section>${element}</section>
+  <section>${richText}</section>
+  <div>{{title}}</div>
+  <div>{{{richText}}}</div>
+  <div>{{{richText2}}}</div>
+  `;
+}
+const AMP2 = (backStringHTML, backtickHTML, stringifyHTML, richText) => {
   // renderHTML = (sanitizedHTML) => {
   //   return (sanitizedHTML.__html);
-  // };
+  // };co
+  const testHTML = "<p>This is test<p>"
+  function createElement(str) {
+    var div = document.createElement("div");
+    div.innerHTML = str;
+    const stringed = div.toString();
+    return stringed;
+  }
+  
   return `
    <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
@@ -205,9 +229,30 @@ const AMP = (sanitizedHTML) => {
                       <div
                         style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
                         Thank you 🎉
-                        ${sanitizedHTML}
                       </div>
-                      
+                      <div
+                        style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
+                     
+                      </div>
+              
+                      <div
+                        style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
+                     
+                      </div>
+                
+                   
+                    
+                     
+                      <div
+                        style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
+                   
+                      </div>
+                   
+                      <div
+                        style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
+                  
+                      </div>
+                  
                     </td>
                   </tr>
                   <tr>

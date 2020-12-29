@@ -12,6 +12,8 @@ const compression = require('compression');
 const cors = require('cors');
 //Template Engine
 const exphbs = require("express-handlebars");
+const hbs = require("hbs");
+// const hbs = require("handlebars");
 const helpers = require("./helpers");
 
 const cookieSession = require('cookie-session');
@@ -46,20 +48,39 @@ require('./utils/passport');
 // app.set('view engine', 'pug'); 
 // app.set('views', path.join(__dirname, 'views'));
 
-// use express-handlebars view engine and set views template directory
-const hbs = exphbs.create({
-  // partialsDir: path.join(__dirname, 'views/partials'),
-  // layoutsDir: path.join(__dirname, "views/layouts"),
-  defaultLayout: false,
-  partialsDir: __dirname + "/views/partials",
-  helpers: helpers(),
-});
+//handlebars.js
+// const hbs = exphbs.create({
+//   // partialsDir: path.join(__dirname, 'views/partials'),
+//   // layoutsDir: path.join(__dirname, "views/layouts"),
+//   defaultLayout: false,
+//   partialsDir: __dirname + "/views/partials",
+//   helpers: helpers(),
+// });
+// app.engine("handlebars", hbs.engine);
+// app.set("view engine", "handlebars");
+// app.set("views", __dirname + "/views");
+const {AMP} = require('./services/emailTemplates/AMP');
+app.set("view engine", "hbs");
+// let element = "<div><p>dalam</p></div>";
+// const template = hbs.compile(AMP(element));
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
-app.set("views", __dirname + "/views");
+// const html = template({ title: 'Handlebars', richText: '<strong>ridiBaba</strong>' });
+// console.log('!!!HBS is : ', html); // <h1>Handlebars</h1>
 
+// const renderedFile = app.render(
+//       "email",
+//       { name: 'dalam'},
+//       (err, html) => {
+//         if (err) return console.error('!!!ERROR IS : ', err);
+//         // do whatever you want here with `html`
+//         // console.log("!!!HTML IS : ", html);
+//         return html;
+//       }
+// );
+// console.log('this is render handlebars :', renderedHTML.toString());
 // Cookie session -->
+// console.log("renderedFile is :",renderedFile);
+
 app.use(bodyParser.json());
 app.use(
   cookieSession({

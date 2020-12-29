@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-
+ const jsdom = require("jsdom");
+ const { JSDOM } = jsdom;
+ const { document } = new JSDOM(`...`).window;
 // var EmailTemplate = require("email-templates").EmailTemplate;
 
 var MailConfig = require("../config/email");
-var hbs = require("nodemailer-express-handlebars");
+// var hbs = require("nodemailer-express-handlebars");
 var mailGunTransport = MailConfig.mailGunTransport;
 
 const Email = require("email-templates");
@@ -152,30 +154,62 @@ const dalam = await email
 // });
 
 // const Email = require("./../utils/email");
-const Emailer = require("../utils/email");
+const Mailer = require("../utils/email");
 
 
 router.post("/", async (req, res) => {
-  // req.logout();
-  // res.redirect("/");
-  // console.log('@@ServerSide ! Received rich text from request is :');
-  // console.log('body is : ', req.body);
-  // console.log('posted_data is : ', req.body.posted_data);
-  // console.log('my_text is : ', req.body.my_text);
+  console.log("received data in /api/v1/email is : ", req.body.data);
+  const pureHTML = req.body.data;
+  const richText = req.body.data;
+  const stringifyHTML = richText.toString();
+  const backtickHTML = `${richText}`;
+  const backStringHTML = `${stringifyHTML}`;
+
+ 
+  function createHTMLElement(str) {
+    var div = document.createElement("div");
+    div.innerHTML = str;
+    const stringed = div.toString();
+    return div.childNodes;
+  }
+  function createHTMLElement2(str) {
+    var div = document.createElement("div");
+    div.innerHTML = str;
+    const stringed = div.toString();
+    return div;
+  }
+  function createHTMLElement3(str) {
+    var div = document.createElement("div");
+    div.innerHTML = str;
+    const stringed = div.toString();
+    return stringed;
+  }
+
   try {
-    const dalam = await email
-      .render("mars/email", {
-        name: "Elon",
-      })
+    const renderedTemplateHTML = await email
+      .render(
+        "mars/email",
+        {
+          name: "Elon",
+          jsdomHTML: req.body.data,
+          jsdomHTML2: req.body.data.toString(),
+          jsdomHTML3: createHTMLElement3(req.body.data),
+          pureHTML,
+          richText,
+          stringifyHTML,
+          backtickHTML,
+          backStringHTML,
+        },
+        {noEscape: true}      )
       .then(console.log("hello again"))
       .catch(console.error);
-      console.log("new is : ", dalam);
+      
       const newUser = {email: 'akhavan.khashayar@gmail.com', name: 'aftoflBig5', }
-      await new Emailer(newUser, "url", dalam).sendWelcome();
+      await new Mailer(newUser, pureHTML, renderedTemplateHTML).sendWelcome();
   } catch (e) {
     console.log(e);
   }
-  console.log('received data in /api/v1/email is : ', req.body.data);
+  
   
   
   res.send('WOW! Received it.');

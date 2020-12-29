@@ -189,7 +189,7 @@ export const RichTextCard = ( {sendDataToServer, updateRichTextState }) => {
 
     sendDataToServer(
       "/api/v1/email",
-      createSanitizedMarkup(renderContentAsHTML())
+      renderContentAsHTML()
     );
     // try {
     //   const response = await axios.post("/api/v1/email", {
