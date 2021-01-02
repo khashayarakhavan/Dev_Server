@@ -1,44 +1,12 @@
-const keys = require("../../config/keys");
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { document } = new JSDOM(`...`).window;
 
 
 
-var raw = require("nanohtml/raw");
-var html = require("nanohtml");
 
-var string = "<h1>This a regular string.</h1>";
-var el = html`
-  <body>
-    ${raw(string)}
-  </body>
-`;
-const AMP = (element, richText) => {
-  const testHTML = "<p>This is test<p>";
 
-  
-  return `<div>${testHTML}</div>
-  <section>${element}</section>
-  <section>${richText}</section>
-  <div>{{title}}</div>
-  <div>{{{richText}}}</div>
-  <div>{{{richText2}}}</div>
-  `;
-}
 const getFlag = (code) => `https://countryflags.io/${code}/flat/64.png`;
 
 const AMP2 = (richText, country) => {
-  // renderHTML = (sanitizedHTML) => {
-  //   return (sanitizedHTML.__html);
-  // };co
   const testHTML = "<p>This is test<p>"
-  function createElement(str) {
-    var div = document.createElement("div");
-    div.innerHTML = str;
-    const stringed = div.toString();
-    return stringed;
-  }
   
   return `
    <!doctype html>

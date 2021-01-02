@@ -99,7 +99,7 @@ module.exports = class Email {
   }
 
   // Send the actual email
-  async send(template, subject) {
+  async send(template, subject, cb) {
     const richText = this.pureHTML;
     const customerCountry = this.customerCountry;
     const stringifyHTML = richText.toString();
@@ -160,12 +160,22 @@ module.exports = class Email {
     await this.newTransport().sendMail(mailOptions, function (err, response) {
       // CallBack function for sending email
       if (err) {
-        console.log("the error is : ", err); // Log if there is any error
+        console.log("Mailgun returned error : ", err); // Log if there is any error
+        cb.status(400).json({
+          status: "failed",
+          message: "Mailgun returned error :",
+          data: {
+            error: err,
+          },
+        });
       } else {
-        console.log(
-          "Email sent with Nodemailer via MailTrap Service",
-          response
-        ); // log the response from mail service to show the result of sent emails.
+        console.log("Email sent with Nodemailer via Mailgun Service", response); // log the response from mail service to show the result of sent emails.
+        cb.status(200).json({
+          status: "success",
+          data: {
+            response: response,
+          },
+        });
       }
     });
   }
@@ -182,7 +192,7 @@ module.exports = class Email {
     return currentContentAsHTML;
   };
 
-  async sendWelcome() {
+  async sendWelcome(cb) {
     // const my = this.raw.blocks[0].inlineStyleRanges;
     // console.log('my',my);
     // const result = this.raw.blocks.map((block) => (!block.text.trim() && "\n") || block.text)
@@ -190,7 +200,7 @@ module.exports = class Email {
 
     //  console.log('result is : ', result);
 
-    await this.send("welcome", "Welcome to the Natours Family!");
+    await this.send("welcome", "Welcome to the Natours Family!", cb);
     console.log("EMAIL SENT :D ");
   }
 

@@ -63,42 +63,20 @@ const Mailer = require("../utils/email");
 
 router.post("/", async (req, res) => {
   console.log("received data in /api/v1/email is : ", req.body.data);
-  const pureHTML = req.body.data.pureHTML;
-  const customerCountry = req.body.data.customerCountry;
-  // const richText = req.body.data;
-  // const stringifyHTML = richText.toString();
-  // const backtickHTML = `${richText}`;
-  // const backStringHTML = `${stringifyHTML}`;
+  const pureHTML = req.body.data.pureHTML ? req.body.data.pureHTML : "<p></p>";
 
-  try {
-    // const renderedTemplateHTML = await email
-    //   .render(
-    //     "mars/email",
-    //     {
-    //       name: "Elon",
-    //       jsdomHTML: req.body.data,
-    //       jsdomHTML2: req.body.data.toString(),
-    //       jsdomHTML3: req.body.data,
-    //       pureHTML,
-    //       richText,
-    //       stringifyHTML,
-    //       backtickHTML,
-    //       backStringHTML,
-    //     },
-    //     { noEscape: true }
-    //   )
-    //   .then(console.log("hello again"))
-    //   .catch(console.error);
-      
+  const customerCountry = req.body.data.customerCountry;
+
+
+  try {      
       const newUser = {email: 'akhavan.khashayar@gmail.com', name: 'aftoflBig5', }
-      await new Mailer(newUser, pureHTML, customerCountry).sendWelcome();
+      await new Mailer(newUser, pureHTML, customerCountry).sendWelcome(res);
   } catch (e) {
-    console.log(e);
+    console.log('Mailer util did not respond correctly', e);
   }
   
   
-  
-  res.send('WOW! Received it.');
+  // res.status(200).send("WOW! Received it.");
 });
 
 

@@ -22,7 +22,7 @@ import VegeloperPageActionTypes from "./vegeloperPage.types";
 
 export function* CallToAPI({ payload: { URL, data }}) {
   try {
-    console.log("👉 HiiiIIIiii! ");
+    console.log("👉 HiiiIIIiii! from Vegeloper SAGA ");
     const response = yield axios.post(URL, {data: data});
     console.log("👉 Returned data:", response);
   } catch (error) {
@@ -33,7 +33,7 @@ export function* CallToAPI({ payload: { URL, data }}) {
 }
 
 export function* onSendDataToServer() {
-  yield takeLatest(VegeloperPageActionTypes.SEND_DATA_SERVER_START, CallToAPI);
+  yield takeLatest(VegeloperPageActionTypes.SEND_OBJECT_TO_SERVER_START, CallToAPI);
 }
 
 export function* vegSagas() {

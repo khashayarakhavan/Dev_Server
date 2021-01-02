@@ -37,7 +37,6 @@ const MessageMeSection = ({
 }) => {
   const handleSubmit = async () => {
     console.log("hello from handleSubmit /messageMe.JS :D ");
-    // updateCustomerCountry();
     sendDataToServer("/api/v1/email", {
       pureHTML: richTextMessageAsHTML,
       customerCountry: customerCountry,

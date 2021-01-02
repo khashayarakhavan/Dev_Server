@@ -7,11 +7,11 @@ import MessageMeActionTypes from "./messageMe.types";
 
 export function* CallToAPI({ payload: { URL, data }}) {
   try {
-    console.log("👉 HiiiIIIiii! ");
+    console.log("👉 HiiiIIIiii! from messageMe SAGA");
     const response = yield axios.post(URL, {data: data});
     console.log("👉 Returned data:", response);
   } catch (error) {
-    console.log(`😱 Axios request failed: ${error}`);
+    console.log(`😱 Axios request failed: `, error);
   }
 }
 
