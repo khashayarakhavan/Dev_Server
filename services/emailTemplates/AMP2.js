@@ -26,6 +26,8 @@ const AMP = (element, richText) => {
   <div>{{{richText2}}}</div>
   `;
 }
+const getFlag = (code) => `https://countryflags.io/${code}/flat/64.png`;
+
 const AMP2 = (richText, country) => {
   // renderHTML = (sanitizedHTML) => {
   //   return (sanitizedHTML.__html);
@@ -229,8 +231,16 @@ const AMP2 = (richText, country) => {
                       <div
                         style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
                         Thank you 🎉
-                        ${richText} and you are from ${country}
-                      </div>
+                        ${richText} and you are from ${country.code} and dial code is ${country.dialCode}
+                        <img alt='Thank you for contacting us. ' height='20px' 
+                                src='${getFlag(country.code)}'
+                                style='border:none;display:block;font-size:13px;outline:none;text-decoration:none;width:20px;'
+                                width='20px' />
+                        </div>
+                    
+                            
+                              
+                            
                       <div
                         style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
                      

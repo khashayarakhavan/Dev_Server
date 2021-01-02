@@ -29,23 +29,32 @@ import {
 //Code
 export const getFlag = (code) => `https://countryflags.io/${code}/flat/64.png`;
 
-export const CountryDialog = ({ open, setOpen, setCountry }) => (
-  <Dialog open={open}>
-    {countriesLoadedfromDisk.map((country) => (
-      <Row
-        onClick={() => {
-          setOpen(false);
-          setCountry(country.name);
-        }}
-      >
-        <Flag src={getFlag(country.code)} />
-        <span>{country.name}</span>
-      </Row>
-    ))}
-  </Dialog>
-);
+// export const CountryDialog = ({ open, setOpen, setCountry }) => (
+//   <Dialog open={open}>
+//     {countriesLoadedfromDisk.map((country) => (
+//       <Row
+//         onClick={() => {
+//           setOpen(false);
+//           setCountry({ name: country.name, dialCode: country.dialCode, code: country.code,
+//            } );
+//         }}
+//       >
+//         <Flag src={getFlag(country.code)} />
+//         <span>{country.name}</span>
+//       </Row>
+//     ))}
+//   </Dialog>
+// );
 
-export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
+export const LazyLoadRow = ({
+  updateCustomerCountry,
+  dialCode,
+  code,
+  name,
+  open,
+  setOpen,
+  setCountry,
+}) => (
   <>
     <SkeletonRow>
       <Skeleton
@@ -65,15 +74,14 @@ export const LazyLoadRow = ({ code, name, open, setOpen, setCountry }) => (
         onClick={() => {
           setOpen(false);
           setCountry(name);
+          updateCustomerCountry({ name, dialCode, code });
         }}
       >
         {/* <Image style={{ background: `url(${getFlag(code)})` }} /> */}
         <FlagContainer>
           <Flag src={getFlag(code)} />
         </FlagContainer>
-        <CountryName>
-          {name.substring(0, 15)}
-        </CountryName>
+        <CountryName>{name.substring(0, 15)}</CountryName>
       </RowLazy>
     </LazyLoad>
   </>
@@ -90,7 +98,7 @@ export const HashGenerator = (key) => {
     return hash;
 };
 
-export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
+export const CountryDialogLazy = ({ open, setOpen, setCountry, updateCustomerCountry }) => (
   <>
     <Overlay isOpen={open} onClick={() => setOpen(false)} />
     <Dialog open={open}>
@@ -98,11 +106,13 @@ export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
         {countriesLoadedfromDisk.map((country) => (
           <LazyLoadRow
             key={country.dial_code}
+            dialCode={country.dial_code}
             code={country.code}
             name={country.name}
             open={open}
             setOpen={setOpen}
             setCountry={setCountry}
+            updateCustomerCountry={updateCustomerCountry}
           />
         ))}
       </List>
@@ -111,16 +121,19 @@ export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
 );
 
 
-const CountryPicker = ({ updateCustomerCountry }) => {
+const CountryPicker = ({ customerCountry, updateCustomerCountry }) => {
   const [isOpen, setOpen] = useState(false);
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("Select Country");
+  
+  // useEffect(() => {}, [country]);
 
   return (
     <Card>
       <CountryDialogLazy
         open={isOpen}
         setOpen={setOpen}
-        setCountry={updateCustomerCountry}
+        setCountry={setCountry}
+        updateCustomerCountry={updateCustomerCountry}
       />
       <Input onClick={() => setOpen(!isOpen)}>
         <Placeholder>{country === "" ? "Country" : country}</Placeholder>

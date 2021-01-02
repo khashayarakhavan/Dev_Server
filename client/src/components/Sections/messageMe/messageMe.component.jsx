@@ -47,7 +47,9 @@ const MessageMeSection = ({
   return (
     <MessageMeContainer>
       <RichText updateRichTextMessageAsHTML={updateRichTextMessageAsHTML} />
-      <CountryPicker updateCustomerCountry={updateCustomerCountry} />
+      <CountryPicker
+        customerCountry={customerCountry} updateCustomerCountry={updateCustomerCountry}
+      />
       <SendButton onClick={handleSubmit}>Send Your Message</SendButton>
     </MessageMeContainer>
   );

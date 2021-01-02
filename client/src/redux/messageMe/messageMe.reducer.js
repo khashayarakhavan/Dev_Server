@@ -2,7 +2,7 @@
 import MessageMeActionTypes from "./messageMe.types";
 
 const INITIAL_STATE = {
-  customerCountry: "Not Selected",
+  customerCountry: {name:"Not Selected", code: "0", dialCode: 0},
   richTextMessageAsHTML: null,
 };
 

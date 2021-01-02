@@ -191,7 +191,7 @@ export const RichTextCard = ({
     //   renderContentAsHTML())
     // ;
 
-    sendDataToServer("/api/v1/email", renderContentAsHTML());
+    // sendDataToServer("/api/v1/email", renderContentAsHTML());
     // try {
     //   const response = await axios.post("/api/v1/email", {
     //     posted_data: "dalam kalti mashan",
