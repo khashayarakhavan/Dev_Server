@@ -8,6 +8,7 @@ import shopReducer from './shop/shop.reducer';
 import themesReducer from './themes/themes.reducer';
 import userReducer from './user/user.reducer';
 import vegeloperPageReducer from './vegeloperPage/vegeloperPage.reducer';
+import messageMeReducer from './messageMe/messageMe.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   shop: shopReducer,
   mode: themesReducer,
   content: contentReducer,
+  messageMe: messageMeReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

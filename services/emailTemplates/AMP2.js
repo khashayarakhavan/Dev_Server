@@ -26,7 +26,7 @@ const AMP = (element, richText) => {
   <div>{{{richText2}}}</div>
   `;
 }
-const AMP2 = (richText) => {
+const AMP2 = (richText, country) => {
   // renderHTML = (sanitizedHTML) => {
   //   return (sanitizedHTML.__html);
   // };co
@@ -229,7 +229,7 @@ const AMP2 = (richText) => {
                       <div
                         style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">
                         Thank you 🎉
-                        ${richText}
+                        ${richText} and you are from ${country}
                       </div>
                       <div
                         style="color:#FFFFFF;font-family:'Droid Sans', 'Helvetica Neue', Arial, sans-serif;font-size:36px;line-height:1;text-align:center;">

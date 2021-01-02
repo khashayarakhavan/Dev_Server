@@ -12,7 +12,7 @@ export const List = styled.div`
   overflow: auto;
   height: 220px;
 
-  background: ${colors.neutrals.light};
+  ${'' /* background: ${colors.neutrals.light}; */}
 
   font-size: 14px;
   ${"" /* padding: 2rem; */}
@@ -43,15 +43,18 @@ export const List = styled.div`
 `;
 
 export const Card = styled.div`
-  position: absolute;
-  bottom: 80%;
-  right: 20%;
+  position: relative;
+  width: 400px;
+  height: 30%;
+  ${'' /* position: absolute; */}
+  ${'' /* bottom: 80%;
+  right: 20%; */}
   background: #7245c7;
   display: grid;
-  height: 10rem;
+  ${'' /* height: 10rem; */}
   
-  width: 200px;
   border-radius: 3rem;
+  border-radius: inherit;
   padding: 1rem;
 
   ${'' /* font-size: 12px !important; */}

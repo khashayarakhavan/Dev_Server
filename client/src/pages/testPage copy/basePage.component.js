@@ -76,7 +76,7 @@ const BasePage = ({ menuOpen, toggleMenuOpen, richText, emailRichText }) => {
         <Link to={"/"} className="homePage">
           {/* <Skeleton /> */}
         </Link>
-        
+
         <RichTextCard />
         <CountryPicker />
         {/* <button onClick={handleClick}>Send Email!</button> */}

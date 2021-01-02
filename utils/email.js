@@ -60,22 +60,17 @@ const authDev = {
 //   }
 
 module.exports = class Email {
-  constructor(user, pureHTML, renderedTemplateHTML) {
-    //  console.log(rawHTML);
+  constructor(user, pureHTML, customerCountry) {
+
     this.to = user.email;
-    this.rawHTML = renderedTemplateHTML;
+    this.customerCountry = customerCountry;
+    // this.rawHTML = renderedTemplateHTML;
     this.firstName = user.name.split(" ")[0];
+
     // this.url = url;
-    this.pureHTML = pureHTML,
+    (this.pureHTML = pureHTML),
       (this.from = `AftoflBig5 <${process.env.EMAIL_FROM}>`);
   }
-
-  // ht
-  //  HTMLComponent = () => (
-  //   <div>
-  //     {<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.rawHTML) }} />}
-  //   </div>
-  // );
 
   // :DEV change dev => prod
 
@@ -106,6 +101,7 @@ module.exports = class Email {
   // Send the actual email
   async send(template, subject) {
     const richText = this.pureHTML;
+    const customerCountry = this.customerCountry;
     const stringifyHTML = richText.toString();
     const backtickHTML = `${richText}`;
     const backStringHTML = `${stringifyHTML}`;
@@ -131,7 +127,7 @@ module.exports = class Email {
     //USING Handlebars.js TEMPLATE ENGINE -->
     let element = "<div><p>dalam</p></div>";
     const templateHBS = hbs.compile(AMP(element, decodedHTML));
-    
+
     var hbsContext = {
       title: "Handlebars",
       richText: "<strong>ridiBaba</strong>",
@@ -141,7 +137,7 @@ module.exports = class Email {
     // <-- End of Handlebars template
 
     //Pure Javascript HTML string -->
-    const ampTemplateHTML = AMP2(decodedHTML);
+    const ampTemplateHTML = AMP2(decodedHTML, customerCountry);
     // <-- End of JS template
 
     // 3) Define email options

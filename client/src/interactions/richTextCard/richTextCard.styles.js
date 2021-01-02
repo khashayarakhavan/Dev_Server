@@ -13,16 +13,16 @@ const duration ={
 export const Card = styled.div`
   position: absolute;
   position: relative;
+  width: 600px;
   ${'' /* top: 10%;
   left: 30%; */}
-
-
+  ${'' /* border-radius: inherit; */}
+  background: inherit;
   overflow: hidden;
-  width: 400px;
   padding: 1rem;
-  border-radius: 0.5rem;
-  background: white;
-  box-shadow: 0 4px 15px ${rgba("black", 0.05)};
+  ${'' /* border-radius: 0.5rem; */}
+  ${'' /* background: white; */}
+  ${'' /* box-shadow: 0 4px 15px ${rgba("black", 0.05)}; */}
 
   & .rdw-editor-wrapper {
     display: flex;

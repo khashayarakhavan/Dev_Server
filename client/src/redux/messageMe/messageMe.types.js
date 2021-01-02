@@ -1,0 +1,7 @@
+const MessageMeActionTypes = {
+  SEND_DATA_SERVER_START: "SEND_DATA_SERVER_START",
+  CUSTOMER_COUNTRY: "CUSTOMER_COUNTRY",
+  RICH_TEXT_MESSAGE_AS_HTML: "RICH_TEXT_MESSAGE_AS_HTML",
+};
+
+export default MessageMeActionTypes;

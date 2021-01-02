@@ -22,7 +22,7 @@ import GlobalConstants from './design/constants.styles';
 //Test Page
 import TestPage from './pages/testPage/testPage.page';
 // import EmailMePage from './pages/emailMe/emailMe.page';
-// import HiPalPage from './pages/hiPal/hiPal.page';
+import HiPalPage from './pages/hiPal/hiPal.page';
 
 import {
   invertTheme, noChange,
@@ -91,6 +91,7 @@ if (bookBtn) {
                   <Route exact path="/test" component={TestPage} />
                   <Route exact path="/" component={Vegeloper} />
                   <Route exact path="/vegeloper" component={Vegeloper} />
+                  <Route exact path="/hiPal" component={HiPalPage} />
                   {/* 
                   <Route path="/articles/:slug" component={SingleArticlePage} />
                   <Route exact path="/hello" component={HomePage} />
@@ -98,7 +99,7 @@ if (bookBtn) {
                   
                   <Route exact path="/test" component={TestPage} />
                   <Route exact path="/email" component={EmailMePage} />
-                  <Route exact path="/hiPal" component={HiPalPage} />
+                
                   <Route path="/shop" component={ShopPage} />
                   <Route path="/jquery" component={SetTimeOut} />
                   <Route exact path="/checkout" component={CheckoutPage} />

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 //Libraries
 import LazyLoad from "react-lazy-load";
 //JSON
-import json from './countryCodes.json';
+import countriesLoadedfromDisk from './countryCodes.json';
 //Components
 import {Skeleton, SkeletonRow} from './countryPicker.styles';
 //Styles
@@ -31,9 +31,8 @@ export const getFlag = (code) => `https://countryflags.io/${code}/flat/64.png`;
 
 export const CountryDialog = ({ open, setOpen, setCountry }) => (
   <Dialog open={open}>
-    {json.map((country) => (
+    {countriesLoadedfromDisk.map((country) => (
       <Row
-        
         onClick={() => {
           setOpen(false);
           setCountry(country.name);
@@ -96,9 +95,9 @@ export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
     <Overlay isOpen={open} onClick={() => setOpen(false)} />
     <Dialog open={open}>
       <List>
-        {json.map((country) => (
+        {countriesLoadedfromDisk.map((country) => (
           <LazyLoadRow
-            key={HashGenerator(country.dial_code)}
+            key={country.dial_code}
             code={country.code}
             name={country.name}
             open={open}
@@ -112,17 +111,16 @@ export const CountryDialogLazy = ({ open, setOpen, setCountry }) => (
 );
 
 
-const CountryPicker = () => {
+const CountryPicker = ({ updateCustomerCountry }) => {
   const [isOpen, setOpen] = useState(false);
   const [country, setCountry] = useState("");
-
 
   return (
     <Card>
       <CountryDialogLazy
         open={isOpen}
         setOpen={setOpen}
-        setCountry={setCountry}
+        setCountry={updateCustomerCountry}
       />
       <Input onClick={() => setOpen(!isOpen)}>
         <Placeholder>{country === "" ? "Country" : country}</Placeholder>

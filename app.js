@@ -139,11 +139,30 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Limit requests from same API
+const only4PerMinlimiter = rateLimit({
+  max: 4, //Define max request from the same IP.
+  // windowMs: 60 * 60 * 1000, //= 1hour , Define timeFrame of each session.
+  windowMs: 1 * 60 * 1000, // =1min , Define timeFrame of each session.
+  message: "Too many requests from this IP, please try again in an hour!", //If limit reached, send this message
+});
+const only2Per30Secondslimiter = rateLimit({
+  max: 2, //Define max request from the same IP.
+  // windowMs: 60 * 60 * 1000, //= 1hour , Define timeFrame of each session.
+  windowMs: 1 * 30 * 1000, // =1min , Define timeFrame of each session.
+  message: "Too many requests from this IP, please try again in an hour!", //If limit reached, send this message
+});
+const only1Per5Secondslimiter = rateLimit({
+  max: 1, //Define max request from the same IP.
+  // windowMs: 60 * 60 * 1000, //= 1hour , Define timeFrame of each session.
+  windowMs: 1 * 5 * 1000, // =1min , Define timeFrame of each session.
+  message: "Too many requests from this IP, please try again in an hour!", //If limit reached, send this message
+});
 const limiter = rateLimit({
   max: 100,
   windowMs: 60 * 60 * 1000,
   message: 'Too many requests from this IP, please try again in an hour!'
 });
+// app.use("/api/v1/email", only1PerMinlimiter);
 app.use('/api', limiter);
 
 // Body parser, reading data from body into req.body
@@ -189,7 +208,7 @@ app.get("/hbs", (req, res, next) => routeHome(req, res, next));
 app.get("/about", (req, res, next) => routeAbout(req, res, next));
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/tours', tourRouter);
-app.use('/api/v1/email', emailRouter);
+app.use('/api/v1/email', only2Per30Secondslimiter, only1Per5Secondslimiter, emailRouter);
 app.use("/mail", indexRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/auth', authRouter);

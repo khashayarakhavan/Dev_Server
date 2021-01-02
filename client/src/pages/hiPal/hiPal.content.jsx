@@ -3,11 +3,15 @@ import React, {useState} from 'react';
 //State Management
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-//State Selector
+//Selectors
 import {
   selectMenuOpen,
   selectPopUpOpen,
 } from "../../redux/vegeloperPage/vegeloperPage.selectors";
+import {
+  selectRichTextMessageAsHTML,
+  selectCustomerCountry,
+} from "../../redux/messageMe/messageMe.selectors";
 //Actions
 import {
   toggleMenuOpen,
@@ -26,7 +30,8 @@ import {YouTube} from '../../components/Sections/YouTube/youTube.component';
 import Projects from '../../components/Sections/Projects/projects.component';
 //Components
 import SignInUp from '../../components/Sections/emailMe/emailMe.component';
-import RichTextSection from '../../components/Sections/richText/richText.component';
+// import RichTextSection from '../../components/Sections/richText/richText.component';
+import MessageMe from '../../components/Sections/messageMe/messageMe.component';
 import MiniCards from "../../components/complex/section/MiniCards/MiniCards.component";
 import TopMenu from '../../components/Sections/header/header.component';
 import Heading from '../../components/Sections/Heading/heading.component';
@@ -36,16 +41,23 @@ import ScrollDownCTA from '../../components/Sections/ScrollDown/ScrollDown.compo
 
 
 //Code
-const HiPalContent = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
+const HiPalContent = ({richTextMessageAsHTML, customerCountry, menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
+  
+  const handleSubmit = async () => {
+    //Test
+    console.log('IT WORKS');
+  }
 
   return (
     <HiPalContainer id="test">
       <TopMenu />
       <Heading />
-      <RichTextSection />
+      <MessageMe />
+      <button onClick={handleSubmit}>CLICK TO LOG</button>
       <SignInUp />
+      {/*
       <Projects />
-      <Heading />
+      <Heading /> */}
 
       {/* <HeroHeader.LeftContainer name="firstInsideContainer" />
       <HeroHeader.RightContainer />
@@ -64,6 +76,8 @@ const HiPalContent = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
 const mapStateToProps = createStructuredSelector({
   menuOpen: selectMenuOpen,
   popUpOpen: selectPopUpOpen,
+  customerCountry: selectCustomerCountry,
+  richTextMessageAsHTML: selectRichTextMessageAsHTML,
 });
 
 const mapDispatchToProps = (dispatch) => ({

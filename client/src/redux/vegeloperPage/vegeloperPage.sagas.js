@@ -27,6 +27,8 @@ export function* CallToAPI({ payload: { URL, data }}) {
     console.log("👉 Returned data:", response);
   } catch (error) {
     console.log(`😱 Axios request failed: ${error}`);
+    console.log(error.message);
+
   }
 }
 
