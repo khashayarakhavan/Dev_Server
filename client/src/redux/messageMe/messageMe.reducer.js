@@ -2,8 +2,8 @@
 import MessageMeActionTypes from "./messageMe.types";
 
 const INITIAL_STATE = {
-  customerCountry: {name:"Not Selected", code: "0", dialCode: 0},
-  richTextMessageAsHTML: null,
+  customerCountry: {name:"Not Selected", code: "N/A", dialCode: 0},
+  richTextMessageAsHTML: "<p></p>",
 };
 
 const MessageMeReducer = (state = INITIAL_STATE, action) => {
@@ -15,7 +15,7 @@ const MessageMeReducer = (state = INITIAL_STATE, action) => {
         customerCountry: action.payload,
       };
     case MessageMeActionTypes.RICH_TEXT_MESSAGE_AS_HTML:
-      console.log("Hello from RICH TEXT AS HTML in messageME Reducer :D");
+      console.log("Hello from RICH_TEXT_MESSAGE_AS_HTML, payload is :", action.payload);
       return {
         ...state,
         richTextMessageAsHTML: action.payload,
@@ -24,7 +24,7 @@ const MessageMeReducer = (state = INITIAL_STATE, action) => {
       console.log("Hello from Customer Country Reducer :D");
       return {
         ...state,
-        richTextMessageAsHTML: action.payload.data,
+        // richTextMessageAsHTML: action.payload.data,
       };
 
     default:

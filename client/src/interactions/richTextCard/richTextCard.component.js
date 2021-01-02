@@ -35,6 +35,7 @@ export const RichTextCard = ({
   );
   const [converted2HtmlContent, setConverted2HtmlContent] = useState(null);
   const [converted2RawContent, setConverted2RawContent] = useState(null);
+  const [effect, setEffect] = useState(true);
   const [converted2PlainTextContent, setConverted2PlainTextContent] = useState(
     null
   );
@@ -42,27 +43,33 @@ export const RichTextCard = ({
   useEffect(() => {
     const rawEditorData = getSavedEditorData();
 
-    if (rawEditorData !== null) {
+    if (rawEditorData !== null ) {
       const contentState = convertFromRaw(rawEditorData); //From JSON to State
       setEditorLocalState(EditorState.createWithContent(contentState));
+      setConverted2RawContent(rawEditorData);
+      
+      setEffect(false)
+     
       
       // console.log('this is contentState', contentState);
       // setConverted2HtmlContent(editorLocalState);
     }
 
-    setConverted2RawContent(rawEditorData);
-    let convertedToHTML = convertContentToHTML();
-    setConverted2HtmlContent(convertedToHTML);
-    updateRichTextMessageAsHTML(convertedToHTML);
-  }, []);
+    if (effect === false) {
+       let convertedToHTML = convertContentToHTML();
+      setConverted2HtmlContent(convertedToHTML);
+      console.log('converted from html in useEffect is :', convertedToHTML);
+      updateRichTextMessageAsHTML(convertedToHTML);
+    }
+  }, [effect]);
 
   const handleEditorChange = (state) => {
     setEditorLocalState(state);
     const RawJSON = convertContentToRawJSON();
-    let convertedToHTML = convertContentToHTML();
-    updateRichTextMessageAsHTML(convertedToHTML);
     setConverted2RawContent(RawJSON);
     saveEditorContent(RawJSON); //save JSON in local memory.
+    let convertedToHTML = convertContentToHTML();
+    updateRichTextMessageAsHTML(convertedToHTML);
     //  convertContentToHTML(); // convert text to raw and save it in memory.
     //  convertContentToPlainText(); // convert text to plain text and save it in state & memory.
   };
@@ -166,6 +173,7 @@ export const RichTextCard = ({
       },
     })(editorLocalState.getCurrentContent());
     setConverted2HtmlContent(currentContentAsHTML);
+    console.log('converted content as HTML is :', currentContentAsHTML);
 
     return currentContentAsHTML;
   };
@@ -178,7 +186,7 @@ export const RichTextCard = ({
 
   const handleSubmit = async () => {
     console.log("hello from handleSubmit :D ", converted2RawContent);
-    updateRichTextMessageAsHTML(converted2RawContent);
+    // updateRichTextMessageAsHTML(converted2RawContent);
     // sendDataToServer("/api/v1/email", convertContentToRawJSON());
     // sendDataToServer("/api/v1/email", converted2RawContent);
     console.log(

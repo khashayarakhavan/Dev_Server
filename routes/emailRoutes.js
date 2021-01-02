@@ -63,8 +63,10 @@ const Mailer = require("../utils/email");
 
 router.post("/", async (req, res) => {
   console.log("received data in /api/v1/email is : ", req.body.data);
-  const pureHTML = req.body.data.pureHTML ? req.body.data.pureHTML : "<p></p>";
+  // const pureHTML = req.body.data.pureHTML ? req.body.data.pureHTML : "<p></p>";
+  const pureHTML = req.body.data.pureHTML;
 
+  // const customerCountry = req.body.data.customerCountry ? req.body.data.customerCountry : "Earth";
   const customerCountry = req.body.data.customerCountry;
 
 
