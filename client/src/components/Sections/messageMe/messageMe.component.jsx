@@ -22,7 +22,8 @@ import SignIn from '../../sign-in/sign-in.component';
 import SignUp from '../../sign-up/sign-up.component';
 import RichText from '../../../interactions/richTextCard/richTextCard.component';
 import CountryPicker from '../../../interactions/CountryPicker/countryPicker.component';
-import PasswordValidator from '../../../interactions/passwordValidator/passwordValidator.component';
+// import PasswordValidator from '../../../interactions/passwordValidator/passwordValidator.component';
+import PasswordValidator3 from '../../../interactions/passwordValidator/passwordValidator3.component';
 
 import { MessageMeContainer, SendButton } from "./messageMe.styles";
 
@@ -52,6 +53,7 @@ const MessageMeSection = ({
         customerCountry={customerCountry} updateCustomerCountry={updateCustomerCountry}
       />
       <PasswordValidator2 />
+      <PasswordValidator3 />
       <SendButton onClick={handleSubmit}>Send Your Message</SendButton>
     </MessageMeContainer>
   );

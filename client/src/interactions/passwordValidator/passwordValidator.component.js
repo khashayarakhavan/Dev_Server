@@ -16,6 +16,12 @@ const PasswordValidator = () => {
   const [state, setState] = useState({});
   const { isLoading, isComplete, text} = state;
   const isValid = text === "pass";
+  // const [isLoading, setIsLoading] = useState(undefined);
+  // const [isComplete, setIsComplete] = useState(undefined);
+  const [isSubmitted, setIsSubmitted] = useState(undefined);
+  // const [isValid, setIsValid] = useState(undefined);
+  const [textboxValue, setTextboxValue] = useState("");
+  const mySuperSecretPassword = "password";
 
   return (
     <Wrapper>
