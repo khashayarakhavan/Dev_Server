@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { rgba } from "polished";
 import { Tooltip } from "react-tippy";
-import "react-tippy/dist/tippy.css";
+import "../../../interactions/InputMaterial/node_modules/react-tippy/dist/tippy.css";
 
 const Wrapper = styled.div`
   position: relative;
@@ -16,6 +16,8 @@ const Wrapper = styled.div`
   outline: none;
   color: ${rgba("#565360", 0.85)};
 `;
+
+
 
 const GlobalStyle = createGlobalStyle`
   body .tippy-tooltip {

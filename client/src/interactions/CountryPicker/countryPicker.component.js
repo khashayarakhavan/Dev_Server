@@ -5,6 +5,8 @@ import LazyLoad from "react-lazy-load";
 //JSON
 import countriesLoadedfromDisk from './countryCodes.json';
 //Components
+import InputMaterial from '../InputMaterial/inputMaterial.component';
+import MaskedInput from '../InputMaterial/MaskedInput';
 import {Skeleton, SkeletonRow} from './countryPicker.styles';
 //Styles
 import {
@@ -135,6 +137,8 @@ const CountryPicker = ({ customerCountry, updateCustomerCountry }) => {
         setCountry={setCountry}
         updateCustomerCountry={updateCustomerCountry}
       />
+      <InputMaterial />
+      {/* <MaskedInput /> */}
       <Input onClick={() => setOpen(!isOpen)}>
         <Placeholder>{country === "" ? "Country" : country}</Placeholder>
       </Input>

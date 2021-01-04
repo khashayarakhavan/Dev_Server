@@ -14,13 +14,15 @@ import {
   updateRichTextMessageAsHTML,
   sendDataToServer,
 } from "../../../redux/messageMe/messageMe.actions";
-
+//Components
+import PasswordValidator2 from '../../../interactions/passwordValidator/passwordValidator2.component';
 // import SignIn from '../../components/sign-in/sign-in.component';
 import SignIn from '../../sign-in/sign-in.component';
 // import SignUp from '../../components/sign-up/sign-up.component';
 import SignUp from '../../sign-up/sign-up.component';
 import RichText from '../../../interactions/richTextCard/richTextCard.component';
 import CountryPicker from '../../../interactions/CountryPicker/countryPicker.component';
+import PasswordValidator from '../../../interactions/passwordValidator/passwordValidator.component';
 
 import { MessageMeContainer, SendButton } from "./messageMe.styles";
 
@@ -49,6 +51,7 @@ const MessageMeSection = ({
       <CountryPicker
         customerCountry={customerCountry} updateCustomerCountry={updateCustomerCountry}
       />
+      <PasswordValidator2 />
       <SendButton onClick={handleSubmit}>Send Your Message</SendButton>
     </MessageMeContainer>
   );

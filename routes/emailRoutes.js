@@ -65,17 +65,32 @@ router.post("/", async (req, res) => {
   console.log("received data in /api/v1/email is : ", req.body.data);
   // const pureHTML = req.body.data.pureHTML ? req.body.data.pureHTML : "<p></p>";
   const pureHTML = req.body.data.pureHTML;
+  
 
   // const customerCountry = req.body.data.customerCountry ? req.body.data.customerCountry : "Earth";
   const customerCountry = req.body.data.customerCountry;
-
-
-  try {      
-      const newUser = {email: 'akhavan.khashayar@gmail.com', name: 'aftoflBig5', }
+  if (!pureHTML || !customerCountry) {
+    res.status(444).send({
+      status: "444",
+      message: "Input data is not in required format. please check the values.",
+      data: {
+        data: req.body.data
+      }
+    })
+  } else {
+    try {
+      const newUser = {
+        email: "akhavan.khashayar@gmail.com",
+        name: "aftoflBig5",
+      };
       await new Mailer(newUser, pureHTML, customerCountry).sendWelcome(res);
-  } catch (e) {
-    console.log('Mailer util did not respond correctly', e);
+    } catch (e) {
+      console.log("Mailer util did not respond correctly", e);
+    }
+
   }
+
+  
   
   
   // res.status(200).send("WOW! Received it.");

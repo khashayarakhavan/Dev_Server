@@ -38,7 +38,7 @@ import Heading from '../../components/Sections/Heading/heading.component';
 import ScrollHorizontal from '../../components/Sections/ScrollHorizontal/scrollHorizontal.component';
 import HeroHeader from "../../components/complex/hero-header/heroHeader.component";
 import ScrollDownCTA from '../../components/Sections/ScrollDown/ScrollDown.component';
-
+import PasswordValidator from '../../interactions/passwordValidator/passwordValidator.component';
 
 //Code
 const HiPalContent = ({richTextMessageAsHTML, customerCountry, menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
@@ -53,6 +53,7 @@ const HiPalContent = ({richTextMessageAsHTML, customerCountry, menuOpen, toggleM
       <TopMenu />
       <Heading />
       <MessageMe />
+      <PasswordValidator />
       <button onClick={handleSubmit}>CLICK TO LOG</button>
       <SignInUp />
       {/*
