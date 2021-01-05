@@ -9,6 +9,7 @@ import {VegeloperContainer} from '../../../pages/vegeloperPage/vegeloper.styles'
 //Code
 export const SectionHeading = styled(VegeloperContainer)`
   grid-column: cover-start / cover-end;
+  background: transparent !important;
 
   position: relative;
 
@@ -22,7 +23,8 @@ export const SectionHeading = styled(VegeloperContainer)`
 
 export const HeadingContainer = styled.div`
   grid-column: center-start / center-end;
-  ${'' /* height: 40vh; */}
+  ${"" /* height: 40vh; */}
+  background: transparent !important;
 
   position: relative;
 
@@ -34,8 +36,8 @@ export const HeadingContainer = styled.div`
   align-content: center;
 
   //Design GiantCard
-  ${'' /* background: white; */}
-  ${'' /* border-radius: 40px; */}
+  ${"" /* background: white; */}
+  ${"" /* border-radius: 40px; */}
 `;
 
 export const Heading = styled.div`

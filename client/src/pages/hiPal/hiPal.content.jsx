@@ -49,7 +49,7 @@ const HiPalContent = ({richTextMessageAsHTML, customerCountry, menuOpen, toggleM
   }
 
   return (
-    <HiPalContainer id="test">
+    <HiPalContainer className="HiPalContainer" id="test">
       <TopMenu />
       <Heading />
       <MessageMe />

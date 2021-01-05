@@ -70,11 +70,13 @@ export const Button = styled.button`
 export const Icon = styled.span`
   position: absolute;
   z-index: 2;
+  
   ${'' /* width: 100%; */}
   ${'' /* height: 100%; */}
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.3s;
 `;
 
 export const spinMotion = keyframes`
@@ -85,6 +87,11 @@ export const spinMotion = keyframes`
 export const Spin = styled.div`
   position: absolute;
   z-index: 2;
+  & > * {
+    opacity: ${(p) => (!p.isLoading ? 1 : 0)};
+    transition: opacity .3s;
+  }
+
   top: 50%;
   left: 50%;
   animation: ${spinMotion} 0.5s linear;
@@ -100,7 +107,7 @@ export const Message = styled.div`
   ${'' /* top: 50%; */}
   ${'' /* left: 50%; */}
   transform: ${p => p.isComplete ? `translate(-50%, 0%)` : ""};
-  transition: transform 0.5s, opacity 0.3s;
+  transition: transform 0.5s, opacity 0.1s;
 `;
 
 export const Svg = styled.svg`
@@ -122,8 +129,8 @@ export const Svg = styled.svg`
   ${(p) => p.isError && "fill: #fb6767;"}; */
   }
   ${"" /* transform: translate(-50%, -50%); */}
-  transform: scale(${(p) => (p.isComplete ? 20 : 1)});
-  transition: transform 0.35s, fill 0.35s;
+  transform: scale(${(p) => (p.isComplete ? 15 : 1)});
+  transition: transform 0.5s, fill 0.5s;
   ${"" /* transform-origin: center center; */}
   ${"" /* transform-origin: 10% 10%; */}
   ${(props) => (props.isSuccess === true ? `fill: #16bd92;` : "")};
