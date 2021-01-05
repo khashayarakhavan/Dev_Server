@@ -11,22 +11,18 @@ const duration ={
 
 
 export const Card = styled.div`
-  ${'' /* grid-row: 1/-1; */}
-  margin: 1rem;
   position: absolute;
   position: relative;
-  width: 350px;
-  width: clamp(350px, 27.34375vw, 600px);
-  width: 100%;
-  ${"" /* top: 10%;
+  width: 600px;
+  ${'' /* top: 10%;
   left: 30%; */}
-  ${"" /* border-radius: inherit; */}
+  ${'' /* border-radius: inherit; */}
   background: inherit;
   overflow: hidden;
   padding: 1rem;
-  ${"" /* border-radius: 0.5rem; */}
-  ${"" /* background: white; */}
-  ${"" /* box-shadow: 0 4px 15px ${rgba("black", 0.05)}; */}
+  ${'' /* border-radius: 0.5rem; */}
+  ${'' /* background: white; */}
+  ${'' /* box-shadow: 0 4px 15px ${rgba("black", 0.05)}; */}
 
   & .rdw-editor-wrapper {
     display: flex;
@@ -37,16 +33,16 @@ export const Card = styled.div`
   & .rdw-editor-toolbar {
     padding: 1rem 0 0;
     border-top: 2px solid ${rgba("black", 0.05)};
-    ${"" /* background: yellow; */}
+    background: yellow;
   }
 
   & .rdw-editor-main {
     color: #565360;
     color: ${colors.neutrals.darkest};
-    ${"" /* background: lightblue; */}
+    ${'' /* background: lightblue; */}
     height: 20rem;
     font-size: 24px;
-
+    
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       background-color: #f5f5f5;

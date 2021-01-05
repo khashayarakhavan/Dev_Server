@@ -3,9 +3,9 @@ import React, { useState } from "react";
 
 import { Input, Placeholder, Wrapper} from "./inputMaterial.styles";
 
-const InputMaterial = () => {
+const InputMaterial = ({grid}) => {
   return (
-    <Wrapper>
+    <Wrapper grid>
       <Input type="text" />
       <Placeholder>Name</Placeholder>
     </Wrapper>

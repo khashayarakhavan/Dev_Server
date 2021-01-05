@@ -233,7 +233,30 @@ export const RichTextCard = ({
           },
         }}
       />
-      
+      <button
+        style={{ fontSize: "14px", color: "pink", background: "lightyellow" }}
+        onClick={handleSubmit}
+      >
+        Send
+      </button>
+      <p style={{ fontSize: "14px", color: "red" }}>
+        This one uses HTML tags dangerously set inside the div.
+      </p>
+      <div
+        className="preview"
+        dangerouslySetInnerHTML={createSanitizedMarkup(renderContentAsHTML())}
+        style={{ fontSize: "14px" }}
+      ></div>
+      <p style={{ fontSize: "14px", color: "red" }}>
+        This one uses mapping over all blocks{" "}
+      </p>
+      <pre style={{ fontSize: "14px", whiteSpace: "normal" }}>
+        {renderContentAsRawJs()}
+      </pre>
+      <p style={{ fontSize: "14px", color: "red" }}>
+        This one maps over all plainText and keeps spaces between{" "}
+      </p>
+      <pre style={{ fontSize: "14px" }}>{renderContentAsPlainText()}</pre>
     </Card>
   );
 };

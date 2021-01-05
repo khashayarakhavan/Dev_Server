@@ -7,10 +7,9 @@ export const MessageMeContainer = styled.div`
   grid-column: full-start / full-end;
   position: relative;
   
-  box-shadow: ${shadows.neumorphic.orangeOld};
-  box-shadow: ${shadows.neumorphic.button};
-  box-shadow: ${shadows.neumorphic.extra};
   box-shadow: ${shadows.neumorphic.original};
+  box-shadow: ${shadows.neumorphic.orangeOld};
+  box-shadow: ${shadows.neumorphic.extra};
   margin: 30px auto;
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -21,16 +20,15 @@ export const MessageMeContainer = styled.div`
   position: relative;
   width: 850px;
   width: min-content;
-  width: 60vw;
 
-  background: transparent ;
   background: ${colors.neutrals.lighter};
-  ${"" /* background: rgba(white, 0.9); */}
-  ${"" /* opacity: 0.8; */}
+  background: transparent !important;
+  ${'' /* background: rgba(white, 0.9); */}
+  ${'' /* opacity: 0.8; */}
   font-size: 14px;
 
   display: grid;
-  grid-template-rows: min-content;
+  grid-template-rows: min-content 10vh;
   grid-template-columns: 60% 40%; 
   justify-content: space-between;
 
@@ -43,19 +41,6 @@ export const MessageMeContainer = styled.div`
       margin-bottom: 50px;
     }
   }
-`;
-export const RightSide = styled.div`
-  grid-column: 2/-1;
-  grid-row: 1/-1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: lightblue;
-`;
-
-export const LeftSide = styled.div`
-  grid-column: 1/2;
-  grid-row: 1/-1;
 `;
 
 export const SendButton = styled.button`

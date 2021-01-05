@@ -9,8 +9,8 @@ import {VegeloperContainer} from '../../../pages/vegeloperPage/vegeloper.styles'
 //Code
 export const SectionHeading = styled(VegeloperContainer)`
   grid-column: cover-start / cover-end;
+  ${"" /**/}
   background: transparent !important;
-
   position: relative;
 
   margin-top: 5rem;
@@ -24,8 +24,8 @@ export const SectionHeading = styled(VegeloperContainer)`
 export const HeadingContainer = styled.div`
   grid-column: center-start / center-end;
   ${"" /* height: 40vh; */}
-  background: transparent !important;
-
+  ${"" /*  */}
+background: transparent !important;
   position: relative;
 
   margin-right: 2rem;

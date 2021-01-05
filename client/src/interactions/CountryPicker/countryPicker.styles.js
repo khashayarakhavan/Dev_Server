@@ -42,26 +42,37 @@ export const List = styled.div`
   }
 `;
 
+const gridCSS = css`
+  grid-column: 2/-1;
+  grid-row: 1/2;
+`;
 export const Card = styled.div`
   position: relative;
+
   width: 400px;
+  width: 80%;
+  margin: 1rem;
   height: 30%;
-  ${'' /* position: absolute; */}
-  ${'' /* bottom: 80%;
+  ${"" /* position: absolute; */}
+  ${"" /* bottom: 80%;
   right: 20%; */}
+  background: transparent;
   background: #7245c7;
   display: grid;
-  ${'' /* height: 10rem; */}
-  
+ 
+  ${"" /* height: 10rem; */}
+
+  ${(p) => p.grid && gridCSS};
   border-radius: 3rem;
   border-radius: inherit;
   padding: 1rem;
 
-  ${'' /* font-size: 12px !important; */}
+  ${"" /* font-size: 12px !important; */}
 `;
 
 export const Input = styled.button`
   color: ${rgba("white", 0.85)};
+  color: pink;
   ${"" /* position: absolute;
   ${'' /* */} */}
   align-self: center;
@@ -72,6 +83,7 @@ export const Input = styled.button`
 
 export const Placeholder = styled.div`
   color: ${rgba("white", 0.5)};
+  color: black;
 `;
 
 export const Row = styled.button`

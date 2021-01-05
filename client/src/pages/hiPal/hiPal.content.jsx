@@ -53,8 +53,8 @@ const HiPalContent = ({richTextMessageAsHTML, customerCountry, menuOpen, toggleM
       <TopMenu />
       <Heading />
       <MessageMe />
-      <PasswordValidator />
-      <button onClick={handleSubmit}>CLICK TO LOG</button>
+      {/* <PasswordValidator /> */}
+      {/* <button onClick={handleSubmit}>CLICK TO LOG</button> */}
       <SignInUp />
       {/*
       <Projects />

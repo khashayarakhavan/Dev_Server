@@ -8,6 +8,7 @@ import countriesLoadedfromDisk from './countryCodes.json';
 import InputMaterial from '../InputMaterial/inputMaterial.component';
 import MaskedInput from '../InputMaterial/MaskedInput';
 import {Skeleton, SkeletonRow} from './countryPicker.styles';
+
 //Styles
 import {
   Dialog,
@@ -123,21 +124,21 @@ export const CountryDialogLazy = ({ open, setOpen, setCountry, updateCustomerCou
 );
 
 
-const CountryPicker = ({ customerCountry, updateCustomerCountry }) => {
+const CountryPicker = ({ customerCountry, updateCustomerCountry, grid }) => {
   const [isOpen, setOpen] = useState(false);
   const [country, setCountry] = useState("Select Country");
   
   // useEffect(() => {}, [country]);
 
   return (
-    <Card>
+    <Card grid>
       <CountryDialogLazy
         open={isOpen}
         setOpen={setOpen}
         setCountry={setCountry}
         updateCustomerCountry={updateCustomerCountry}
       />
-      <InputMaterial />
+      
       {/* <MaskedInput /> */}
       <Input onClick={() => setOpen(!isOpen)}>
         <Placeholder>{country === "" ? "Country" : country}</Placeholder>

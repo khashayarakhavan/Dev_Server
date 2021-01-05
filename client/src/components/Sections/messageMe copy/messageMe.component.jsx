@@ -22,11 +22,10 @@ import SignIn from '../../sign-in/sign-in.component';
 import SignUp from '../../sign-up/sign-up.component';
 import RichText from '../../../interactions/richTextCard/richTextCard.component';
 import CountryPicker from '../../../interactions/CountryPicker/countryPicker.component';
-import InputMaterial from '../../../interactions/InputMaterial/inputMaterial.component';
 // import PasswordValidator from '../../../interactions/passwordValidator/passwordValidator.component';
 import PasswordValidator3 from '../../../interactions/passwordValidator/passwordValidator3.component';
 
-import { MessageMeContainer, SendButton , RightSide, LeftSide} from "./messageMe.styles";
+import { MessageMeContainer, SendButton } from "./messageMe.styles";
 
  
   
@@ -49,21 +48,13 @@ const MessageMeSection = ({
 
   return (
     <MessageMeContainer>
-      <LeftSide>
-        <RichText updateRichTextMessageAsHTML={updateRichTextMessageAsHTML} />
-      </LeftSide>
-
-      <RightSide>
-        <CountryPicker
-          customerCountry={customerCountry}
-          updateCustomerCountry={updateCustomerCountry}
-        />
-        <InputMaterial />
-      </RightSide>
-
-      {/* <PasswordValidator2 /> */}
-      {/* <PasswordValidator3 /> */}
-      {/* <SendButton onClick={handleSubmit}>Send Your Message</SendButton> */}
+      <RichText updateRichTextMessageAsHTML={updateRichTextMessageAsHTML} />
+      <CountryPicker
+        customerCountry={customerCountry} updateCustomerCountry={updateCustomerCountry}
+      />
+      <PasswordValidator2 />
+      <PasswordValidator3 />
+      <SendButton onClick={handleSubmit}>Send Your Message</SendButton>
     </MessageMeContainer>
   );
 };
