@@ -11,7 +11,7 @@ export const List = styled.div`
   position: relative;
   overflow: auto;
   height: 220px;
-
+background: white;
   ${'' /* background: ${colors.neutrals.light}; */}
 
   font-size: 14px;
@@ -51,13 +51,14 @@ export const Card = styled.div`
 
   width: 400px;
   width: 80%;
+  width: min-content;
   margin: 1rem;
   height: 30%;
   ${"" /* position: absolute; */}
   ${"" /* bottom: 80%;
   right: 20%; */}
-  background: transparent;
   background: #7245c7;
+  background: transparent;
   display: grid;
  
   ${"" /* height: 10rem; */}
@@ -137,11 +138,13 @@ export const Dialog = styled.div`
   border-radius: 2rem;
   top: 100%;
   width: 100%;
+  z-index: 1000;
 
   ${"" /* height: 260px; */
   }
   transform: translateY(1rem);
   background: transparent;
+  background: white;
   transition-property: visibility, opacity, transform;
   transform-duration: 0.35s;
   ${(p) => p.open && openStyles};
@@ -215,6 +218,7 @@ export const RowLazy = styled.button`
   padding: 2rem;
 
   background: ${colors.neutrals.light};
+  background: white;
 
   ${"" /* margin: 1rem; */}
   ${"" /* background: lightyellow; */}
@@ -277,6 +281,7 @@ export const SkeletonRow = styled.div`
   z-index: 0;
   display: flex;
   align-items: center;
+  ${'' /* background: white; */}
 `;
 
 export const Overlay = styled.div`

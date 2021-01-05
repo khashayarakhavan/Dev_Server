@@ -49,7 +49,7 @@ export const RightSide = styled.div`
   grid-row: 1/-1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   background: lightblue;
 `;
 

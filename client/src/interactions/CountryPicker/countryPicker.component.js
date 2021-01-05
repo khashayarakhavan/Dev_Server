@@ -6,8 +6,12 @@ import LazyLoad from "react-lazy-load";
 import countriesLoadedfromDisk from './countryCodes.json';
 //Components
 import InputMaterial from '../InputMaterial/inputMaterial.component';
+
 import MaskedInput from '../InputMaterial/MaskedInput';
 import {Skeleton, SkeletonRow} from './countryPicker.styles';
+// import InputDropDown from "../interactions/InputDropDown/inputDropDown.component";
+import InputDropDown from "../InputDropDown/inputDropDown.component";
+
 
 //Styles
 import {
@@ -138,11 +142,11 @@ const CountryPicker = ({ customerCountry, updateCustomerCountry, grid }) => {
         setCountry={setCountry}
         updateCustomerCountry={updateCustomerCountry}
       />
-      
       {/* <MaskedInput /> */}
-      <Input onClick={() => setOpen(!isOpen)}>
+      <InputDropDown setOpen={setOpen} isOpen={isOpen}/>
+      {/* <Input onClick={() => setOpen(!isOpen)}>
         <Placeholder>{country === "" ? "Country" : country}</Placeholder>
-      </Input>
+      </Input> */}
     </Card>
   );
 };

@@ -4,12 +4,12 @@ import './inputDropDown.css';
 
 // import { Input, Placeholder, Wrapper} from "./inputDropDown.styles";
 
-const InputDropDown = ({grid}) => {
+const InputDropDown = ({grid, setOpen, isOpen}) => {
   return (
     <div className="container">
-      <button className="btn">
-        <div className="innerFrame" >
-          <span>Account Settings</span>
+      <button className="btn" onClick={() => setOpen(!isOpen)}>
+        <div className="innerFrame">
+          <span>Country Settings</span>
           <i className="material-icons">public</i>
         </div>
         <ul className="dropdown">
