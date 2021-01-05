@@ -15,6 +15,7 @@ import {
   sendDataToServer,
 } from "../../../redux/messageMe/messageMe.actions";
 //Components
+import InputDropDown from '../../../interactions/InputDropDown/inputDropDown.component';
 import PasswordValidator2 from '../../../interactions/passwordValidator/passwordValidator2.component';
 // import SignIn from '../../components/sign-in/sign-in.component';
 import SignIn from '../../sign-in/sign-in.component';
@@ -59,6 +60,7 @@ const MessageMeSection = ({
           updateCustomerCountry={updateCustomerCountry}
         />
         <InputMaterial />
+        <InputDropDown />
       </RightSide>
 
       {/* <PasswordValidator2 /> */}

@@ -38,6 +38,7 @@ export const Card = styled.div`
     padding: 1rem 0 0;
     border-top: 2px solid ${rgba("black", 0.05)};
     ${"" /* background: yellow; */}
+    ${'' /* width: 50%; */}
   }
 
   & .rdw-editor-main {
