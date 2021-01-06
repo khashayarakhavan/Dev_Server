@@ -10,9 +10,10 @@ import respond from '../../design/responsive';
 export const List = styled.div`
   position: relative;
   overflow: auto;
+  border-radius: 2rem;
   height: 220px;
-background: white;
-  ${'' /* background: ${colors.neutrals.light}; */}
+  background: white;
+  ${"" /* background: ${colors.neutrals.light}; */}
 
   font-size: 14px;
   ${"" /* padding: 2rem; */}
@@ -23,14 +24,15 @@ background: white;
   }
 
   &::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
+    width: 8px;
+    height: 5px;
     background-color: #f5f5f5;
   }
 
   &::-webkit-scrollbar-thumb:vertical {
     background-color: ${colors.secondary.lightest};
     background-color: #0ae;
+    background-color: ${colors.accent.ochreFire};
     background-image: -webkit-gradient(
       linear,
       0 0,
@@ -52,21 +54,23 @@ export const Card = styled.div`
   width: 400px;
   width: 80%;
   width: min-content;
+  border-radius: 3rem;
+  border-radius: inherit;
   margin: 1rem;
-  height: 30%;
+  margin-bottom: 0;
+  padding: 1rem;
+  padding-bottom: 14.1421356237px;
+  ${"" /* height: 30%; */}
   ${"" /* position: absolute; */}
   ${"" /* bottom: 80%;
   right: 20%; */}
   background: #7245c7;
   background: transparent;
   display: grid;
- 
+
   ${"" /* height: 10rem; */}
 
   ${(p) => p.grid && gridCSS};
-  border-radius: 3rem;
-  border-radius: inherit;
-  padding: 1rem;
 
   ${"" /* font-size: 12px !important; */}
 `;
@@ -128,6 +132,74 @@ const openStyles = css`
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+  transition: visibility 0.75s, opacity 0.75s, transform 0.75s;
+`;
+
+export const DropDown = styled.div`
+ ${(p) => p.open && openStyles};
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  overflow: auto;
+  border-radius: 4px;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10000;
+
+  list-style-type: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: 0.3s ease;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 120px;
+    width: 0;
+    height: 0;
+    box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid #fff;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid transparent;
+    transform: rotate(-45deg);
+    mix-blend-mode: multiple;
+  }
+
+  a {
+   display: block;
+	 border-bottom: 1px solid rgba(0, 0, 0, .05);
+	 padding: 16px 0;
+	 color: inherit;
+	 font-size: 10px;
+	 text-decoration: none;
+  }
+
+  li {
+    z-index: 1;
+    position: relative;
+    background: #fff;
+    padding: 0 20px;
+    color: #666;
+
+    &.active {
+      color: #5380f7;
+    }
+    &.first-child {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+    &.last-child {
+      border-radius: 0 0 4px 4px;
+
+      a {
+        border-bottom: 0;
+      }
+    }
+  }
 `;
 
 export const Dialog = styled.div`
@@ -135,19 +207,47 @@ export const Dialog = styled.div`
   visibility: hidden;
   opacity: 0;
   overflow: auto;
+  overflow: visible;
   border-radius: 2rem;
   top: 100%;
+  
   width: 100%;
   z-index: 1000;
 
-  ${"" /* height: 260px; */
-  }
-  transform: translateY(1rem);
+  transform: translateY(10rem);
   background: transparent;
   background: white;
-  transition-property: visibility, opacity, transform;
-  transform-duration: 0.35s;
+  ${
+    "" /* transition-property: visibility, opacity, transform;
+  transform-duration: 3.35s; */
+  }
   ${(p) => p.open && openStyles};
+
+  &::before {
+    ${'' /* Create Triangle Here ! */}
+    content: "";
+    position: absolute;
+    top: 0px;
+   
+
+    ${'' /* z-index: 1000000; */}
+    ${"" /* background: red; */}
+    left: 120px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid red;
+    border-top: 6px solid #fff;
+    border-right: 6px solid red;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid red;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid red;
+    border-left: 6px solid transparent;
+    transform: translate(0%, -50%) rotate(-45deg);
+    mix-blend-mode: multiple;
+  }
 `;
 
 export const Avatar = styled.div`
@@ -227,6 +327,7 @@ export const RowLazy = styled.button`
 
   border: none;
 
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -305,6 +406,17 @@ export const Overlay = styled.div`
 export const CountryName = styled.span`
  margin-Left: 1.5rem;
  white-space: nowrap;
+`;
+export const CountryCode = styled.span`
+ margin-Left: 1.5rem;
+ white-space: nowrap;
+  position: absolute;
+  font-weight: 200;
+  font-size: 14px;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+${'' /* align-self: flex-start; */}
 `;
 
 

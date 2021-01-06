@@ -16,6 +16,7 @@ import InputDropDown from "../InputDropDown/inputDropDown.component";
 //Styles
 import {
   Dialog,
+  DropDown,
   List,
   Row,
   RowLazy,
@@ -29,6 +30,7 @@ import {
   Name,
   Overlay,
   CountryName,
+  CountryCode,
 } from "./countryPicker.styles";
 // import LazyLoadRow from '../LazyCard/lazyCard.component';
 
@@ -89,6 +91,8 @@ export const LazyLoadRow = ({
           <Flag src={getFlag(code)} />
         </FlagContainer>
         <CountryName>{name.substring(0, 15)}</CountryName>
+        <CountryCode>{code}</CountryCode>
+
       </RowLazy>
     </LazyLoad>
   </>
@@ -108,6 +112,7 @@ export const HashGenerator = (key) => {
 export const CountryDialogLazy = ({ open, setOpen, setCountry, updateCustomerCountry }) => (
   <>
     <Overlay isOpen={open} onClick={() => setOpen(false)} />
+    {/* <DropDown /> */}
     <Dialog open={open}>
       <List>
         {countriesLoadedfromDisk.map((country) => (

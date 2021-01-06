@@ -49,8 +49,9 @@ export const RightSide = styled.div`
   grid-row: 1/-1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
-  background: lightblue;
+  ${'' /* background: lightblue; */}
 `;
 
 export const LeftSide = styled.div`
