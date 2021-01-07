@@ -158,7 +158,7 @@ export const CountryDialogLazy = ({ open, setOpen, setCountry, updateCustomerCou
 
 const CountryPicker = ({ customerCountry, updateCustomerCountry, grid }) => {
   const [isOpen, setOpen] = useState(false);
-  const [country, setCountry] = useState("Select Country");
+  const [country, setCountry] = useState("");
   
   // useEffect(() => {}, [country]);
 
@@ -171,7 +171,7 @@ const CountryPicker = ({ customerCountry, updateCustomerCountry, grid }) => {
         updateCustomerCountry={updateCustomerCountry}
       />
       {/* <MaskedInput /> */}
-      <InputDropDown setOpen={setOpen} isOpen={isOpen}/>
+      <InputDropDown country={country} setOpen={setOpen} isOpen={isOpen}/>
       {/* <Input onClick={() => setOpen(!isOpen)}>
         <Placeholder>{country === "" ? "Country" : country}</Placeholder>
       </Input> */}

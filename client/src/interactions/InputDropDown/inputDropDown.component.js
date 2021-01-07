@@ -1,15 +1,33 @@
 //Basics
 import React, { useState } from "react";
+import { Textfit } from "react-textfit";
 import './inputDropDown.css';
 
 // import { Input, Placeholder, Wrapper} from "./inputDropDown.styles";
 
-const InputDropDown = ({grid, setOpen, isOpen}) => {
+const InputDropDown = ({grid, setOpen, isOpen, country}) => {
   return (
     <div className="container">
-      <button className="btn" id="countryPickerButton" onClick={() => setOpen(!isOpen)}>
+      <button
+        className="btn"
+        id="countryPickerButton"
+        onClick={() => setOpen(!isOpen)}
+      >
         <div className="innerFrame">
-          <span>Country Settings</span>
+          <div style={{ width: `85%`, textAlign: 'left'}}>
+            <Textfit mode="multi" forceSingleModeWidth={false} max={'12'}>
+              <span>
+                {country === "" ? (
+                  `Country Settings`
+                ) : (
+                  <div>
+                    <span className="country--selected">{country}</span>
+                    <span>{` is aaamazing!!!`}</span>
+                  </div>
+                )}
+              </span>
+            </Textfit>
+          </div>
           <i className="material-icons">public</i>
         </div>
         <ul className="dropdown">

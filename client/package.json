@@ -39,6 +39,7 @@
     "react-scroll": "^1.8.1",
     "react-stripe-checkout": "2.6.3",
     "react-test-renderer": "16.8.6",
+    "react-textfit": "^1.1.1",
     "react-tippy": "^1.4.0",
     "redux": "4.0.1",
     "redux-logger": "3.0.6",
