@@ -54,6 +54,24 @@ export const getFlag = (code) => `https://countryflags.io/${code}/flat/64.png`;
 //     ))}
 //   </Dialog>
 // );
+const handleVisible = (e) => {
+  console.log("look ma I have been lazyloaded!");
+  // var elementsArray = document.getElementsByClassName("is-visible");
+  
+  // for (let el of elementsArray) {
+    // var elParent = el.parentNode;
+    // var elSkel = elParent.getElementsByClassName("SkeletonRow")[0];
+    // var elSkel = elParent.getElementsByClassName("SkeletonRow");
+    // [].slice.call(elSkel).map((e) => console.log(e));
+    // [...elSkel].map(e => console.log('wow this is skeleton ', e));
+    // elSkel.style.display = "none";
+  };
+  
+  // console.log(elementsArray);
+  // element.classList.contains("myclass");
+  // var element = document.getElementsById("SkeletonRow");
+  // if (element) {element.style.display = "none";}
+// };
 
 export const LazyLoadRow = ({
   updateCustomerCountry,
@@ -65,7 +83,7 @@ export const LazyLoadRow = ({
   setCountry,
 }) => (
   <>
-    <SkeletonRow>
+    <SkeletonRow className="SkeletonRow">
       <Skeleton
         width="30px"
         height="30px"
@@ -78,8 +96,14 @@ export const LazyLoadRow = ({
       </div>
     </SkeletonRow>
 
-    <LazyLoad height={50}>
+    <LazyLoad
+      className="LazyLoad"
+      height={50}
+      // onContentVisible={() => console.log("look ma I have been lazyloaded!")}
+      onContentVisible={handleVisible}
+    >
       <RowLazy
+        className="RowLazy"
         onClick={() => {
           setOpen(false);
           setCountry(name);
@@ -92,7 +116,6 @@ export const LazyLoadRow = ({
         </FlagContainer>
         <CountryName>{name.substring(0, 15)}</CountryName>
         <CountryCode>{code}</CountryCode>
-
       </RowLazy>
     </LazyLoad>
   </>

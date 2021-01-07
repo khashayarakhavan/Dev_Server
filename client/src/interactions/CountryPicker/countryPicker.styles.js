@@ -8,8 +8,11 @@ import respond from '../../design/responsive';
 //Code
 
 export const List = styled.div`
+  padding: 1rem 0.5rem;
+  padding-right: 2.5rem;
   position: relative;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   border-radius: 2rem;
   height: 220px;
   background: white;
@@ -32,7 +35,7 @@ export const List = styled.div`
   &::-webkit-scrollbar-thumb:vertical {
     background-color: ${colors.secondary.lightest};
     background-color: #0ae;
-    background-color: ${colors.accent.ochreFire};
+    background-color: ${colors.accent.lightest};
     background-image: -webkit-gradient(
       linear,
       0 0,
@@ -283,11 +286,13 @@ const getRandomNumberBetween = (min, max) => {
 
 export const loadingRow = css`
   position: absolute;
+  width: unset;
+  ${'' /* width: 100%; */}
+
   ${"" /* background: pink; */}
   ${"" /* */}
   z-index: 0;
   ${'' /* background: red; */}
-  width: unset;
   ${"" /* width: 80%; */}
   ${"" /* width: 70%; */}
 
@@ -299,8 +304,8 @@ export const loadingRow = css`
 
   & > ${Name} {
     height: 18px;
-    width: ${getRandomNumberBetween(10, 150)}px;
     width: 50px;
+    width: ${getRandomNumberBetween(10, 150)}px;
     ${"" /* background: blue; */}
     color: black;
   }

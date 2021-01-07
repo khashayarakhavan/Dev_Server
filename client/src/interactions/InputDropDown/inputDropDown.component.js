@@ -7,7 +7,7 @@ import './inputDropDown.css';
 const InputDropDown = ({grid, setOpen, isOpen}) => {
   return (
     <div className="container">
-      <button className="btn" onClick={() => setOpen(!isOpen)}>
+      <button className="btn" id="countryPickerButton" onClick={() => setOpen(!isOpen)}>
         <div className="innerFrame">
           <span>Country Settings</span>
           <i className="material-icons">public</i>
