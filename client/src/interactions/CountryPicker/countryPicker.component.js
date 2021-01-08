@@ -1,5 +1,5 @@
 //Basics
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //Libraries
 import LazyLoad from "react-lazy-load";
 //JSON
@@ -11,6 +11,7 @@ import MaskedInput from '../InputMaterial/MaskedInput';
 import {Skeleton, SkeletonRow} from './countryPicker.styles';
 // import InputDropDown from "../interactions/InputDropDown/inputDropDown.component";
 import InputDropDown from "../InputDropDown/inputDropDown.component";
+import { Textfit } from "react-textfit";
 
 
 //Styles
@@ -81,7 +82,9 @@ export const LazyLoadRow = ({
   open,
   setOpen,
   setCountry,
-}) => (
+}) => {
+  //  
+  return (
   <>
     <SkeletonRow className="SkeletonRow">
       <Skeleton
@@ -114,12 +117,19 @@ export const LazyLoadRow = ({
         <FlagContainer>
           <Flag src={getFlag(code)} />
         </FlagContainer>
-        <CountryName>{name.substring(0, 15)}</CountryName>
+
+        <CountryName>
+          {/* {name.length >= 15 ? name.substring(0, 15) + " . . ." : name} */}
+          <Textfit mode="single" forceSingleModeWidth={true} max={"12"}>
+            {name.split(',')[0]}
+            {/* {name.length >= 15 ? name.substring(0, 15) + " . . ." : name} */}
+          </Textfit>
+        </CountryName>
         <CountryCode>{code}</CountryCode>
       </RowLazy>
     </LazyLoad>
   </>
-);
+)};
 
 export const HashGenerator = (key) => {
   let hash = 0;

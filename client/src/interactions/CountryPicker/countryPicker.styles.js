@@ -67,6 +67,7 @@ export const Card = styled.div`
   ${"" /* position: absolute; */}
   ${"" /* bottom: 80%;
   right: 20%; */}
+
   background: #7245c7;
   background: transparent;
   display: grid;
@@ -248,7 +249,7 @@ export const Dialog = styled.div`
     border-bottom: 6px solid transparent;
     border-left: 6px solid red;
     border-left: 6px solid transparent;
-    transform: translate(0%, -50%) rotate(-45deg);
+    transform: translate(50%, -50%) rotate(-45deg);
     mix-blend-mode: multiple;
   }
 `;
@@ -409,19 +410,28 @@ export const Overlay = styled.div`
 `;
 
 export const CountryName = styled.span`
- margin-Left: 1.5rem;
- white-space: nowrap;
+  width:130px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  margin-left: 1.4rem;
+  white-space: nowrap;
+  text-align: left;
 `;
 export const CountryCode = styled.span`
- margin-Left: 1.5rem;
- white-space: nowrap;
+  ${"" /* margin-right: 1.5rem; */}
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
   position: absolute;
-  font-weight: 200;
+  color: #003153;
+  color: #102539;
+
   font-size: 14px;
   right: 10px;
   top: 50%;
   transform: translate(0, -50%);
-${'' /* align-self: flex-start; */}
+  ${"" /* align-self: flex-start; */}
 `;
 
 
