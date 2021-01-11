@@ -7,7 +7,7 @@ import { createStructuredSelector } from "reselect";
 import { EditorState , RichUtils, convertToRaw, convertFromRaw} from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import { convertToHTML } from "draft-convert";
-import DOMPurify from "dompurify";
+import DOMPurify, { setConfig } from "dompurify";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"; 
 import axios from "axios";
 //Actions
@@ -82,18 +82,19 @@ export const RichTextCard = ({
   
   useEffect(() => {
     const timer = setInterval(() => {
-      // let nowTime = new Date();
-      //   let diff = (nowTime.getTime() - moment.getTime()) / 1000;
-        if (checker === true) {
+      let nowTime = new Date();
+      let diff = (nowTime.getTime() - moment.getTime()) / 1000;
+        if (checker === true && diff > 5) {
             console.log("@@@Automatic From setInterval");
             let convertedToHTML = convertContentToHTML();
             setConverted2HtmlContent(convertedToHTML);
             updateRichTextMessageAsHTML(convertedToHTML);
+            setMoment(nowTime);
             setChecker(false);
             console.log("UPDATED THIS VERY CHALLENGING VARIABLE");
           }
         }
-    , 10000);
+    , 5000);
     // clearing interval
     return () => clearInterval(timer);
   });
@@ -101,6 +102,7 @@ export const RichTextCard = ({
 
  
   const handleEditorChange = (state) => {
+
     setChecker(true);
     var startDate = new Date();
     setEditorLocalState(state);
@@ -112,7 +114,7 @@ export const RichTextCard = ({
     // Do your operations
     // var endDate = new Date();
     var timeDiff = (startDate.getTime() - moment.getTime()) / 1000;
-    if (timeDiff > 5) {
+    if (timeDiff > 4 ) {
       
        console.log('timeDifference is : ',timeDiff);
        setMoment(startDate);
