@@ -1,24 +1,30 @@
 //Framework
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //Styles
 import {Button, Loader} from './loadingButton.styles';
 
 
-const LoadingButton = ({isError, isComplete, isLoading, handleSubmit}) => {
+const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsComplete}) => {
   // const [isLoading, setIsLoading] = useState(false);
   // const [isComplete, setIsComplete] = useState(isCompletes);
   // const [isError, setIsError] = useState(isErrors);
-  
+  useEffect(() => {
+    if(isComplete === true) setTimeout(() => {
+        toggleIsComplete();
+      }, 4000);
+  }, [isComplete === true]);
+
+
+  //LEGACY
   // const handleClick = async () => {
-  //   handleSubmit();
-  //   // setIsLoading(true);
-  //   // setTimeout(() => {
-  //   //   setIsLoading(false);
-  //   //   setIsComplete(true);
-  //   //   setTimeout(() => {
-  //   //     setIsComplete(false);
-  //   //   }, 4000);
-  //   // }, 5000);
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //     setIsComplete(true);
+  //     setTimeout(() => {
+  //       setIsComplete(false);
+  //     }, 4000);
+  //   }, 5000);
   // };
 
   // const handleClick = async () => {

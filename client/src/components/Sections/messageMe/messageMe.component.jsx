@@ -17,6 +17,7 @@ import {
   updateRichTextMessageAsHTML,
   sendDataToServer,
   updateIsLoading,
+  toggleIsComplete,
 } from "../../../redux/messageMe/messageMe.actions";
 //Components
 import InputDropDown from '../../../interactions/InputDropDown/inputDropDown.component';
@@ -49,6 +50,7 @@ const MessageMeSection = ({
   isComplete,
   isLoading,
   updateIsLoading,
+  toggleIsComplete,
 }) => {
   const handleSubmit = async () => {
     console.log("hello from handleSubmit /messageMe.JS :D ");
@@ -77,6 +79,7 @@ const MessageMeSection = ({
           isError={isError}
           isComplete={isComplete}
           handleSubmit={handleSubmit}
+          toggleIsComplete={toggleIsComplete}
         />
         {/* <InputDropDown /> */}
       </RightSide>
@@ -99,6 +102,7 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => ({
   updateCustomerCountry: (value) => dispatch(updateCustomerCountry(value)),
   updateIsLoading: (value) => dispatch(updateIsLoading(value)),
+  toggleIsComplete: (value) => dispatch(toggleIsComplete()),
   updateRichTextMessageAsHTML: (value) =>
     dispatch(updateRichTextMessageAsHTML(value)),
   sendDataToServer: (URL, data) => dispatch(sendDataToServer(URL, data)),

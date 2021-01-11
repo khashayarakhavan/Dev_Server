@@ -19,6 +19,10 @@ export const updateIsLoading = (value) => ({
   type: MessageMeActionTypes.UPDATE_IS_LOADING,
   payload: value,
 });
+export const toggleIsComplete = (value) => ({
+  type: MessageMeActionTypes.TOGGLE_IS_COMPLETE,
+  payload: value,
+});
 export const sendClientRichTextMessageToServer = (URL, data) => ({
   type: MessageMeActionTypes.SEND_CLIENT_RICH_TEXT_MESSAGE_TO_SERVER,
   payload: { URL, data },
@@ -30,6 +34,10 @@ export const callToApiSuccess = (res) => ({
 });
 export const sendClientRichTextMessageToServerSuccess = (res) => ({
   type: MessageMeActionTypes.SEND_CLIENT_RICH_TEXT_MESSAGE_TO_SERVER_SUCCESS,
+  payload: res,
+});
+export const sendClientRichTextMessageToServerFailure = (res) => ({
+  type: MessageMeActionTypes.SEND_CLIENT_RICH_TEXT_MESSAGE_TO_SERVER_FAILURE,
   payload: res,
 });
 
