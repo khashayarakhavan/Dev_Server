@@ -36,40 +36,122 @@ export const RichTextCard = ({
   const [converted2HtmlContent, setConverted2HtmlContent] = useState(null);
   const [converted2RawContent, setConverted2RawContent] = useState(null);
   const [effect, setEffect] = useState(true);
+  const [checker, setChecker] = useState(false);
+  const [moment, setMoment] = useState(new Date());
   const [converted2PlainTextContent, setConverted2PlainTextContent] = useState(
     null
   );
 
   useEffect(() => {
+   
     const rawEditorData = getSavedEditorData();
+   
 
-    if (rawEditorData !== null ) {
+    if (rawEditorData !== null && effect === true ) {
+      console.log("@@@FROM rawedit loader///");
       const contentState = convertFromRaw(rawEditorData); //From JSON to State
       setEditorLocalState(EditorState.createWithContent(contentState));
       setConverted2RawContent(rawEditorData);
-      
-      setEffect(false)
-     
-      
-      // console.log('this is contentState', contentState);
-      // setConverted2HtmlContent(editorLocalState);
+      setEffect(false);
     }
 
     if (effect === false) {
-       let convertedToHTML = convertContentToHTML();
+      console.log('@@@FROM useEffect if///');
+      let convertedToHTML = convertContentToHTML();
       setConverted2HtmlContent(convertedToHTML);
       console.log('converted from html in useEffect is :', convertedToHTML);
       updateRichTextMessageAsHTML(convertedToHTML);
     }
   }, [effect]);
 
+  
+  // useEffect(() => {
+  //     setTimeout(() => {
+  //       let nowTime = new Date();
+  //       let diff = (nowTime.getTime() - moment.getTime()) / 1000;
+  //       if (checker === true && diff > 5) {
+  //           console.log("@@@Automatic From useEffect");
+  //           let convertedToHTML = convertContentToHTML();
+  //           setConverted2HtmlContent(convertedToHTML);
+  //           updateRichTextMessageAsHTML(convertedToHTML);
+  //         }
+  //       }
+  //     , 5000);    
+  // },[checker]);
+
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      // let nowTime = new Date();
+      //   let diff = (nowTime.getTime() - moment.getTime()) / 1000;
+        if (checker === true) {
+            console.log("@@@Automatic From setInterval");
+            let convertedToHTML = convertContentToHTML();
+            setConverted2HtmlContent(convertedToHTML);
+            updateRichTextMessageAsHTML(convertedToHTML);
+            setChecker(false);
+            console.log("UPDATED THIS VERY CHALLENGING VARIABLE");
+          }
+        }
+    , 10000);
+    // clearing interval
+    return () => clearInterval(timer);
+  });
+  
+
+ 
   const handleEditorChange = (state) => {
+    setChecker(true);
+    var startDate = new Date();
     setEditorLocalState(state);
     const RawJSON = convertContentToRawJSON();
     setConverted2RawContent(RawJSON);
     saveEditorContent(RawJSON); //save JSON in local memory.
-    let convertedToHTML = convertContentToHTML();
-    updateRichTextMessageAsHTML(convertedToHTML);
+    
+    
+    // Do your operations
+    // var endDate = new Date();
+    var timeDiff = (startDate.getTime() - moment.getTime()) / 1000;
+    if (timeDiff > 5) {
+      
+       console.log('timeDifference is : ',timeDiff);
+       setMoment(startDate);
+       let convertedToHTML = convertContentToHTML();
+       updateRichTextMessageAsHTML(convertedToHTML);
+       setChecker(false);
+      //  setTimeout(() => {
+      //    console.log("HAHAHAHA!!!");
+         
+      //  }, 4000);
+    };
+
+    // let currentTime = new Date();
+    // var currentTimeDiff = (currentTime.getTime() - moment.getTime() ) / 1000;
+    // if (currentTimeDiff > 10) {
+    //   console.log("timeDifference is toooo looong: ", timeDiff);
+    //   setMoment(startDate);
+    //   setTimeout(() => {
+    //     console.log("AUTOMATIC UPDATE!!!");
+    //     let convertedToHTML = convertContentToHTML();
+    //     updateRichTextMessageAsHTML(convertedToHTML);
+    //   }, 4000);
+
+    // }
+    // if (timeDiff) {
+    //   tester = 0;
+    //   setTimeout(() => {
+    //     console.log("HAHAHAHA!!!");
+    //     let convertedToHTML = convertContentToHTML();
+    //     updateRichTextMessageAsHTML(convertedToHTML);
+    //   }, 4000);
+    // }
+    // setTimeout(() => {
+      
+    // }, 4000);
+
+    
+    
+
     //  convertContentToHTML(); // convert text to raw and save it in memory.
     //  convertContentToPlainText(); // convert text to plain text and save it in state & memory.
   };

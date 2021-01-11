@@ -86,7 +86,7 @@ const MessageMeSection = ({
 
       {/* <PasswordValidator2 /> */}
       {/* <PasswordValidator3 /> */}
-      <SendButton onClick={handleSubmit}>Send Your Message</SendButton>
+      {/* <SendButton onClick={handleSubmit}>Send Your Message</SendButton> */}
     </MessageMeContainer>
   );
 };

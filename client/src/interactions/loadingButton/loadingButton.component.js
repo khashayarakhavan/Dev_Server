@@ -8,8 +8,10 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
   // const [isLoading, setIsLoading] = useState(false);
   // const [isComplete, setIsComplete] = useState(isCompletes);
   // const [isError, setIsError] = useState(isErrors);
-  useEffect(() => {
+  
+  useEffect(() => {  
     if(isComplete === true) setTimeout(() => {
+      console.log("I was called from UseEffect loadingButton");
         toggleIsComplete();
       }, 4000);
   }, [isComplete]);
