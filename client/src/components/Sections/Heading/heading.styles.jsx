@@ -43,7 +43,7 @@ export const SectionHeading = styled(VegeloperContainer)`
     ${"" /* transform: skewY(20deg); */}
     background-repeat: no-repeat;
     background-repeat: repeat;
-    opacity: 0.5;
+    opacity: 0.2;
     background-size: 100% 280%;
     background-size: cover;
     background-size: contain;

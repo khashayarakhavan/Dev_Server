@@ -1,4 +1,5 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
+import { callToApiSuccess, callToApiFailure } from "./messageMe.actions";
 import axios from 'axios';
 
 import MessageMeActionTypes from "./messageMe.types";
@@ -11,12 +12,16 @@ export function* CallToAPI({ payload: { URL, data }}) {
     const response = yield axios.post(URL, {data: data});
     // const response = yield axios.post(URL, {data: "dalam kalti :-p "});
     console.log("👉 Returned data:", response);
+    yield put(callToApiSuccess(response));
   } catch (error) {
     console.log(`😱 Axios request failed with status: `, error.status);
     console.log(`😱 and the message is : `, error.message);
+    yield put(callToApiFailure(error));
 
   }
 }
+
+   
 
 export function* onSendDataToServer() {
   yield takeLatest(MessageMeActionTypes.SEND_DATA_SERVER_START, CallToAPI);
