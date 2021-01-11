@@ -12,7 +12,7 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
     if(isComplete === true) setTimeout(() => {
         toggleIsComplete();
       }, 4000);
-  }, [isComplete === true]);
+  }, [isComplete]);
 
 
   //LEGACY
