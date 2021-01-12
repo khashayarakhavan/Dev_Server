@@ -30,7 +30,7 @@ let rand = getRandomNumberBetween(1, 3);
 
                     <span style={{ transition: `all 2.3s` }}>
                       {rand === 1
-                        ? ` is aaamazing!!!`
+                        ? ` is aaamazing!!`
                         : rand === 2
                         ? (<span > is aawesome!!</span>)
                         : ` is charming!!!`}

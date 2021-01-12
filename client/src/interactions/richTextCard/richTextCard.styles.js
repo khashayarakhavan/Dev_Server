@@ -3,6 +3,7 @@ import styled, {css} from "styled-components";
 import { rgba } from "polished";
 //Design
 import colors from '../../design/colors';
+import shadows from "../../design/shadows.styles";
 
 const duration ={
   transtion:'0.45s',
@@ -11,11 +12,11 @@ const duration ={
 
 
 export const Card = styled.div`
-  ${'' /* grid-row: 1/-1; */}
+  ${"" /* grid-row: 1/-1; */}
   margin: 1rem;
   position: absolute;
   position: relative;
-  width: 350px;
+  width: 250px;
   width: clamp(350px, 27.34375vw, 600px);
   width: 100%;
   ${"" /* top: 10%;
@@ -31,22 +32,44 @@ export const Card = styled.div`
   & .rdw-editor-wrapper {
     display: flex;
     flex-direction: column-reverse;
-    ${"" /* background: red; */}
+    ${"" /*  */}
+    background: transparent;
+    ${"" /* border-radius: 5px; */}
+    ${"" /* background-color: ${colors.neutrals.lightest}; */}
   }
 
   & .rdw-editor-toolbar {
     padding: 1rem 0 0;
-    border-top: 2px solid ${rgba("black", 0.05)};
-    ${"" /* background: yellow; */}
-    ${'' /* width: 50%; */}
+    border: 0;
+    border-top: 4px solid ${rgba("black", 0.05)};
+    border-top: 4px solid ${colors.accent.lightest};
+
+    background: transparent;
+
+    ${"" /* */}
+    ${"" /* width: 50%; */}
   }
 
   & .rdw-editor-main {
     color: #565360;
     color: ${colors.neutrals.darkest};
+    background-color: ${colors.neutrals.lightest};
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.99);
+    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
+    ${'' /* box-shadow: ${shadows.neumorphic.original}; */}
     ${"" /* background: lightblue; */}
     height: 20rem;
+    border-radius: 20px;
+    ${'' /* border-bottom-right-radius: 50px 20px; */}
+    border-bottom-right-radius: 0px;
+    ${'' /* border-bottom-left-radius: 50px 20px; */}
+    border-bottom-left-radius: 0px;
     font-size: 24px;
+    padding: 0.5rem;
 
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -100,6 +123,9 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  background: white;
+  background: transparent;
+  ${'' /* border-bottom: 4px solid ${colors.accent.lightest}; */}
 `;
 
 export const Image = styled.div`
@@ -108,6 +134,7 @@ export const Image = styled.div`
   margin-right: 1rem;
   border-radius: 0.5rem;
   background: #e3d5ff;
+  ${'' /* background-size: cover; */}
   background-size: 100%;
   background-position: center bottom;
   background-repeat: repeat-x;
@@ -118,6 +145,7 @@ export const Image = styled.div`
 export const Text = styled.span`
   color: #acaab7;
   font-size: 18px;
+  ${'' /* background: white; */}
 `;
 
 

@@ -19,7 +19,8 @@ import {
 //Styles
 import { Card, Header, Image, Text } from "./richTextCard.styles";
 //Assets
-import vegeloperImage from "../../assets/SVG/Vegeloper.svg";
+// import vegeloperImage from "../../assets/SVG/Vegeloper.svg";
+import vegeloperImage from "../../assets/icon/unkownUser.png";
 import boldIcon from "../../assets/SVG/bold.svg";
 import italicIcon from "../../assets/SVG/italic.svg";
 import underlineIcon from "../../assets/SVG/underline.svg";
@@ -66,17 +67,19 @@ export const RichTextCard = ({
 
   
   // useEffect(() => {
-  //     setTimeout(() => {
-  //       let nowTime = new Date();
-  //       let diff = (nowTime.getTime() - moment.getTime()) / 1000;
-  //       if (checker === true && diff > 5) {
-  //           console.log("@@@Automatic From useEffect");
-  //           let convertedToHTML = convertContentToHTML();
-  //           setConverted2HtmlContent(convertedToHTML);
-  //           updateRichTextMessageAsHTML(convertedToHTML);
-  //         }
-  //       }
-  //     , 5000);    
+  //    let nowTime = new Date();
+  //    let diff = (nowTime.getTime() - moment.getTime()) / 1000;
+  //    console.log("am being callllleeedd");
+
+  //    if (checker === true && diff > 5) {
+  //      console.log("@@@Automatic From setInterval");
+  //      let convertedToHTML = convertContentToHTML();
+  //      setConverted2HtmlContent(convertedToHTML);
+  //      updateRichTextMessageAsHTML(convertedToHTML);
+  //      setMoment(nowTime);
+  //      setChecker(false);
+  //      console.log("UPDATED THIS VERY CHALLENGING VARIABLE");
+  //    }
   // },[checker]);
 
   
@@ -84,17 +87,19 @@ export const RichTextCard = ({
     const timer = setInterval(() => {
       let nowTime = new Date();
       let diff = (nowTime.getTime() - moment.getTime()) / 1000;
-        if (checker === true && diff > 5) {
-            console.log("@@@Automatic From setInterval");
-            let convertedToHTML = convertContentToHTML();
-            setConverted2HtmlContent(convertedToHTML);
-            updateRichTextMessageAsHTML(convertedToHTML);
-            setMoment(nowTime);
-            setChecker(false);
-            console.log("UPDATED THIS VERY CHALLENGING VARIABLE");
-          }
+      console.log('am being callllleeedd');
+      
+      if (checker === true && diff > 5) {
+          console.log("@@@Automatic From setInterval");
+          let convertedToHTML = convertContentToHTML();
+          setConverted2HtmlContent(convertedToHTML);
+          updateRichTextMessageAsHTML(convertedToHTML);
+          setMoment(nowTime);
+          setChecker(false);
+          console.log("UPDATED THIS VERY CHALLENGING VARIABLE");
+      }
         }
-    , 5000);
+    , 10000);
     // clearing interval
     return () => clearInterval(timer);
   });
@@ -104,6 +109,7 @@ export const RichTextCard = ({
   const handleEditorChange = (state) => {
 
     setChecker(true);
+    // let checker = 1;
     var startDate = new Date();
     setEditorLocalState(state);
     const RawJSON = convertContentToRawJSON();
@@ -115,17 +121,20 @@ export const RichTextCard = ({
     // var endDate = new Date();
     var timeDiff = (startDate.getTime() - moment.getTime()) / 1000;
     if (timeDiff > 4 ) {
-      
        console.log('timeDifference is : ',timeDiff);
        setMoment(startDate);
        let convertedToHTML = convertContentToHTML();
        updateRichTextMessageAsHTML(convertedToHTML);
        setChecker(false);
-      //  setTimeout(() => {
-      //    console.log("HAHAHAHA!!!");
-         
-      //  }, 4000);
+      //  checker= 0;
     };
+
+    // if (checker === 0) {
+    //   setTimeout(() => {
+    //     console.log('I am much simpler than you thought!');
+    //     updateRichTextMessageAsHTML(convertContentToHTML());
+    //   }, 4000);
+    // }
 
     // let currentTime = new Date();
     // var currentTimeDiff = (currentTime.getTime() - moment.getTime() ) / 1000;
@@ -298,7 +307,15 @@ export const RichTextCard = ({
   return (
     <Card>
       <Header>
-        <Image style={{ background: `url(${vegeloperImage})` }} />
+        {/* <Image style={{ background: `url(${vegeloperImage})` }} /> */}
+        <img
+          src={vegeloperImage}
+          style={{
+            width: "60px",
+            height: "60px",
+            filter: "brightness(1.4) saturate(180%) hue-rotate(220deg)",
+          }}
+        />
         <Text>Tell me more about your project ...</Text>
       </Header>
       <Editor
@@ -317,7 +334,6 @@ export const RichTextCard = ({
           },
         }}
       />
-      
     </Card>
   );
 };

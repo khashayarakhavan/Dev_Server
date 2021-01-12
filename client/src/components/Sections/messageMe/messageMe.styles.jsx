@@ -21,7 +21,7 @@ export const MessageMeContainer = styled.div`
   position: relative;
   width: 850px;
   width: min-content;
-  width: 60vw;
+  width: 50vw;
 
   background: transparent ;
   background: ${colors.neutrals.lighter};

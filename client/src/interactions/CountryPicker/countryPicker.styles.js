@@ -333,12 +333,17 @@ export const RowLazy = styled.button`
 
   border: none;
 
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
   ${(p) => p.isLoading && loadingRow}
+
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+  }
 `;
 
 
