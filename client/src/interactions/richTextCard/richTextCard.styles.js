@@ -51,22 +51,28 @@ export const Card = styled.div`
   }
 
   & .rdw-editor-main {
+    transition: all 0.35s;
     color: #565360;
     color: ${colors.neutrals.darkest};
     background-color: ${colors.neutrals.lightest};
-    background-color: transparent;
     background-color: rgba(255, 255, 255, 0.3);
     background-color: rgba(255, 255, 255, 0.99);
     background-color: rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.5);
-    ${'' /* box-shadow: ${shadows.neumorphic.original}; */}
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+    ${"" /* box-shadow: ${shadows.neumorphic.original}; */}
     ${"" /* background: lightblue; */}
     height: 20rem;
     border-radius: 20px;
-    ${'' /* border-bottom-right-radius: 50px 20px; */}
+    ${"" /* border-bottom-right-radius: 50px 20px; */}
     border-bottom-right-radius: 0px;
-    ${'' /* border-bottom-left-radius: 50px 20px; */}
+    ${"" /* border-bottom-left-radius: 50px 20px; */}
     border-bottom-left-radius: 0px;
     font-size: 24px;
     padding: 0.5rem;
@@ -98,6 +104,10 @@ export const Card = styled.div`
 
   & .rdw-option-wrapper {
     min-width: auto;
+    background: transparent;
+    border: 0;
+    transition: all 0.2s;
+    border-radius: 8px;
   }
 
   & .rdw-option-wrapper img {
@@ -108,6 +118,7 @@ export const Card = styled.div`
 
   & .rdw-option-wrapper:hover {
     box-shadow: none;
+    background: rgba(255, 255, 255, 0.85);;
   }
 
   & .rdw-option-active {
