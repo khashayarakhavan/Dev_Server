@@ -23,7 +23,10 @@ import { Card, Header, Image, Text } from "./richTextCard.styles";
 import vegeloperImage from "../../assets/icon/unkownUser.png";
 import boldIcon from "../../assets/SVG/bold.svg";
 import italicIcon from "../../assets/SVG/italic.svg";
+import italicIcon_2 from "../../assets/SVG/italic_2.svg";
 import underlineIcon from "../../assets/SVG/underline.svg";
+import underlineIcon_2 from "../../assets/SVG/underline_2.svg";
+import underlineIcon_3 from "../../assets/SVG/underline_3.svg";
 
 
 export const RichTextCard = ({
@@ -316,7 +319,7 @@ export const RichTextCard = ({
             filter: "brightness(1.4) saturate(180%) hue-rotate(220deg)",
           }}
         />
-        <Text>Tell me more about your project ...</Text>
+        <Text>Tell me about your project...</Text>
       </Header>
       <Editor
         className="editor"
@@ -329,8 +332,8 @@ export const RichTextCard = ({
             options: ["bold", "italic", "underline"],
             inDropdown: false,
             bold: { icon: boldIcon },
-            italic: { icon: italicIcon },
-            underline: { icon: underlineIcon },
+            italic: { icon: italicIcon_2 },
+            underline: { icon: underlineIcon_3 },
           },
         }}
       />

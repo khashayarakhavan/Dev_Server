@@ -40,6 +40,7 @@ export const Card = styled.div`
 
   & .rdw-editor-toolbar {
     padding: 1rem 0 0;
+    font-size: 12px;
     border: 0;
     border-top: 4px solid ${rgba("black", 0.05)};
     border-top: 4px solid ${colors.accent.lightest};
@@ -61,20 +62,23 @@ export const Card = styled.div`
     background-color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.5);
     background-color: transparent;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.85);
     }
-    ${"" /* box-shadow: ${shadows.neumorphic.original}; */}
-    ${"" /* background: lightblue; */}
+ 
     height: 20rem;
     border-radius: 20px;
     ${"" /* border-bottom-right-radius: 50px 20px; */}
     border-bottom-right-radius: 0px;
     ${"" /* border-bottom-left-radius: 50px 20px; */}
     border-bottom-left-radius: 0px;
-    font-size: 24px;
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
     padding: 0.5rem;
 
     &::-webkit-scrollbar-track {
@@ -106,11 +110,29 @@ export const Card = styled.div`
     min-width: auto;
     background: transparent;
     border: 0;
-    transition: all 0.2s;
+    transition: all 0.35s;
     border-radius: 8px;
+    width: 34px;
+    height: 34px;
+
+    &:hover {
+      background: red;
+    }
+
+    ${
+      "" /* :before {
+      content: "";
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: red;
+      ${"" /* z-index: -1; */
+    }
+    } */}
   }
 
   & .rdw-option-wrapper img {
+    position: relative;
     width: 24px;
     height: 24px;
     opacity: 0.25;
@@ -118,7 +140,11 @@ export const Card = styled.div`
 
   & .rdw-option-wrapper:hover {
     box-shadow: none;
-    background: rgba(255, 255, 255, 0.85);;
+    background: rgba(255, 255, 255, 0.85);
+
+    fill: black;
+    filter: hue-rotate(210deg);
+    ${"" /* box-shadow: ${shadows.neumorphic.original}; */}
   }
 
   & .rdw-option-active {
@@ -155,8 +181,13 @@ export const Image = styled.div`
 
 export const Text = styled.span`
   color: #acaab7;
-  font-size: 18px;
-  ${'' /* background: white; */}
+  color: ${colors.neutrals.darkest};
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  padding-left: 1rem;
+
+  ${"" /* background: white; */}
 `;
 
 
