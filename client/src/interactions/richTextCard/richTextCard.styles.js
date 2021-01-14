@@ -53,6 +53,8 @@ export const Card = styled.div`
 
   & .rdw-editor-main {
     transition: all 0.35s;
+    padding: 1rem;
+   
     color: #565360;
     color: ${colors.neutrals.darkest};
     background-color: ${colors.neutrals.lightest};
@@ -74,12 +76,16 @@ export const Card = styled.div`
     border-bottom-right-radius: 0px;
     ${"" /* border-bottom-left-radius: 50px 20px; */}
     border-bottom-left-radius: 0px;
-    font-size: 18px;
-    font-family: "Josefin Sans", sans-serif;
+    font-size: 17px;
+        font-family: "Josefin Sans", sans-serif;
     font-weight: 400;
+    
     font-family: "Poppins", sans-serif;
     font-weight: 200;
+    
+
     padding: 0.5rem;
+     padding-left: 2rem;
 
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

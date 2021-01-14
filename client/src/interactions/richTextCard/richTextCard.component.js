@@ -319,13 +319,18 @@ export const RichTextCard = ({
             filter: "brightness(1.4) saturate(180%) hue-rotate(220deg)",
           }}
         />
-        <Text>Tell me about your project...</Text>
+        <Text>
+          Are you working on your {" "}
+          <span style={{ color: "#102539", fontWeight: "400" }}>
+            gameChanging project{" "}
+          </span>?
+        </Text>
       </Header>
       <Editor
         className="editor"
         editorState={editorLocalState}
         onEditorStateChange={handleEditorChange}
-        placeholder="Type your message"
+        placeholder="Can't wait to know about it 🤩"
         toolbar={{
           options: ["inline"],
           inline: {
