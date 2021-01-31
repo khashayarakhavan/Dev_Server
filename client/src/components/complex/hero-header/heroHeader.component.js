@@ -21,6 +21,9 @@ import SectionFeatures from '../../../components/Sections/Features/sectionFeatur
 import {AnimationCreateRobot} from '../../../design/animations.styles';
 import heartSVG from '../../../assets/SVG/heart.svg';
 import SvgHeart from '../../../assets/svgReact/Heart.js';
+import robotAunt from '../../../assets/img/robot_aunt.jpg';
+import robotCousin from '../../../assets/img/robot_cousin.jpg';
+import robotHome from '../../../assets/img/robot_home.jpg';
 // import CustomSVG from '../../../assets/svgReact/CustomSVG.js';
 import {CustomSVG, NewSVG} from './heroHeader.styles';
 import sprite from '../../../assets/SVG/heart.svg';
@@ -74,16 +77,15 @@ export const HeroHeaderLeftContainer = ({ toggleMenuOpen, menuOpen, popUpOpen, t
   // const open = props.open;
 
   return (
-    <HeroHeaderLeft >
+    <HeroHeaderLeft>
       <Heading>
         <p className="hi">
           Hi<Accent_fireOrange>.</Accent_fireOrange>
+          I'm <Accent_fireOrange>K</Accent_fireOrange>hashi
         </p>
-        <p className="verb">
-          I<Accent_mateBlue>’</Accent_mateBlue>m
-        </p>
+        <p className="verb">{/* I<Accent_mateBlue>’</Accent_mateBlue>m */}</p>
         <p className="name">
-          <Accent_fireOrange>K</Accent_fireOrange>hashi
+          {/* <Accent_fireOrange>K</Accent_fireOrange>hashi */}
         </p>
       </Heading>
 
@@ -92,7 +94,14 @@ export const HeroHeaderLeftContainer = ({ toggleMenuOpen, menuOpen, popUpOpen, t
           a web <span style={{ fontWeight: 400 }}>developer</span>
         </p>
       </TEXT>
-
+      {/* <div style={{ display: "flex" }}>
+        <p style={{  fontSize: "14px" }}>it is my home</p>
+        <img src={robotHome} width="200px" height="200px" margin="2rem" />
+        <p style={{  fontSize: "14px" }}>it is my aunt's home</p>
+        <img src={robotAunt} width="200px" height="200px" margin="2rem" />
+        <p style={{  fontSize: "14px" }}>it is my cousin and his friend:</p>
+        <img src={robotCousin} width="200px" height="200px" margin="2rem" />
+      </div> */}
       <Button onClick={togglePopUp}>
         <p>Pleased to meet you</p> <SvgIcon />
         {/* <br /> */}

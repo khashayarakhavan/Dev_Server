@@ -208,3 +208,11 @@ export const SearchBox = ({ toggleCartHidden, itemCount }) => (
 .alert--error {
   background-color: #eb4d4b;
 }
+
+
+//Font group
+    font-family: "FS Kim", "Georgia", "Serif";
+    font-feature-settings: "liga";
+    font-weight: 500;
+    font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+    

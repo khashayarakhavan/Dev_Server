@@ -1,5 +1,5 @@
 //Framework
-import React from 'react';
+import React, {useState} from 'react';
 //State Mangement
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -36,6 +36,8 @@ import PasswordValidator3 from '../../../interactions/passwordValidator/password
 
 import { MessageMeContainer, SendButton , RightSide, LeftSide} from "./messageMe.styles";
 
+import FormInput from "../../atomic/form-input/form-input.component";
+import CustomButton from "../../atomic/custom-button/custom-button.component";
  
   
 
@@ -52,14 +54,42 @@ const MessageMeSection = ({
   updateIsLoading,
   toggleIsComplete,
 }) => {
-  const handleSubmit = async () => {
+
+  const [userCredentials, setUserCredentials] = useState({
+    displayName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  })  
+  const { displayName, email, password, confirmPassword } = userCredentials;
+
+  
+  const handleChange = (event) => { 
+    const { name, value } = event.target;
+    setUserCredentials({ ...userCredentials, [name]: value });
+  };
+
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // event.preventDefault();
     console.log("hello from handleSubmit /messageMe.JS :D ");
+
+    if (password !== confirmPassword) {
+      alert("ooOOppSSss!! passwords don't match");
+      return;
+    }
+    if (!password) {
+      alert("please enter password.");
+      return;
+    }
+
     updateIsLoading(true);
-    let res = sendDataToServer("/api/v1/email", {
+    sendDataToServer("/api/v1/email", {
       pureHTML: richTextMessageAsHTML,
       customerCountry: customerCountry,
     });
-    // return res;
+    
   };
 
   return (
@@ -73,15 +103,52 @@ const MessageMeSection = ({
           customerCountry={customerCountry}
           updateCustomerCountry={updateCustomerCountry}
         />
-        <InputMaterial />
-        <LoadingButton
-          isLoading={isLoading}
-          isError={isError}
-          isComplete={isComplete}
-          handleSubmit={handleSubmit}
-          toggleIsComplete={toggleIsComplete}
-        />
-        
+
+        <form className="sign-up-form" onSubmit={handleSubmit}>
+          <FormInput
+            type="text"
+            name="displayName"
+            value={displayName}
+            onChange={handleChange}
+            label="Display Name"
+            required
+          />
+          <FormInput
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            label="Email"
+            required
+          />
+          <FormInput
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+            label="Password"
+            required
+          />
+          <FormInput
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={handleChange}
+            label="Confirm Password"
+            required
+          />
+          {/* <CustomButton type="submit">SIGN UP</CustomButton> */}
+          <LoadingButton
+            type="submit"
+            isLoading={isLoading}
+            isError={isError}
+            isComplete={isComplete}
+            handleSubmit={handleSubmit}
+            toggleIsComplete={toggleIsComplete}
+          />
+        </form>
+
+        {/* <InputMaterial /> */}
         {/* <InputDropDown /> */}
       </RightSide>
 

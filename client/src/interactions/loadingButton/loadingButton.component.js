@@ -41,7 +41,7 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
 
   return (
     <Button
-      onClick={() => handleSubmit()}
+      // onClick={() => handleSubmit()}
       // onSubmit={() => handleSubmit()}
       // type="submit"
       isComplete={isComplete}

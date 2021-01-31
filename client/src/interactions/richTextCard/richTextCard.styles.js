@@ -79,7 +79,6 @@ export const Card = styled.div`
     font-size: 17px;
         font-family: "Josefin Sans", sans-serif;
     font-weight: 400;
-    
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     
