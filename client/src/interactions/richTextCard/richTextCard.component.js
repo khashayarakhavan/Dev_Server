@@ -33,6 +33,9 @@ export const RichTextCard = ({
   sendDataToServer,
   updateRichTextState,
   updateRichTextMessageAsHTML,
+  handleEditorChange_parent,
+  onChange,
+  textState,
 }) => {
   const [editorLocalState, setEditorLocalState] = useState(() =>
     EditorState.createEmpty()
@@ -54,7 +57,7 @@ export const RichTextCard = ({
     if (rawEditorData !== null && effect === true ) {
       console.log("@@@FROM rawedit loader///");
       const contentState = convertFromRaw(rawEditorData); //From JSON to State
-      setEditorLocalState(EditorState.createWithContent(contentState));
+      // setEditorLocalState(EditorState.createWithContent(contentState));
       setConverted2RawContent(rawEditorData);
       setEffect(false);
     }
@@ -320,16 +323,19 @@ export const RichTextCard = ({
           }}
         />
         <Text>
-          Are you working on your {" "}
+          Are you working on your{" "}
           <span style={{ color: "#102539", fontWeight: "400" }}>
             gameChanging project{" "}
-          </span>?
+          </span>
+          ?
         </Text>
       </Header>
       <Editor
         className="editor"
         editorState={editorLocalState}
+        // editorState={textState}
         onEditorStateChange={handleEditorChange}
+        // onEditorStateChange={onChange}
         placeholder="Can't wait to know about it 🤩"
         toolbar={{
           options: ["inline"],

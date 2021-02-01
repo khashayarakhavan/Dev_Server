@@ -38,6 +38,10 @@ import { MessageMeContainer, SendButton , RightSide, LeftSide} from "./messageMe
 
 import FormInput from "../../atomic/form-input/form-input.component";
 import CustomButton from "../../atomic/custom-button/custom-button.component";
+
+import { EditorState, RichUtils, convertToRaw, convertFromRaw } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import { convertToHTML } from "draft-convert";
  
   
 
@@ -63,10 +67,46 @@ const MessageMeSection = ({
   })  
   const { displayName, email, password, confirmPassword } = userCredentials;
 
+  const [editorLocalState, setEditorLocalState] = useState(() =>
+    EditorState.createEmpty()
+  );
+
   
   const handleChange = (event) => { 
     const { name, value } = event.target;
     setUserCredentials({ ...userCredentials, [name]: value });
+  };
+  
+  const handleEditorChange_parent = (state) => {
+    setEditorLocalState(state);   
+    // console.log('new state is : ');
+    // console.log(convertContentToHTML());
+    };
+
+  const convertContentToHTML = () => {
+    //Simple implementation:
+    //  let currentContentAsHTML = convertToHTML(editorState.getCurrentContent()) 
+    //Advanced optional props:
+    let currentContentAsHTML = convertToHTML({
+      styleToHTML: (style) => {
+        if (style === "BOLD") {
+          return <span style={{ color: "blue" }} />;
+        }
+      },
+      blockToHTML: (block) => {
+        if (block.type === "PARAGRAPH") {
+          return <p />;
+        }
+      },
+      entityToHTML: (entity, originalText) => {
+        if (entity.type === "LINK") {
+          return <a href={entity.data.url}>{originalText}</a>;
+        }
+        return originalText;
+      },
+    })(editorLocalState.getCurrentContent());
+    
+    return currentContentAsHTML;
   };
 
   
@@ -88,6 +128,7 @@ const MessageMeSection = ({
     sendDataToServer("/api/v1/email", {
       pureHTML: richTextMessageAsHTML,
       customerCountry: customerCountry,
+      userCredentials: { displayName, email, password },
     });
     
   };
@@ -95,7 +136,11 @@ const MessageMeSection = ({
   return (
     <MessageMeContainer>
       <LeftSide>
-        <RichText updateRichTextMessageAsHTML={updateRichTextMessageAsHTML} />
+        <RichText
+          // onChange={handleEditorChange_parent}
+          // textState={editorLocalState}
+          updateRichTextMessageAsHTML={updateRichTextMessageAsHTML}
+        />
       </LeftSide>
 
       <RightSide>
@@ -143,7 +188,7 @@ const MessageMeSection = ({
             isLoading={isLoading}
             isError={isError}
             isComplete={isComplete}
-            handleSubmit={handleSubmit}
+            // handleSubmit={handleSubmit}
             toggleIsComplete={toggleIsComplete}
           />
         </form>

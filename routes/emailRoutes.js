@@ -65,7 +65,8 @@ router.post("/", async (req, res) => {
   console.log("received data in /api/v1/email is : ", req.body.data);
   // const pureHTML = req.body.data.pureHTML ? req.body.data.pureHTML : "<p></p>";
   const pureHTML = req.body.data.pureHTML;
-  
+  const userCredentials = req.body.data.userCredentials;
+  const {email, displayName, password} = userCredentials;
 
   // const customerCountry = req.body.data.customerCountry ? req.body.data.customerCountry : "Earth";
   const customerCountry = req.body.data.customerCountry;
@@ -84,6 +85,7 @@ router.post("/", async (req, res) => {
         name: "aftoflBig5",
       };
       await new Mailer(newUser, pureHTML, customerCountry).sendWelcome(res);
+      console.log(`sent by ${displayName} to this email address: ${email} had the password including ${password}`);
     } catch (e) {
       console.log("Mailer util did not respond correctly", e);
     }
