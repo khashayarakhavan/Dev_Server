@@ -15,6 +15,8 @@ export const Inner = styled.span`
     "" /* background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} !important;
   background: ${(p) => p.isComplete && p.isError && `#fb6767`} !important; */
   }
+  background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} !important;
+  background: ${(p) => p.isComplete && p.isError && `#fb6767`} !important;
   color: ${(p) => (p.isComplete ? "#EB5E28" : "#EB5E28")} !important;
 
   &:hover {
@@ -24,8 +26,8 @@ export const Inner = styled.span`
 
 export const RequestStatusColor = styled.div`
   ${'' /* font-size: 18px; */}
-  color: ${(p) => (p.isComplete ? `#16bd92` : `white`)};
-  color: ${(p) => p.isComplete && p.isError && `#fb6767`};
+  background-color: ${(p) => (p.isComplete ? `#16bd92` : `white`)};
+  background-color: ${(p) => p.isComplete && p.isError && `#fb6767`};
 `;
 
 
@@ -40,10 +42,13 @@ export const Button = styled.button`
   border-radius: 8px;
   cursor: pointer;
 
-  ${'' /* background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} ; */}
-  ${'' /* background: ${(p) => p.isComplete && p.isError && `#fb6767`}; */}
+  ${'' /* background: ${(p) => p.isComplete && p.isError && `#fb6767`};
+  background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} !important; */}
+  ${
+    "" /* background: ${(p) => p.isComplete && p.isError && `#fb6767`};
 
-  ${'' /* color: ${(p) => (p.isComplete ? "white" : "#EB5E28")} !important; */}
+  ${'' /* color: ${(p) => (p.isComplete ? "white" : "#EB5E28")} !important; */
+  }
   color: ##EB5E28;
   box-shadow: ${shadows.neumorphic.extra} !important;
   transition: backgorund 0.5s;

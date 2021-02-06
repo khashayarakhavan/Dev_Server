@@ -19,15 +19,16 @@ const defaultStyle = {
   transition: `all ${duration}ms ease-in-out`,
   opacity: 0,
   // padding: 20,
+
   display: "inline-block",
-  // backgroundColor: "#8787d8",
+  // background: "#8787d8",
 };
 
 const transitionStyles = {
-  entering: { opacity: 1, color: '' },
-  entered: { opacity: 1 , color: ''},
+  entering: { opacity: 1, background: '' },
+  entered: { opacity: 1 , background: ''},
   exiting: {opacity: 1, color: '', transform: 'translateY(10px)'},
-  exited: {opacity: 1, color: '' , transform: 'translateY(-40px) translateX(10px)'},
+  exited: {opacity: 1, color: '' , transform: 'translateY(-40px) translateX(20px)'},
 };
 
 const Fade = ({ in: inProp }) => (
@@ -99,13 +100,9 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
 
         {!isComplete && !isLoading && "mailMe"}
         {isComplete && !isError && (
-          <div style={{ width: `100%`, textAlign: "center" }}>
-            <Textfit mode="single" forceSingleModeWidth={true} max={"12"}>
-              <RequestStatusColor isComplete={isComplete} isError={isError}>
-                Tnx
-              </RequestStatusColor>
-              😊 I'll res ASAP
-            </Textfit>
+          <div style={{ width: `100%`}}>
+          
+            😊 I'll res ASAP
           </div>
         )}
         {isComplete && isError && (
@@ -141,7 +138,7 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
           </span>
         </Inner>
       </Button>
-      <br />
+      {/* <br /> */}
 
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
