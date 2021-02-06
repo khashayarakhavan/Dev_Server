@@ -30,6 +30,7 @@ import RichText from '../../../interactions/richTextCard/richTextCard.component'
 import CountryPicker from '../../../interactions/CountryPicker/countryPicker.component';
 import InputMaterial from '../../../interactions/InputMaterial/inputMaterial.component';
 import LoadingButton from "../../../interactions/loadingButton/loadingButton.component";
+import LoadingButtonBlobs from "../../../interactions/loadingButton/loadingButtonBlobs.component";
 
 // import PasswordValidator from '../../../interactions/passwordValidator/passwordValidator.component';
 import PasswordValidator3 from '../../../interactions/passwordValidator/passwordValidator3.component';
@@ -37,6 +38,7 @@ import PasswordValidator3 from '../../../interactions/passwordValidator/password
 import { MessageMeContainer, SendButton , RightSide, LeftSide} from "./messageMe.styles";
 
 import FormInput from "../../atomic/form-input/form-input.component";
+import FormInputNeumorphic from "../../atomic/form-input-neumorphic/form-input-neumorphic.component";
 import CustomButton from "../../atomic/custom-button/custom-button.component";
 
 import { EditorState, RichUtils, convertToRaw, convertFromRaw } from "draft-js";
@@ -119,10 +121,10 @@ const MessageMeSection = ({
       alert("ooOOppSSss!! passwords don't match");
       return;
     }
-    if (!password) {
-      alert("please enter password.");
-      return;
-    }
+    // if (!password) {
+    //   alert("please enter password.");
+    //   return;
+    // }
 
     updateIsLoading(true);
     sendDataToServer("/api/v1/email", {
@@ -143,19 +145,19 @@ const MessageMeSection = ({
         />
       </LeftSide>
 
-      <RightSide>
+      <RightSide style={{marginRight: "2rem"}}>
         <CountryPicker
           customerCountry={customerCountry}
           updateCustomerCountry={updateCustomerCountry}
         />
 
         <form className="sign-up-form" onSubmit={handleSubmit}>
-          <FormInput
+          <FormInputNeumorphic
             type="text"
             name="displayName"
             value={displayName}
             onChange={handleChange}
-            label="Display Name"
+            label="How may I call you?"
             required
           />
           <FormInput
@@ -166,7 +168,7 @@ const MessageMeSection = ({
             label="Email"
             required
           />
-          <FormInput
+          {/* <FormInput
             type="password"
             name="password"
             value={password}
@@ -181,8 +183,9 @@ const MessageMeSection = ({
             onChange={handleChange}
             label="Confirm Password"
             required
-          />
+          /> */}
           {/* <CustomButton type="submit">SIGN UP</CustomButton> */}
+          {/* <LoadingButtonBlobs /> */}
           <LoadingButton
             type="submit"
             isLoading={isLoading}

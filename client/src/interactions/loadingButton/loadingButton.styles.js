@@ -10,6 +10,11 @@ const duration ={
 
 const backgroundColor= 'transparent';
 
+export const Inner = styled.span`
+  background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} !important;
+  background: ${(p) => p.isComplete && p.isError && `#fb6767`} !important;
+  color: ${(p) => (p.isComplete ? "white" : "#EB5E28")} !important;
+`;
 export const Button = styled.button`
   position: relative;
   overflow: hidden;
@@ -20,12 +25,17 @@ export const Button = styled.button`
   border-radius: 8px;
   cursor: pointer;
 
-  background: ${(p) => (p.isComplete ? `#16bd92` : `white`)};
+  background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} ;
   background: ${(p) => p.isComplete && p.isError && `#fb6767`};
 
-  color: ${(p) => (p.isComplete ? "white" : "#EB5E28")};
-  box-shadow: ${shadows.neumorphic.extra};
+  ${'' /* color: ${(p) => (p.isComplete ? "white" : "#EB5E28")} !important; */}
+  color: ##EB5E28;
+  box-shadow: ${shadows.neumorphic.extra} !important;
   transition: backgorund 0.5s;
+
+  &:hover {
+    color: white !important;
+  }
 
   &:disabled {
     cursor: not-allowed;

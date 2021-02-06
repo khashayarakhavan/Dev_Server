@@ -80,13 +80,10 @@ export const HeroHeaderLeftContainer = ({ toggleMenuOpen, menuOpen, popUpOpen, t
     <HeroHeaderLeft>
       <Heading>
         <p className="hi">
-          Hi<Accent_fireOrange>.</Accent_fireOrange>
+          Hi<Accent_fireOrange>.</Accent_fireOrange><br/>
           I'm <Accent_fireOrange>K</Accent_fireOrange>hashi
         </p>
-        <p className="verb">{/* I<Accent_mateBlue>’</Accent_mateBlue>m */}</p>
-        <p className="name">
-          {/* <Accent_fireOrange>K</Accent_fireOrange>hashi */}
-        </p>
+        
       </Heading>
 
       <TEXT>

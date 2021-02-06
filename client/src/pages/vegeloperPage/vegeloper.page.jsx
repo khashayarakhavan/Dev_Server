@@ -60,6 +60,9 @@ import {
   CodeInput,
   CodeDash,
   GradientButton,
+  GridContainer,
+  LocalLeft,
+  LocalRight,
 } from "../../interactions/SlideUp/slideUp.styles";
 
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
@@ -86,31 +89,37 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
       <Dialog isOpen={popUpOpen}>
         <DialogContent>
           <Header>
-            <Title>Need a Call?</Title>
-            <span className="material-icons" onClick={() => togglePopUp(false)}>
+            {/* <Title style={{ gridColumn: "1/2" }}>
+              Need to know more about me? headphones on ! 🎧
+            </Title> */}
+            {/* <Title style={{ gridColumn: "2/3" }}>
+              or have an awesome project!?✨🚀
+            </Title> */}
+            <span
+              style={{ gridColumn: "3/4" }}
+              className="material-icons"
+              onClick={() => togglePopUp(false)}
+            >
               close
             </span>
           </Header>
+          <GridContainer>
+          <LocalLeft>
+                hi
+          </LocalLeft>
+          <LocalRight>
+hello
+          </LocalRight>
+
+          </GridContainer>
+
           <Message>Please Enter Your Phone Number </Message>
-          <CodeRow>
+          
+          {/* <CodeRow>
             <CodeInput placeholder="0" />
             <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            <CodeInput placeholder="0" />
-          </CodeRow>
+            
+          </CodeRow> */}
           <GradientButton onClick={togglePopUp}>Submit</GradientButton>
         </DialogContent>
       </Dialog>

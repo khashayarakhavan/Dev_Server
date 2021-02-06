@@ -3,6 +3,7 @@ import styled, {css} from "styled-components";
 import { rgba } from "polished";
 //Design
 import colors from '../../design/colors';
+import shadows from '../../design/shadows.styles';
 import respond from '../../design/responsive';
 
 //Code
@@ -99,12 +100,38 @@ export const DialogContent = styled.div`
   padding: 2rem;
 `;
 
+export const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  ${'' /* grid-template-rows: 1fr 100px; */}
+  margin-top: 1rem;
+  
+  ${'' /* box-shadow: ${shadows.neumorphic.original}; */}
+  ${'' /* background: #1234F1; */}
+`;
+
+export const LocalLeft = styled.div`
+  box-shadow: ${shadows.neumorphic.original};
+  background: red;
+  border-radius: 6px;
+`;
+
+export const LocalRight = styled.div`
+  box-shadow: ${shadows.neumorphic.original};
+  background: yellow;
+  border-radius: 6px;
+`;
+
 export const Header = styled.div`
+  ${'' /* display: grid;
+  grid-template-columns: 1fr  1fr 25px ; */}
   display: flex;
   
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.75rem;
+  justify-content: flex-end;
+  ${'' /* margin-bottom: 1.75rem; */}
 
   & > .material-icons {
     color: ${rgba("#10132F", 0.38)};

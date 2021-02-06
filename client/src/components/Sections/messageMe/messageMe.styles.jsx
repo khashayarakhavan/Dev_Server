@@ -4,7 +4,7 @@ import shadows from '../../../design/shadows.styles';
 
 
 export const MessageMeContainer = styled.div`
-  grid-column: full-start / full-end;
+  grid-column: center-start / center-end;
   position: relative;
   
   box-shadow: ${shadows.neumorphic.orangeOld};
@@ -19,9 +19,9 @@ export const MessageMeContainer = styled.div`
   overflow: hidden;
 
   position: relative;
-  width: 850px;
+  ${'' /* width: 850px;
   width: min-content;
-  width: 50vw;
+  width: 50vw; */}
 
   background: transparent ;
   background: ${colors.neutrals.lighter};
