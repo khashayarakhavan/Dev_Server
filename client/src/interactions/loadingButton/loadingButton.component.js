@@ -1,13 +1,57 @@
 //Framework
 import React, { useState, useEffect } from "react";
 //Styles
-import {Button, Loader, Inner} from './loadingButton.styles';
+import {Button, Loader, Inner, RequestStatusColor } from './loadingButton.styles';
+//Libraries
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { Textfit } from "react-textfit";
+import { CSSTransition, TransitionGroup, Transition } from "react-transition-group";
+import uuid from "uuid";
+
+import "./styles.css";
+
+
+const duration = 300;
+
+const defaultStyle = {
+  // transition: `opacity ${duration}ms ease-in-out`,
+  transition: `all ${duration}ms ease-in-out`,
+  opacity: 0,
+  // padding: 20,
+  display: "inline-block",
+  // backgroundColor: "#8787d8",
+};
+
+const transitionStyles = {
+  entering: { opacity: 1, color: '' },
+  entered: { opacity: 1 , color: ''},
+  exiting: {opacity: 1, color: '', transform: 'translateY(10px)'},
+  exited: {opacity: 1, color: '' , transform: 'translateY(-40px) translateX(10px)'},
+};
+
+const Fade = ({ in: inProp }) => (
+  <Transition in={inProp} timeout={duration}>
+    {(state) => (
+      <div
+        style={{
+          ...defaultStyle,
+          ...transitionStyles[state],
+        }}
+      >
+        <FontAwesomeIcon icon={faPaperPlane} style={{ color: "" }} />
+      </div>
+    )}
+  </Transition>
+);
+
+
 
 
 const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsComplete}) => {
   // const [isLoading, setIsLoading] = useState(false);
   // const [isComplete, setIsComplete] = useState(isCompletes);
-  // const [isError, setIsError] = useState(isErrors);
+  const [show, setShow] = useState(!isLoading);
   
   useEffect(() => {  
     if(isComplete === true) setTimeout(() => {
@@ -38,6 +82,7 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
       
   //   }
   // };
+  
 
   return (
     <div className="buttons">
@@ -47,15 +92,41 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
         isError={isError}
         disabled={isLoading || isComplete}
       >
+        <Fade in={!isComplete && !isLoading} />
+        {/* {!isComplete && !isLoading && (
+          <FontAwesomeIcon icon={faPaperPlane} style={{ color: "" }} />
+        )} */}
+
         {!isComplete && !isLoading && "mailMe"}
-        {isComplete && !isError && "Tnx😊 I'll res ASAP"}
-        {isComplete && isError && "Oops☹️ plz try again."}
+        {isComplete && !isError && (
+          <div style={{ width: `100%`, textAlign: "center" }}>
+            <Textfit mode="single" forceSingleModeWidth={true} max={"12"}>
+              <RequestStatusColor isComplete={isComplete} isError={isError}>
+                Tnx
+              </RequestStatusColor>
+              😊 I'll res ASAP
+            </Textfit>
+          </div>
+        )}
+        {isComplete && isError && (
+          <div style={{ width: `100%`, textAlign: "center" }}>
+            <Textfit mode="single" forceSingleModeWidth={true} max={"12"}>
+              <RequestStatusColor isComplete={isComplete} isError={isError}>
+                Ooops
+              </RequestStatusColor>
+              ☹️ plz try again.
+            </Textfit>
+          </div>
+        )}
+
+        {/* {isComplete && isError && "Oops☹️ plz try again."} */}
         {!isComplete && isLoading && (
           <>
             Mailing
             <Loader />
           </>
         )}
+
         <Inner
           className="blob-btn__inner"
           isComplete={isComplete}

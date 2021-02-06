@@ -11,13 +11,28 @@ const duration ={
 const backgroundColor= 'transparent';
 
 export const Inner = styled.span`
-  background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} !important;
-  background: ${(p) => p.isComplete && p.isError && `#fb6767`} !important;
-  color: ${(p) => (p.isComplete ? "white" : "#EB5E28")} !important;
+  ${
+    "" /* background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} !important;
+  background: ${(p) => p.isComplete && p.isError && `#fb6767`} !important; */
+  }
+  color: ${(p) => (p.isComplete ? "#EB5E28" : "#EB5E28")} !important;
+
+  &:hover {
+    color: ${(p) => (p.isComplete ? "white" : "#EB5E28")} !important;
+  }
 `;
+
+export const RequestStatusColor = styled.div`
+  ${'' /* font-size: 18px; */}
+  color: ${(p) => (p.isComplete ? `#16bd92` : `white`)};
+  color: ${(p) => p.isComplete && p.isError && `#fb6767`};
+`;
+
+
 export const Button = styled.button`
   position: relative;
   overflow: hidden;
+  width: 80%;
   width: 180px;
   height: 64px;
   padding: 0;
@@ -25,8 +40,8 @@ export const Button = styled.button`
   border-radius: 8px;
   cursor: pointer;
 
-  background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} ;
-  background: ${(p) => p.isComplete && p.isError && `#fb6767`};
+  ${'' /* background: ${(p) => (p.isComplete ? `#16bd92` : `white`)} ; */}
+  ${'' /* background: ${(p) => p.isComplete && p.isError && `#fb6767`}; */}
 
   ${'' /* color: ${(p) => (p.isComplete ? "white" : "#EB5E28")} !important; */}
   color: ##EB5E28;

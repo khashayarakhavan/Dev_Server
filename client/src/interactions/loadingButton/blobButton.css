@@ -15,10 +15,10 @@
  .blob-btn {
 	 z-index: 1;
 	 position: relative;
-	 padding: 20px 46px;
+	 /* padding: 20px 46px; */
 	 margin-bottom: 30px;
 	 text-align: center;
-	 text-transform: uppercase;
+	 /* text-transform: uppercase; */
 	 color: #EB5E28;
 	 font-size: 16px;
 	 font-weight: bold;
