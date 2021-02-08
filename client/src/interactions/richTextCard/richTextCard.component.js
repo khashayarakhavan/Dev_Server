@@ -17,7 +17,7 @@ import {
 } from "../../redux/vegeloperPage/vegeloperPage.actions";
 
 //Styles
-import { Card, Header, Image, Text } from "./richTextCard.styles";
+import { Card, Header, Image, Text, SubText, Wrapper_Text } from "./richTextCard.styles";
 //Assets
 // import vegeloperImage from "../../assets/SVG/Vegeloper.svg";
 import vegeloperImage from "../../assets/icon/unkownUser.png";
@@ -39,6 +39,8 @@ export const RichTextCard = ({
 }) => {
   const [editorLocalState, setEditorLocalState] = useState(() =>
     EditorState.createEmpty()
+    
+    
   );
   const [converted2HtmlContent, setConverted2HtmlContent] = useState(null);
   const [converted2RawContent, setConverted2RawContent] = useState(null);
@@ -50,9 +52,9 @@ export const RichTextCard = ({
   );
 
   useEffect(() => {
-   
+    setFocusToEnd();
     const rawEditorData = getSavedEditorData();
-   
+    // setEditorLocalState(EditorState.moveFocusToEnd(editorLocalState));
 
     if (rawEditorData !== null && effect === true ) {
       console.log("@@@FROM rawedit loader///");
@@ -309,6 +311,9 @@ export const RichTextCard = ({
     //   console.log(`😱 Axios request failed: ${e}`);
     // }
   };
+  const setFocusToEnd = () => {
+      setEditorLocalState(EditorState.moveFocusToEnd(editorLocalState));
+  };
 
   return (
     <Card>
@@ -322,21 +327,35 @@ export const RichTextCard = ({
             filter: "brightness(1.4) saturate(180%) hue-rotate(220deg)",
           }}
         />
-        <Text>
-          Are you working on your{" "}
-          <span style={{ color: "#102539", fontWeight: "400" }}>
-            gameChanging project{" "}
-          </span>
-          ?
-        </Text>
+        <Wrapper_Text>
+          <Text>
+            are you working on your
+            <br />{" "}
+            <span style={{ color: "#102539", fontWeight: "400" }}>
+              gameChanging{" "}
+            </span>
+            project ?
+          </Text>
+          <SubText>
+            write me a bit about my role in this exciting experience.
+          </SubText>
+        </Wrapper_Text>
       </Header>
+      {/* <button
+        onClick={() => {
+          setFocusToEnd();
+        }}
+      >
+        Set focus
+      </button> */}
       <Editor
         className="editor"
         editorState={editorLocalState}
         // editorState={textState}
         onEditorStateChange={handleEditorChange}
+        preserveSelectionOnBlur={true}
         // onEditorStateChange={onChange}
-        placeholder="Can't wait to know about it 🤩"
+        placeholder="write me a bit about my role in this exciting experience 🤩"
         toolbar={{
           options: ["inline"],
           inline: {

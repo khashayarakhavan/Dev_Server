@@ -25,10 +25,18 @@ const defaultStyle = {
 };
 
 const transitionStyles = {
-  entering: { opacity: 1, background: '' },
-  entered: { opacity: 1 , background: ''},
-  exiting: {opacity: 1, color: '', transform: 'translateY(10px)'},
-  exited: {opacity: 1, color: '' , transform: 'translateY(-40px) translateX(20px)'},
+  entering: { opacity: 1, background: "" },
+  entered: { opacity: 1, background: "" },
+  exiting: {
+    opacity: 1,
+    color: "",
+    transform: "translateY(10px)",
+  },
+  exited: {
+    opacity: 1,
+    color: "",
+    transform: "translateY(-40px) translateX(20px) ",
+  },
 };
 
 const Fade = ({ in: inProp }) => (
@@ -140,7 +148,7 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
       </Button>
       {/* <br /> */}
 
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      {/* <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <filter id="goo">
             <feGaussianBlur
@@ -157,7 +165,7 @@ const LoadingButton = ({isError, isComplete, isLoading, handleSubmit, toggleIsCo
             <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
           </filter>
         </defs>
-      </svg>
+      </svg> */}
     </div>
   );
   // return (

@@ -82,6 +82,7 @@ export const Loader = styled.span`
 
   background: linear-gradient(to right, #fc00ff, #00dbde);
   background: linear-gradient(to right, #102539, #fd6a0f);
+  background: linear-gradient(to right, #fff, #fd6a0f);
 
   animation: ${loadKeyFrames} 1s 5;
 `;

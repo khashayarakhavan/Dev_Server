@@ -29,6 +29,18 @@ export const Card = styled.div`
   ${"" /* background: white; */}
   ${"" /* box-shadow: 0 4px 15px ${rgba("black", 0.05)}; */}
 
+  & .public-DraftEditor-content {
+    color: orange;
+    ${'' /* font-size: 28px; */}
+  }
+
+  .public-DraftEditorPlaceholder-root {
+  ${'' /* color: red; */}
+  font-size: 14px;
+  padding-left: 50px;
+}
+
+
   & .rdw-editor-wrapper {
     display: flex;
     flex-direction: column-reverse;
@@ -187,7 +199,22 @@ export const Image = styled.div`
 export const Text = styled.span`
   color: #acaab7;
   color: ${colors.neutrals.darkest};
-  font-size: 22px;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  padding-left: 1rem;
+
+  span {
+    font-weight: 400;
+  }
+
+  ${"" /* background: white; */}
+`;
+
+export const SubText = styled.span`
+  color: #acaab7;
+  color: ${colors.neutrals.darkest};
+  font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   padding-left: 1rem;
@@ -195,6 +222,9 @@ export const Text = styled.span`
   ${"" /* background: white; */}
 `;
 
-
+export const Wrapper_Text = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 
