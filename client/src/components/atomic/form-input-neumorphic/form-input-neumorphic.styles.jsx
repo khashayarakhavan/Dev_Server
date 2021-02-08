@@ -1,12 +1,16 @@
 import styled, { css } from 'styled-components';
 
 const subColor = 'grey';
-const mainColor = 'black';
+const mainColor = "#143351";
 
 const shrinkLabelStyles = css`
   top: -14px;
   font-size: 12px;
-  color: ${mainColor};
+  ${"" /* color: ${mainColor}; */}
+  &:invalid {
+    ${"" /* border-bottom: 3px solid red; */}
+    color: red;
+  }
 `;
 
 export const GroupContainer = styled.div`
@@ -26,17 +30,50 @@ export const FormInputContainer = styled.input`
   padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
+  height: min-content;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #143351;
   border: none;
-  border-radius: 0;
-  border-bottom: 1px solid ${subColor};
-  margin: 25px 0;
+  border-radius: 3rem;
 
-  &:focus {
-    outline: none;
+  &:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 50%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 10px solid blue; /* This creates the border. Replace black with whatever color you want. */
   }
+
+  ${"" /* border-bottom: 1px solid ${subColor}; */}
+  margin: 25px 0;
 
   &:focus ~ label {
     ${shrinkLabelStyles}
+  }
+
+  &:required {
+    //removes the red shadow if the input is invalid.
+    box-shadow: none;
+  }
+
+  &:invalid {
+    border: none;
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+    ${"" /* box-shadow: 0 1rem 2rem rgba($color-black, 0.1); */}
+    ${"" /*  */}
+    ${"" /* color: green; */}
+    ${"" /* border-bottom: 3px solid rgb(102, 235, 102); */}
+
+    &:invalid {
+      ${"" /* border-bottom: 3px solid red; */}
+      ${'' /* color: #f22; */}
+    }
   }
 `;
 
@@ -51,6 +88,10 @@ export const FormInputLabel = styled.label`
   left: 5px;
   top: 10px;
   transition: 300ms ease all;
+  color: #143351;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
 
   &.shrink {
     ${shrinkLabelStyles}

@@ -19,6 +19,8 @@ export const MessageMeContainer = styled.div`
   overflow: hidden;
 
   position: relative;
+  width: 75%;
+  width: 55vw;
   ${'' /* width: 850px;
   width: min-content;
   width: 50vw; */}

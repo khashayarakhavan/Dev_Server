@@ -329,7 +329,7 @@ export const RichTextCard = ({
         />
         <Wrapper_Text>
           <Text>
-            are you working on your
+            Need a developer for your
             <br />{" "}
             <span style={{ color: "#102539", fontWeight: "400" }}>
               gameChanging{" "}
@@ -337,7 +337,7 @@ export const RichTextCard = ({
             project ?
           </Text>
           <SubText>
-            write me a bit about my role in this exciting experience.
+            Tell me about it . . .
           </SubText>
         </Wrapper_Text>
       </Header>
@@ -352,10 +352,11 @@ export const RichTextCard = ({
         className="editor"
         editorState={editorLocalState}
         // editorState={textState}
+        // onBlur={() => setFocusToEnd()}
         onEditorStateChange={handleEditorChange}
         preserveSelectionOnBlur={true}
         // onEditorStateChange={onChange}
-        placeholder="write me a bit about my role in this exciting experience 🤩"
+        placeholder="Can't wait to read your msg 🤩"
         toolbar={{
           options: ["inline"],
           inline: {

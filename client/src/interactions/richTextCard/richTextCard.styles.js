@@ -30,14 +30,21 @@ export const Card = styled.div`
   ${"" /* box-shadow: 0 4px 15px ${rgba("black", 0.05)}; */}
 
   & .public-DraftEditor-content {
-    color: orange;
-    ${'' /* font-size: 28px; */}
+    ${"" /* color: orange; */}
+    ${"" /* font-size: 28px; */}
+    font-weight: 400;
+    font-weight: 500;
+    color: #D65522;
   }
 
   .public-DraftEditorPlaceholder-root {
-  ${'' /* color: red; */}
+  ${"" /* color: red; */}
   font-size: 14px;
-  padding-left: 50px;
+  padding-left: 5px;
+  color: orange;
+  color: #fd6a0f;
+  color: #D65522;
+  font-weight: 600;
 }
 
 
@@ -214,10 +221,11 @@ export const Text = styled.span`
 export const SubText = styled.span`
   color: #acaab7;
   color: ${colors.neutrals.darkest};
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   padding-left: 1rem;
+  padding-top: 1rem;
 
   ${"" /* background: white; */}
 `;

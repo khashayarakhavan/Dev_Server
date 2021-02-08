@@ -145,7 +145,7 @@ const MessageMeSection = ({
         />
       </LeftSide>
 
-      <RightSide style={{marginRight: "2rem"}}>
+      <RightSide style={{ marginRight: "2rem" }}>
         <CountryPicker
           customerCountry={customerCountry}
           updateCustomerCountry={updateCustomerCountry}
@@ -160,7 +160,7 @@ const MessageMeSection = ({
             label="How may I call you?"
             required
           />
-          <FormInput
+          <FormInputNeumorphic
             type="email"
             name="email"
             value={email}
