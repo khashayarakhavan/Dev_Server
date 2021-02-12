@@ -1,5 +1,5 @@
 //Libraries
-import styled, {css} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 import { rgba } from "polished";
 //Design
 import colors from '../../design/colors';
@@ -102,23 +102,44 @@ export const DialogContent = styled.div`
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   ${'' /* grid-template-rows: 1fr 100px; */}
   margin-top: 1rem;
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ${'' /* height: 3rem; */}
+    ${'' /* background: transparent !important; */}
+    font-size: 14px;
+    font-weight: 600;
+  }
   
   ${'' /* box-shadow: ${shadows.neumorphic.original}; */}
   ${'' /* background: #1234F1; */}
 `;
 
 export const LocalLeft = styled.div`
+grid-column: 1/ span 1;
+  box-shadow: ${shadows.neumorphic.original};
+  background: pink;
+  border-radius: 6px;
+`;
+
+export const LocalCenter = styled.div`
+grid-column: 2/ span 1;
   box-shadow: ${shadows.neumorphic.original};
   background: red;
   border-radius: 6px;
 `;
 
+
+
 export const LocalRight = styled.div`
   box-shadow: ${shadows.neumorphic.original};
+  grid-column: 3 / span 1;
   background: yellow;
   border-radius: 6px;
 `;
@@ -146,9 +167,120 @@ export const Title = styled.div`
 
 export const Message = styled.div`
   font-size: 1.2875rem;
-  color: ${rgba("#10132F", 0.38)};
-  margin-bottom: 1.75rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: rgba("#10132F", 0.38);
+  ${'' /* margin-bottom: 1.75rem; */}
 `;
+export const SubMessage = styled.div`
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: ${colors.primary};
+  margin-bottom: 1.75rem;
+  margin-left: 2px;
+`;
+
+
+const colorChange4 = (backColor) => keyframes`
+  0% { background:  transparent;}
+  20% { background:  ${backColor}; }
+  100% { background:  ${backColor};  }
+  ${"" /* 100% { background:  transparent; } */}
+`;
+const colorChange3 = (backColor) => keyframes`
+  from { background:  transparent;}
+  to { background:  ${backColor};  }
+  ${'' /* 100% { background:  transparent; } */}
+`;
+const colorChange2 = (color) => keyframes`
+  0% { background:  transparent;}
+  50% { background:  ${color};  }
+  100% { background:  transparent; }
+`;
+const colorChange = keyframes`
+  0% { background:  blue;}
+  ${'' /* 50% { background:  red;  } */}
+  100% { background:  red; }
+`;
+
+const background_change = (backColor) => keyframes`
+  0% {
+    background-color: ${backColor};
+    opacity: 0%;
+  }
+
+  50% {
+    background-color: ${backColor};
+    opacity: 100%;
+  }
+
+  100% {
+   background-color: none;
+  }
+`;
+
+export const spinMotion = keyframes`
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg);};
+`;
+
+const breatheAnimation = keyframes`
+ 0% { height: 100px; width: 100px; background: red; }
+ 30% { height: 400px; width: 400px; opacity: 1; background: blue; }
+ 40% { height: 405px; width: 405px; opacity: 0.3; background: white; }
+ 100% { height: 100px; width: 100px; opacity: 0.6; background: green; }
+`;
+
+
+export const Circle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: ${colors.primary};
+  font-family: "Poppins", sans-serif;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+
+  ${"" /* animation: ${breatheAnimation} 8s infinite; */}
+  ${"" /* animation: ${spinMotion} 8s infinite; */}
+  animation: ${colorChange} 0.8s infinite;
+
+  animation: ${colorChange2()} 1s ease infinite;
+
+  ${"" /* animation: name time func delay iteration dir fill play; */}
+  ${
+    "" /* animation: ${colorChange3(
+    "plum"
+  )} 2s ease-in-out 0.5s infinite alternate none running;
+  animation: ${colorChange3("plum")} ${(props) => props.duration} ease-in-out
+    ${(props) => props.delay} infinite alternate none running; */
+  }
+
+  animation: ${(props) => colorChange3(props.backColor)} ${(props) =>
+    props.duration}
+    ease-in-out ${(props) => props.delay} infinite alternate none running;
+
+  animation: ${(props) => colorChange4(props.backColor)}
+    ${(props) => props.duration} linear ${(props) => props.delay} infinite ;
+`;
+
+
+export const NumberCircle = styled.div`
+  ${"" /* border-radius: 50%; */}
+  ${"" /* grid-column: 1/ span 1; */}
+  width: 150px;
+  height: 15px;
+  ${"" /* height: 15px; */}
+  
+  background: red !important;
+  transition: all 1s;
+  ${"" /* animation: ${colorChange("red")} 2s ease-in-out infinite linear; */}
+  animation: ${colorChange} 1s linear;
+`;
+
 
 export const CodeRow = styled.div`
   display: flex;

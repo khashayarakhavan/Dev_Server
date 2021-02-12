@@ -4,16 +4,16 @@ import React from 'react';
 import colors from '../../../design/colors';
 
 //Style
-import { SectionHeading, HeadingContainer, Heading ,} from "./heading.styles";
+import { SectionHeading, HeadingContainer, Heading } from "./heading.styles";
 
 //Code
-const Template = () => {
+const Template = ({text}) => {
   return (
     <SectionHeading>
       <HeadingContainer>
         <Heading>
           <h1>
-            Wanna Know me in <span style={{}}> a </span> minute?
+            {text}
           </h1>
           <h4>
             Just hit{" "}

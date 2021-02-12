@@ -51,7 +51,7 @@ const HiPalContent = ({richTextMessageAsHTML, customerCountry, menuOpen, toggleM
   return (
     <HiPalContainer className="HiPalContainer" id="test">
       <TopMenu />
-      <Heading />
+      <Heading text="I believe in myself." />
       <MessageMe />
       {/* <PasswordValidator /> */}
       {/* <button onClick={handleSubmit}>CLICK TO LOG</button> */}

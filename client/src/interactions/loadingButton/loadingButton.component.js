@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import {Button, Loader, Inner, RequestStatusColor } from './loadingButton.styles';
 //Libraries
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faPaperPlane, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Textfit } from "react-textfit";
 import { CSSTransition, TransitionGroup, Transition } from "react-transition-group";
 import uuid from "uuid";
@@ -49,6 +49,7 @@ const Fade = ({ in: inProp }) => (
         }}
       >
         <FontAwesomeIcon icon={faPaperPlane} style={{ color: "" }} />
+        <FontAwesomeIcon icon={faDownload} style={{ color: "" }} />
       </div>
     )}
   </Transition>

@@ -16,6 +16,9 @@ import TopMenu from '../../components/Sections/header/header.component';
 import Heading from '../../components/Sections/Heading/heading.component';
 import ScrollHorizontal from '../../components/Sections/ScrollHorizontal/scrollHorizontal.component';
 import HeroHeader from "../../components/complex/hero-header/heroHeader.component";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faPaperPlane, faDownload, faPlayCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 // import HeroHeaderLeftContainer ,{
 //   HeroHeaderRightContainer,
 // } from "../../components/complex/hero-header/heroHeader.component";
@@ -56,6 +59,7 @@ import {
   Header,
   Title,
   Message,
+  SubMessage,
   CodeRow,
   CodeInput,
   CodeDash,
@@ -63,6 +67,9 @@ import {
   GridContainer,
   LocalLeft,
   LocalRight,
+  LocalCenter,
+  NumberCircle,
+  Circle,
 } from "../../interactions/SlideUp/slideUp.styles";
 
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
@@ -103,18 +110,37 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
               close
             </span>
           </Header>
-          <GridContainer>
-          <LocalLeft>
-                hi
-          </LocalLeft>
-          <LocalRight>
-hello
-          </LocalRight>
 
+          <Message>
+            Need a focused developer{" "}
+            <span style={{ fontSize: "3.5rem" }}>ASAP ?</span>{" "}
+          </Message>
+          <SubMessage>just follow these steps.</SubMessage>
+          <GridContainer>
+            <LocalLeft>
+              <FontAwesomeIcon
+                icon={faPlayCircle}
+                style={{ color: "orange" }}
+              />
+              videoResume
+              {/* <NumberCircle>hi</NumberCircle> */}
+              <Circle backColor="plum" delay="0s" duration="1s">1</Circle>
+              <Circle backColor="green" delay="0.2s" duration="1s">2</Circle>
+              
+              <Circle  backColor="yellow" delay="0.4s" duration="1s">3</Circle>
+            </LocalLeft>
+            <LocalCenter>
+              2-
+              <FontAwesomeIcon icon={faPaperPlane} style={{ color: "plum" }} />
+              directMe
+            </LocalCenter>
+            <LocalRight>
+              3-
+              <FontAwesomeIcon icon={faDownload} style={{ color: "pink" }} />
+              myCV
+            </LocalRight>
           </GridContainer>
 
-          <Message>Please Enter Your Phone Number </Message>
-          
           {/* <CodeRow>
             <CodeInput placeholder="0" />
             <CodeDash>-</CodeDash>
@@ -130,7 +156,7 @@ hello
           <HeroHeader.LeftContainer name="firstInsideContainer" />
           <HeroHeader.RightContainer />
           <ScrollDownCTA />
-          <Heading />
+          <Heading text="Wanna know me in a minute?" />
           <Element name="test1" className="element" />
           <YouTube />
           <Element name="test2" className="element" />
