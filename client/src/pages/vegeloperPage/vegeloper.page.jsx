@@ -64,12 +64,15 @@ import {
   CodeInput,
   CodeDash,
   GradientButton,
+  GridContainerWrapper,
   GridContainer,
   LocalLeft,
   LocalRight,
   LocalCenter,
+  SubLocal,
   NumberCircle,
   Circle,
+  ReadMore
 } from "../../interactions/SlideUp/slideUp.styles";
 
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
@@ -103,7 +106,11 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
               or have an awesome project!?✨🚀
             </Title> */}
             <span
-              style={{ gridColumn: "3/4" }}
+              style={{
+                gridColumn: "3/4",
+                background: "white",
+                borderRadius: "50%",
+              }}
               className="material-icons"
               onClick={() => togglePopUp(false)}
             >
@@ -111,42 +118,75 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
             </span>
           </Header>
 
-          <Message>
-            Need a focused developer{" "}
-            <span style={{ fontSize: "3.5rem" }}>ASAP ?</span>{" "}
-          </Message>
-          <SubMessage>just follow these steps.</SubMessage>
-          <GridContainer>
-            <LocalLeft>
-              <FontAwesomeIcon
-                icon={faPlayCircle}
-                style={{ color: "orange" }}
-              />
-              videoResume
-              {/* <NumberCircle>hi</NumberCircle> */}
-              <Circle backColor="plum" delay="0s" duration="1s">1</Circle>
-              <Circle backColor="green" delay="0.2s" duration="1s">2</Circle>
-              
-              <Circle  backColor="yellow" delay="0.4s" duration="1s">3</Circle>
-            </LocalLeft>
-            <LocalCenter>
-              2-
-              <FontAwesomeIcon icon={faPaperPlane} style={{ color: "plum" }} />
-              directMe
-            </LocalCenter>
-            <LocalRight>
-              3-
-              <FontAwesomeIcon icon={faDownload} style={{ color: "pink" }} />
-              myCV
-            </LocalRight>
-          </GridContainer>
+          {/*
+           */}
+
+          <GridContainerWrapper>
+            <Message>
+              No Waffles<span style={{ color: "#EB5E28", margin: 0 }}>.</span>
+              {/* <span style={{ fontSize: "3.5rem" }}>ASAP?</span>{" "} */}
+              <span style={{ fontSize: "1.5rem", fontFamily: "Poppins" }}>
+                <br />
+                Just follow these steps . . .
+              </span>
+              <SubMessage>
+                Need more info?
+              </SubMessage>
+              <ReadMore>
+                Read more
+              </ReadMore>
+            </Message>
+
+            <GridContainer style={{ gridRow: "1/-1" }}>
+              <LocalLeft style={{ marginBottom: "1rem" }}>
+                <Circle backColor="#f4cbbd" delay="0s" duration="3s">
+                  1
+                </Circle>
+                <SubLocal>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faPlayCircle}
+                    style={{ color: "orange", marginRight: "2rem" }}
+                  />
+                  videoResume
+                </SubLocal>
+                {/* <NumberCircle>hi</NumberCircle> */}
+              </LocalLeft>
+
+              <LocalCenter style={{ marginBottom: "1rem" }}>
+                <Circle backColor="darksalmon" delay="0.2s" duration="3s">
+                  2
+                </Circle>
+                <SubLocal>
+                  <FontAwesomeIcon
+                    icon={faDownload}
+                    style={{ color: "pink", marginRight: "2rem" }}
+                  />
+                  pdfCV
+                </SubLocal>
+              </LocalCenter>
+
+              <LocalRight>
+                <Circle backColor="coral" delay="0.4s" duration="3s">
+                  3
+                </Circle>
+                <SubLocal style={{ marginBottom: "0rem" }}>
+                  <FontAwesomeIcon
+                    icon={faPaperPlane}
+                    style={{ color: "plum", marginRight: "2rem" }}
+                  />
+                  directMe
+                </SubLocal>
+              </LocalRight>
+            </GridContainer>
+          </GridContainerWrapper>
 
           {/* <CodeRow>
             <CodeInput placeholder="0" />
             <CodeDash>-</CodeDash>
             
           </CodeRow> */}
-          <GradientButton onClick={togglePopUp}>Submit</GradientButton>
+          {/* <GradientButton onClick={togglePopUp}>Submit</GradientButton> */}
         </DialogContent>
       </Dialog>
 

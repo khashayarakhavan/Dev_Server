@@ -99,22 +99,31 @@ export const Dialog = styled.div`
 export const DialogContent = styled.div`
   padding: 2rem;
 `;
+export const GridContainerWrapper = styled.div`
+margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  ${'' /* background: pink; */}
+`;
 
 export const GridContainer = styled.div`
+grid-column: 2/ span 1;
+  ${'' /* background: grey; */}
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 10px;
   ${'' /* grid-template-rows: 1fr 100px; */}
-  margin-top: 1rem;
+  ${'' /* margin-top: 1rem; */}
 
   & > * {
     display: flex;
-    justify-content: center;
+    ${'' /* justify-content: center; */}
     align-items: center;
     ${'' /* height: 3rem; */}
     ${'' /* background: transparent !important; */}
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 200;
   }
   
   ${'' /* box-shadow: ${shadows.neumorphic.original}; */}
@@ -122,26 +131,56 @@ export const GridContainer = styled.div`
 `;
 
 export const LocalLeft = styled.div`
-grid-column: 1/ span 1;
-  box-shadow: ${shadows.neumorphic.original};
-  background: pink;
+  grid-row: 1 / span 1;
+ 
+  background: transparent;
   border-radius: 6px;
 `;
 
 export const LocalCenter = styled.div`
-grid-column: 2/ span 1;
-  box-shadow: ${shadows.neumorphic.original};
-  background: red;
+  grid-row: 2 / span 1;
+ 
+  background: transparent;
   border-radius: 6px;
 `;
 
 
 
 export const LocalRight = styled.div`
-  box-shadow: ${shadows.neumorphic.original};
-  grid-column: 3 / span 1;
-  background: yellow;
+ 
+  grid-row: 3 / span 1;
+  background: transparent;
   border-radius: 6px;
+`;
+
+export const ReadMore = styled.div`
+  margin-top: "0.2rem";
+  color: red;
+  color: #EB5E28;
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+`;
+
+export const SubLocal = styled.div`
+  box-shadow: ${shadows.neumorphic.original};
+  width: min-content;
+  width: 17rem;
+  border-radius: 6px;
+  background: white;
+  height: 2rem;
+  margin-left: 2rem;
+
+  padding: 2rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  :hover {
+    background: orange;
+    color: white;
+  }
+
+ 
 `;
 
 export const Header = styled.div`
@@ -166,25 +205,29 @@ export const Title = styled.div`
 `;
 
 export const Message = styled.div`
+  grid-column: 1 / span 1;
   font-size: 1.2875rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-family: "Rubik Mono One", Cambria, "Times New Roman", Times, sans-serif;
   font-weight: 400;
   color: rgba("#10132F", 0.38);
-  ${'' /* margin-bottom: 1.75rem; */}
+  ${"" /* margin-bottom: 1.75rem; */}
 `;
+
 export const SubMessage = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 200;
   color: ${colors.primary};
-  margin-bottom: 1.75rem;
+  margin-top: 6rem;
+  ${'' /* margin-bottom: 1.75rem; */}
   margin-left: 2px;
 `;
 
 
 const colorChange4 = (backColor) => keyframes`
   0% { background:  transparent;}
-  20% { background:  ${backColor}; }
-  100% { background:  ${backColor};  }
+  40% { background:  ${backColor}; }
+  100% { background:  ${backColor}; color: black; }
   ${"" /* 100% { background:  transparent; } */}
 `;
 const colorChange3 = (backColor) => keyframes`
