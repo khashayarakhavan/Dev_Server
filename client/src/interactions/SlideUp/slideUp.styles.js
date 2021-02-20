@@ -1,10 +1,18 @@
 //Libraries
 import styled, {css, keyframes} from "styled-components";
+import { Link as RouterLink} from "react-router-dom";
 import { rgba } from "polished";
+import {
+  Link as ScrollLink,
+  Element,
+  animateScroll as scroll,
+} from "react-scroll";
+
 //Design
 import colors from '../../design/colors';
 import shadows from '../../design/shadows.styles';
 import respond from '../../design/responsive';
+
 
 //Code
 export const Frame = styled.div`
@@ -130,24 +138,23 @@ grid-column: 2/ span 1;
   ${'' /* background: #1234F1; */}
 `;
 
-export const LocalLeft = styled.div`
+export const LocalLeft = styled(ScrollLink)`
   grid-row: 1 / span 1;
- 
+
   background: transparent;
   border-radius: 6px;
 `;
 
-export const LocalCenter = styled.div`
+export const LocalCenter = styled.a`
   grid-row: 2 / span 1;
- 
+
   background: transparent;
   border-radius: 6px;
 `;
 
 
 
-export const LocalRight = styled.div`
- 
+export const LocalRight = styled(RouterLink)`
   grid-row: 3 / span 1;
   background: transparent;
   border-radius: 6px;

@@ -76,7 +76,10 @@ import {
 } from "../../interactions/SlideUp/slideUp.styles";
 
 import { Link as ScrollLink, Element, animateScroll as scroll } from "react-scroll";
-import {ScrollLinkCustom} from './vegeloper.styles';
+import { ScrollLinkCustom } from "./vegeloper.styles";
+
+import {TransitionLink} from '../../interactions/TransitionLink/transitionLink.styles';
+
 const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
   
   const scrollToTop = () => {
@@ -129,16 +132,21 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
                 <br />
                 Just follow these steps . . .
               </span>
-              <SubMessage>
-                Need more info?
-              </SubMessage>
-              <ReadMore>
-                Read more
-              </ReadMore>
+              <SubMessage>Need more info?</SubMessage>
+              <ReadMore>Read more</ReadMore>
             </Message>
 
             <GridContainer style={{ gridRow: "1/-1" }}>
-              <LocalLeft style={{ marginBottom: "1rem" }}>
+              <LocalLeft
+                style={{ marginBottom: "1rem" }}
+                onClick={() => togglePopUp(false)}
+                activeClass="active"
+                to="test1"
+                spy={true}
+                smooth={true}
+                offset={-300}
+                duration={1000}
+              >
                 <Circle backColor="#f4cbbd" delay="0s" duration="3s">
                   1
                 </Circle>
@@ -153,7 +161,11 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
                 {/* <NumberCircle>hi</NumberCircle> */}
               </LocalLeft>
 
-              <LocalCenter style={{ marginBottom: "1rem" }}>
+              <LocalCenter
+                style={{ marginBottom: "1rem" }}
+                href="https://storage.googleapis.com/shaja-267509.appspot.com/ReactDeveloper_Canada.pdf"
+                onClick={() => togglePopUp(false)}
+              >
                 <Circle backColor="darksalmon" delay="0.2s" duration="3s">
                   2
                 </Circle>
@@ -166,7 +178,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
                 </SubLocal>
               </LocalCenter>
 
-              <LocalRight>
+              <LocalRight to="/hiPal" onClick={() => togglePopUp(false)}>
                 <Circle backColor="coral" delay="0.4s" duration="3s">
                   3
                 </Circle>
