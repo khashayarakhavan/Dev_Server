@@ -39,7 +39,20 @@ TODO never follow it
 
 
 
+
 */
+
+// const bookBtn = document.getElementById("book-tour");
+// if (bookBtn) {
+//   bookBtn.addEventListener("click", (e) => {
+//     e.target.textContent = "Processing...";
+//     /* javascript automatically converts the kebab-cased variables to camelCased variable  */
+//     /* so here instead of tour-id we use tourId alongwith ES6 destructuring */
+//     // const { tourId } = e.target.dataset;
+//     // bookTour(tourId);
+//   });
+// }
+
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 
 const App = ({ checkUserSession, currentUser, darkMode }) => {

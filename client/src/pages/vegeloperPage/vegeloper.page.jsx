@@ -164,7 +164,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
               <LocalCenter
                 style={{ marginBottom: "1rem" }}
                 href="https://storage.googleapis.com/shaja-267509.appspot.com/ReactDeveloper_Canada.pdf"
-                onClick={() => togglePopUp(false)}
+                target="_newtab"
               >
                 <Circle backColor="darksalmon" delay="0.2s" duration="3s">
                   2
