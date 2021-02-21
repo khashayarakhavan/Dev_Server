@@ -81,6 +81,8 @@ import { ScrollLinkCustom } from "./main.styles";
 
 import {TransitionLink} from '../../interactions/TransitionLink/transitionLink.styles';
 import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
+
+import {SlideUpButtonJelly} from '../../interactions/SlideUpButtonJelly/slideUpButtonJelly.component';
 const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
   
   const scrollToTop = () => {
@@ -108,110 +110,8 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
       <Burger onClick={toggleMenuOpen} className="uil uil-bars" /> */}
       <ModernNav toggleMenuOpen={toggleMenuOpen}  />
 
-
-      <Overlay isOpen={popUpOpen} onClick={togglePopUp} />
-      <Dialog isOpen={popUpOpen}>
-        <DialogContent>
-          <Header>
-            {/* <Title style={{ gridColumn: "1/2" }}>
-              Need to know more about me? headphones on ! 🎧
-            </Title> */}
-            {/* <Title style={{ gridColumn: "2/3" }}>
-              or have an awesome project!?✨🚀
-            </Title> */}
-            <span
-              style={{
-                gridColumn: "3/4",
-                background: "white",
-                borderRadius: "50%",
-              }}
-              className="material-icons"
-              onClick={() => togglePopUp(false)}
-            >
-              close
-            </span>
-          </Header>
-
-          {/*
-           */}
-
-          <GridContainerWrapper>
-            <Message>
-              No Waffles<span style={{ color: "#EB5E28", margin: 0 }}>.</span>
-              {/* <span style={{ fontSize: "3.5rem" }}>ASAP?</span>{" "} */}
-              <span style={{ fontSize: "1.5rem", fontFamily: "Poppins" }}>
-                <br />
-                Just follow these steps . . .
-              </span>
-              <SubMessage>Need more info?</SubMessage>
-              <ReadMore>Read more</ReadMore>
-            </Message>
-
-            <GridContainer style={{ gridRow: "1/-1" }}>
-              <LocalLeft
-                style={{ marginBottom: "1rem" }}
-                onClick={() => togglePopUp(false)}
-                activeClass="active"
-                to="test1"
-                spy={true}
-                smooth={true}
-                offset={-300}
-                duration={1000}
-              >
-                <Circle backColor="#f4cbbd" delay="0s" duration="3s">
-                  1
-                </Circle>
-                <SubLocal>
-                  {" "}
-                  <FontAwesomeIcon
-                    icon={faPlayCircle}
-                    style={{ color: "orange", marginRight: "2rem" }}
-                  />
-                  videoResume
-                </SubLocal>
-                {/* <NumberCircle>hi</NumberCircle> */}
-              </LocalLeft>
-
-              <LocalCenter
-                style={{ marginBottom: "1rem" }}
-                href="https://storage.googleapis.com/shaja-267509.appspot.com/ReactDeveloper_Canada.pdf"
-                target="_newtab"
-              >
-                <Circle backColor="darksalmon" delay="0.2s" duration="3s">
-                  2
-                </Circle>
-                <SubLocal>
-                  <FontAwesomeIcon
-                    icon={faDownload}
-                    style={{ color: "pink", marginRight: "2rem" }}
-                  />
-                  pdfCV
-                </SubLocal>
-              </LocalCenter>
-
-              <LocalRight to="/hiPal" onClick={() => togglePopUp(false)}>
-                <Circle backColor="coral" delay="0.4s" duration="3s">
-                  3
-                </Circle>
-                <SubLocal style={{ marginBottom: "0rem" }}>
-                  <FontAwesomeIcon
-                    icon={faPaperPlane}
-                    style={{ color: "plum", marginRight: "2rem" }}
-                  />
-                  directMe
-                </SubLocal>
-              </LocalRight>
-            </GridContainer>
-          </GridContainerWrapper>
-
-          {/* <CodeRow>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            
-          </CodeRow> */}
-          {/* <GradientButton onClick={togglePopUp}>Submit</GradientButton> */}
-        </DialogContent>
-      </Dialog>
+      <SlideUpButtonJelly  popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
+     
 
       <Content className="main_page-content" open={menuOpen}>
         <MainContainer id="test">
@@ -261,7 +161,109 @@ export default connect(mapStateToProps, mapDispatchToProps)(VegeloperPage);
 
 
 
+//  <Overlay isOpen={popUpOpen} onClick={togglePopUp} />
+//       <Dialog isOpen={popUpOpen}>
+//         <DialogContent>
+//           <Header>
+//             {/* <Title style={{ gridColumn: "1/2" }}>
+//               Need to know more about me? headphones on ! 🎧
+//             </Title> */}
+//             {/* <Title style={{ gridColumn: "2/3" }}>
+//               or have an awesome project!?✨🚀
+//             </Title> */}
+//             <span
+//               style={{
+//                 gridColumn: "3/4",
+//                 background: "white",
+//                 borderRadius: "50%",
+//               }}
+//               className="material-icons"
+//               onClick={() => togglePopUp(false)}
+//             >
+//               close
+//             </span>
+//           </Header>
 
+//           {/*
+//            */}
+
+//           <GridContainerWrapper>
+//             <Message>
+//               No Waffles<span style={{ color: "#EB5E28", margin: 0 }}>.</span>
+//               {/* <span style={{ fontSize: "3.5rem" }}>ASAP?</span>{" "} */}
+//               <span style={{ fontSize: "1.5rem", fontFamily: "Poppins" }}>
+//                 <br />
+//                 Just follow these steps . . .
+//               </span>
+//               <SubMessage>Need more info?</SubMessage>
+//               <ReadMore>Read more</ReadMore>
+//             </Message>
+
+//             <GridContainer style={{ gridRow: "1/-1" }}>
+//               <LocalLeft
+//                 style={{ marginBottom: "1rem" }}
+//                 onClick={() => togglePopUp(false)}
+//                 activeClass="active"
+//                 to="test1"
+//                 spy={true}
+//                 smooth={true}
+//                 offset={-300}
+//                 duration={1000}
+//               >
+//                 <Circle backColor="#f4cbbd" delay="0s" duration="3s">
+//                   1
+//                 </Circle>
+//                 <SubLocal>
+//                   {" "}
+//                   <FontAwesomeIcon
+//                     icon={faPlayCircle}
+//                     style={{ color: "orange", marginRight: "2rem" }}
+//                   />
+//                   videoResume
+//                 </SubLocal>
+//                 {/* <NumberCircle>hi</NumberCircle> */}
+//               </LocalLeft>
+
+//               <LocalCenter
+//                 style={{ marginBottom: "1rem" }}
+//                 href="https://storage.googleapis.com/shaja-267509.appspot.com/ReactDeveloper_Canada.pdf"
+//                 target="_newtab"
+//               >
+//                 <Circle backColor="darksalmon" delay="0.2s" duration="3s">
+//                   2
+//                 </Circle>
+//                 <SubLocal>
+//                   <FontAwesomeIcon
+//                     icon={faDownload}
+//                     style={{ color: "pink", marginRight: "2rem" }}
+//                   />
+//                   pdfCV
+//                 </SubLocal>
+//               </LocalCenter>
+
+//               <LocalRight to="/hiPal" onClick={() => togglePopUp(false)}>
+//                 <Circle backColor="coral" delay="0.4s" duration="3s">
+//                   3
+//                 </Circle>
+//                 <SubLocal style={{ marginBottom: "0rem" }}>
+//                   <FontAwesomeIcon
+//                     icon={faPaperPlane}
+//                     style={{ color: "plum", marginRight: "2rem" }}
+//                   />
+//                   directMe
+//                 </SubLocal>
+//               </LocalRight>
+//             </GridContainer>
+//           </GridContainerWrapper>
+
+//           {/* <CodeRow>
+//             <CodeInput placeholder="0" />
+//             <CodeDash>-</CodeDash>
+            
+//           </CodeRow> */}
+//           {/* <GradientButton onClick={togglePopUp}>Submit</GradientButton> */}
+//         </DialogContent>
+//       </Dialog>
 
 
 
