@@ -3,11 +3,13 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   .fade-enter {
     opacity: 0.01;
+    background: white;
   }
 
   .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 1300ms ease-in;
+    transition: background 2300ms ease-in;
+    background: white;
   }
 
   .fade-exit {

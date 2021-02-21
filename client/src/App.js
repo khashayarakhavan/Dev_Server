@@ -31,8 +31,7 @@ const App = ({ checkUserSession, currentUser, darkMode , ...props}) => {
         <ThemeProvider theme={darkMode ? invertTheme : noChange}>
           <div>
             <GlobalConstants />
-            <GlobalStyle darkMode />
-     
+            <GlobalStyle darkMode />     
 
             <ErrorBoundary>
               <Suspense fallback={<Spinner />}>
