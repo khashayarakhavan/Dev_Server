@@ -50,8 +50,11 @@ export const VegeloperContainer = styled(Element)`
     rgb(242, 223, 237),
     rgb(234, 241, 249)
   );
-  background: ${colors.neutrals.light};
+  background: transparent;
+  ${"" /* background: ${colors.neutrals.light}; */}
+  ${"" /* background: red; */}
 
+ 
   grid-template-rows:
     [first-line] repeat(10, [row-start] min-content [row-end])
     [last-line];

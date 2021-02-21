@@ -14,7 +14,8 @@ import {
   togglePopUp,
 } from "../../redux/vegeloperPage/vegeloperPage.actions";
 //Containers
-import {ScreenContainer, Content} from '../../design/containers.styles';
+import {ScreenContainer} from '../../design/containers.styles';
+import {Content} from './hiPal.styles';
 //Components
 import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
 import {SlideUpHiPal} from '../../interactions/SlideUp/slideUp.component';
@@ -27,10 +28,10 @@ const HiPalPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
     <ScreenContainer>
       {/* #ABSOLUTE ITEMS */}
       <ModernNav toggleMenuOpen={toggleMenuOpen} />
-      <SlideUpHiPal popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
+      {/* <SlideUpHiPal popUpOpen={popUpOpen} togglePopUp={togglePopUp} /> */}
 
       {/* #VISIBLE CONTENT */}
-      <Content open={menuOpen}>
+      <Content className="hiPal_page-content" open={menuOpen}>
         <HiPalContent />
       </Content>
     </ScreenContainer>

@@ -467,8 +467,9 @@ export const Burger = styled.button`
 export const Nav = styled.nav`
   position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   ${"" /* background: red; */}
   top: 50vh;
   transform: translateY(-50%);
