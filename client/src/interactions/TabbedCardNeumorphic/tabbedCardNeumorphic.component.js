@@ -3,6 +3,9 @@ import React, { useState } from "react";
 
 //Styles
 import { Row, Underline, Button, Content, Card, Tab } from "./tabbedCardNeumorphic.styles";
+import reactLogo from '../../assets/img/reactLogo.png'
+import mongoLogo from '../../assets/img/mongoLogo.png'
+import nodeLogo from '../../assets/img/nodeLogo.png'
 // import {Row, Avatar, Name, Card, List} from './tabbedCard.styles';
 
 
@@ -27,7 +30,6 @@ export const TabbedCard = () => {
 
   return (
     <Card>
-      
       <Content active={active}>
         <Tab>
           This project was an effort to better understand human behaviour.
@@ -35,22 +37,34 @@ export const TabbedCard = () => {
         <Tab>
           The most challenging part is mapping the real complex cognitive
           problem into a functional code.
-         
         </Tab>
         <Tab>
-          Node.js Express MongoDB
-          <div
-            style={{
-              borderRadius: "50%",
-              overflow: "hidden",
-              height: "50px",
-              width: "50px",
-            }}
-          >
+          Server-Side:
+          <div style={{ display: "flex" }}>
             <img
-              src="https://www.gannett-cdn.com/presto/2020/03/13/USAT/1c2efdbb-5801-4f59-860b-ff0874040fb6-VPC_CORONAVIRUS_CLOSES_DISNEY_PARKS_DESK_THUMB.jpg?crop=1911,1075,x2,y2&width=1911&height=1075&format=pjpg&auto=webp"
-              width="50px"
-              height="50px"
+              src={reactLogo}
+              style={{ marginRight: "1rem" }}
+              height="30px"
+            />
+            <img src={nodeLogo} style={{ marginRight: "1rem" }} height="30px" />
+            <img
+              src={mongoLogo}
+              style={{ marginRight: "1rem" }}
+              height="30px"
+            />
+          </div>
+          Logic:
+          <div style={{ display: "flex" }}>
+            <img
+              src={reactLogo}
+              style={{ marginRight: "1rem" }}
+              height="30px"
+            />
+            <img src={nodeLogo} style={{ marginRight: "1rem" }} height="30px" />
+            <img
+              src={mongoLogo}
+              style={{ marginRight: "1rem" }}
+              height="30px"
             />
           </div>
         </Tab>

@@ -20,7 +20,7 @@ export const Card = styled.div`
   position: relative;
   width: 200px;
   width: 100%;
-  height: 150px;
+  height: 17rem;
   background: transparent;
 `;
 
@@ -30,6 +30,7 @@ export const Row = styled.div`
   bottom: 0;
   width: 70%;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   ${"" /* margin-top: 5rem; */}
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -91,7 +92,7 @@ export const Content = styled.div`
   left: 0;
   content: "";
   height: 100%;
-  height: 10rem;
+  height: 12rem;
   font-size: 14px;
   font-weight: 800;
   
@@ -114,6 +115,7 @@ export const Tab = styled.div`
   width: 300px;
   padding-right: 8rem;
   padding-top: 1rem;
+  align-items: center;
   
   
 `;

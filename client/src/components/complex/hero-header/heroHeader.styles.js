@@ -529,6 +529,12 @@ export const Button = styled.div`
     left: 0;
     z-index: 1000;
   }
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
 `;
 
 export const HeroHeaderContainer = styled.header`
