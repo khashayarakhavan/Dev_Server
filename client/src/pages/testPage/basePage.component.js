@@ -27,19 +27,15 @@ import SlideUpDialog from '../../interactions/SlideUp/slideUp.component';
 import LazyCard from '../../interactions/LazyCard/lazyCard.component';
 import TabbedCard from '../../interactions/TabbedCard/tabbedCard.component';
 import ToolTip from '../../interactions/ToolTip/toolTip.component';
-import RichTextCard from '../../interactions/richTextCard/richTextCard.component';
+
 import CountryPicker from '../../interactions/CountryPicker/countryPicker.component';
 import Skeleton from '../../interactions/Skeleton/skeletonScreen.component';
 
 
 
-const BasePage = ({ menuOpen, toggleMenuOpen, richText, emailRichText }) => {
+const BasePage = ({ menuOpen, toggleMenuOpen,  }) => {
 
-  useEffect(() => {
-    if (richText) {
-      console.log(`@FROM TESTPAGE!!! this is rich text: `, richText.blocks[0].text);
-    }
-  }, [richText]);
+  
 
   const [open, setOpen] = useState(false);
   
@@ -76,9 +72,9 @@ const BasePage = ({ menuOpen, toggleMenuOpen, richText, emailRichText }) => {
         <Link to={"/"} className="homePage">
           {/* <Skeleton /> */}
         </Link>
-        
-        <RichTextCard />
-        <CountryPicker />
+        <TabbedCard />
+      
+        {/* <CountryPicker /> */}
         {/* <button onClick={handleClick}>Send Email!</button> */}
         {/* <SlideUpDialog /> */}
       </Content>
@@ -89,7 +85,7 @@ const BasePage = ({ menuOpen, toggleMenuOpen, richText, emailRichText }) => {
 const mapStateToProps = createStructuredSelector({
   // currentUser: selectCurrentUser,
   menuOpen: selectMenuOpen,
-  richText: selectRichText,
+
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -2,7 +2,8 @@
 import React from 'react';
 //Components
 import CardScroll from '../../atomic/cardScroll/cardScroll.component';
-
+import TabbedCard from '../../../interactions/TabbedCard/tabbedCard.component';
+import TabbedCardNeumorphic from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
 //Style
 import {
   ScrollContainerFlex,
@@ -14,7 +15,7 @@ const Template = () => {
   return (
     <ScrollContainerFlex>
       <ScrollCardContainer>
-        <CardScroll />
+        <TabbedCardNeumorphic />
       </ScrollCardContainer>
       <ScrollCardContainer>
         <CardScroll />

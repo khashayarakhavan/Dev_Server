@@ -27,7 +27,7 @@ const AboutMePage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
     <ScreenContainer>
       {/* #ABSOLUTE ITEMS */}
       <ModernNav toggleMenuOpen={toggleMenuOpen} />
-      <SlideUpHiPal popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
+      {/* <SlideUpHiPal popUpOpen={popUpOpen} togglePopUp={togglePopUp} /> */}
 
       {/* #VISIBLE CONTENT */}
       <Content open={menuOpen}>

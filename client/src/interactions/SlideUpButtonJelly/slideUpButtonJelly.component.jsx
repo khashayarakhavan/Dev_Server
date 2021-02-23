@@ -115,7 +115,11 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                 Just follow these steps . . .
               </span>
               <SubMessage>Need more info?</SubMessage>
-              <ReadMore>Read more</ReadMore>
+              <ReadMore>
+                <Link to="/aboutMe" onClick={() => togglePopUp(false)}>
+                  Read more
+                </Link>
+              </ReadMore>
             </Message>
 
             <GridContainer style={{ gridRow: "1/-1" }}>

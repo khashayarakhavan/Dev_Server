@@ -147,6 +147,10 @@ body {
     background: linear-gradient(45deg,
       rgb(242, 243, 247) ,
       rgba(229, 229, 229, 0.1) );   
+
+    *:focus {
+      outline: none;
+    }
 }
 
 ::selection {

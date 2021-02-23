@@ -114,7 +114,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
      
 
       <Content className="main_page-content" open={menuOpen}>
-        <MainContainer id="test">
+        <MainContainer className="main_page-container" id="test">
           <TopMenu />
           <HeroHeader.LeftContainer name="firstInsideContainer" />
           <HeroHeader.RightContainer />

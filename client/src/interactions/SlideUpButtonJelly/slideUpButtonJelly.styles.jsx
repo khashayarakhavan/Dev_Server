@@ -502,7 +502,7 @@ export const Phone = styled.div`
 `;
 
 const openStyles = css`
-  transform: translateX(150px) translateY(100px) ;
+  transform: translateX(150px) translateY(100px);
   border-radius: 10vw;
 `;
 
