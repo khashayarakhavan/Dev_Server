@@ -5,6 +5,7 @@ import { firstCardImage } from "../../../design/images";
 //Style
 import { CardScroll } from "./cardScroll.styles";
 import { Highlighter } from '../../../interactions/HighLighter/highlighter.styles';
+import TabbedCard from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
 //Code
 const Template = () => {
   return (
@@ -18,25 +19,26 @@ const Template = () => {
           borderRadius: "clamp(15px, 5vw, 20px)",
         }}
       />
-      <div className="iconTest">
+      <h3 className="heading-tertiary">
+        <Highlighter>AYOCO</Highlighter> Project
+      </h3>
+      {/* <span className="orangeLine" /> */}
+      {/* <div className="iconTest">
         <i className=" icon-basic-heart"></i>
-      </div>
+      </div> */}
       {/* <div className="iconTest">
               <i className=" icon-basic-heart"></i>
             </div> */}
 
-      <h3 className="heading-tertiary">
-        <Highlighter>AYOCO</Highlighter> Project
-      </h3>
-      <span />
-      <p className="feature-box__text">
+      <TabbedCard />
+      {/* <p className="feature-box__text">
         shaja baja much loven disch very guten disch
       </p>
       <div className="technologies">
         <i className=" icon-basic-heart"></i>
         <i className=" icon-basic-heart"></i>
         <i className=" icon-basic-heart"></i>
-      </div>
+      </div> */}
     </CardScroll>
   );
 };

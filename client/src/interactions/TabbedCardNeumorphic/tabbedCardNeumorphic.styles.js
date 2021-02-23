@@ -12,28 +12,31 @@ const duration ={
 
 
 export const transition = css`
-  transition: transform ${duration.transtion};
+  transition: transform ${duration.transtion}, background .3s;
 `;
 
 export const Card = styled.div`
   overflow: hidden;
-  ${'' /* position: absolute; */}
   position: relative;
-  ${'' /* top: 30rem;
-  right: 30rem; */}
   width: 200px;
-  height: 280px;
-  background: lightblue;
-  border-radius: 2vw;
+  width: 100%;
+  height: 150px;
+  background: transparent;
 `;
 
 export const Row = styled.div`
   position: relative;
-  
-  margin-top: 5rem;
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  margin-bottom: 1rem;
+  ${"" /* margin-top: 5rem; */}
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
+  box-shadow: ${shadows.neumorphic.original};
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background: transparent;
 `;
 
 export const Underline = styled.div`
@@ -41,8 +44,6 @@ export const Underline = styled.div`
   left: 0;
   bottom: 0;
   width: 33.333%;
-  width: 33.333%;
-  ${"" /* width: 33%; */}
   height: 6px;
   background: #6b44a9;
   background: ${colors.neutrals.lightest};
@@ -55,18 +56,25 @@ export const Underline = styled.div`
 export const Button = styled.button`
   flex: 1 1 33.3333%;
   width: 100%;
+  height: 3rem;
+  align-items: start;
   overflow: hidden;
-  box-shadow: ${shadows.neumorphic.original};
-  border-radius: 6px;
-  font-size: 20px;
+
+  &:first-of-type {
+    border-top-left-radius: 8px;
+  }
+  &:last-of-type {
+    border-top-right-radius: 8px;
+  }
+
+  ${"" /* border-radius: 50%; */}
+  ${"" /* border-radius: 6px; */}
+  
+  font-size: 10px;
   border: none;
-  height: 5rem;
   border-bottom: 1px solid ${rgba("white", 0.25)};
   background-color: ${(p) =>
     p.active ? colors.neutrals.lightest : "transparent"};
-  
-  
-
   color: ${(p) => rgba("white", p.active ? 0.85 : 0.25)};
   color: ${(p) =>
     p.active ? colors.accent.lightest : colors.neutrals.darkest};
@@ -78,22 +86,34 @@ export const Button = styled.button`
 
 export const Content = styled.div`
   position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
   content: "";
   height: 100%;
+  height: 10rem;
+  font-size: 14px;
+  font-weight: 800;
+  
+
+  ${"" /* background: red !important; */}
   display: flex;
-  //roll content based on active index 
+  //roll content based on active index
   transform: translateX(
-    ${p => p.active === 0 
-      ? 0
-      : `-${p.active * 300}px`
-    }
+    ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}px`)}
   );
   ${transition};
+
+  &:hover {
+    ${"" /* background: ${colors.neutrals.lightest}; */}
+  }
 `;
 
 export const Tab = styled.div`
-font-size: 24px;
-font-weight: 800;
-padding: 2rem;
+  width: 300%;
   width: 300px;
+  padding-right: 8rem;
+  padding-top: 1rem;
+  
+  
 `;

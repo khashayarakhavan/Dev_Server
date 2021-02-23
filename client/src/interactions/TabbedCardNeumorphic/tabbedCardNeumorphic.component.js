@@ -6,7 +6,7 @@ import { Row, Underline, Button, Content, Card, Tab } from "./tabbedCardNeumorph
 // import {Row, Avatar, Name, Card, List} from './tabbedCard.styles';
 
 
-export const tabs = ["1", "2", "3"];
+export const tabs = ["Goal", "Challenge", "Stack"];
 export const tabHeaders = ["Vibrant", "Pretty", "Awesome"];
 
 //Code
@@ -27,9 +27,34 @@ export const TabbedCard = () => {
 
   return (
     <Card>
-      <Tabs active={active} setActive={setActive} />
+      
       <Content active={active}>
-        {tabs.map((tab) => (
+        <Tab>
+          This project was an effort to better understand human behaviour.
+        </Tab>
+        <Tab>
+          The most challenging part is mapping the real complex cognitive
+          problem into a functional code.
+         
+        </Tab>
+        <Tab>
+          Node.js Express MongoDB
+          <div
+            style={{
+              borderRadius: "50%",
+              overflow: "hidden",
+              height: "50px",
+              width: "50px",
+            }}
+          >
+            <img
+              src="https://www.gannett-cdn.com/presto/2020/03/13/USAT/1c2efdbb-5801-4f59-860b-ff0874040fb6-VPC_CORONAVIRUS_CLOSES_DISNEY_PARKS_DESK_THUMB.jpg?crop=1911,1075,x2,y2&width=1911&height=1075&format=pjpg&auto=webp"
+              width="50px"
+              height="50px"
+            />
+          </div>
+        </Tab>
+        {/* {tabs.map((tab) => (
           <Tab>
             <div
               style={{
@@ -46,8 +71,9 @@ export const TabbedCard = () => {
               />
             </div>
           </Tab>
-        ))}
+        ))} */}
       </Content>
+      <Tabs active={active} setActive={setActive} />
     </Card>
   );
 };
