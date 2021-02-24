@@ -4,6 +4,9 @@ import React from 'react';
 import CardScroll from '../../atomic/cardScroll/cardScroll.component';
 import TabbedCard from '../../../interactions/TabbedCard/tabbedCard.component';
 import TabbedCardNeumorphic from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
+import FrontEndEssentials from '../../../assets/img/frontEndEssentials.jpg';
+import DisneyPhoto from '../../../assets/img/Disney.jpg';
+import h2 from '../../../assets/img/h2.jpg';
 //Style
 import {
   ScrollContainerFlex,
@@ -14,15 +17,28 @@ import {
 const Template = () => {
   return (
     <ScrollContainerFlex>
-      <ScrollCardContainer>
+      {/* <ScrollCardContainer>
         <TabbedCardNeumorphic />
+      </ScrollCardContainer> */}
+
+      <ScrollCardContainer>
+        <CardScroll
+          project="Authentication"
+          projectSub="Process"
+          photo={FrontEndEssentials}
+        />
       </ScrollCardContainer>
       <ScrollCardContainer>
-        <CardScroll />
+        <CardScroll
+          project="Cognitive"
+          projectSub="Science"
+          photo={DisneyPhoto}
+        />
       </ScrollCardContainer>
       <ScrollCardContainer>
-        <CardScroll />
+        <CardScroll project="Ayoco" projectSub="Project" photo={h2} />
       </ScrollCardContainer>
+
       {/* <ScrollCardContainer>
         <CardScroll />
       </ScrollCardContainer> */}

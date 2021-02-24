@@ -19,7 +19,7 @@ export const Highlighter = styled.div`
     z-index: -1;
     left: 0;
     bottom: 0;
-    bottom: 2px;
+    bottom: -2px;
     width: 100%;
     height: 6px;
     background: ${colors.accent.ochreFire};
@@ -29,6 +29,6 @@ export const Highlighter = styled.div`
   }
 
   &:hover::after {
-    transform: scaleY(2);
+    transform: scaleY(2.5);
   }
 `;

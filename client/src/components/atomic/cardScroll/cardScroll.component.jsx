@@ -7,11 +7,11 @@ import { CardScroll } from "./cardScroll.styles";
 import { Highlighter } from '../../../interactions/HighLighter/highlighter.styles';
 import TabbedCard from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
 //Code
-const Template = () => {
+const Template = ({project, projectSub, photo}) => {
   return (
     <CardScroll>
       <img
-        src={firstCardImage}
+        src={photo}
         style={{
           marginBottom: "1rem",
           width: "100%",
@@ -20,7 +20,7 @@ const Template = () => {
         }}
       />
       <h3 className="heading-tertiary">
-        <Highlighter>AYOCO</Highlighter> Project
+        {project} <Highlighter> {projectSub}</Highlighter>
       </h3>
       {/* <span className="orangeLine" /> */}
       {/* <div className="iconTest">
