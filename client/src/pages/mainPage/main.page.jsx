@@ -81,7 +81,7 @@ import { ScrollLinkCustom } from "./main.styles";
 
 import {TransitionLink} from '../../interactions/TransitionLink/transitionLink.styles';
 import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
-
+import Section_Skill from '../../components/Sections/skills/skills.component';
 import {SlideUpButtonJelly} from '../../interactions/SlideUpButtonJelly/slideUpButtonJelly.component';
 const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
   
@@ -123,6 +123,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
           <Element name="test1" className="element" />
           <YouTube />
           <Element name="test2" className="element" />
+          <Section_Skill />
           <ScrollHorizontal />
           <Projects />
           <MiniCards />

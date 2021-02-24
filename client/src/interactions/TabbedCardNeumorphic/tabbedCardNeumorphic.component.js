@@ -40,7 +40,7 @@ export const TabbedCard = () => {
         </Tab>
         <Tab>
           Server-Side:
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", marginButtom: "1rem" }}>
             <img
               src={reactLogo}
               style={{ marginRight: "1rem" }}

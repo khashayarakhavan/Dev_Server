@@ -45,53 +45,159 @@ import {
   BubbleButton,
 } from "./skills.styles";
 
+import {Heading, TEXT} from './skills.styles';
+import {
+  Accent_fireOrange,
+  Accent_mateBlue,
+} from "../../../design/effects.styles";
 
 //Code
 export const Header = (props) => {
   const { hidden } = props;
 
   return (
-    
-      <SkillsContainer>
-        <Row>
-          <ColMd12>
-            <Article>
-              <header class="">
+    <SkillsContainer>
+      <Row>
+        <ColMd12>
+          <Article>
+            {/* <header class="">
                 <h2>I help people ...</h2>
-              </header>
+              </header> */}
 
-              <DesignRow>
-                <ColMd6>
-                  <BubbleButton>
-                    <BubbleRight>
-                      <DesignIconVert />
-                    </BubbleRight>
-                  </BubbleButton>
-                  <Deets>
-                    <h3>Create blazing fast websites.</h3>
-                    <p>
-                      My ultimate goal is to perfectly match your real needs to
-                      the best solutions available. So I always make sure to
-                      follow the tech community's best practices.
+            <DesignRow>
+              <ColMd6>
+                <BubbleButton>
+                  <BubbleRight>
+                    <DesignIconVert />
+                  </BubbleRight>
+                </BubbleButton>
+                {/* <Deets style={{ textAlign: "left" }}>
+                  <h3>FrontEnd</h3>
+                  <p
+                    style={{
+                      fontSize: "2vw",
+                      fontWeight: "200",
+                      textAlign: "left",
+                    }}
+                  >
+                    My ultimate goal is to perfectly match your real needs to
+                    the best solutions available. So I always make sure to
+                    follow the tech community's best practices.
+                  </p>
+                </Deets> */}
+                <Deets style={{ textAlign: "Right", marginTop: "2rem" }}>
+                  <h3 className="hi">
+                   Tech Stack
+                  </h3>
+
+                  <TEXT>
+                    <p style={{ display: "inline" }}>
+                      <span style={{ fontWeight: 200 }}>
+                        modern,
+                      </span>{" "}
+                      <span style={{ fontWeight: 400, color: "#EB5E28" }}>
+                        smooth,
+                      </span>{" "}
+                      <span style={{ fontWeight: 200 }}>
+                        {" "}
+                        accessible
+                      </span>
                     </p>
-                  </Deets>
-                </ColMd6>
-                <ColMd6>
-                  <Deets>
-                    <h3>Create blazing fast websites.</h3>
-                    <p>
-                      My ultimate goal is to perfectly match your real needs to
-                      the best solutions available. So I always make sure to
-                      follow the tech community's best practices.
+                  </TEXT>
+
+                  <p
+                    style={{
+                      fontSize: "2rem",
+                      fontWeight: "200",
+                      textAlign: "right",
+                      width: "85%",
+                      width: "82%",
+                      width: "35vw",
+                      // marginRight: "13%",
+                      textAlign: "justify",
+                      textJustify: "auto",
+                      paddingLeft: "2rem",
+                    }}
+                  >
+                    My ultimate goal is to perfectly match your real needs to
+                    the best solutions available. So I always make sure to
+                    follow the tech community's best practices.
+                  </p>
+                </Deets>
+              </ColMd6>
+              <ColMd6>
+                <Deets style={{ textAlign: "left", marginTop: "2rem" }}>
+                  <h3 className="hi">Grow Fast</h3>
+
+                  <TEXT>
+                    <p style={{ display: "inline" }}>
+                      <span style={{ fontWeight: 200 }}>scalable,</span>{" "}
+                      <span style={{ fontWeight: 400, color: "#EB5E28" }}>
+                        secure,
+                      </span>{" "}
+                      <span style={{ fontWeight: 200}}>
+                        {" "}
+                        available
+                      </span>
                     </p>
-                  </Deets>
-                  <BubbleButton>
-                    <BubbleRight>
-                      <DevIconVert />
-                    </BubbleRight>
-                  </BubbleButton>
-                </ColMd6>
-                {/* <ColMd6>
+                  </TEXT>
+
+                  <p
+                    style={{
+                      fontSize: "2rem",
+                      fontWeight: "200",
+                      textAlign: "left",
+                      width: "85%",
+                      width: "82%",
+                      width: "35vw",
+                      // marginRight: "13%",
+                      textAlign: "justify",
+                      textJustify: "auto",
+                      paddingRight: "2rem",
+                    }}
+                  >
+                    My ultimate goal is to perfectly match your real needs to
+                    the best solutions available. So I always make sure to
+                    follow the tech community's best practices.
+                  </p>
+                </Deets>
+                {/* <Deets style={{ textAlign: "right", marginTop: "2rem" }}>
+                  <h3 className="hi">
+                    Grow <Accent_fireOrange>F</Accent_fireOrange>ast
+                  </h3>
+
+                  <TEXT>
+                    <p style={{ display: "inline" }}>
+                      <span style={{ fontWeight: 400 }}>scalable,</span>{" "}
+                      <span style={{ fontWeight: 200 }}>secure</span>{" "}
+                      <span style={{ fontWeight: 400 }}> available</span>
+                    </p>
+                  </TEXT>
+
+                  <p
+                    style={{
+                      fontSize: "2rem",
+                      fontWeight: "200",
+
+                      textAlign: "right",
+                      width: "78%",
+                      marginLeft: "22%",
+                      textAlign: "justify",
+                      textJustify: "auto",
+                    }}
+                  >
+                    My ultimate goal is to perfectly match your real needs to
+                    the best solutions available. So I always make sure to
+                    follow the tech community's best practices.
+                  </p>
+                </Deets> */}
+                <BubbleButton style={{ margin: "0 auto", marginRight: "0" }}>
+                  <BubbleRight>
+                    <DevIconVert />
+                  </BubbleRight>
+                </BubbleButton>
+              </ColMd6>
+              {/* <ColMd6>
                   <BubbleButton>
                     <BubbleRight>
                       <DesignIconVert />
@@ -106,15 +212,14 @@ export const Header = (props) => {
                     </p>
                   </Deets>
                 </ColMd6> */}
-              </DesignRow>
-              {/* <!-- /row --> */}
-              
-              {/* <!-- /row --> */}
-            </Article>
-          </ColMd12>
-        </Row>
-      </SkillsContainer>
-    
+            </DesignRow>
+            {/* <!-- /row --> */}
+
+            {/* <!-- /row --> */}
+          </Article>
+        </ColMd12>
+      </Row>
+    </SkillsContainer>
   );
 };
 

@@ -49,7 +49,7 @@ const Fade = ({ in: inProp }) => (
         }}
       >
         <FontAwesomeIcon icon={faPaperPlane} style={{ color: "" }} />
-        <FontAwesomeIcon icon={faDownload} style={{ color: "" }} />
+        {/* <FontAwesomeIcon icon={faDownload} style={{ color: "" }} /> */}
       </div>
     )}
   </Transition>

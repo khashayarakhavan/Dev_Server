@@ -163,8 +163,8 @@ ${'' /*
 export const ColMd12 = styled.div`
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  ${'' /* padding-left: 15px;
+  padding-right: 15px; */}
 
   
 
@@ -480,14 +480,19 @@ export const DevIconVert = styled.div`
   }
 `;
 export const Deets = styled.div`
-  padding: 0 0 0 2rem;
+  ${'' /* padding: 0 0 0 2rem; */}
+  ${'' /* width: 50vw; */}
 
   h3 {
     ${fonts.mixins.heroHeader};
-    padding: 0 0 1rem;
+    ${'' /* padding: 0 0 1rem; */}
+    line-height: 1;
     margin: 0;
+    
+    font-size: 2.2vmax;
     font-size: 2.8vmax;
-    ${'' /* @media (max-width: 500px) {
+    ${
+      "" /* @media (max-width: 500px) {
       font-size: 2.75rem;
     }
     @media (max-width: 400px) {
@@ -504,18 +509,23 @@ export const Deets = styled.div`
     }
     @media (max-width: 200px) {
       font-size: 1rem;
-    } */}
+    } */
+    }
     ${"" /* color: #45b29a; */}
   }
 
   p {
     margin: 0 0 10px;
-    ${"" /* font-family: adobe-garamond-pro, HelveticaNeue-Light, "Helvetica Neue Light",
-      "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */}
+    margin-top: 1rem;
+    ${
+      "" /* font-family: adobe-garamond-pro, HelveticaNeue-Light, "Helvetica Neue Light",
+      "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+    }
     ${fonts.mixins.text};
     ${"" /* font-weight: 300; */}
-    font-size: 2.5vmax;
-    ${'' /* @media (max-width: 500px) {
+    
+    ${
+      "" /* @media (max-width: 500px) {
       font-size: 1.75rem;
     }
     @media (max-width: 400px) {
@@ -523,8 +533,10 @@ export const Deets = styled.div`
     }
     @media (max-width: 350px) {
       font-size: 1rem;
-    } */}
-    ${'' /* @media (max-width: 300px) {
+    } */
+    }
+    ${
+      "" /* @media (max-width: 300px) {
       font-size: 0.75rem;
     }
     @media (max-width: 250px) {
@@ -532,7 +544,8 @@ export const Deets = styled.div`
     }
     @media (max-width: 200px) {
       font-size: 1rem;
-    } */}
+    } */
+    }
   }
 `;
 export const Develop = styled(Row)`
@@ -569,5 +582,109 @@ export const HomeDev = styled.div`
 
 
 
+
+export const Heading = styled.div`
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  ${respond.pc.min`
+  .verb {
+    display: inline; 
+  }
+
+  .name {
+    ${"" /* display: block; */}
+    display: inline;
+    margin-left: 3.315vw;
+    
+    ${"" /* margin-left: 3.315rem;
+    margin-left: 3.23730468vw; */}
+  }
+  `}
+
+  ${fonts.mixins.heroHeader};
+
+  font-size: clamp(2.5rem, 8.3vw, 8.3vw);
+  font-size: clamp(4.7rem, 15.666666vw, 15.666666vw);
+  font-size: 12.3333333vw;
+  font-size: 15.2360833vw;
+  font-size: 12.2360833vw;
+
+  line-height: clamp(3rem, 10vw, 10vw);
+  line-height: 1;
+  letter-spacing: 0px;
+  font-style: normal;
+  color: ${colors.secondary.darkest};
+
+  text-rendering: optimizeLegibility;
+  padding-top: clamp(6rem, 20vw, 20vw);
+  padding-top: clamp(30px, 10vw, 10vw);
+  padding-left: clamp(30px, 10vw, 10vw);
+
+ 
+`;
+
+
+
+
+export const TEXT = styled.span`
+  display: block;
+  ${"" /* height: clamp(40px, 6.666vw, 16.666vw); */}
+  ${fonts.mixins.text};
+  width: 100%;
+
+  color: ${colors.neutrals.darkest};
+  letter-spacing: 0px;
+  font-style: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-rendering: optimizeLegibility;
+  ${"" /* line-height: ${sizes.lineHeight.large}; */}
+  line-height: clamp(30px, 10vw, 10vw);
+  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
+  font-family: "Cabin", sans-serif;
+  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 3.333vw, 3.333vw);
+  font-size: 5.9vw;
+  font-size: 9.1vw;
+  font-size: 8vw;
+  font-size: 7.23vw;
+
+  font-weight: 400;
+  font-weight: 200;
+  ${"" /* margin-top: 20px; */}
+  padding-left: clamp(34px, 10.666vw, 10.666vw);
+
+  p {
+    font-size: 2vmax;
+  }
+
+  ${respond.mobile.max`
+    padding-left: clamp(3px, 0.5vw, 0.5vw);
+    font-size: 7.26vw;
+  `}
+  ${respond.pc.min`
+    padding-left: clamp(3px, 0.5vw, 0.5vw);
+    padding-left: clamp(2px,0.1953125vw, 0.1953125vw);
+    font-size: clamp(1rem, 0.9765625vw, 0.9765625vw);
+    font-size: clamp(1.56rem, 1.5234375vw, 1.5234375vw);
+    font-size: 2vw;
+     font-size: 2vmax !important;
+
+    line-height: clamp(30px, 2.9296vw, 2.9296vw);  
+  `}
+
+  .love {
+    margin-top: 3rem;
+  }
+`;
 
 
