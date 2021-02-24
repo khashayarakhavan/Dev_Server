@@ -48,7 +48,9 @@ export const Underline = styled.div`
   height: 6px;
   background: #6b44a9;
   background: ${colors.neutrals.lightest};
+  background: ${colors.accent.ochreFire};
   background: ${colors.accent.lightest};
+  background: ${colors.accent.darkest};
   //roll underline based on active index
   transform: translateX(${(p) => (p.active === 0 ? 0 : p.active * 100)}%);
   ${transition};

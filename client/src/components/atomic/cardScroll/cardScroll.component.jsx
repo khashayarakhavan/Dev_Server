@@ -5,20 +5,14 @@ import { firstCardImage } from "../../../design/images";
 //Style
 import { CardScroll } from "./cardScroll.styles";
 import { Highlighter } from '../../../interactions/HighLighter/highlighter.styles';
-import TabbedCard from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
+import TabbedCardNeumorphic from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
+import { SvgIcon, Icon_cognitiveScience, Icon_cyberSecurity } from "./cardScroll.styles";
 //Code
 const Template = ({project, projectSub, photo}) => {
   return (
     <CardScroll>
-      <img
-        src={photo}
-        style={{
-          marginBottom: "1rem",
-          width: "100%",
-          height: "18rem",
-          borderRadius: "clamp(15px, 5vw, 20px)",
-        }}
-      />
+      {photo === "react" ? <SvgIcon /> : photo==="cognitive" ? <Icon_cognitiveScience /> : <Icon_cyberSecurity />}
+
       <h3 className="heading-tertiary">
         {project} <Highlighter> {projectSub}</Highlighter>
       </h3>
@@ -29,8 +23,7 @@ const Template = ({project, projectSub, photo}) => {
       {/* <div className="iconTest">
               <i className=" icon-basic-heart"></i>
             </div> */}
-
-      <TabbedCard />
+      <TabbedCardNeumorphic />
       {/* <p className="feature-box__text">
         shaja baja much loven disch very guten disch
       </p>

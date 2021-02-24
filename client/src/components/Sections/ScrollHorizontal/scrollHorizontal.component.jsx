@@ -25,14 +25,14 @@ const Template = () => {
         <CardScroll
           project="Authentication"
           projectSub="Process"
-          photo={FrontEndEssentials}
+          photo="react"
         />
       </ScrollCardContainer>
       <ScrollCardContainer>
         <CardScroll
           project="Cognitive"
           projectSub="Science"
-          photo={DisneyPhoto}
+          photo="cognitive"
         />
       </ScrollCardContainer>
       <ScrollCardContainer>

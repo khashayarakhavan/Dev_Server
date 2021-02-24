@@ -23,6 +23,7 @@ export const Highlighter = styled.div`
     width: 100%;
     height: 6px;
     background: ${colors.accent.ochreFire};
+    background: ${colors.accent.darkest};
     background: ${colors.accent.lightest};
     transform-origin: 0% 100%;
     transition: transform 0.25s;

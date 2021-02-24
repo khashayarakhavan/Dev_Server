@@ -5,6 +5,15 @@ import fonts from '../../../design/fonts.styles';
 import shadows from '../../../design/shadows.styles';
 import colors from '../../../design/colors';
 import {respond} from '../../../design/responsive';
+import {ReactComponent as Icon_Framework_React} from '../../../assets/SVG/frameworkReact.svg';
+import {ReactComponent as Icon_Cognitive_Science} from '../../../assets/SVG/cognitiveScience.svg';
+import {ReactComponent as Icon_Cognitive_Science_Brain} from '../../../assets/SVG/cognitiveScience_brain.svg';
+import {ReactComponent as Icon_Cognitive_Science_NanoBot} from '../../../assets/SVG/cognitiveScience_nanobot.svg';
+import {ReactComponent as Icon_Cyber_Security} from '../../../assets/SVG/cyberSecurity2.svg';
+import {ReactComponent as Icon_Cyber_Security_Cloud} from '../../../assets/SVG/cyberSecurity_cloud.svg';
+import {ReactComponent as Icon_Cyber_Security_Trojan} from '../../../assets/SVG/cyberSecurity_trojan.svg';
+import {ReactComponent as Icon_Cyber_Security_Shield} from '../../../assets/SVG/cyberSecurity_shield.svg';
+import {ReactComponent as Icon_Cyber_Security_Verified} from '../../../assets/SVG/cyberSecurity_verified.svg';
 
 export const Highlighter = styled.div`
   position: relative;
@@ -204,6 +213,41 @@ export const CardScroll = styled.div`
   }
 
  
+`;
+
+
+export const SvgIcon = styled(Icon_Framework_React)`
+  width: clamp(1.8rem, 8vw, 8vw);
+  height: clamp(1.8rem, 8vw, 8vw);
+  fill: ${colors.accent.ochreFire};
+  fill: ${colors.neutrals.darkest};
+  fill: ${colors.accent.darkest};
+  fill: ${colors.accent.lightest};
+  margin-bottom: 1rem;
+`;
+
+export const Icon_cognitiveScience = styled(Icon_Cognitive_Science_NanoBot)`
+  width: clamp(1.8rem, 6vw, 6vw);
+  height: clamp(1.8rem, 6vw, 6vw);
+  fill: ${colors.accent.ochreFire};
+  fill: ${colors.neutrals.darkest};
+  fill: ${colors.accent.darkest};
+  fill: ${colors.accent.lightest};
+  margin-bottom: 1rem;
+  width: clamp(1.8rem, 8vw, 8vw);
+  height: clamp(1.8rem, 8vw, 8vw);
+`;
+
+export const Icon_cyberSecurity = styled(Icon_Cyber_Security_Verified)`
+  width: clamp(1.8rem, 6vw, 6vw);
+  height: clamp(1.8rem, 6vw, 6vw);
+  fill: ${colors.accent.ochreFire};
+  fill: ${colors.neutrals.darkest};
+  fill: ${colors.accent.darkest};
+  fill: ${colors.accent.lightest};
+  margin-bottom: 1rem;
+  width: clamp(1.8rem, 8vw, 8vw);
+  height: clamp(1.8rem, 8vw, 8vw);
 `;
 
 
