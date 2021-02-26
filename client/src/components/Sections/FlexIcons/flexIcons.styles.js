@@ -3,17 +3,27 @@ import styled from "styled-components";
 
 export const FeatureContainer = styled.section`
   // defining the grid values and positioning in relation to container grid using column names
-  grid-column: center-start / center-end;
-  justify-self: center;
+  ${"" /* grid-column: center-start / center-end;
+  justify-self: center; */}
+  width: max-content;
 
+  position: relative;
+  bottom: 0;
+  ${'' /* right: 2rem; */}
+
+  
   margin: 0rem 0;
+  margin-top: 1rem;
   height: min-content;
   border-bottom: 5px solid #eb5e28;
 
-  display: flex; // flex lets it to have all items in a single row
+  ${'' /* margin-left: 2rem; */}
+  ${'' /* margin-top: 3rem; */}
+  ${'' /* padding-left: 3rem; */}
+  display: inline-flex; // flex lets it to have all items in a single row
   flex-direction: row;
   flex-wrap: wrap; // lets the flex to occupy new row when space is not enough
-  justify-content: center; // Horizontally align items inside the flex container
+  justify-content: flex-end; // Horizontally align items inside the flex container
   align-items: center; // Vertically align items inside the flex container
 `;
 

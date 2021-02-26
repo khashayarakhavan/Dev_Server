@@ -51,6 +51,8 @@ import {
   Accent_mateBlue,
 } from "../../../design/effects.styles";
 
+import FlexIcons from "../../Sections/FlexIcons/flexIcons.component";
+
 //Code
 export const Header = (props) => {
   const { hidden } = props;
@@ -86,22 +88,15 @@ export const Header = (props) => {
                   </p>
                 </Deets> */}
                 <Deets style={{ textAlign: "Right", marginTop: "2rem" }}>
-                  <h3 className="hi">
-                   Tech Stack
-                  </h3>
+                  <h3 className="hi">Tech Stack</h3>
 
                   <TEXT>
                     <p style={{ display: "inline" }}>
-                      <span style={{ fontWeight: 200 }}>
-                        modern,
-                      </span>{" "}
+                      <span style={{ fontWeight: 200 }}>modern,</span>{" "}
                       <span style={{ fontWeight: 400, color: "#EB5E28" }}>
                         smooth,
                       </span>{" "}
-                      <span style={{ fontWeight: 200 }}>
-                        {" "}
-                        accessible
-                      </span>
+                      <span style={{ fontWeight: 200 }}> accessible</span>
                     </p>
                   </TEXT>
 
@@ -122,6 +117,12 @@ export const Header = (props) => {
                     My ultimate goal is to perfectly match your real needs to
                     the best solutions available. So I always make sure to
                     follow the tech community's best practices.
+                    <br />
+                    <div
+                      style={{ display: "flex", justifyContent: "flex-start" }}
+                    >
+                      <FlexIcons />
+                    </div>
                   </p>
                 </Deets>
               </ColMd6>
@@ -135,10 +136,7 @@ export const Header = (props) => {
                       <span style={{ fontWeight: 400, color: "#EB5E28" }}>
                         secure,
                       </span>{" "}
-                      <span style={{ fontWeight: 200}}>
-                        {" "}
-                        available
-                      </span>
+                      <span style={{ fontWeight: 200 }}> available</span>
                     </p>
                   </TEXT>
 
@@ -159,6 +157,12 @@ export const Header = (props) => {
                     My ultimate goal is to perfectly match your real needs to
                     the best solutions available. So I always make sure to
                     follow the tech community's best practices.
+                    <br />
+                    <div
+                      style={{ display: "flex", justifyContent: "flex-start" }}
+                    >
+                      <FlexIcons />
+                    </div>
                   </p>
                 </Deets>
                 {/* <Deets style={{ textAlign: "right", marginTop: "2rem" }}>

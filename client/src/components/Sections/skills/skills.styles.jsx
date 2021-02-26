@@ -522,6 +522,7 @@ export const Deets = styled.div`
       "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
     }
     ${fonts.mixins.text};
+    position: relative;
     ${"" /* font-weight: 300; */}
     
     ${

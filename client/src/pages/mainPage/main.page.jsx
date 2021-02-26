@@ -128,7 +128,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
           <YouTube />
           <Element name="test2" className="element" />
           <Section_Skill />
-          <FlexIcons />
+          {/* <FlexIcons /> */}
           <Heading cta="read " subCta="more details" text="Recent Projects" inverted zeroMarginBottom/>
           <ScrollHorizontal />
           <Projects />
