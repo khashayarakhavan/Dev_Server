@@ -1,0 +1,41 @@
+
+.features-2 {
+    // defining the grid values and positioning in relation to container grid using column names
+    grid-column: center-start / center-end;
+    margin: 0rem 0;
+    height: min-content;
+    border-top: 5px solid grey;
+    
+    display: flex; // flex lets it to have all items in a single row
+    flex-direction: row;
+    flex-wrap: wrap; // lets the flex to occupy new row when space is not enough
+    justify-content: center; // Horizontally align items inside the flex container
+    align-items: center; // Vertically align items inside the flex container
+}
+
+.feature-2 {
+    // Align items inside the flex item --> change position of icon
+    display: flex; 
+    flex-direction: column; // changing the direction to vertical
+    align-items: center; // centering icons in horizontal
+    justify-content: center; // centering icons in vertical
+    color: #102539;
+
+    // defining the size and property of each flex-cell
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(182, 125, 144, 0.025);
+    border-radius: 50%;
+    
+    &__icon {
+        // defining the size of each SVG-icon and its padding
+        margin: .5rem;
+        width: 4rem;
+        height: 4rem;
+        fill: currentColor;
+    }
+
+    &:hover {
+        color: #003153;
+    }
+}

@@ -127,7 +127,7 @@ export const Header = (props) => {
               </ColMd6>
               <ColMd6>
                 <Deets style={{ textAlign: "left", marginTop: "2rem" }}>
-                  <h3 className="hi">Cloud World</h3>
+                  <h3 className="hi">Cloud Era</h3>
 
                   <TEXT>
                     <p style={{ display: "inline" }}>

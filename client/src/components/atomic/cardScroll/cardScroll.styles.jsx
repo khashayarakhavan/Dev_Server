@@ -217,8 +217,8 @@ export const CardScroll = styled.div`
 
 
 export const SvgIcon = styled(Icon_Framework_React)`
-  width: clamp(1.8rem, 8vw, 8vw);
-  height: clamp(1.8rem, 8vw, 8vw);
+  width: clamp(1.8rem, 6vw, 6vw);
+  height: clamp(1.8rem, 6vw, 6vw);
   fill: ${colors.accent.ochreFire};
   fill: ${colors.neutrals.darkest};
   fill: ${colors.accent.darkest};
@@ -234,8 +234,8 @@ export const Icon_cognitiveScience = styled(Icon_Cognitive_Science_NanoBot)`
   fill: ${colors.accent.darkest};
   fill: ${colors.accent.lightest};
   margin-bottom: 1rem;
-  width: clamp(1.8rem, 8vw, 8vw);
-  height: clamp(1.8rem, 8vw, 8vw);
+  width: clamp(1.8rem, 6vw, 6vw);
+  height: clamp(1.8rem, 6vw, 6vw);
 `;
 
 export const Icon_cyberSecurity = styled(Icon_Cyber_Security_Verified)`
@@ -246,8 +246,8 @@ export const Icon_cyberSecurity = styled(Icon_Cyber_Security_Verified)`
   fill: ${colors.accent.darkest};
   fill: ${colors.accent.lightest};
   margin-bottom: 1rem;
-  width: clamp(1.8rem, 8vw, 8vw);
-  height: clamp(1.8rem, 8vw, 8vw);
+  width: clamp(1.8rem, 6vw, 6vw);
+  height: clamp(1.8rem, 6vw, 6vw);
 `;
 
 

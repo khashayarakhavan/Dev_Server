@@ -82,6 +82,7 @@ import { ScrollLinkCustom } from "./main.styles";
 import {TransitionLink} from '../../interactions/TransitionLink/transitionLink.styles';
 import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
 import Section_Skill from '../../components/Sections/skills/skills.component';
+import FlexIcons from '../../components/Sections/FlexIcons/flexIcons.component';
 import {SlideUpButtonJelly} from '../../interactions/SlideUpButtonJelly/slideUpButtonJelly.component';
 const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
   
@@ -108,10 +109,9 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
         </Link>
       </Nav>
       <Burger onClick={toggleMenuOpen} className="uil uil-bars" /> */}
-      <ModernNav toggleMenuOpen={toggleMenuOpen}  />
+      <ModernNav toggleMenuOpen={toggleMenuOpen} />
 
-      <SlideUpButtonJelly  popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
-     
+      <SlideUpButtonJelly popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
 
       <Content className="main_page-content" open={menuOpen}>
         <MainContainer className="main_page-container" id="test">
@@ -119,11 +119,17 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
           <HeroHeader.LeftContainer name="firstInsideContainer" />
           <HeroHeader.RightContainer />
           <ScrollDownCTA />
-          <Heading text="Wanna know me in a minute?" />
+          <Heading
+            cta="play"
+            subCta="just hit "
+            text="Wanna know me in a minute?"
+          />
           <Element name="test1" className="element" />
           <YouTube />
           <Element name="test2" className="element" />
           <Section_Skill />
+          <FlexIcons />
+          <Heading cta="read " subCta="more details" text="Recent Projects" inverted zeroMarginBottom/>
           <ScrollHorizontal />
           <Projects />
           <MiniCards />
