@@ -977,7 +977,7 @@ body {
   grid-column: center-start / center-end;
   margin: 0rem 0;
   height: min-content;
-  border-top: 5px solid grey;
+  /* border-top: 5px solid grey; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

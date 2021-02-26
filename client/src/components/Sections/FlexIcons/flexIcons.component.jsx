@@ -1,99 +1,76 @@
 //Basics
 import React from 'react';
+
+import { SVGSource, SVG } from "../../../assets/spriteSVG/spriteSvg.js";
+
 //Design
 import colors from '../../../design/colors';
 import sprite from "../../../assets/SVG/sprite.svg";
+import spriteTech from "../../../assets/spriteSVG/sprite.svg";
+
 
 //Style
 // import "./flexIcons.css";
-import "./flexIcons.scss";
+// import "./flexIcons.scss";
+import {Icon, FeatureContainer, Feature} from './flexIcons.styles';
 
 
 //Code
 const Template = ({props}) => {
   return (
-    <section className="features-2 u-margin-bottom-medium">
-      <div className="feature-2">
-        <svg className="feature-2__icon">
+    <FeatureContainer>
+      {/* <Feature>
+        <Icon>
           <use href={sprite + "#icon-global"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
+        </Icon>
+      </Feature>
+      <Feature>
+        <Icon>
           <use href={sprite + "#icon-trophy"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
+        </Icon>
+      </Feature>
+      <Feature>
+        <Icon>
           <use href={sprite + "#icon-presentation"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
+        </Icon>
+      </Feature>
+      <Feature>
+        <Icon>
           <use href={sprite + "#icon-map-pin"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
+        </Icon>
+      </Feature>
+      <Feature>
+        <Icon>
           <use href={sprite + "#icon-key"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-global"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-trophy"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-presentation"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-map-pin"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-key"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-global"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-trophy"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-presentation"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-presentation"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-map-pin"} />
-        </svg>
-      </div>
-      <div className="feature-2">
-        <svg className="feature-2__icon">
-          <use href={sprite + "#icon-key"} />
-        </svg>
-      </div>
-    </section>
+        </Icon>
+      </Feature> */}
+      <Feature>
+        <Icon>
+          <use href={spriteTech + "#aws"} />
+        </Icon>
+      </Feature>
+      <Feature>
+        <Icon>
+          <use href={spriteTech + "#googlecloud"} />
+        </Icon>
+      </Feature>
+      
+      <Feature>
+        <Icon>
+          <use href={spriteTech + "#heroku"} />
+        </Icon>
+      </Feature>
+      <Feature>
+        <Icon>
+          <use href={spriteTech + "#circleci"} />
+        </Icon>
+      </Feature>
+      <Feature>
+        <Icon>
+          <use href={spriteTech + "#gitlab"} />
+        </Icon>
+      </Feature>
+    </FeatureContainer>
   );
 };
 

@@ -1050,7 +1050,7 @@ body {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  border-top: 5px solid grey;
+  /* border-top: 5px solid grey; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -1,10 +1,13 @@
 
-.features-2 {
+
+.featureContainer {
     // defining the grid values and positioning in relation to container grid using column names
     grid-column: center-start / center-end;
+    justify-self: center;
+    
     margin: 0rem 0;
     height: min-content;
-    border-top: 5px solid grey;
+    border-bottom: 5px solid #EB5E28;
     
     display: flex; // flex lets it to have all items in a single row
     flex-direction: row;
@@ -22,8 +25,8 @@
     color: #102539;
 
     // defining the size and property of each flex-cell
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
     background-color: rgba(182, 125, 144, 0.025);
     border-radius: 50%;
     
@@ -39,3 +42,4 @@
         color: #003153;
     }
 }
+
