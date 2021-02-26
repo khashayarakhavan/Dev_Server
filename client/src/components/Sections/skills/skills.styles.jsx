@@ -189,11 +189,12 @@ export const ColMd4 = styled.div`
 export const ColMd6 = styled.div`
   display: flex;
   margin-bottom: 3rem;
+  width: min-content;
   flex-flow: no-wrap;
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  ${'' /* padding-left: 15px;
+  padding-right: 15px; */}
 
   ${"" /* @media (min-width: 992px) {
     float: left;
@@ -248,7 +249,7 @@ export const DesignRow = styled(Row)`
     background-color: green;
   } */}
   text-align: left;
-  margin: 3rem 0 6rem;
+  ${'' /* margin: 3rem 0 6rem; */}
 `;
 
 export const HomeDesign = styled.div`
@@ -272,11 +273,17 @@ export const Image2 = styled(Image)`
 `;
 export const BubbleRight = styled.div`
   ${shadows.mixins.neumorphic.button};
+
   ${"" /* background: #f3f2f1; */}
-  width: 10rem;
-  height: 10rem;
- 
-  border-radius: 6rem;
+  ${'' /* width: 10rem;
+  height: 10rem; */}
+  ${'' /* position: absolute; */}
+  width: 80%;
+  height: 80%;
+  ${'' /* margin-left: 3rem; */}
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -300,9 +307,7 @@ export const BubbleLeft = styled.div`
   ${"" /* background: #f3f2f1; */}
   width: 10rem;
   height: 10rem;
-  -webkit-border-radius: 6rem;
-  -moz-border-radius: 6rem;
-  border-radius: 6rem;
+
   position: absolute;
   overflow: hidden;
   top: 2.6rem;
@@ -322,7 +327,7 @@ export const BubbleButton = styled.div`
   min-width: 11.5rem;
   
   height: 25rem;
-  border-radius: 60rem;
+  border-radius: 50%;
   ${"" /* position: absolute; */}
   overflow: hidden;
   ${'' /* position: absolute; */}
@@ -366,9 +371,12 @@ export const Translate = keyframes`
 export const DesignIconVert = styled.div`
   animation: fourSkills 7s cubic-bezier(1, 0, 0, 1) infinite ; // steps(50)
   background-size: 100%;
-  border-radius: 6rem;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
   width: 7.7rem;
   height: 7.7rem;
+  border-radius: 50%;
   ${'' /* background-image: url(https://res.cloudinary.com/khashi-dev/image/upload/v1603146036/react-style-firebase_qyez2a.png); */}
   background-image: url(https://res.cloudinary.com/khashi-dev/image/upload/v1603146749/4-skills_fz1ley.png);
   ${"" /* background-repeat: no-repeat; */}
@@ -419,7 +427,7 @@ export const DesignIconVert = styled.div`
 `;
 
 export const DevIconVert = styled.div`
-  border-radius: 6rem;
+  border-radius: 50%;
   background-size: 100%;
   animation: fourSkills 7s cubic-bezier(1, 0, 0, 1) infinite; // steps(50)
   background-image: url(https://res.cloudinary.com/khashi-dev/image/upload/v1603150550/GCP-AWS-Heroku-DO2_eogbkt.png);
@@ -429,11 +437,9 @@ export const DevIconVert = styled.div`
   align-content: center;
   justify-items: center;
   justify-content: center; */}
-  
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
   width: 7.7rem;
   height: 7.7rem;
+
   ${"" /* background-size: cover; */}
   ${"" /* @media (max-width: 500px) {
     width: 4.7rem;
@@ -482,12 +488,14 @@ export const DevIconVert = styled.div`
 export const Deets = styled.div`
   ${'' /* padding: 0 0 0 2rem; */}
   ${'' /* width: 50vw; */}
-
+  position: relative;
+  width: min-content;
   h3 {
     ${fonts.mixins.heroHeader};
     ${'' /* padding: 0 0 1rem; */}
     line-height: 1;
     margin: 0;
+    ${'' /* display: flex; */}
     
     font-size: 2.2vmax;
     font-size: 2.8vmax;
@@ -686,6 +694,22 @@ export const TEXT = styled.span`
   .love {
     margin-top: 3rem;
   }
+`;
+
+
+export const TitleContainer = styled.div`
+display: flex;
+  align-items: center;
+  height: 8vw;
+`;
+
+export const TitleBlock = styled.div`
+  display: flex;
+  flex: 80;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
 `;
 
 

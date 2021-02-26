@@ -43,6 +43,8 @@ import {
   DevIconVert,
   ColMd6_Pull3,
   BubbleButton,
+  TitleContainer,
+  TitleBlock,
 } from "./skills.styles";
 
 import {Heading, TEXT} from './skills.styles';
@@ -68,11 +70,6 @@ export const Header = (props) => {
 
             <DesignRow>
               <ColMd6>
-                <BubbleButton>
-                  <BubbleRight>
-                    <DesignIconVert />
-                  </BubbleRight>
-                </BubbleButton>
                 {/* <Deets style={{ textAlign: "left" }}>
                   <h3>FrontEnd</h3>
                   <p
@@ -88,17 +85,24 @@ export const Header = (props) => {
                   </p>
                 </Deets> */}
                 <Deets style={{ textAlign: "Right", marginTop: "2rem" }}>
-                  <h3 className="hi">Tech Stack</h3>
+                  <TitleContainer className="titleContainer">
+                    <BubbleRight style={{ flex: "20" }}>
+                      <DesignIconVert />
+                    </BubbleRight>
+                    <TitleBlock>
+                      <h3 className="hi">Tech Stack</h3>
 
-                  <TEXT>
-                    <p style={{ display: "inline" }}>
-                      <span style={{ fontWeight: 200 }}>modern,</span>{" "}
-                      <span style={{ fontWeight: 400, color: "#EB5E28" }}>
-                        smooth,
-                      </span>{" "}
-                      <span style={{ fontWeight: 200 }}> accessible</span>
-                    </p>
-                  </TEXT>
+                      <TEXT>
+                        <p style={{ display: "inline" }}>
+                          <span style={{ fontWeight: 200 }}>modern,</span>{" "}
+                          <span style={{ fontWeight: 400, color: "#EB5E28" }}>
+                            smooth,
+                          </span>{" "}
+                          <span style={{ fontWeight: 200 }}> accessible</span>
+                        </p>
+                      </TEXT>
+                    </TitleBlock>
+                  </TitleContainer>
 
                   <p
                     style={{
@@ -111,7 +115,7 @@ export const Header = (props) => {
                       // marginRight: "13%",
                       textAlign: "justify",
                       textJustify: "auto",
-                      paddingLeft: "2rem",
+                      // paddingLeft: "1rem",
                     }}
                   >
                     My ultimate goal is to perfectly match your real needs to
@@ -119,7 +123,7 @@ export const Header = (props) => {
                     follow the tech community's best practices.
                     <br />
                     <div
-                      style={{ display: "flex", justifyContent: "flex-start" }}
+                      style={{ display: "flex", justifyContent: "flex-end" }}
                     >
                       <FlexIcons />
                     </div>
@@ -127,19 +131,24 @@ export const Header = (props) => {
                 </Deets>
               </ColMd6>
               <ColMd6>
-                <Deets style={{ textAlign: "left", marginTop: "2rem" }}>
-                  <h3 className="hi">Cloud Era</h3>
-
-                  <TEXT>
-                    <p style={{ display: "inline" }}>
-                      <span style={{ fontWeight: 200 }}>scalable,</span>{" "}
-                      <span style={{ fontWeight: 400, color: "#EB5E28" }}>
-                        secure,
-                      </span>{" "}
-                      <span style={{ fontWeight: 200 }}> available</span>
-                    </p>
-                  </TEXT>
-
+                <Deets>
+                  <TitleContainer className="titleContainer">
+                    <TitleBlock style={{alignItems: "flex-start"}}>
+                      <h3 className="hi">Cloud Era </h3>{" "}
+                      <TEXT>
+                        <p style={{ display: "inline" }}>
+                          <span style={{ fontWeight: 200 }}>scalable,</span>{" "}
+                          <span style={{ fontWeight: 400, color: "#EB5E28" }}>
+                            secure,
+                          </span>{" "}
+                          <span style={{ fontWeight: 200 }}> available</span>
+                        </p>
+                      </TEXT>
+                    </TitleBlock>
+                    <BubbleRight style={{ flex: "20" }}>
+                      <DevIconVert />
+                    </BubbleRight>
+                  </TitleContainer>
                   <p
                     style={{
                       fontSize: "2rem",
@@ -151,7 +160,7 @@ export const Header = (props) => {
                       // marginRight: "13%",
                       textAlign: "justify",
                       textJustify: "auto",
-                      paddingRight: "2rem",
+                      paddingLeft: "0rem",
                     }}
                   >
                     My ultimate goal is to perfectly match your real needs to
@@ -159,12 +168,13 @@ export const Header = (props) => {
                     follow the tech community's best practices.
                     <br />
                     <div
-                      style={{ display: "flex", justifyContent: "flex-start" }}
+                      style={{ display: "flex", justifyContent: "flex-end" }}
                     >
                       <FlexIcons />
                     </div>
                   </p>
                 </Deets>
+
                 {/* <Deets style={{ textAlign: "right", marginTop: "2rem" }}>
                   <h3 className="hi">
                     Grow <Accent_fireOrange>F</Accent_fireOrange>ast
@@ -195,11 +205,9 @@ export const Header = (props) => {
                     follow the tech community's best practices.
                   </p>
                 </Deets> */}
-                <BubbleButton style={{ margin: "0 auto", marginRight: "0" }}>
-                  <BubbleRight>
-                    <DevIconVert />
-                  </BubbleRight>
-                </BubbleButton>
+                {/* <BubbleButton
+                  style={{ margin: "0 auto", marginRight: "0" }}
+                ></BubbleButton> */}
               </ColMd6>
               {/* <ColMd6>
                   <BubbleButton>
