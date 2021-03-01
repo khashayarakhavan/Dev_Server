@@ -1,5 +1,5 @@
 //Basics
-import React from 'react';
+import React, {forwardRef} from 'react';
 
 import { SVGSource, SVG } from "../../../assets/spriteSVG/spriteSvg.js";
 
@@ -7,54 +7,96 @@ import { SVGSource, SVG } from "../../../assets/spriteSVG/spriteSvg.js";
 import colors from '../../../design/colors';
 import sprite from "../../../assets/SVG/sprite.svg";
 import spriteTech from "../../../assets/spriteSVG/sprite.svg";
+import Tippy from "@tippyjs/react";
+
+import "tippy.js/dist/tippy.css";
+import "tippy.js/themes/material.css";
+import "tippy.js/animations/scale-subtle.css";
+import {Icon, FeatureContainer, Feature, CustomTooltip} from './flexIcons.styles';
+
+export const technologies = ["aws", "googlecloud", "firebase"];
+export const names = ["aws", "google cloud", "firebase"];
+// import "./flexIcons.css";
+// import Tippy from "@tippyjs/react/headless";
+// import "tippy.js/dist/tippy.css";
+// import "react-tippy/dist/tippy.css";
 
 
 //Style
 // import "./flexIcons.css";
 // import "./flexIcons.scss";
-import {Icon, FeatureContainer, Feature} from './flexIcons.styles';
 
 
 //Code
 const Template = ({props}) => {
+  const TooltipContent = (
+    <CustomTooltip>
+      Simple Tooltip !{/* <CustomButton></CustomButton> */}
+    </CustomTooltip>
+  );
+
+
+
   return (
     <FeatureContainer>
-      {/* <Feature>
-        <Icon>
-          <use href={sprite + "#icon-global"} />
-        </Icon>
+      {/* {Content} */}
+      {technologies.map((tab, i) => (
+     
+      <Feature>
+        <Tippy
+          content={names[i]}
+          placement="top"
+          animation="scale-subtle"
+          // theme="nanai"
+          arrow={true}
+          duration={200}
+          delay={[75, 0]}
+          distance={8}
+         
+          className="nanai-theme"
+        >
+         
+          <Icon>
+            <use href={spriteTech + `#${tab}`} />
+          </Icon>
+        </Tippy>
+      </Feature>
+      ))}
+
+      <Feature>
+        <Tippy
+          content="AWS"
+          placement="bottom"
+          animation="scale-subtle"
+          // theme="nanai"
+          arrow={false}
+          duration={200}
+          delay={[75, 0]}
+          distance={8}
+          className="nanai-theme"
+        >
+          <Icon>
+            <use href={spriteTech + "#aws"} />
+          </Icon>
+        </Tippy>
       </Feature>
       <Feature>
-        <Icon>
-          <use href={sprite + "#icon-trophy"} />
-        </Icon>
+        <Tippy
+          content="AWS"
+          placement="bottom"
+          animation="scale-subtle"
+          // theme="nanai"
+          arrow={false}
+          duration={200}
+          delay={[75, 0]}
+          distance={8}
+          className="nanai-theme"
+        >
+          <Icon>
+            <use href={spriteTech + "#googlecloud"} />
+          </Icon>
+        </Tippy>
       </Feature>
-      <Feature>
-        <Icon>
-          <use href={sprite + "#icon-presentation"} />
-        </Icon>
-      </Feature>
-      <Feature>
-        <Icon>
-          <use href={sprite + "#icon-map-pin"} />
-        </Icon>
-      </Feature>
-      <Feature>
-        <Icon>
-          <use href={sprite + "#icon-key"} />
-        </Icon>
-      </Feature> */}
-      <Feature>
-        <Icon>
-          <use href={spriteTech + "#aws"} />
-        </Icon>
-      </Feature>
-      <Feature>
-        <Icon>
-          <use href={spriteTech + "#googlecloud"} />
-        </Icon>
-      </Feature>
-      
       <Feature>
         <Icon>
           <use href={spriteTech + "#heroku"} />

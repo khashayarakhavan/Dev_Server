@@ -216,3 +216,14 @@ export const SearchBox = ({ toggleCartHidden, itemCount }) => (
     font-weight: 500;
     font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
     
+
+
+
+
+
+//Tippy.js tooltip 
+//when adding another children inside a tippy ref, make sure to forward its refrence
+//down to its proper element. 
+const ThisWillWork = forwardRef((props, ref) => {
+  return <button ref={ref}>Reference</button>;
+});

@@ -10,11 +10,6 @@ import colors from './colors';
 
 const GlobalStyle = createGlobalStyle`
 
-.tippy-tooltip.tomato-theme {
-  background-color: tomato;
-  color: yellow;
-}
-
  @font-face {
     font-family: "Transat-Bold";
     src: url("Fonts/Transat/Bold/transat_bold-webfont.woff") format('woff'),
@@ -112,6 +107,29 @@ ${
 	font-weight: 700;
 	src: local(".SFNS-BoldItalic"), local(".SFNSText-BoldItalic"), local(".HelveticaNeueDeskInterface-BoldItalic"), local(".LucidaGrandeUI"), local("Segoe UI Bold Italic"), local("Ubuntu Bold Italic"), local("Roboto-BoldItalic"), local("DroidSans-Bold"), local("Tahoma Bold"), local("Oxygen-Sans"), local("Cantarell");
 }
+
+
+.nanai-theme { //styling the theme of tippyJS
+    ${"" /* background-color: tomato !important; */}
+    ${"" /* background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%); */}
+    background-color: #102539 !important;
+    color: #F9F9FA !important;
+    font-family: Raleway, sans-serif;
+    font-size: 12px !important;   
+
+    & > .tippy-arrow { //styling the border of tippyJS
+    border-top-color: tomato !important;
+    background: transparent;
+    color: #102539;
+    }
+
+    & > 
+}
+
+${"" /* .tippy-tooltip {
+    font-size: 0.9rem;
+    } */}
+
 /* Now, let's apply it on an element */
 ${"" /* body {
   font-family: "system";
@@ -151,6 +169,32 @@ body {
     *:focus {
       outline: none;
     }
+
+
+    
+.tippy-tooltip.tomato-theme {
+  background-color: tomato;
+  color: yellow;
+}
+
+${
+  "" /* .tippy-tooltip.tomato-theme[data-animatefill] {
+  background-color: transparent;
+}
+
+.tippy-tooltip.tomato-theme .tippy-backdrop {
+  background-color: tomato;
+} */
+}
+
+
+}
+
+${
+  "" /* 
+.tippy-popper[x-placement^=top] [x-arrow] {
+  border-top: 7px solid #DBEEF5;
+} */
 }
 
 ::selection {

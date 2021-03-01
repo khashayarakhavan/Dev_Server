@@ -1,5 +1,6 @@
 //Libraries
 import styled from "styled-components";
+import { rgba } from "polished";
 
 export const FeatureContainer = styled.section`
   // defining the grid values and positioning in relation to container grid using column names
@@ -9,22 +10,23 @@ export const FeatureContainer = styled.section`
 
   position: relative;
   bottom: 0;
-  ${'' /* right: 2rem; */}
+  ${"" /* right: 2rem; */}
 
-  
   margin: 0rem 0;
   margin-top: 1rem;
   height: min-content;
   border-bottom: 5px solid #eb5e28;
 
-  ${'' /* margin-left: 2rem; */}
-  ${'' /* margin-top: 3rem; */}
-  ${'' /* padding-left: 3rem; */}
+  ${"" /* margin-left: 2rem; */}
+  ${"" /* margin-top: 3rem; */}
+  ${"" /* padding-left: 3rem; */}
   display: inline-flex; // flex lets it to have all items in a single row
   flex-direction: row;
   flex-wrap: wrap; // lets the flex to occupy new row when space is not enough
   justify-content: flex-end; // Horizontally align items inside the flex container
   align-items: center; // Vertically align items inside the flex container
+
+ 
 `;
 
 export const Feature = styled.div`
@@ -66,4 +68,17 @@ export const Icon = styled.svg`
   ${'' /* width: 100%;
   height: 100%; */}
   fill: currentColor;
+`;
+
+
+
+export const CustomTooltip = styled.div`
+  color: ${rgba("#fff", 0.85)};
+  color: #143351;
+  font-size: 12px;
+  color: #eb5e28;
+  color: red;
+  background: #f0f0f3;
+  width: 100%;
+  height: 100%;
 `;

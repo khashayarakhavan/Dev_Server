@@ -1,52 +1,8 @@
 
-
-
-.features-2 {
-   
-    grid-column: center-start / center-end;
-    margin: 0rem 0;
-    height: min-content;
-    /* border-top: 5px solid grey; */
     
-    display: flex; 
-   
-    flex-direction: row;
-    flex-wrap: wrap; 
-    
-    justify-content: center;
-    align-items: center;
+.tippy-tooltip.nanai-theme {
+  background-color: red !important;
+  color: blue !important;
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
 }
-
-.feature-2 {
-    
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center;
-    color: #102539;
-
-    
-    width: 5rem;
-    height: 5rem;
-    background-color: rgba(182, 125, 144, 0.025);
-    border-radius: 50%;
-    
-   
-
-    
-}
-
-.feature-2__icon {
-       
-        margin: .5rem;
-        width: 4rem;
-        height: 4rem;
-        fill: currentColor;
-    }
-
-
-    .feature-2:hover {
-    
-        color: #003153;
-    
-    }
