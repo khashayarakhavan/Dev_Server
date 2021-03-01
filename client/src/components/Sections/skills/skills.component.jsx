@@ -53,7 +53,7 @@ import {
   Accent_mateBlue,
 } from "../../../design/effects.styles";
 
-import FlexIcons from "../../Sections/FlexIcons/flexIcons.component";
+import {FrontEnd, BackEnd} from "../../Sections/FlexIcons/flexIcons.component";
 
 //Code
 export const Header = (props) => {
@@ -106,7 +106,7 @@ export const Header = (props) => {
 
                   <p
                     style={{
-                      fontSize: "2rem",
+                      fontSize: "1.7rem",
                       fontWeight: "200",
                       textAlign: "right",
                       width: "85%",
@@ -118,22 +118,23 @@ export const Header = (props) => {
                       // paddingLeft: "1rem",
                     }}
                   >
-                    My ultimate goal is to perfectly match your real needs to
-                    the best solutions available. So I always make sure to
-                    follow the tech community's best practices.
+                    Ideally, it's the project that dictates the stack.The
+                    developer's job is to identify its basic needs, and use
+                    proper tools to serve them .
                     <br />
-                    <div
-                      style={{ display: "flex", justifyContent: "flex-end" }}
-                    >
-                      <FlexIcons />
-                    </div>
+                    While enjoying MERN and Jamstack, I'm passionately following
+                    Technology-Agnostic approach and extending my toolbox
+                    with the emerging standards such as :
                   </p>
+                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                    <FrontEnd />
+                  </div>
                 </Deets>
               </ColMd6>
               <ColMd6>
                 <Deets>
                   <TitleContainer className="titleContainer">
-                    <TitleBlock style={{alignItems: "flex-start"}}>
+                    <TitleBlock style={{ alignItems: "flex-start" }}>
                       <h3 className="hi">Cloud Era </h3>{" "}
                       <TEXT>
                         <p style={{ display: "inline" }}>
@@ -151,7 +152,7 @@ export const Header = (props) => {
                   </TitleContainer>
                   <p
                     style={{
-                      fontSize: "2rem",
+                      fontSize: "1.7rem",
                       fontWeight: "200",
                       textAlign: "left",
                       width: "85%",
@@ -163,16 +164,16 @@ export const Header = (props) => {
                       paddingLeft: "0rem",
                     }}
                   >
-                    My ultimate goal is to perfectly match your real needs to
-                    the best solutions available. So I always make sure to
-                    follow the tech community's best practices.
+                    Ideally, it's the project that dictates the stack.The
+                    developer's job is to identify its basic needs, and use
+                    proper tools to serve them. I've been using MERN stack for a
+                    while and now I'm extending my toolbox using the latest
+                    tools such as :
                     <br />
-                    <div
-                      style={{ display: "flex", justifyContent: "flex-end" }}
-                    >
-                      <FlexIcons />
-                    </div>
                   </p>
+                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                    <BackEnd />
+                  </div>
                 </Deets>
 
                 {/* <Deets style={{ textAlign: "right", marginTop: "2rem" }}>

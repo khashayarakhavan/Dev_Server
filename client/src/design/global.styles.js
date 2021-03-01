@@ -108,8 +108,8 @@ ${
 	src: local(".SFNS-BoldItalic"), local(".SFNSText-BoldItalic"), local(".HelveticaNeueDeskInterface-BoldItalic"), local(".LucidaGrandeUI"), local("Segoe UI Bold Italic"), local("Ubuntu Bold Italic"), local("Roboto-BoldItalic"), local("DroidSans-Bold"), local("Tahoma Bold"), local("Oxygen-Sans"), local("Cantarell");
 }
 
-
-.nanai-theme { //styling the theme of tippyJS
+ //styling the theme of tippyJS
+.nanai-theme {
     ${"" /* background-color: tomato !important; */}
     ${"" /* background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%); */}
     background-color: #102539 !important;
@@ -123,7 +123,7 @@ ${
     color: #102539;
     }
 
-    & > 
+    
 }
 
 ${"" /* .tippy-tooltip {

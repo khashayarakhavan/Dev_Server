@@ -13,7 +13,7 @@ export const FeatureContainer = styled.section`
   ${"" /* right: 2rem; */}
 
   margin: 0rem 0;
-  margin-top: 1rem;
+  margin-top: 2rem;
   height: min-content;
   border-bottom: 5px solid #eb5e28;
 
