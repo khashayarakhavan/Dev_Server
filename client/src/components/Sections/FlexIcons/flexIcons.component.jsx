@@ -80,9 +80,6 @@ export const backEndNames = [
 export const FrontEnd = ({props}) => {
   
 
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
 
 
   return (
@@ -117,11 +114,7 @@ export const FrontEnd = ({props}) => {
 export const BackEnd = ({props}) => {
   
 
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-
+  
   return (
     <FeatureContainer>
       {/* {Content} */}
