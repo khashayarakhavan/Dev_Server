@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectData, selectPosts } from "../../../redux/content/content.selectors";
-import ArticleItemContainer from '../../atomic/article-item/article-item.container';
+import { selectData, selectPosts } from "redux/content/content.selectors";
+import ArticleItemContainer from 'components/atomic/article-item/article-item.container';
 // import { fetchContentStart } from "../../redux/content/content.actions";
 import { ArticlesContainer } from "./articles.styles";
 

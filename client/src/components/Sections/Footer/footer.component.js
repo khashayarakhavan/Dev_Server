@@ -10,6 +10,16 @@ import p2small from "../../../assets/img/nat-2.jpg";
 const Template = () => {
   return (
     <footer className="section-footer">
+      {/* <div
+        id="retainable-rss-embed"
+        data-rss="https://medium.com/feed/@username"
+        data-maxcols="3"
+        data-layout="grid"
+        data-poststyle="inline"
+        data-readmore="Read the rest"
+        data-buttonclass="btn btn-primary"
+        data-offset="-100"
+      ></div> */}
       <div className="footer">
         <div className="footer__logo-box">
           {/* Art Direction for footer photo, changing size and resolution density based on media queries. */}

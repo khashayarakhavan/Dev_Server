@@ -30,7 +30,7 @@ export const Loading = (state) => {
           <FadeIn>
             <div class="d-flex justify-content-center align-items-center">
               <h1>fetching pizza</h1>
-                <Lottie options={defaultOptions2} height={120} width={120} />  
+                <Lottie options={defaultOptions} height={120} width={120} />  
             </div>
           </FadeIn>
       </div>
