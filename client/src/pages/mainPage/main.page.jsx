@@ -84,6 +84,7 @@ import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
 import Section_Skill from '../../components/Sections/skills/skills.component';
 import FlexIcons from '../../components/Sections/FlexIcons/flexIcons.component';
 import {SlideUpButtonJelly} from '../../interactions/SlideUpButtonJelly/slideUpButtonJelly.component';
+import Footer from '../../components/Sections/Footer/footer.component';
 const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
   
   const scrollToTop = () => {
@@ -131,8 +132,9 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => 
           {/* <FlexIcons /> */}
           <Heading cta="read " subCta="more details" text="Recent Projects" inverted zeroMarginBottom/>
           <ScrollHorizontal />
-          <Projects />
+          {/* <Projects /> */}
           <MiniCards />
+          <Footer />
           {/* <ScrollLinkCustom
             activeClass="active"
             to="test1"

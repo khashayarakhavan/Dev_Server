@@ -122,9 +122,8 @@ export const Header = (props) => {
                     developer's job is to identify its basic needs, and use
                     proper tools to serve them .
                     <br />
-                    While enjoying MERN and Jamstack, I'm passionately following
-                    Technology-Agnostic approach and extending my toolbox
-                    with the emerging solutions such as :
+                    I'm passionately following Language-Agnostic approach and
+                    extending my toolbox with emerging technologies such as :
                   </p>
                   <div style={{ display: "flex", justifyContent: "flex-end" }}>
                     <FrontEnd />
@@ -164,9 +163,14 @@ export const Header = (props) => {
                       paddingLeft: "0rem",
                     }}
                   >
-                   We are on the precipice of a golden age in cloud technologies. This marked shift will probably forever change the way we build and scale web apps. 
-                   <br/>
-                   Secure authentication, continuous delivery, and instast access are becoming the new industry standard. I tend to use a number of tools and services to meet these requirements, such as :
+                    We are on the precipice of a golden age in cloud
+                    technologies. This marked shift will probably forever change
+                    the way we build and scale web apps.
+                    <br />
+                    Secure authentication, continuous delivery, and instast
+                    access are becoming the industry standard. So, I tend to use
+                    a number of different tools and services to meet these
+                    requirements. I adore most of them, namely :
                     <br />
                   </p>
                   <div style={{ display: "flex", justifyContent: "flex-end" }}>

@@ -20,27 +20,55 @@ import "tippy.js/animations/scale-subtle.css";
 import {Icon, FeatureContainer, Feature, CustomTooltip} from './flexIcons.styles';
 
 export const frontEnd = [
+  "react",
+  "redux",
+  "nodejs",
   "typescript",
   "graphql",
   "redis",
   "postgresql",
   "mongodb",
-  "styledcomponents",
-  "jest",
+  // "styledcomponents",
   "pythonlang",
-  "gitlab",
+  "jest",
+  // "gitlab",
 ];
 export const frontEndNames = [
+  "React",
+  "Redux",
+  "Node.js",
   "TypeScript",
   "GraphQL",
   "Redis",
   "PostgreSQL",
   "MongoDB Atlas",
-  "Styled-Components",
-  "Jest",
+  // "Styled-Components",
   "Python",
-  "GitLab",
+  "Jest",
+  // "GitLab",
 ];
+// export const frontEnd = [
+//   "typescript",
+//   "graphql",
+//   "redis",
+//   "postgresql",
+//   "mongodb",
+//   "styledcomponents",
+//   "jest",
+//   "pythonlang",
+//   "gitlab",
+// ];
+// export const frontEndNames = [
+//   "TypeScript",
+//   "GraphQL",
+//   "Redis",
+//   "PostgreSQL",
+//   "MongoDB Atlas",
+//   "Styled-Components",
+//   "Jest",
+//   "Python",
+//   "GitLab",
+// ];
 export const backEnd = [
   "aws",
   "googlecloud",
@@ -51,6 +79,7 @@ export const backEnd = [
   "circleci",
   "cloudflare",
   "docker",
+  "gitlab",
 ];
 
 export const backEndNames = [
@@ -62,7 +91,8 @@ export const backEndNames = [
   "Passport.js",
   "CircleCI",
   "Cloudflare CDN",
-  "Docker"
+  "Docker",
+  "GitLab"
 ];
 
 // import "./flexIcons.css";
