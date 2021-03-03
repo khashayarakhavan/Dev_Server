@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Article, Image } from "./article-item.styles";
+import { Article, Image } from "./contentful-single-article.styles";
 
 const Template = ({post}) => {
-  console.log('Post property in article-item.js is:', post);
+  console.log('Post property in contentful-single-article.component.js is:', post);
   return (
     <Article>
       <div className="no-gutter">

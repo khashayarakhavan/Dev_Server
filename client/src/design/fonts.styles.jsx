@@ -47,6 +47,116 @@ const fonts = {
     font-family: "Abril Fatface", cursive;
   `,
 
+  menu: {
+    logo: (...args) => css`
+      font-family: "Barriecito", cursive;
+      font-weight: 400;
+      font-size: clamp(3rem, 2.9296875vw, 2.9296875vw);
+      line-height: 1.6;
+    `,
+    link: (...args) => css`
+      font-family: Montserrat, sans-serif;
+      font-weight: 800;
+      font-size: clamp(15px, 1.171875vw, 1.171875vw);
+      line-height: 1.6;
+    `,
+  },
+
+  heading: {
+    h1: (...args) => css`
+      font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
+        sans-serif;
+      font-weight: 400;
+      font-size: clamp(3.9rem, 3.80859375vw, 3.80859375vw);
+      line-height: 1;
+    `,
+    h1_sub: (...args) => css`
+      font-family: "Poppins", sans-serif;
+      font-size: 2vw;
+      font-weight: 400;
+      line-height: clamp(30px, 2.9296vw, 2.9296vw);
+    `,
+    h1_sub_light: (...args) => css`
+      font-family: "Poppins", sans-serif;
+      font-size: 2vw;
+      font-weight: 200;
+      line-height: clamp(30px, 2.9296vw, 2.9296vw);
+    `,
+    h1_button: (...args) => css`
+      font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
+        sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.9rem, 0.8789vw, 0.8789vw);
+      line-height: 1.6;
+    `,
+    h1_button_sub: (...args) => css`
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(0.9rem, 0.8789vw, 0.8789vw);
+      font-weight: 200;
+      line-height: 1.6;
+    `,
+    h2: (...args) => css`
+      font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
+        sans-serif;
+      font-size: 2.8vmax;
+      font-weight: 400;
+      line-height: 1;
+    `,
+    h2_sub: (...args) => css`
+      font-family: "Nunito", sans-serif;
+      font-size: 2vmax;
+      font-weight: 400;
+      line-height: clamp(30px, 2.9296vw, 2.9296vw);
+    `,
+    h2_sub_light: (...args) => css`
+      font-family: "Nunito", sans-serif;
+      font-size: 2vmax;
+      font-weight: 200;
+      line-height: clamp(30px, 2.9296vw, 2.9296vw);
+    `,
+    h2_text: (...args) => css`
+      font-family: "Nunito", sans-serif;
+      font-size: clamp(1.7rem, 1.328125vw, 1.328125vw);
+      font-weight: 200;
+      line-height: 1.6;
+    `,
+    h3: (...args) => css`
+      font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
+        sans-serif;
+      line-height: 1.5;
+      font-weight: 700;
+      font-size: 1.46484375vw;
+      -webkit-font-smoothing: antialiased;
+    `,
+    h3_text: (...args) => css`
+      font-family: "Poppins", sans-serif;
+      font-size: 1.09375vw;
+      font-weight: 800;
+      line-height: 1.6;
+    `,
+    h3_button: (...args) => css`
+      font-family: Arial;
+      font-size: 0.9727626vw;
+      font-weight: 400;
+      font-stretch: normal;
+      line-height: normal;
+    `,
+    h4: (...args) => css`
+      font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
+        sans-serif;
+      line-height: 1.5;
+      font-weight: 700;
+      font-size: 1.46484375vw;
+      -webkit-font-smoothing: antialiased;
+    `,
+    h4_text: (...args) => css`
+      font-family: "Poppins", sans-serif;
+      font-size: 0.9765625vw;
+      font-weight: 200;
+      line-height: 1.6;
+    `,
+  },
+
   mixins: {
     CTA: {
       visitProfile: (...args) => css`
@@ -81,7 +191,8 @@ const fonts = {
       font-weight: 400;
     `,
     heroHeader: (...args) => css`
-      font-family: "Rubik Mono One",  Cambria, "Times New Roman", Times, sans-serif;
+      font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
+        sans-serif;
       font-weight: 400;
     `,
   },

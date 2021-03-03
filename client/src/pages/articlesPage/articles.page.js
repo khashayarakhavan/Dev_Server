@@ -18,7 +18,7 @@ import {ScreenContainer, Content} from '../../design/containers.styles';
 //Components
 import {ModernNav} from '../../interactions/ModernNav/modernNav.component';
 import { SlideUpHiPal } from "../../interactions/SlideUp/slideUp.component";
-import ArticlesContent from './articles.component';
+import PageArticles_Content from './page-articles.content';
 
 //Code
 const EmailMePage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
@@ -31,7 +31,7 @@ const EmailMePage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
 
       {/* #VISIBLE CONTENT */}
       <Content open={menuOpen}>
-        <ArticlesContent />
+        <PageArticles_Content />
       </Content>
     </ScreenContainer>
   );

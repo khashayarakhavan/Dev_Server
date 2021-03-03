@@ -20,7 +20,7 @@ import { HomePageContainer } from './articles.styles';
 <--
 */
 
-const HomePage = ({ fetchContentStart }) => {
+const PageArticlesContent = ({ fetchContentStart }) => {
   useEffect(() => {
     fetchContentStart();
   }, [fetchContentStart]);
@@ -49,4 +49,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchContentStart: () => dispatch(fetchContentStart()),
 });
 
-export default connect(null, mapDispatchToProps)(HomePage);
+export default connect(null, mapDispatchToProps)(PageArticlesContent);
