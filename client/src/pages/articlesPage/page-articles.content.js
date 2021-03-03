@@ -5,11 +5,18 @@ import React, { Profiler, useEffect } from "react";
 import { connect } from "react-redux";
 //Components
 import Articles from 'components/complex/articles/articles.component';
+import Heading from "components/Sections/Heading/heading.component";
+
 import Directory from 'components/complex/directory/directory.component';
+import TopMenu from "components/Sections/header/header.component";
+
 //Actions
 import { fetchContentStart } from "redux/content/content.actions";
 //Styles
-import { HomePageContainer } from './articles.styles';
+import {
+  HomePageContainer,
+  PageArticleContainer,
+} from "./page-articles.styles";
 
 // --> END OF IMPORT SECTION <-- //
 
@@ -26,12 +33,22 @@ const PageArticlesContent = ({ fetchContentStart }) => {
   }, [fetchContentStart]);
   
   return (
-    <HomePageContainer>
-      <Directory />
-      <Profiler id='Articles' onRender={(id, phase, actualDuration) => {
-        console.log({id, phase, actualDuration});
-      } }>
-      <Articles />
+    <PageArticleContainer>
+      {/* <Directory /> */}
+      <TopMenu />
+      <Heading
+        text="Ich writtenen stories."
+        cta="read"
+        subCta="just "
+        
+      />
+      <Profiler
+        id="Articles"
+        onRender={(id, phase, actualDuration) => {
+          console.log({ id, phase, actualDuration });
+        }}
+      >
+        <Articles />
       </Profiler>
       {/* <iframe
         src="https://pasteapp.com/p/KlvWDQenHd2/embed?view=2Rn8cAnnmcW"
@@ -41,7 +58,7 @@ const PageArticlesContent = ({ fetchContentStart }) => {
         frameborder="0"
         allowfullscreen
       ></iframe> */}
-    </HomePageContainer>
+    </PageArticleContainer>
   );
 };
 

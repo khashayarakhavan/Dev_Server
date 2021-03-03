@@ -33,7 +33,7 @@ import SignInUp from '../../components/Sections/emailMe/emailMe.component';
 // import RichTextSection from '../../components/Sections/richText/richText.component';
 import MessageMe from '../../components/Sections/messageMe/messageMe.component';
 import MiniCards from "../../components/complex/section/MiniCards/MiniCards.component";
-import TopMenu from '../../components/Sections/header/header.component';
+import TopMenu from 'components/Sections/header/header.component';
 import Heading from '../../components/Sections/Heading/heading.component';
 import ScrollHorizontal from '../../components/Sections/ScrollHorizontal/scrollHorizontal.component';
 import HeroHeader from "../../components/complex/hero-header/heroHeader.component";

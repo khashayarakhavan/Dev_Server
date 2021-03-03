@@ -8,7 +8,7 @@ import shadows from '../../design/shadows.styles';
 //Respond
 import {respond} from '../../design/responsive';
 //Containers
-import {VegeloperContainer} from '../../design/containers.styles';
+import {VegeloperContainer} from 'design/containers.styles';
 import {
   Link as ScrollLink,
   Element,

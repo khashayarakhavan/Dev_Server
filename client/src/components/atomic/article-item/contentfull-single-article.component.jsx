@@ -1,38 +1,62 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Article, Image } from "./contentful-single-article.styles";
+import {
+  Article,
+  Image,
+  TextBody,
+  PostTitle,
+  PostSubTitle,
+  AuthorFullName,
+  Time,
+  AuthorData,
+} from "./contentful-single-article.styles";
 
-const Template = ({post}) => {
+import {Skeleton, Row} from './contentful-single-article.styles';
+import LazyLoadCard from 'interactions/LazyCard/lazyCard.component.js';
+
+
+const Template = ({post, isLoading}) => {
   console.log('Post property in contentful-single-article.component.js is:', post);
   return (
     <Article>
-      <div className="no-gutter">
-        <h2>
-          <Link to={`articles/${post.fields.slug}`}>{post.fields.title}</Link>
-        </h2>
-        <Link to={`articles/${post.fields.slug}`}>
-          <Image
-            src={post.fields.featuredImage.fields.file.url + "?w=400&h=300"}
-            alt={post.fields.featuredImage.fields.file.fileName}
-          />
-        </Link>
+      
+        <div style={{height: "min-content"}}>
+          <Link
+            to={`articles/${post.fields.slug}`}
+            style={{ marginBottom: "0" , height: "min-content", width: "min-content"}}
+          >
+            {" "}
+            <Image
+              src={post.fields.featuredImage.fields.file.url + "?w=400&h=300"}
+              alt={post.fields.featuredImage.fields.file.fileName}
+              style={{ marginBottom: "0", marginTop: "0" }}
+            />
+          </Link>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <Link
+            to={`articles/${post.fields.slug}`}
+            style={{ marginBottom: "0" }}
+          >
+            <PostTitle>{post.fields.title}</PostTitle>
+          </Link>
+          <PostSubTitle>Read more on Medium.com</PostSubTitle>
+        </div>
+      
+      <TextBody>{post.fields.content}</TextBody>
 
-        <p>{post.fields.content}</p>
-
-        <p className="contentful">
-          <img
-            src={
-              post.fields.author.fields.avatar.fields.file.url + "?w=50&h=50"
-            }
-            alt={post.fields.author.fields.fullName}
-          />
-          <a>{post.fields.author.fields.fullName}</a>
-          <i className="link-spacer"></i>
-          <time className="post-date" dateTime="2015-05-05">
-            {post.fields.publishDate}
-          </time>
-        </p>
-      </div>
+      <AuthorData className="contentful">
+        <img
+          src={post.fields.author.fields.avatar.fields.file.url + "?w=50&h=50"}
+          alt={post.fields.author.fields.fullName}
+          style={{ marginBottom: "0" }}
+        />
+        <AuthorFullName>{post.fields.author.fields.fullName}</AuthorFullName>
+        <i className="link-spacer"></i>
+        <Time className="post-date" dateTime="2015-05-05">
+          {post.fields.publishDate}
+        </Time>
+      </AuthorData>
     </Article>
   );
 };

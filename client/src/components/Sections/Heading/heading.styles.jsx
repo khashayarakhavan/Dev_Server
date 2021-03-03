@@ -1,10 +1,10 @@
 //Libraries
 import styled from "styled-components";
 //Design
-import fonts from '../../../design/fonts.styles';
-import colors from '../../../design/colors';
-import {respond} from '../../../design/responsive';
-import {VegeloperContainer} from '../../../pages/vegeloperPage/vegeloper.styles';
+import fonts from 'design/fonts.styles';
+import colors from 'design/colors';
+import {respond} from 'design/responsive';
+import {VegeloperContainer} from 'design/containers.styles';
 
 //Code
 export const SectionHeading = styled(VegeloperContainer)`

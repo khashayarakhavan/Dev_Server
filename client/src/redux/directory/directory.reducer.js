@@ -4,6 +4,7 @@ export const INITIAL_STATE = {
       title: 'hats',
       imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
       id: 1,
+      size: 'large',
       linkUrl: 'shop'
     },
     {

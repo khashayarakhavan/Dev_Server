@@ -227,3 +227,16 @@ export const SearchBox = ({ toggleCartHidden, itemCount }) => (
 const ThisWillWork = forwardRef((props, ref) => {
   return <button ref={ref}>Reference</button>;
 });
+
+
+
+//window viewport size function for Chrome developers console 
+function winSize() {
+    console.log(`
+Inner Width: ${this.innerWidth}
+Inner Height: ${this.innerHeight}
+Outer Width: ${this.outerWidth}
+Outer Height: ${this.outerHeight}
+`);}
+
+winSize();

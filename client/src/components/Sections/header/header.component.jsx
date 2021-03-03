@@ -50,7 +50,7 @@ export const Header = (props) => {
           /about
           <PrussianBlue_To_Orange>Me</PrussianBlue_To_Orange>
         </MenuButton>
-        <MenuButton to="/test">
+        <MenuButton to="/articles">
           /my
           <PrussianBlue_To_Orange>Works</PrussianBlue_To_Orange>
         </MenuButton>
