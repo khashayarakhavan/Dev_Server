@@ -15,7 +15,7 @@ import {Article, Image, PostTitle, PostSubTitle, TextBody, AuthorData, AuthorFul
 
 const PostContent = ({post}) => (
  
-    <Article>
+    <ArticlesContainer>
       <div style={{ height: "min-content" }}>
         <Link
           to={`/articles/${post.fields.slug}`}
@@ -57,7 +57,7 @@ const PostContent = ({post}) => (
           {post.fields.publishDate}
         </Time>
       </AuthorData>
-    </Article>
+    </ArticlesContainer>
  
 );
 
@@ -69,7 +69,7 @@ export const Articles = ({ post, data, isLoading }) => {
   console.log('from WOWOWOWOWOWOWOW, the post is ', post);
   return (
     <ArticlesContainer>
-      {isLoading ? (
+      {/* {isLoading ? (
         <Wrapper>
           <Row>
             <Skeleton width="50px" height="50px" margin="0 2rem .5rem 0" />
@@ -80,9 +80,10 @@ export const Articles = ({ post, data, isLoading }) => {
           </Row>
         </Wrapper>
       ) : (
-        
         <PostContent post={post} />
-      )}
+      )} */}
+
+      <PostContent post={post} />
     </ArticlesContainer>
   );
 };

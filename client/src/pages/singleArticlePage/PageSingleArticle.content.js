@@ -3,6 +3,7 @@
 //Libraries
 import React, { lazy, Profiler, useEffect } from "react";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 //Components
 // import SingleArticle from 'components/complex/singleArticle/singleArticle.container';.
 
@@ -20,7 +21,16 @@ import {
   PageSingleArticleContainer,
 } from "./pageSingleArticle.styles";
 
-const SingleArticle = lazy(() =>
+import {
+  ArticlesContainer,
+  Row,
+  Skeleton,
+  Wrapper,
+} from "./pageSingleArticle.styles";
+
+import { selectFetching } from "redux/content/content.selectors";
+
+const SingleArticleContainer = lazy(() =>
   import("components/complex/singleArticle/singleArticle.container")
 );
 
@@ -33,7 +43,7 @@ const SingleArticle = lazy(() =>
 <--
 */
 
-const PageSingleArticleContent = ({ fetchSingleArticleStart, match }) => {
+const PageSingleArticleContent = ({ fetchSingleArticleStart, match, isLoading }) => {
   useEffect(() => {
     fetchSingleArticleStart(match.params.slug);
   }, [fetchSingleArticleStart]);
@@ -42,7 +52,20 @@ const PageSingleArticleContent = ({ fetchSingleArticleStart, match }) => {
     <PageSingleArticleContainer>
       <TopMenu />
       <Heading text="Ich writtenen stories." cta="read" subCta="just " />
-      <SingleArticle />
+      
+      {isLoading ? (
+        <Wrapper>
+          <Row>
+            <Skeleton width="50px" height="50px" margin="0 2rem .5rem 0" />
+            <div>
+              <Skeleton width="130px" height="30px" margin="0 0 0.6rem" />
+              <Skeleton width="80px" height="30px" />
+            </div>
+          </Row>
+        </Wrapper>
+      ) : (
+        <SingleArticleContainer />
+      )}
     </PageSingleArticleContainer>
   );
 };
@@ -51,4 +74,14 @@ const mapDispatchToProps = (dispatch) => ({
   fetchSingleArticleStart: (slug) => dispatch(fetchSingleArticleStart(slug)),
 });
 
-export default connect(null, mapDispatchToProps)(PageSingleArticleContent);
+
+const mapStateToProps = createStructuredSelector({
+
+  isLoading: selectFetching,
+
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PageSingleArticleContent);
