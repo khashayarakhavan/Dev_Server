@@ -71,5 +71,6 @@ export const Row = styled.div`
   border-radius: 3vw;
   padding: 6rem 3rem;
   background: #f9f9fa;
+  ${'' /* background: transparent; */}
 `;
 

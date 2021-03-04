@@ -9,7 +9,7 @@ export const HomePageContainer = styled(VegeloperContainer)`
 
 
 
-export const PageArticleContainer = styled(VegeloperContainer)`
+export const PageSingleArticleContainer = styled(VegeloperContainer)`
   ${"" /* background-image:  */}
   ${"" /* background: transparent; */}
   position: relative;

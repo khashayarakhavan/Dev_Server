@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   data: null, // Main entry for SHOP_DATA import in our app.
   isFetching: false,
   errorMessage: undefined,
-  post: null,
+  post: {fields: {title: 'hi', slug: "new", content: "test", author: "aftoflBig5", publishDate: "1111"}},
 };
 
 const contentReducer = (state = INITIAL_STATE, action) => {

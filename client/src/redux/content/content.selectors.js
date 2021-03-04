@@ -9,7 +9,7 @@ export const selectData = createSelector(
 
 export const selectPost = createSelector(
   [selectContent],
-  (content) => content.post
+  (content) => content.post ? content.post : {}
 );
 
 export const selectFetching = createSelector(

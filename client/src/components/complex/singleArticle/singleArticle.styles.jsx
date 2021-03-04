@@ -1,7 +1,9 @@
 import styled, { css, keyframes } from "styled-components";
 import { rgba } from "polished";
-import fonts from 'design/fonts.styles';
-import shadows from 'design/shadows.styles';
+import fonts from "design/fonts.styles";
+import shadows from "design/shadows.styles";
+import { VegeloperContainer } from "design/containers.styles";
+
 
 export const Article = styled.article`
   margin-bottom: 4rem;
@@ -9,11 +11,19 @@ export const Article = styled.article`
   border-radius: 3vw;
   padding: 3rem;
   background: #f9f9fa;
-  background: transparent; 
+  background: transparent;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   ${"" /* background: red; */}
 `;
+
+
+export const Wrapper = styled.div`
+  grid-column: center-start/center-end;
+`;
+
+
+
 export const TextBody = styled.div`
   ${fonts.heading.h2_text};
   color: #143351;
@@ -28,12 +38,12 @@ export const PostSubTitle = styled.div`
 `;
 export const AuthorFullName = styled.div`
   ${fonts.heading.h3_text};
-  color: #EB5E28;
+  color: #eb5e28;
   margin-left: 1rem;
 `;
 export const AuthorData = styled.div`
   display: flex;
-  color: #EB5E28;
+  color: #eb5e28;
   margin-top: 2rem;
   align-items: center;
 `;
@@ -44,12 +54,11 @@ export const Time = styled.time`
 `;
 
 export const Image = styled.img`
-width: 200px;
-margin-top: 2rem;
+  width: 200px;
+  margin-top: 2rem;
 
-         cursor: help;
+  cursor: help;
 `;
-
 
 const skeletonColor = "#e0daeb";
 const borderRadius = "3px";
@@ -85,10 +94,17 @@ export const Skeleton = styled.div`
   }
 `;
 
-
 export const Row = styled.div`
-  
-  ${'' /* display: flex; */}
+  ${"" /* display: flex; */}
   align-items: center;
 `;
 
+
+
+export const ArticlesContainer = styled(VegeloperContainer)`
+  grid-column: cover-start/cover-end;
+  ${"" /* background: tomato; */}
+  margin: 0 0 5rem;
+  padding: 5rem 5rem;
+  background: transparent;
+`;

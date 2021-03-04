@@ -23,7 +23,7 @@ export function* fetchContentAsync() {
 export function* fetchSingleArticleAsync({payload: slug}) {
          try {
            log("Helllooooooooo");
-           log("This is slug", slug);
+           log("This is slug from content.sagas.js", slug);
            const data = yield client.getEntries({
              content_type: "post",
              "fields.slug": slug,
@@ -31,6 +31,7 @@ export function* fetchSingleArticleAsync({payload: slug}) {
            const post = data.items[0];
            
            log("Received Single Article from Contentful API:", post);
+           log("Received fields from content.sagas:", post.fields);
            // const post = data.items; // location of posts inside JSON data received from Contentful API.
            yield put(fetchSingleArticleSuccess(post));
          } catch (error) {

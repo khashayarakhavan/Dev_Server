@@ -1,47 +1,21 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-import {
-  Article,
-  Image,
-  TextBody,
-  PostTitle,
-  PostSubTitle,
-  AuthorFullName,
-  Time,
-  AuthorData,
-} from "./contentful-single-article.styles";
-
-import {Skeleton, Row} from './contentful-single-article.styles';
-import LazyLoadCard from 'interactions/LazyCard/lazyCard.component.js';
-
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  // let { id } = useParams();
-
-  return (
-    <div>
-      <h3>nanai kalti</h3>
-    </div>
-  );
-}
+  selectData,
+  selectPost,
+  selectFetching,
+} from "redux/content/content.selectors";
 
 
-const Template = ({post, isLoading, ...props}) => {
-  let {match} = props;
-  console.log('Post property in contentful-single-article.component.js is:', post);
-  return (
+import { ArticlesContainer, Row, Skeleton, Wrapper } from "./singleArticle.styles";
+
+import {Article, Image, PostTitle, PostSubTitle, TextBody, AuthorData, AuthorFullName, Time} from './singleArticle.styles';
+
+const PostContent = ({post}) => (
+ 
     <Article>
-     
-      
-
       <div style={{ height: "min-content" }}>
         <Link
           to={`/articles/${post.fields.slug}`}
@@ -84,7 +58,51 @@ const Template = ({post, isLoading, ...props}) => {
         </Time>
       </AuthorData>
     </Article>
+ 
+);
+
+
+
+
+export const Articles = ({ post, data, isLoading }) => {
+  // console.log('data is ...', data);
+  console.log('from WOWOWOWOWOWOWOW, the post is ', post);
+  return (
+    <ArticlesContainer>
+      {isLoading ? (
+        <Wrapper>
+          <Row>
+            <Skeleton width="50px" height="50px" margin="0 2rem .5rem 0" />
+            <div>
+              <Skeleton width="130px" height="30px" margin="0 0 0.6rem" />
+              <Skeleton width="80px" height="30px" />
+            </div>
+          </Row>
+        </Wrapper>
+      ) : (
+        
+        <PostContent post={post} />
+      )}
+    </ArticlesContainer>
   );
 };
 
-export default Template;
+
+
+// const mapStateToProps = createStructuredSelector({
+//   data: selectData,
+//   post: selectPost,
+//   isLoading: selectFetching,
+// });
+
+// const mapDispatchToProps = (dispatch) => ({
+//   fetchContentStart: () => dispatch(fetchContentStart()),
+// });
+
+// export default connect(mapStateToProps, null)(Articles);
+export default (Articles);
+
+
+
+
+      
