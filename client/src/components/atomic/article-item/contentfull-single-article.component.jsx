@@ -1,4 +1,7 @@
 import React , {forwardRef} from 'react';
+// import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+
 // import { Link } from 'react-router-dom';
 import {
   BrowserRouter as Router,
@@ -35,19 +38,28 @@ function Child() {
 }
 
 
-const Template = ({ post, isLoading, history, match, ...props}) => {
+
+
+
+const Template = ({ post, isLoading, history, ...props}) => {
+
+      // const history = useHistory();
   // let {match} = props;
 
 //   const ThisWillWork = forwardRef((children, ref) => {
 //   return <div ref={ref}>{children}</div>;
 // });
 
-  const clickHandler = () => {
-    history.push(`${match.url}/articles/${post.fields.slug}`);
+  const clickHandler = (props) => {
+
+     setTimeout(() => {
+      //  history.push(`/articles/${post.fields.slug}`);
+     }, 1000);
+    
   }
   console.log('Post property in contentful-single-article.component.js is:', post);
   return (
-    <Article>
+    <Article {...props}>
       <div style={{ height: "min-content" }}>
         <ScrollUp
           to="pageSingleArticle"
@@ -60,7 +72,7 @@ const Template = ({ post, isLoading, history, match, ...props}) => {
           <Link
             to={`/articles/${post.fields.slug}`}
             // to={`pageSingleArticle`}
-            // onClick={clickHandler}
+            // onClick={() => history.push("/contact", { from: "HomePage" })}
             style={{
               marginBottom: "0",
               height: "min-content",
@@ -85,16 +97,19 @@ const Template = ({ post, isLoading, history, match, ...props}) => {
           offset={-300}
           duration={500}
         >
-          <Link
-            to={`/articles/${post.fields.slug}`}
-            style={{
-              marginBottom: "0",
-              height: "min-content",
-              width: "min-content",
-            }}
-          >
-            <PostTitle>{post.fields.title}</PostTitle>
-          </Link>
+          <PostTitle>
+            <Link
+              to={`/articles/${post.fields.slug}`}
+              style={{
+                marginBottom: "0",
+                height: "min-content",
+                width: "min-content",
+                color: 'inherit',
+              }}
+            >
+              {post.fields.title}
+            </Link>
+          </PostTitle>
         </ScrollUp>
 
         <PostSubTitle>Read more on Medium.com</PostSubTitle>

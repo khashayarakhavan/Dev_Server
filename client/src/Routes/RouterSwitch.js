@@ -1,5 +1,5 @@
 import React, {lazy} from "react";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter} from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import {Wrapper} from './RouterSwitch.styles';
 import HiPalPage from "pages/hiPal/hiPal.page";
@@ -10,6 +10,7 @@ import Error404Page from "pages/404ErrorPage/error404.page";
 import ArticlesPage from "pages/articlesPage/articles.page.js";
 import SingleContent from "pages/singleArticle/singleArticle.component";
 import Vegeloper from "../pages/vegeloperPage/vegeloper.page";
+
 
 import SingleArticlePage from "pages/singleArticlePage/pageSingleArticle.container";
 // const SingleArticlePage = lazy(() =>

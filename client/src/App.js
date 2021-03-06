@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect } from 'react';
+
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { ThemeProvider } from "styled-components";
@@ -26,16 +27,18 @@ const App = ({ checkUserSession, currentUser, darkMode , ...props}) => {
 
 
   return (
-    <>
+    <> 
       <ThemeProvider theme={ThemeLight}>
         <ThemeProvider theme={darkMode ? invertTheme : noChange}>
           <div>
             <GlobalConstants />
-            <GlobalStyle darkMode />     
+            <GlobalStyle darkMode />
 
             <ErrorBoundary>
               <Suspense fallback={<Spinner />}>
-                <RouterSwitch {...props} />  
+               
+                  <RouterSwitch {...props} />
+        
               </Suspense>
             </ErrorBoundary>
           </div>

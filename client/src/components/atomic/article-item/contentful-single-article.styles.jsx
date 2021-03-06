@@ -31,7 +31,10 @@ export const TextBody = styled.div`
 `;
 export const PostTitle = styled.div`
   ${fonts.heading.h2};
-  width: max-content;
+  ${'' /* width: 50%; */}
+  ${'' /* min-width: 50%; */}
+  width: 70%;
+  ${'' /* width: max-content; */}
   ${'' /* display: block; */}
   ${'' /* background: red; */}
   color: #102539;
