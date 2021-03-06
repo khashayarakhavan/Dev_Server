@@ -9,13 +9,13 @@ import {
 } from "redux/content/content.selectors";
 
 
-import { ArticlesContainer, Row, Skeleton, Wrapper } from "./singleArticle.styles";
+import { ArticlesContainer, Article, Row, Skeleton, Wrapper } from "./singleArticle.styles";
 
-import {Article, Image, PostTitle, PostSubTitle, TextBody, AuthorData, AuthorFullName, Time} from './singleArticle.styles';
+import {Image, PostTitle, PostSubTitle, TextBody, AuthorData, AuthorFullName, Time} from './singleArticle.styles';
 
 const PostContent = ({post}) => (
  
-    <ArticlesContainer>
+    <Article>
       <div style={{ height: "min-content" }}>
         <Link
           to={`/articles/${post.fields.slug}`}
@@ -57,7 +57,7 @@ const PostContent = ({post}) => (
           {post.fields.publishDate}
         </Time>
       </AuthorData>
-    </ArticlesContainer>
+    </Article>
  
 );
 
@@ -69,20 +69,6 @@ export const Articles = ({ post, data, isLoading }) => {
   console.log('from WOWOWOWOWOWOWOW, the post is ', post);
   return (
     <ArticlesContainer>
-      {/* {isLoading ? (
-        <Wrapper>
-          <Row>
-            <Skeleton width="50px" height="50px" margin="0 2rem .5rem 0" />
-            <div>
-              <Skeleton width="130px" height="30px" margin="0 0 0.6rem" />
-              <Skeleton width="80px" height="30px" />
-            </div>
-          </Row>
-        </Wrapper>
-      ) : (
-        <PostContent post={post} />
-      )} */}
-
       <PostContent post={post} />
     </ArticlesContainer>
   );

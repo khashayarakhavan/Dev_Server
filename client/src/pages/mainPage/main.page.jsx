@@ -33,7 +33,7 @@ import {
   MainContainer,
 } from "./main.styles";
 
-import ScrollDownCTA from '../../components/Sections/ScrollDown/ScrollDown.component';
+import ScrollDownCTA from 'components/Sections/ScrollDown/ScrollDown.component';
 import {Phone, Nav, NavButton, NavIcon, NavText, Burger, Content} from './main.styles';
 //State Mangement
 import { connect } from "react-redux";

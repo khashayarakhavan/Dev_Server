@@ -3,6 +3,17 @@ import { rgba } from "polished";
 import fonts from 'design/fonts.styles';
 import shadows from 'design/shadows.styles';
 
+import {
+  Link as ScrollLink,
+  Element,
+  animateScroll as scroll,
+} from "react-scroll";
+
+
+export const ScrollUp= styled(ScrollLink)`
+width: min-width;
+`;
+
 export const Article = styled.article`
   margin-bottom: 4rem;
   box-shadow: ${shadows.neumorphic.extra};
@@ -20,6 +31,9 @@ export const TextBody = styled.div`
 `;
 export const PostTitle = styled.div`
   ${fonts.heading.h2};
+  width: max-content;
+  ${'' /* display: block; */}
+  ${'' /* background: red; */}
   color: #102539;
 `;
 export const PostSubTitle = styled.div`

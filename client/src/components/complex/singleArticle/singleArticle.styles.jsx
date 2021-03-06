@@ -6,14 +6,15 @@ import { VegeloperContainer } from "design/containers.styles";
 
 
 export const Article = styled.article`
+grid-column: center-start/ center-end;
   margin-bottom: 4rem;
   box-shadow: ${shadows.neumorphic.extra};
   border-radius: 3vw;
   padding: 3rem;
   background: #f9f9fa;
   background: transparent;
-  display: flex;
-  flex-direction: column;
+  ${'' /* display: flex; */}
+  ${'' /* flex-direction: column; */}
   ${"" /* background: red; */}
 `;
 
@@ -103,8 +104,11 @@ export const Row = styled.div`
 
 export const ArticlesContainer = styled(VegeloperContainer)`
   grid-column: cover-start/cover-end;
+  background: transparent; //override VegeloperContainer default background.
   ${"" /* background: tomato; */}
+  height: min-height;
   margin: 0 0 5rem;
   padding: 5rem 5rem;
-  background: transparent;
+  min-height: 100vh;
+  ${'' /* background: red; */}
 `;

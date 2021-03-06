@@ -8,11 +8,13 @@ import TestPage from "pages/testPage/testPage.page";
 import aboutMePage from "pages/aboutMe/aboutMe.page";
 import Error404Page from "pages/404ErrorPage/error404.page";
 import ArticlesPage from "pages/articlesPage/articles.page.js";
-import SingleArticlePage from "pages/singleArticlePage/pageSingleArticle.page";
 import SingleContent from "pages/singleArticle/singleArticle.component";
-
-// const Vegeloper = lazy(() => import("../pages/vegeloperPage/vegeloper.page"));
 import Vegeloper from "../pages/vegeloperPage/vegeloper.page";
+
+import SingleArticlePage from "pages/singleArticlePage/pageSingleArticle.container";
+// const SingleArticlePage = lazy(() =>
+//   import("pages/singleArticlePage/pageSingleArticle.container")
+// );
 
 
 function RouterSwitch({ location }) {

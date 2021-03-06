@@ -18,6 +18,12 @@ import {
   PageArticleContainer,
 } from "./page-articles.styles";
 
+import {
+  Link as ScrollLink,
+  Element,
+  animateScroll as scroll,
+} from "react-scroll";
+
 // --> END OF IMPORT SECTION <-- //
 
 /*
@@ -36,12 +42,8 @@ const PageArticlesContent = ({ fetchContentStart }) => {
     <PageArticleContainer>
       {/* <Directory /> */}
       <TopMenu />
-      <Heading
-        text="Ich writtenen stories."
-        cta="read"
-        subCta="just "
-        
-      />
+      <Heading text="Ich writtenen stories." cta="read" subCta="just " />
+      <Element name="pageSingleArticle" className="element" />
       <Profiler
         id="Articles"
         onRender={(id, phase, actualDuration) => {

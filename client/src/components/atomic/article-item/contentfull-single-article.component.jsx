@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {forwardRef} from 'react';
 // import { Link } from 'react-router-dom';
 import {
   BrowserRouter as Router,
@@ -16,6 +16,7 @@ import {
   AuthorFullName,
   Time,
   AuthorData,
+  ScrollUp,
 } from "./contentful-single-article.styles";
 
 import {Skeleton, Row} from './contentful-single-article.styles';
@@ -34,38 +35,68 @@ function Child() {
 }
 
 
-const Template = ({post, isLoading, ...props}) => {
-  let {match} = props;
+const Template = ({ post, isLoading, history, match, ...props}) => {
+  // let {match} = props;
+
+//   const ThisWillWork = forwardRef((children, ref) => {
+//   return <div ref={ref}>{children}</div>;
+// });
+
+  const clickHandler = () => {
+    history.push(`${match.url}/articles/${post.fields.slug}`);
+  }
   console.log('Post property in contentful-single-article.component.js is:', post);
   return (
     <Article>
-     
-      
-
       <div style={{ height: "min-content" }}>
-        <Link
-          to={`/articles/${post.fields.slug}`}
-          style={{
-            marginBottom: "0",
-            height: "min-content",
-            width: "min-content",
-          }}
+        <ScrollUp
+          to="pageSingleArticle"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={-300}
+          duration={500}
         >
-          {" "}
-          <Image
-            src={post.fields.featuredImage.fields.file.url + "?w=400&h=300"}
-            alt={post.fields.featuredImage.fields.file.fileName}
-            style={{ marginBottom: "0", marginTop: "0" }}
-          />
-        </Link>
+          <Link
+            to={`/articles/${post.fields.slug}`}
+            // to={`pageSingleArticle`}
+            // onClick={clickHandler}
+            style={{
+              marginBottom: "0",
+              height: "min-content",
+              width: "min-content",
+            }}
+          >
+            {" "}
+            <Image
+              src={post.fields.featuredImage.fields.file.url + "?w=400&h=300"}
+              alt={post.fields.featuredImage.fields.file.fileName}
+              style={{ marginBottom: "0", marginTop: "0" }}
+            />
+          </Link>
+        </ScrollUp>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <Link
-          to={`/articles/${post.fields.slug}`}
-          style={{ marginBottom: "0" }}
+        <ScrollUp
+          to="pageSingleArticle"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={-300}
+          duration={500}
         >
-          <PostTitle>{post.fields.title}</PostTitle>
-        </Link>
+          <Link
+            to={`/articles/${post.fields.slug}`}
+            style={{
+              marginBottom: "0",
+              height: "min-content",
+              width: "min-content",
+            }}
+          >
+            <PostTitle>{post.fields.title}</PostTitle>
+          </Link>
+        </ScrollUp>
+
         <PostSubTitle>Read more on Medium.com</PostSubTitle>
       </div>
 

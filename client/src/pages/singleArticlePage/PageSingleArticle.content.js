@@ -4,6 +4,7 @@
 import React, { lazy, Profiler, useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+
 //Components
 // import SingleArticle from 'components/complex/singleArticle/singleArticle.container';.
 
@@ -28,12 +29,12 @@ import {
   Wrapper,
 } from "./pageSingleArticle.styles";
 
-import { selectFetching } from "redux/content/content.selectors";
+import { selectFetchingSingle } from "redux/content/content.selectors";
 
 const SingleArticleContainer = lazy(() =>
   import("components/complex/singleArticle/singleArticle.container")
 );
-
+// import SingleArticleContainer from "components/complex/singleArticle/singleArticle.container";
 // --> END OF IMPORT SECTION <-- //
 
 /*
@@ -51,8 +52,13 @@ const PageSingleArticleContent = ({ fetchSingleArticleStart, match, isLoading })
   return (
     <PageSingleArticleContainer>
       <TopMenu />
-      <Heading text="Ich writtenen stories." cta="read" subCta="just " />
-      
+      <Heading
+        text="Ich momenen Love in Love in 5 ! ❤️👩‍👦"
+        cta="read"
+        subCta="just "
+      />
+
+
       {isLoading ? (
         <Wrapper>
           <Row>
@@ -77,7 +83,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = createStructuredSelector({
 
-  isLoading: selectFetching,
+  isLoading: selectFetchingSingle,
 
 });
 

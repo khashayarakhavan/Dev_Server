@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { selectFetchingSingle  } from 'redux/content/content.selectors';
-import WithSpinner from 'components/complex/with-spinner/with-spinner.component';
-import PageSingleArticle from './pageSingleArticle.page';
+import { selectFetching  } from '../../../redux/content/content.selectors';
+import WithSpinner from '../../with-spinner/with-spinner.component';
+import SingleArticle from './contentfull-single-article.component';
 
 const mapStateToProps = createStructuredSelector({
   // isLoading: (state) => selectFetching(state),
-  isLoading: selectFetchingSingle,
+  isLoading: selectFetching,
 });
 
 const ArticleItemContainer = compose(
   connect(mapStateToProps),
   // WithSpinner
-)(PageSingleArticle);
+)(SingleArticle);
 
 export default ArticleItemContainer;

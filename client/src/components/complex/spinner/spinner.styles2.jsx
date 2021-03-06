@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const SpinnerOverlay = styled.div`
-  height: 60vh;
+  height: 100vh;
   width: 100%;
   display: flex;
+  background: blue;
   justify-content: center;
   align-items: center;
 `;
@@ -11,9 +12,10 @@ export const SpinnerOverlay = styled.div`
 export const SpinnerContainer = styled.div`
          display: inline-block;
          width: 50px;
+         background: red;
          border-color: yellow;
          height: 50px;
-         ${'' /* border: 3px solid rgba(195, 195, 195, 0.6); */}
+         border: 3px solid rgba(195, 195, 195, 0.6);
          border: 2px solid yellow;
          border-radius: 100%;
          border-top-color: yellow;

@@ -17,6 +17,11 @@ export const selectFetching = createSelector(
   (content) => content.isFetching
 );
 
+export const selectFetchingSingle = createSelector(
+  [selectContent],
+  (content) => content.isFetchingSingle
+);
+
 export const selectPosts = createSelector(
   [selectData],
   (Data) => Data ? Data.items : []

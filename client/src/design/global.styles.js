@@ -162,10 +162,10 @@ body {
     font-family: "system-ui";
     color: ${colors.primary};
     line-height: 1.6;
-    background: linear-gradient(45deg,
+    ${'' /* background: linear-gradient(45deg,
       rgb(242, 243, 247) ,
-      rgba(229, 229, 229, 0.1) );   
-
+      rgba(229, 229, 229, 0.1) );    */}
+      background: transparent;
     *:focus {
       outline: none;
     }

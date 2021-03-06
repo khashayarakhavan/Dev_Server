@@ -20,7 +20,8 @@ export const ScreenContainer = styled.div`
   position: relative;
   overflow: hidden;
   width: 100vw;
-  background-color: ${colors.accent.ochrePale};
+  ${'' /* height: 100vh; */}
+  background-color: ${colors.accent.ochrePale} !important;
 `;
 
 const openStyles = css`
@@ -35,6 +36,7 @@ export const Content = styled.div`
   background: #210f40;
   transform: translateX(0) scale(1);
   transition: 0.45s ${(p) => p.open && openStyles};
+  background-color: ${colors.accent.ochrePale} !important;
 `;
 
 
