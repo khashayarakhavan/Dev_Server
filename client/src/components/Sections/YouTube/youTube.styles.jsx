@@ -61,7 +61,8 @@ export const YTContainer = styled.div`
   margin-left: 1rem;
 
   //Design GiantCard
-  border-radius: 40px;
+  border-radius: 4vw;
+  
   background: white;
 `;
 
@@ -74,8 +75,8 @@ export const YT = styled.div`
     height: 70vh;
   `}
 
-  background: red;
-  border-radius: 30px;
+  background: transparent;
+  border-radius: 4vw;
   overflow: hidden;
 
   .player {
@@ -100,7 +101,7 @@ export const YouTubeContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  border-radius: 40px;
+  border-radius: 4vw;
   overflow: hidden;
 
   ${shadows.mixins.neumorphic.extra};

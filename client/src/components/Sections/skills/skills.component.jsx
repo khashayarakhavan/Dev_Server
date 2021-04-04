@@ -45,6 +45,8 @@ import {
   BubbleButton,
   TitleContainer,
   TitleBlock,
+  Description,
+  SubTitle,
 } from "./skills.styles";
 
 import {Heading, TEXT} from './skills.styles';
@@ -64,34 +66,15 @@ export const Header = (props) => {
       <Row>
         <ColMd12>
           <Article>
-            {/* <header class="">
-                <h2>I help people ...</h2>
-              </header> */}
-
             <DesignRow>
-              <ColMd6>
-                {/* <Deets style={{ textAlign: "left" }}>
-                  <h3>FrontEnd</h3>
-                  <p
-                    style={{
-                      fontSize: "2vw",
-                      fontWeight: "200",
-                      textAlign: "left",
-                    }}
-                  >
-                    My ultimate goal is to perfectly match your real needs to
-                    the best solutions available. So I always make sure to
-                    follow the tech community's best practices.
-                  </p>
-                </Deets> */}
-                <Deets style={{ textAlign: "Right", marginTop: "2rem" }}>
+              <ColMd6>               
+                <Deets style={{ textAlign: "Right", marginTop: "2vw" }}>
                   <TitleContainer className="titleContainer">
                     <BubbleRight style={{ flex: "20" }}>
                       <DesignIconVert />
                     </BubbleRight>
                     <TitleBlock>
                       <h3 className="hi">Tech Stack</h3>
-
                       <TEXT>
                         <p style={{ display: "inline" }}>
                           <span style={{ fontWeight: 200 }}>modern,</span>{" "}
@@ -104,9 +87,9 @@ export const Header = (props) => {
                     </TitleBlock>
                   </TitleContainer>
 
-                  <p
+                  <Description
                     style={{
-                      fontSize: "1.7rem",
+                      
                       fontWeight: "200",
                       textAlign: "right",
                       width: "85%",
@@ -124,7 +107,7 @@ export const Header = (props) => {
                     <br />
                     I'm passionately following Language-Agnostic approach and
                     extending my toolbox with emerging technologies such as :
-                  </p>
+                  </Description>
                   <div style={{ display: "flex", justifyContent: "flex-end" }}>
                     <FrontEnd />
                   </div>
@@ -151,7 +134,7 @@ export const Header = (props) => {
                   </TitleContainer>
                   <p
                     style={{
-                      fontSize: "1.7rem",
+                      fontSize: "1.7vw",
                       fontWeight: "200",
                       textAlign: "left",
                       width: "85%",
@@ -160,7 +143,7 @@ export const Header = (props) => {
                       // marginRight: "13%",
                       textAlign: "justify",
                       textJustify: "auto",
-                      paddingLeft: "0rem",
+                      paddingLeft: "0",
                     }}
                   >
                     We are on the precipice of a golden age in cloud

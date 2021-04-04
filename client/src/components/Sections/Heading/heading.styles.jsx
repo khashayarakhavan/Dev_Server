@@ -17,8 +17,8 @@ export const SectionHeading = styled(VegeloperContainer)`
   background: transparent !important;
   ${"" /* background-color: rgba(249, 249, 250, 0.9) !important; */}
 
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
   overflow: hidden;
   z-index: 10000;
 

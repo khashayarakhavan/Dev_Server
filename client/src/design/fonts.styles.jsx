@@ -187,7 +187,7 @@ const fonts = {
     `,
     text: (...args) => css`
       font-family: "Nunito", sans-serif;
-      font-size: 2rem;
+      font-size: 2vw;
       font-weight: 400;
     `,
     heroHeader: (...args) => css`
