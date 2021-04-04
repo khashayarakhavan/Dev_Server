@@ -31,9 +31,7 @@ export const Articles = ({ posts, data, isLoading }) => {
   return (
     <ArticlesContainer>
       {isLoading ? (
-        
         <Wrapper>
-        
           <Row>
             <Skeleton width="50px" height="50px" margin="0 2rem .5rem 0" />
             <div>
@@ -75,6 +73,7 @@ export const Articles = ({ posts, data, isLoading }) => {
               />
             ))}
           </Wrapper>
+        
         </>
       )}
     </ArticlesContainer>

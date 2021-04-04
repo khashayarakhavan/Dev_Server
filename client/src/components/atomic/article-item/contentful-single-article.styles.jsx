@@ -38,6 +38,7 @@ export const PostTitle = styled.div`
   ${'' /* display: block; */}
   ${'' /* background: red; */}
   color: #102539;
+  cursor: pointer;
 `;
 export const PostSubTitle = styled.div`
   ${fonts.heading.h2_sub};
@@ -61,10 +62,21 @@ export const Time = styled.time`
 `;
 
 export const Image = styled.img`
-width: 200px;
-margin-top: 2rem;
+  ${'' /* width: 200px; */}
+  height: 15vmax;
+  border-radius: 50%;
+  box-shadow: ${shadows.neumorphic.extra};
+  margin-top: 2rem;
+  cursor: pointer;
 
-         cursor: help;
+  border-top-right-radius: 9vw 16vw;
+  border-bottom-right-radius: 16vw 9vw;
+  border-bottom-right-radius: 2vw 16vw;
+  border-top-left-radius: 16vw -2vw;
+  border-top-left-radius: 20% 80%;
+  border-top-left-radius: 16vw 1.2vw;
+  border-top-left-radius: 1.6vw 1.2vw;
+  border-bottom-left-radius: 16vw 9vw;
 `;
 
 

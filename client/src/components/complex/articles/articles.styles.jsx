@@ -6,13 +6,13 @@ import { rgba } from "polished";
 export const ArticlesContainer = styled(VegeloperContainer)`
   grid-column: cover-start/cover-end;
   ${"" /* background: tomato; */}
-  margin: 0 0 5rem;
-  padding: 5rem 5rem;
+  ${'' /* margin: 0 0 5rem; */}
+  ${'' /* padding: 5rem 5rem; */}
   background: transparent;
 `;
 
 export const Wrapper = styled.div`
-
+padding: 0;
 grid-column: center-start/center-end;
 `;
 

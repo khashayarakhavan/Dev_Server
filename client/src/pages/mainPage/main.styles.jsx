@@ -5,6 +5,7 @@ import {rgba} from 'polished';
 import colors from '../../design/colors';
 import shadows from '../../design/shadows.styles';
 import {VegeloperContainer} from '../vegeloperPage/vegeloper.styles'
+import {VectorBackgroundContainer} from 'design/containers.styles';
 
 //Design
 import {respond} from '../../design/responsive';
@@ -28,7 +29,7 @@ export const ScrollLinkCustom = styled(ScrollLink)`
 `;
 
 
-export const MainContainer = styled(VegeloperContainer)`
+export const MainContainer2 = styled(VegeloperContainer)`
   position: relative;
   background-color: rgba(249, 249, 250, 0.8) !important;
 
@@ -59,6 +60,8 @@ export const MainContainer = styled(VegeloperContainer)`
     position: absolute;
     z-index: -1000;
   }
+`;
+export const MainContainer = styled(VectorBackgroundContainer)`
 `;
 
 

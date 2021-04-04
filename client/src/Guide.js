@@ -240,3 +240,16 @@ Outer Height: ${this.outerHeight}
 `);}
 
 winSize();
+
+
+
+//Scroll library topScrool function
+import {
+  Link as ScrollLink,
+  Element,
+  animateScroll as scroll,
+} from "react-scroll";
+
+ const scrollToTop = () => {
+    scroll.scrollToTop();
+  };

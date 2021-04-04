@@ -55,10 +55,26 @@ export const Time = styled.time`
 `;
 
 export const Image = styled.img`
-  width: 200px;
+  ${"" /* width: 200px; */}
+  width: 70%;
+  justify-self: center;
+  ${"" /* border-radius: 6vw; */}
+  border-top-right-radius: 9vw 16vw;
+  border-bottom-right-radius: 16vw 9vw;
+  border-bottom-right-radius: 2vw 16vw;
+  border-top-left-radius: 16vw -2vw;
+  border-top-left-radius: 20% 80%;
+  border-top-left-radius: 16vw 1.2vw;
+  border-top-left-radius: 1.6vw 1.2vw;
+  border-bottom-left-radius: 16vw 9vw;
   margin-top: 2rem;
 
-  cursor: help;
+  ${'' /* height: 30vmax;
+  width: 30vmax;
+  border-radius: 50%;
+  box-shadow: ${shadows.neumorphic.extra}; */}
+
+  ${"" /* cursor: pointer; */}
 `;
 
 const skeletonColor = "#e0daeb";
@@ -109,6 +125,6 @@ export const ArticlesContainer = styled(VegeloperContainer)`
   height: min-height;
   margin: 0 0 5rem;
   padding: 5rem 5rem;
-  min-height: 100vh;
+  ${'' /* min-height: 100vh; */}
   ${'' /* background: red; */}
 `;

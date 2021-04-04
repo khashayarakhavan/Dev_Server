@@ -17,29 +17,19 @@ const PostContent = ({post}) => (
  
     <Article>
       <div style={{ height: "min-content" }}>
-        <Link
-          to={`/articles/${post.fields.slug}`}
-          style={{
-            marginBottom: "0",
-            height: "min-content",
-            width: "min-content",
-          }}
-        >
+        
           {" "}
           <Image
-            src={post.fields.featuredImage.fields.file.url + "?w=400&h=300"}
+            src={post.fields.featuredImage.fields.file.url + "?h=600"}
             alt={post.fields.featuredImage.fields.file.fileName}
             style={{ marginBottom: "0", marginTop: "0" }}
           />
-        </Link>
+        
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <Link
-          to={`/articles/${post.fields.slug}`}
-          style={{ marginBottom: "0" }}
-        >
+        
           <PostTitle>{post.fields.title}</PostTitle>
-        </Link>
+       
         <PostSubTitle>Read more on Medium.com</PostSubTitle>
       </div>
 

@@ -29,12 +29,17 @@ function RouterSwitch({ location }) {
         >
           <section className="route-section">
             <Switch location={location}>
-              <Route exact path="/" component={MainPage} />
+              <Route
+                exact
+                path="/"
+                render={(routeProps) => (
+                  <MainPage {...routeProps} pageActive="1" />)}
+                />
               <Route path="/test" component={TestPage} />
               <Route path="/vegeloper" component={Vegeloper} />
-              <Route path="/hiPal" component={HiPalPage} />
+              <Route path="/hiPal" component={HiPalPage} pageActive="2" />
               <Route path="/aboutMe" component={aboutMePage} />
-              <Route exact path="/articles" component={ArticlesPage} />
+              <Route exact path="/articles" component={ArticlesPage} pageActive="3" />
               <Route path="/articles/:slug" component={SingleArticlePage} />
               {/* <Route path="/articles/:slug" component={SingleContent} /> */}
               <Route children={<Error404Page />} />

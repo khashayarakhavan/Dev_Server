@@ -58,7 +58,6 @@ const PageSingleArticleContent = ({ fetchSingleArticleStart, match, isLoading })
         subCta="just "
       />
 
-
       {isLoading ? (
         <Wrapper>
           <Row>
@@ -72,6 +71,13 @@ const PageSingleArticleContent = ({ fetchSingleArticleStart, match, isLoading })
       ) : (
         <SingleArticleContainer />
       )}
+
+      <Heading
+        text="WoW Almost finished "
+        cta="read "
+        subCta=" thoroughly"
+        inverted
+      />
     </PageSingleArticleContainer>
   );
 };

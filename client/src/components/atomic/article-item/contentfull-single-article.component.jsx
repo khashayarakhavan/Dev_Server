@@ -41,23 +41,24 @@ function Child() {
 
 
 
-const Template = ({ post, isLoading, history, ...props}) => {
-
-      // const history = useHistory();
+const Template = ({ post, isLoading, history, ...props }) => {
+  // const history = useHistory();
   // let {match} = props;
 
-//   const ThisWillWork = forwardRef((children, ref) => {
-//   return <div ref={ref}>{children}</div>;
-// });
+  //   const ThisWillWork = forwardRef((children, ref) => {
+  //   return <div ref={ref}>{children}</div>;
+  // });
 
-  const clickHandler = (props) => {
+  const truncate = (string) => {
+    var truncString = string.substring(0, 150); //Only keep the first 3 characters
+    return truncString + ` . . .`;
+  };;
 
-     setTimeout(() => {
-      //  history.push(`/articles/${post.fields.slug}`);
-     }, 1000);
-    
-  }
-  console.log('Post property in contentful-single-article.component.js is:', post);
+  
+  console.log(
+    "Post property in contentful-single-article.component.js is:",
+    post
+  );
   return (
     <Article {...props}>
       <div style={{ height: "min-content" }}>
@@ -104,7 +105,7 @@ const Template = ({ post, isLoading, history, ...props}) => {
                 marginBottom: "0",
                 height: "min-content",
                 width: "min-content",
-                color: 'inherit',
+                color: "inherit",
               }}
             >
               {post.fields.title}
@@ -115,7 +116,7 @@ const Template = ({ post, isLoading, history, ...props}) => {
         <PostSubTitle>Read more on Medium.com</PostSubTitle>
       </div>
 
-      <TextBody>{post.fields.content}</TextBody>
+      <TextBody>{truncate(post.fields.content)}</TextBody>
 
       <AuthorData className="contentful">
         <img
@@ -125,12 +126,12 @@ const Template = ({ post, isLoading, history, ...props}) => {
         />
         <AuthorFullName>{post.fields.author.fields.fullName}</AuthorFullName>
         <i className="link-spacer"></i>
-        <Time className="post-date" dateTime="2015-05-05">
+        {/* <Time className="post-date" dateTime="2015-05-05">
           {post.fields.publishDate}
-        </Time>
+        </Time> */}
       </AuthorData>
     </Article>
   );
-};
+};;
 
 export default Template;

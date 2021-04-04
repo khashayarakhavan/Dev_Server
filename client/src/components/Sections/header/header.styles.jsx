@@ -1,63 +1,47 @@
 //Basics
 import { Link } from "react-router-dom";
 //Libraries
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 //Mixins
-import { mix_containers, mix_flex } from "../../../design/mixins.styles";
+import { mix_containers, mix_flex } from "design/mixins.styles";
 //Responsive
-import { respond } from "../../../design/responsive";
+import { respond } from "design/responsive";
 //Design
-import colors from "../../../design/colors";
-import sizes from "../../../design/sizes";
-import shadows from "../../../design/shadows.styles";
-import fonts from '../../../design/fonts.styles';
-import margins from '../../../design/margins.styles';
-import { PrussianBlue_To_Orange } from '../../../design/effects.styles';
+import {VegeloperContainer} from 'design/containers.styles';
+import colors from "design/colors";
+import sizes from "design/sizes";
+import shadows from "design/shadows.styles";
+import fonts from 'design/fonts.styles';
+import margins from 'design/margins.styles';
+import { PrussianBlue_To_Orange } from 'design/effects.styles';
 //Assets
-import { ReactComponent as VegeloperLogo } from "../../../assets/SVG/Vegeloper.svg";
-import { ReactComponent as WebWeaverLine } from "../../../assets/SVG/WebWeaver-Line.svg";
+import { ReactComponent as VegeloperLogo } from "assets/SVG/Vegeloper.svg";
+import { ReactComponent as WebWeaverLine } from "assets/SVG/WebWeaver-Line.svg";
 
 
 //Code
 
 export const HigherContainer = styled.div`
   grid-column: cover-start / cover-end;
-  ${"" /* display: flex;
-  justify-content: center; */}
-  display: grid;
-  grid-template-columns: 10vw min-content 10vw;
-  grid-template-columns: 10vw 1fr 10vw;
+  grid-row: 1 / span 1;
 
-  ${respond.mobile.max`
-    grid-template-columns: [cover-start leftSide-start] 1vw [leftSide-end full-start] 9vw [center-start] repeat(
-      8,
-      [col-start] minmax(min-content, 1fr) [col-end]
-    ) [center-end] 9vw [full-end rightSide-start]
-    1vw
-    [rightSide-end cover-end];
-  `}
-  ${respond.pc.min`
-    grid-template-columns: [cover-start leftSide-start] minmax(1vw, 1fr) [leftSide-end full-start] 9vw [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 9vw [full-end rightSide-start]
-     minmax(1vw, 1fr)
-      [rightSide-end cover-end];
-  `}
+  display: grid;
+  grid-template-columns: [cover-start leftSide-start] minmax(1vw,1fr) [leftSide-end full-start] 9vw [center-start] repeat(8,[col-start] minmax(min-content,1fr) [col-end]) [center-end] 9vw [full-end rightSide-start] minmax(1vw,1fr) [rightSide-end cover-end];
+
 
   width: 100%;
-  grid-row: 1 / span 1;
   z-index: 10000000;
-  background-color: rgb(242, 243, 247);
+ 
   background-color: transparent;
   top: 0;
   left: 0;
+
 `;
 
 export const HeaderContainer = styled.div`
-  grid-column: 2 / span 1;
   grid-column: center-start / center-end;
-  ${'' /* width: 100%; */}
   grid-row: 1 / span 1;
   z-index: 10000001;
-  ${'' /* flex: 0 0 50%; */}
 
 
   top: 0;
@@ -66,15 +50,17 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 
   background-color: rgb(242, 243, 247);
   background-color: transparent;
-  ${"" /* transition: height 0.01s , opacity 0.01s ; */}
   transform: scale(0.1);
+
+
   //Hiding menu before reaching tablet viewport.
   height: 0vh;
   opacity: 0;
-  ${"" /* opacity: 1; */}
+
 
   ${respond.mobile.max`
     height: clamp(96px, 12vh, 12vh);
@@ -82,18 +68,19 @@ export const HeaderContainer = styled.div`
     opacity: 1;
   `};
   ${respond.pc.min`
-    ${"" /* grid-column: full-start / full-end; */}
+    
+    grid-column: center-start / center-end;
   `};
 `;
 
 export const LogoContainer = styled(Link)`
   ${mix_containers.logo};
-  margin-right: auto;
+  ${'' /* margin-right: auto; */}
   display: flex;
 
   height: 100%;
-  margin-left: clamp(-2rem, -3.33333vw, -3.33333vw);
-  margin-left: -3.33333333vw;
+  ${'' /* margin-left: clamp(-2rem, -3.33333vw, -3.33333vw);
+  margin-left: -3.33333333vw; */}
   ${respond.pc.min`
     ${'' /* margin-left: -5vw; */}
   `}
@@ -107,6 +94,12 @@ export const LogoSVG = styled(VegeloperLogo)`
   width: clamp(7rem, 11.6666vw, 11.6666vw);
   height: clamp(7rem, 11.6666vw, 11.6666vw);
   height: clamp(7rem, 8.75vh, 11.6666vw);
+  
+  //Fix SVG to left side.
+  padding-right: clamp(12px, 1.2vw, 1.2vw);
+  
+
+  ${'' /* margin-left: -0.7rem; */}
 
   ${respond.pc.min`
     width: clamp(7rem, 6.8359375vw, 6.8359375vw);
@@ -116,15 +109,15 @@ export const LogoSVG = styled(VegeloperLogo)`
 `;
 
 export const LogoText = styled.p`
-  ${fonts.mixins.logo};
-  ${"" /* font-size: 3rem; */}
-  font-size: clamp(3rem, 5vw, 5vw);
-  ${respond.pc.min`
-    font-size: clamp(3rem, 2.9296875vw, 2.9296875vw);
-  `}
+  ${fonts.menu.logo};
+
   color: ${colors.primary};
   margin-left: ${sizes.margin.small};
-  margin-left: 0.7rem;
+  margin-left: clamp(7px, 0.7vw, 0.7vw);
+  
+  ${respond.pc.min`
+    ${'' /* font-size: clamp(3rem, 2.9296875vw, 2.9296875vw); */}
+  `}
 `;
 
 export const LogoLine = styled(WebWeaverLine)`
@@ -147,14 +140,16 @@ export const MenuButtonsContainer = styled.div`
 
 
 export const MenuButton = styled(Link)`
+  ${fonts.menu.link};
+
   ${shadows.mixins.neumorphic.button};
   ${shadows.mixins.neumorphic.original};
-  ${fonts.mixins.menuButton}
+  ${"" /* ${fonts.mixins.menuButton} */}
 
   ${mix_flex.center};
   color: ${colors.primary};
 
-  font-size: clamp(1.2rem, 2vw, 2vw);
+  ${"" /* font-size: clamp(1.2rem, 2vw, 2vw); */}
 
   height: clamp(4.2rem, 7vw, 7vw);
   width: clamp(7rem, 11.66666vw, 11.66666vw);
@@ -162,7 +157,7 @@ export const MenuButton = styled(Link)`
     height: clamp(4.2rem, 4.1015625vw, 4.1015625vw);
     
     width: clamp(7rem, 6.8359375vw, 6.8359375vw);
-    font-size: clamp(1.2rem, 1.171875vw, 1.171875vw);
+    ${"" /* font-size: clamp(1.2rem, 1.171875vw, 1.171875vw); */}
   `}
   ${respond.pc.large`
     ${
@@ -174,7 +169,7 @@ export const MenuButton = styled(Link)`
 
   transition: background-color 0.3s ease;
   transition: all 0.4s;
-  border-radius: 15px;
+  border-radius: clamp(15px, 1.5vw, 1.5vw);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   position: relative;
@@ -189,7 +184,8 @@ export const MenuButton = styled(Link)`
 
   &:active {
     transform: translateY(2px);
-    transition: transform 0.25s ease;
+    transition: transform 0.15s ease, box-shadow 0.1s linear;
+    box-shadow: ${shadows.neumorphic.original};
   }
 
   :not(:last-of-type) {
@@ -213,8 +209,15 @@ export const MenuButton = styled(Link)`
 
   &::before,
   &::after {
-    border: ${({ variant }) =>
-      variant === "active" ? "5px solid transparent" : "none"};
+    ${
+      "" /* border: ${(p) => p.variant="1" ? activeOpenStyle : activeOpenStyle2}; */
+    }
+    ${
+      "" /* border: ${({ variant }) =>
+      variant === "active"
+        ? "clamp(5px, 0.5vw, 0.5vw) solid transparent"
+        : "none"}; */
+    }
     border-radius: 1px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -223,14 +226,25 @@ export const MenuButton = styled(Link)`
   }
 `;
 
+const activeOpenStyle = css`
+  border: clamp(5px, 0.5vw, 0.5vw) solid red;
+`;
+const activeOpenStyle2 = css`
+  border: clamp(5px, 0.5vw, 0.5vw) solid red;
+`;
+
 export const MenuButtonOrange = styled(MenuButton)`
-  ${shadows.mixins.neumorphic.onActive_orange};
-  transition: box-shadow 0.2s linear;
+  ${"" /* ${shadows.mixins.neumorphic.onActive_orange}; */}
+  box-shadow: ${shadows.neumorphic.orange};
+  ${'' /* transition: box-shadow 0.4s linear; */}
+
   &:hover {
     box-shadow: ${shadows.neumorphic.orange2};
   }
 
-  
+  &:active {
+    box-shadow: ${shadows.neumorphic.originalOrange};
+  }
 
   background-color: #fff !important;
 `;

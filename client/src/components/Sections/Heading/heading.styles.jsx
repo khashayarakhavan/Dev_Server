@@ -10,7 +10,7 @@ import {VegeloperContainer} from 'design/containers.styles';
 export const SectionHeading = styled(VegeloperContainer)`
   grid-column: cover-start / cover-end;
   position: relative;
-  height: 250px;
+  height: minmax(250px, auto);
   justify-content: center;
   align-content: center;
   ${"" /**/}

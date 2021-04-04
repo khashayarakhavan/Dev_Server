@@ -13,6 +13,8 @@ export const PageArticleContainer = styled(VegeloperContainer)`
   ${"" /* background-image:  */}
   ${"" /* background: transparent; */}
   position: relative;
+  padding: 0;
+  margin: 0;
   ${"" /* opacity: 0.5; */}
   background-color: rgba(249, 249, 250, 0.80) !important;
   ${"" /* opacity: 0.1; */}

@@ -30,7 +30,8 @@ import {
 
 //Code
 export const Header = (props) => {
-  const { hidden } = props;
+  const { hidden, pageActive } = props;
+
 
   return (
     <HigherContainer>

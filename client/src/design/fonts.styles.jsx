@@ -51,13 +51,13 @@ const fonts = {
     logo: (...args) => css`
       font-family: "Barriecito", cursive;
       font-weight: 400;
-      font-size: clamp(3rem, 2.9296875vw, 2.9296875vw);
+      font-size: clamp(30px, 3vw, 3vw);
       line-height: 1.6;
     `,
     link: (...args) => css`
       font-family: Montserrat, sans-serif;
       font-weight: 800;
-      font-size: clamp(15px, 1.171875vw, 1.171875vw);
+      font-size: clamp(11px, 1.1vw, 1.1vw);
       line-height: 1.6;
     `,
   },

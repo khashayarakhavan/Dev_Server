@@ -1,7 +1,7 @@
 //Basics
 import React from 'react';
 //Design
-import colors from '../../../design/colors';
+import colors from 'design/colors';
 
 //Style
 import { SectionHeading, HeadingContainer, Heading } from "./heading.styles";
