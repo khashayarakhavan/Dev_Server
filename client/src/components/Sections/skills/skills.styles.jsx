@@ -171,33 +171,21 @@ export const HomeDesign = styled.div`
   position: relative;
 `;
 
-export const Image = styled.img`
-  vertical-align: middle;
-  border: 0;
-  width: 100%;
-`;
-export const Image2 = styled(Image)`
-  
-  float: right;
-  max-width: 180px;
-`;
+
 export const BubbleRight = styled.div`
   ${shadows.mixins.neumorphic.button};
-
-
-
-  width: 80%;
-  height: 80%;
-
   margin: 0 !important;
   padding: 0 !important;
   border-radius: 50%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
-
+  overflow: hidden;
+  width: 7.7vw;
+  height: 7.7vw;
 `;
+
 export const BubbleLeft = styled.div`
   ${shadows.mixins.neumorphic.original};
 
@@ -512,7 +500,8 @@ export const Description = styled.p`
   position: relative;
 
   ${fonts.mixins.text};
-  font-size: 1.7vw !important;
+  font-size: 1.5vw !important;
+  
 `;
 
 export const TitleBlock = styled.div`
@@ -524,4 +513,101 @@ export const TitleBlock = styled.div`
   height: 100%;
 `;
 
+const movePicture = keyframes`
+   0% {
+     transform: translate(0 0px)  scale(1.2);
+     transform-origin: top ;
+    }
+    25% {
+      transform: translate(0 -20%) scale(1.2);
+      transform-origin: top ;
+      ${
+        "" /* background-position: 0 -7rem; //this should be cleaned up, my sprite sheet is 202px by accident, it should be 200px */
+      }
+    }
+    50% {
+      transform: translate(0, -40%) scale(1.2);
+      transform-origin: top ;
+      ${"" /* background-position: 0 -14rem; */}
+    }
+    75% {
+       transform: translate(0, -40%) scale(1.2);
+       transform-origin: top  ;
+      ${"" /* background-position: 0 -21rem; */}
+    }
+    90% {
+       transform: translate(0, 0) scale(1.2);
+       transform-origin: top ;
+      ${"" /* background-position: 0 0px; */}
+    }
+    100% {
+       transform: translate(0, 0)  scale(1.2);
+       transform-origin: top ;
+      ${"" /* background-position: 0 0px; */}
+    }
+`;
+
+const movePicture2 = keyframes`
+   0% {
+     ${'' /* transform: rotate(10deg); */}
+     transform: translate(0, -38%)  scale(1);
+     ${'' /* transform-origin: 0% 100% ; */}
+    }
+    30% {
+      ${'' /* transform: rotate(20deg); */}
+      transform: translate(0, -12.5%) scale(1);
+      ${'' /* transform-origin: 0% 100% ; */}
+      ${
+        "" /* background-position: 0 -7rem; //this should be cleaned up, my sprite sheet is 202px by accident, it should be 200px */
+      }
+    }
+    60% {
+      ${'' /* transform: rotate(40deg); */}
+      transform: translate(0, 12.5%) scale(1);
+      ${'' /* transform-origin: 0% 100% ; */}
+      ${"" /* background-position: 0 -14rem; */}
+    }
+    90% {
+       transform: translate(0, 38%) scale(1);
+       ${'' /* transform-origin: 0% 100%  ; */}
+       ${'' /* transform: rotate(60deg); */}
+      ${"" /* background-position: 0 -21rem; */}
+    }
+    90% {
+       transform: translate(0, 38%) scale(1);
+       ${'' /* transform: rotate(80deg); */}
+       ${'' /* transform-origin: 0% 100% ; */}
+      ${"" /* background-position: 0 0px; */}
+    }
+    100% {
+       transform: translate(0, -38%)  scale(1);
+       ${'' /* transform: rotate(90deg); */}
+       ${'' /* transform-origin: 50% 50% ; */}
+      ${"" /* background-position: 0 0px; */}
+    }
+`;
+
+export const Picture = styled.picture`
+  animation: ${movePicture2} 10s cubic-bezier(1, 0, 0, 1) infinite; // steps(50)
+  transition: transform 1000ms;
+  
+`;
+
+
+export const Image = styled.img`
+  ${
+    "" /* animation: movePicture 7s cubic-bezier(1, 0, 0, 1) infinite; // steps(50) */
+  }
+  ${"" /* vertical-align: middle; */}
+  border: 0;
+  animation: ${movePicture2} 10s cubic-bezier(1, 0, 0, 1) infinite; // steps(50)
+  ${'' /* transition: transform 1000ms; */}
+  transform-origin: top center !important;
+  width: 100%;
+  ${"" /* width: 100%; */}
+`;
+export const Image2 = styled(Image)`
+  float: right;
+  max-width: 180px;
+`;
 

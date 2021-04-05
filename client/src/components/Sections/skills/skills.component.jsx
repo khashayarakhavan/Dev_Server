@@ -4,13 +4,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 //Selectors
 import { createStructuredSelector } from 'reselect';
-import { selectCartHidden } from '../../../redux/cart/cart.selectors';
-import { selectDarkMode } from "../../../redux/themes/themes.selectors";
-import { selectCurrentUser } from '../../../redux/user/user.selectors';
+import { selectCartHidden } from 'redux/cart/cart.selectors';
+import { selectDarkMode } from "redux/themes/themes.selectors";
+import { selectCurrentUser } from 'redux/user/user.selectors';
 //Actions
-import { toggleCartHidden } from "../../../redux/cart/cart.actions";
-import { toggleDarkMode } from "../../../redux/themes/themes.actions";
-import { signOutStart } from "../../../redux/user/user.actions";
+import { toggleCartHidden } from "redux/cart/cart.actions";
+import { toggleDarkMode } from "redux/themes/themes.actions";
+import { signOutStart } from "redux/user/user.actions";
 //Components
 import CartDropdown from '../../complex/cart-dropdown/cart-dropdown.component';
 //Assets
@@ -47,15 +47,28 @@ import {
   TitleBlock,
   Description,
   SubTitle,
+  Picture
 } from "./skills.styles";
+
+import design_icons_vert from "assets/img/design-icons-vert.png";
+import dev_icons_vert from "assets/img/dev-icons-vert.png";
+import frontend__icons from "assets/img/frontend__icons.png";
+import frontend__icons__svg from "assets/img/frontend__icons--svg.svg";
+import frontend__icons__svg2 from "assets/img/frontend__icons--svg2.svg";
+import frontend__icons__svg3 from "assets/img/frontend__icons--svg3.svg";
+import frontend__icons__svg4 from "assets/img/frontend__icons--svg4.svg";
+import frontend__icons__svg5 from "assets/img/frontend__icons--svg5.svg";
+import frontend__icons__svg6 from "assets/img/frontend__icons--svg6.svg";
+import backend__icons__svg from "assets/img/backend__icons--svg.svg";
+import backend__icons from "assets/img/backend__icons.png";
 
 import {Heading, TEXT} from './skills.styles';
 import {
   Accent_fireOrange,
   Accent_mateBlue,
-} from "../../../design/effects.styles";
+} from "design/effects.styles";
 
-import {FrontEnd, BackEnd} from "../../Sections/FlexIcons/flexIcons.component";
+import {FrontEnd, BackEnd} from "components/Sections/FlexIcons/flexIcons.component";
 
 //Code
 export const Header = (props) => {
@@ -67,11 +80,32 @@ export const Header = (props) => {
         <ColMd12>
           <Article>
             <DesignRow>
-              <ColMd6>               
+              <ColMd6>
                 <Deets style={{ textAlign: "Right", marginTop: "2vw" }}>
                   <TitleContainer className="titleContainer">
                     <BubbleRight style={{ flex: "20" }}>
-                      <DesignIconVert />
+                      {/* <DesignIconVert /> */}
+                      <Image
+                        className=""
+                        srcSet={`${frontend__icons__svg6} 1x, ${backend__icons} 2x`}
+                        alt="Full Logo"
+                      />
+                      {/* <Picture clanssName="footer__logo">
+                        <source
+                          srcSet={`${dev_icons_vert} 1x, ${dev_icons_vert} 2x`}
+                          media="(min-width: 1100px)"
+                        />
+                        <source
+                          srcSet={`${design_icons_vert} 1x, ${design_icons_vert} 2x`}
+                          media="(min-width: 1000px)"
+                        />
+
+                        <Image
+                          className=""
+                          srcSet={`${design_icons_vert} 1x, ${design_icons_vert} 2x`}
+                          alt="Full Logo"
+                        />
+                      </Picture> */}
                     </BubbleRight>
                     <TitleBlock>
                       <h3 className="hi">Tech Stack</h3>
@@ -86,10 +120,8 @@ export const Header = (props) => {
                       </TEXT>
                     </TitleBlock>
                   </TitleContainer>
-
                   <Description
                     style={{
-                      
                       fontWeight: "200",
                       textAlign: "right",
                       width: "85%",
@@ -101,15 +133,18 @@ export const Header = (props) => {
                       // paddingLeft: "1rem",
                     }}
                   >
-                    Ideally, it's the project that dictates the stack.The
+                    Ideally, it's the project that dictates the stack. A
                     developer's job is to identify its basic needs, and use
                     proper tools to serve them .
                     <br />
                     I'm passionately following Language-Agnostic approach and
-                    extending my toolbox with emerging technologies such as :
+                    extending my toolbox with emerging technologies such as:
                   </Description>
-                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                    <FrontEnd />
+                  <div
+                    className={"frontend__icons--container"}
+                    style={{ display: "flex", justifyContent: "flex-end" }}
+                  >
+                    <FrontEnd className={"frontend__icons--component"} />
                   </div>
                 </Deets>
               </ColMd6>
@@ -129,12 +164,16 @@ export const Header = (props) => {
                       </TEXT>
                     </TitleBlock>
                     <BubbleRight style={{ flex: "20" }}>
-                      <DevIconVert />
+                      {/* <DevIconVert /> */}
+                      <Image
+                        className=""
+                        srcSet={`${backend__icons__svg} 1x, ${backend__icons} 2x`}
+                        alt="Full Logo"
+                      />
                     </BubbleRight>
                   </TitleContainer>
-                  <p
+                  <Description
                     style={{
-                      fontSize: "1.7vw",
                       fontWeight: "200",
                       textAlign: "left",
                       width: "85%",
@@ -153,67 +192,18 @@ export const Header = (props) => {
                     Secure authentication, continuous delivery, and instast
                     access are becoming the industry standard. So, I tend to use
                     a number of different tools and services to meet these
-                    requirements. I adore most of them, namely :
+                    requirements. I adore most of them, namely:
                     <br />
-                  </p>
-                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                    <BackEnd />
+                  </Description>
+                  <div
+                    className={"backend__icons--container"}
+                    style={{ display: "flex", justifyContent: "flex-end" }}
+                  >
+                    <BackEnd className={"backend__icons--component"} />
                   </div>
                 </Deets>
-
-                {/* <Deets style={{ textAlign: "right", marginTop: "2rem" }}>
-                  <h3 className="hi">
-                    Grow <Accent_fireOrange>F</Accent_fireOrange>ast
-                  </h3>
-
-                  <TEXT>
-                    <p style={{ display: "inline" }}>
-                      <span style={{ fontWeight: 400 }}>scalable,</span>{" "}
-                      <span style={{ fontWeight: 200 }}>secure</span>{" "}
-                      <span style={{ fontWeight: 400 }}> available</span>
-                    </p>
-                  </TEXT>
-
-                  <p
-                    style={{
-                      fontSize: "2rem",
-                      fontWeight: "200",
-
-                      textAlign: "right",
-                      width: "78%",
-                      marginLeft: "22%",
-                      textAlign: "justify",
-                      textJustify: "auto",
-                    }}
-                  >
-                    My ultimate goal is to perfectly match your real needs to
-                    the best solutions available. So I always make sure to
-                    follow the tech community's best practices.
-                  </p>
-                </Deets> */}
-                {/* <BubbleButton
-                  style={{ margin: "0 auto", marginRight: "0" }}
-                ></BubbleButton> */}
               </ColMd6>
-              {/* <ColMd6>
-                  <BubbleButton>
-                    <BubbleRight>
-                      <DesignIconVert />
-                    </BubbleRight>
-                  </BubbleButton>
-                  <Deets>
-                    <h3>Create blazing fast websites.</h3>
-                    <p>
-                      My ultimate goal is to perfectly match your real needs to
-                      the best solutions available. So I always make sure to
-                      follow the tech community's best practices.
-                    </p>
-                  </Deets>
-                </ColMd6> */}
             </DesignRow>
-            {/* <!-- /row --> */}
-
-            {/* <!-- /row --> */}
           </Article>
         </ColMd12>
       </Row>

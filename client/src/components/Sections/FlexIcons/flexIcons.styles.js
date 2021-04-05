@@ -15,7 +15,7 @@ export const FeatureContainer = styled.section`
   margin: 0rem 0;
   margin-top: 2rem;
   height: min-content;
-  border-bottom: 5px solid #eb5e28;
+  border-bottom: 0.5vw solid #eb5e28;
 
   ${"" /* margin-left: 2rem; */}
   ${"" /* margin-top: 3rem; */}
@@ -63,8 +63,8 @@ export const Icon = styled.svg`
 
   ${'' /* background: pink; */}
   margin: 0 auto;
-  width: 2rem;
-  height: 2rem;
+  width: 2vw;
+  height: 2vw;
   ${'' /* width: 100%;
   height: 100%; */}
   fill: currentColor;

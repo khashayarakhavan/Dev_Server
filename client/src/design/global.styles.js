@@ -110,21 +110,30 @@ ${
 
  //styling the theme of tippyJS
 .nanai-theme {
-    ${"" /* background-color: tomato !important; */}
-    ${"" /* background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%); */}
     background-color: #102539 !important;
     color: #F9F9FA !important;
-    font-family: Raleway, sans-serif;
-    font-size: 12px !important;   
 
-    & > .tippy-arrow { //styling the border of tippyJS
+    font-family: Raleway, sans-serif;
+    font-size: 1.1vw !important;   
+    line-height: 1.2;
+    border-radius: 0.3vw !important;
+   
+    ${"" /* border-width: 3.2vw 3.2vw 3.2vw !important; */}
+
+
+     .tippy-arrow { //styling the border of tippyJS
     border-top-color: tomato !important;
     background: transparent;
-    color: #102539;
-    }
+    color: #102539;    
+     ${'' /* border-bottom: 70px solid pink; */}
+    } 
+
+    
 
     
 }
+
+
 
 ${"" /* .tippy-tooltip {
     font-size: 0.9rem;
@@ -162,9 +171,11 @@ body {
     font-family: "system-ui";
     color: ${colors.primary};
     line-height: 1.6;
-    ${'' /* background: linear-gradient(45deg,
+    ${
+      "" /* background: linear-gradient(45deg,
       rgb(242, 243, 247) ,
-      rgba(229, 229, 229, 0.1) );    */}
+      rgba(229, 229, 229, 0.1) );    */
+    }
       background: transparent;
     *:focus {
       outline: none;
