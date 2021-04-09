@@ -24,6 +24,7 @@ export const SectionHeading = styled(VegeloperContainer)`
 
   display: grid;
 
+  //Rotated Background 
   &::after {
     content: "";
     
@@ -39,7 +40,7 @@ export const SectionHeading = styled(VegeloperContainer)`
     -ms-transform: rotate(30deg);
     -o-transform: rotate(30deg); */
     }
-    transform: translateX(0%) rotate(30deg);
+    transform: translateX(0%) rotate(30deg) scale(1.7);
     ${"" /* transform: skewY(20deg); */}
     background-repeat: no-repeat;
     background-repeat: repeat;

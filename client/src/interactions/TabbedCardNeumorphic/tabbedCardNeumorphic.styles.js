@@ -18,9 +18,9 @@ export const transition = css`
 export const Card = styled.div`
   overflow: hidden;
   position: relative;
-  width: 200px;
+  ${'' /* width: 200px; */}
   width: 100%;
-  height: 17rem;
+  height: 17vw;
   background: transparent;
 `;
 
@@ -35,8 +35,8 @@ export const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: ${shadows.neumorphic.original};
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-right-radius: 0.8vw;
+  border-top-left-radius: 0.8vw;
   background: transparent;
 `;
 
@@ -45,7 +45,7 @@ export const Underline = styled.div`
   left: 0;
   bottom: 0;
   width: 33.333%;
-  height: 6px;
+  height: 0.6vw;
   background: #6b44a9;
   background: ${colors.neutrals.lightest};
   background: ${colors.accent.ochreFire};
@@ -59,23 +59,23 @@ export const Underline = styled.div`
 export const Button = styled.button`
   flex: 1 1 33.3333%;
   width: 100%;
-  height: 3rem;
+  height: 3vw;
   align-items: start;
   overflow: hidden;
 
   &:first-of-type {
-    border-top-left-radius: 8px;
+    border-top-left-radius: 0.8vw;
   }
   &:last-of-type {
-    border-top-right-radius: 8px;
+    border-top-right-radius: 0.8vw;
   }
 
   ${"" /* border-radius: 50%; */}
   ${"" /* border-radius: 6px; */}
   
-  font-size: 10px;
+  font-size: 1vw;
   border: none;
-  border-bottom: 1px solid ${rgba("white", 0.25)};
+  border-bottom: 0.1vw solid ${rgba("white", 0.25)};
   background-color: ${(p) =>
     p.active ? colors.neutrals.lightest : "transparent"};
   color: ${(p) => rgba("white", p.active ? 0.85 : 0.25)};
@@ -94,8 +94,8 @@ export const Content = styled.div`
   left: 0;
   content: "";
   height: 100%;
-  height: 12rem;
-  font-size: 14px;
+  height: 12vw;
+  font-size: 1.4vw;
   font-weight: 800;
   
 
@@ -103,7 +103,8 @@ export const Content = styled.div`
   display: flex;
   //roll content based on active index
   transform: translateX(
-    ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}px`)}
+    ${'' /* ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}px`)} */}
+    ${(p) => (p.active === 0 ? 0 : `-${p.active * 30}vw`)}
   );
   ${transition};
 
@@ -115,8 +116,9 @@ export const Content = styled.div`
 export const Tab = styled.div`
   width: 300%;
   width: 300px;
-  padding-right: 8rem;
-  padding-top: 1rem;
+  width: 30vw;
+  padding-right: 8vw;
+  padding-top: 1vw;
   align-items: center;
   
   

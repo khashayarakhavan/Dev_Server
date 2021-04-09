@@ -91,7 +91,7 @@ export const CardScroll = styled.div`
     padding: 2rem 1rem 3rem;
     padding: 1.953125vw 0.9765625vw 0.9296875vw;
     width: clamp(15rem, 14.6484375vw, 14.6484375vw);
-    width: 20vw;
+    width: 23vw;
   `}
 
   .technologies {

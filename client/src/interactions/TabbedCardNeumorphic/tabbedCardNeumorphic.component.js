@@ -3,9 +3,13 @@ import React, { useState } from "react";
 
 //Styles
 import { Row, Underline, Button, Content, Card, Tab } from "./tabbedCardNeumorphic.styles";
-import reactLogo from '../../assets/img/reactLogo.png'
-import mongoLogo from '../../assets/img/mongoLogo.png'
-import nodeLogo from '../../assets/img/nodeLogo.png'
+
+
+import mongoSVG from 'assets/Logos/mongodb.svg';
+import nodeSVG from 'assets/Logos/nodejs.svg';
+import reactSVG from 'assets/Logos/react.svg';
+
+
 // import {Row, Avatar, Name, Card, List} from './tabbedCard.styles';
 
 
@@ -40,52 +44,24 @@ export const TabbedCard = () => {
         </Tab>
         <Tab>
           Server-Side:
-          <div style={{ display: "flex", marginButtom: "1rem" }}>
+          <div style={{ display: "flex", marginButtom: "1vw" }}>
             <img
-              src={reactLogo}
-              style={{ marginRight: "1rem" }}
-              height="30px"
+              src={reactSVG}
+              style={{ marginRight: "1vw", height: "3vw" }}
             />
-            <img src={nodeLogo} style={{ marginRight: "1rem" }} height="30px" />
-            <img
-              src={mongoLogo}
-              style={{ marginRight: "1rem" }}
-              height="30px"
-            />
+            <img src={nodeSVG} style={{ marginRight: "1vw", height: "3vw" }} />
+            <img src={mongoSVG} style={{ marginRight: "1vw", height: "3vw" }} />
           </div>
           Logic:
           <div style={{ display: "flex" }}>
             <img
-              src={reactLogo}
-              style={{ marginRight: "1rem" }}
-              height="30px"
+              src={reactSVG}
+              style={{ marginRight: "1vw", height: "3vw" }}
             />
-            <img src={nodeLogo} style={{ marginRight: "1rem" }} height="30px" />
-            <img
-              src={mongoLogo}
-              style={{ marginRight: "1rem" }}
-              height="30px"
-            />
+            <img src={nodeSVG} style={{ marginRight: "1vw", height: "3vw" }} />
+            <img src={mongoSVG} style={{ marginRight: "1vw", height: "3vw" }} />
           </div>
         </Tab>
-        {/* {tabs.map((tab) => (
-          <Tab>
-            <div
-              style={{
-                borderRadius: "50%",
-                overflow: "hidden",
-                height: "50px",
-                width: "50px",
-              }}
-            >
-              <img
-                src="https://www.gannett-cdn.com/presto/2020/03/13/USAT/1c2efdbb-5801-4f59-860b-ff0874040fb6-VPC_CORONAVIRUS_CLOSES_DISNEY_PARKS_DESK_THUMB.jpg?crop=1911,1075,x2,y2&width=1911&height=1075&format=pjpg&auto=webp"
-                width="50px"
-                height="50px"
-              />
-            </div>
-          </Tab>
-        ))} */}
       </Content>
       <Tabs active={active} setActive={setActive} />
     </Card>

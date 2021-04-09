@@ -21,7 +21,7 @@ export const Highlighter = styled.div`
     bottom: 0;
     bottom: -2px;
     width: 100%;
-    height: 6px;
+    height: 0.6vw;
     background: ${colors.accent.ochreFire};
     background: ${colors.accent.darkest};
     background: ${colors.accent.lightest};

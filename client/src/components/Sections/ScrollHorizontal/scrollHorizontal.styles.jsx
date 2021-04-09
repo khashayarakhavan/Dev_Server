@@ -47,7 +47,7 @@ export const ScrollContainerFlex = styled.div`
   ${respond.pc.min`
   grid-column: full-start/ full-end;
   width: 100%;
-  padding: 5rem 1rem; 
+  padding: 5vw 1vw; 
  
   flex-direction: row;
   justify-content: center;

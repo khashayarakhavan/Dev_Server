@@ -4,8 +4,8 @@ import React from 'react';
 
 //Style
 import { CardScroll } from "./cardScroll.styles";
-import { Highlighter } from '../../../interactions/HighLighter/highlighter.styles';
-import TabbedCardNeumorphic from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
+import { Highlighter } from 'interactions/HighLighter/highlighter.styles';
+import TabbedCardNeumorphic from 'interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
 import { SvgIcon, Icon_cognitiveScience, Icon_cyberSecurity } from "./cardScroll.styles";
 //Code
 const Template = ({project, projectSub, photo}) => {
