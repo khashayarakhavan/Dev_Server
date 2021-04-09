@@ -6,35 +6,30 @@ import p1 from "../../../assets/img/nat-1-large.jpg";
 import p1small from "../../../assets/img/nat-1.jpg";
 import p2 from "../../../assets/img/nat-2-large.jpg";
 import p2small from "../../../assets/img/nat-2.jpg";
+import vegeloperSVG from "assets/SVG/Vegeloper.svg";
 
 const Template = () => {
   return (
     <footer className="section-footer">
-      {/* <div
-        id="retainable-rss-embed"
-        data-rss="https://medium.com/feed/@username"
-        data-maxcols="3"
-        data-layout="grid"
-        data-poststyle="inline"
-        data-readmore="Read the rest"
-        data-buttonclass="btn btn-primary"
-        data-offset="-100"
-      ></div> */}
       <div className="footer">
         <div className="footer__logo-box">
           {/* Art Direction for footer photo, changing size and resolution density based on media queries. */}
-          <picture clanssName="footer__logo">
+          <img
+            className="footer__logo"
+            srcSet={`${vegeloperSVG} 1x, ${vegeloperSVG} 2x`}
+            alt="Full Logo"
+          />
+          {/* <picture clanssName="footer__logo">
             <source
               srcSet={`${p2small} 1x, ${p2} 2x`}
               media="(min-width: 1000.5rem)"
             />
             <img
               className="footer__logo"
-              srcSet={`${p1small} 1x, ${p1} 2x`}
+              srcSet={`${vegeloperSVG} 1x, ${vegeloperSVG} 2x`}
               alt="Full Logo"
             />
-          </picture>
-          ;
+          </picture> */}
         </div>
         <div className="row">
           <div className="col-1-of-2">

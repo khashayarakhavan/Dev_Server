@@ -496,11 +496,16 @@ display: flex;
 `;
 export const Description = styled.p`
   margin: 1vw 0 1vw;
-  ${"" /* margin-top: 1vw; */}
+  width: 35vw;
+  font-weight: 200 !important;
   position: relative;
 
   ${fonts.mixins.text};
   font-size: 1.5vw !important;
+  padding-left: 0;
+
+  text-align: justify;
+  text-justify: distribute;
   
 `;
 

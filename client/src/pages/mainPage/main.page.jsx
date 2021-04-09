@@ -75,6 +75,13 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp, pageA
             zeroMarginBottom
           />
           <ScrollHorizontal />
+          <Heading
+            cta="More "
+            subCta="Articles"
+            text=""
+            inverted
+            zeroMargin
+          />
           <MiniCards />
           <Footer />
           {/* <Footer />

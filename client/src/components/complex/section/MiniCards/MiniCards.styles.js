@@ -11,7 +11,7 @@ export const MiniCardsContainer = styled.header`
   grid-column: center-start / center-end;
   grid-column: full-start / full-end;
   ${'' /* background: red; */}
-  padding: 5rem 1rem; 
+  ${'' /* padding: 5rem 1rem;  */}
 `;
 
 export const FlexContainer = styled.div`
@@ -79,7 +79,7 @@ export const MiniCard = styled.div`
 
     ${respond.pc.min`
     font-size: 4rem;
-    font-size: 3.90625vw;
+    font-size: 4vw;
     `}
   }
 
@@ -112,7 +112,7 @@ export const MiniCard = styled.div`
 
     ${respond.pc.min`
     font-size: 15px;
-    font-size: 1.46484375vw;
+    font-size: 1.5vw;
     `}
   }
 
@@ -124,7 +124,7 @@ export const MiniCard = styled.div`
 
     ${respond.pc.min`
     font-size: 10px;
-    font-size: 0.9765625vw;
+    font-size: 1.2vw;
     `}
   }
 

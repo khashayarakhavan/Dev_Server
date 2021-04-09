@@ -90,22 +90,6 @@ export const Header = (props) => {
                         srcSet={`${frontend__icons__svg6} 1x, ${backend__icons} 2x`}
                         alt="Full Logo"
                       />
-                      {/* <Picture clanssName="footer__logo">
-                        <source
-                          srcSet={`${dev_icons_vert} 1x, ${dev_icons_vert} 2x`}
-                          media="(min-width: 1100px)"
-                        />
-                        <source
-                          srcSet={`${design_icons_vert} 1x, ${design_icons_vert} 2x`}
-                          media="(min-width: 1000px)"
-                        />
-
-                        <Image
-                          className=""
-                          srcSet={`${design_icons_vert} 1x, ${design_icons_vert} 2x`}
-                          alt="Full Logo"
-                        />
-                      </Picture> */}
                     </BubbleRight>
                     <TitleBlock>
                       <h3 className="hi">Tech Stack</h3>
@@ -120,19 +104,7 @@ export const Header = (props) => {
                       </TEXT>
                     </TitleBlock>
                   </TitleContainer>
-                  <Description
-                    style={{
-                      fontWeight: "200",
-                      textAlign: "right",
-                      width: "85%",
-                      width: "82%",
-                      width: "35vw",
-                      // marginRight: "13%",
-                      textAlign: "justify",
-                      textJustify: "auto",
-                      // paddingLeft: "1rem",
-                    }}
-                  >
+                  <Description>
                     Ideally, it's the project that dictates the stack. A
                     developer's job is to identify its basic needs, and use
                     proper tools to serve them .
@@ -172,25 +144,13 @@ export const Header = (props) => {
                       />
                     </BubbleRight>
                   </TitleContainer>
-                  <Description
-                    style={{
-                      fontWeight: "200",
-                      textAlign: "left",
-                      width: "85%",
-                      width: "82%",
-                      width: "35vw",
-                      // marginRight: "13%",
-                      textAlign: "justify",
-                      textJustify: "auto",
-                      paddingLeft: "0",
-                    }}
-                  >
+                  <Description>
                     We are on the precipice of a golden age in cloud
                     technologies. This marked shift will probably forever change
                     the way we build and scale web apps.
                     <br />
                     Secure authentication, continuous delivery, and instast
-                    access are becoming the industry standard. So, I tend to use
+                    access are becoming the industry standard. <br/> I tend to use
                     a number of different tools and services to meet these
                     requirements. I adore most of them, namely:
                     <br />

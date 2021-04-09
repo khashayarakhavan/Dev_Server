@@ -9,7 +9,7 @@ import { SectionHeading, HeadingContainer, Heading } from "./heading.styles";
 //Code
 const Template = ({text, subCta, cta, inverted, ...props}) => {
   return (
-    <SectionHeading style={props.zeroMarginBottom && { marginBottom: "0" }}>
+    <SectionHeading style={props.zeroMarginBottom && { marginBottom: "0" }} zeroMargin={props.zeroMargin}>
       <HeadingContainer>
         <Heading>
          

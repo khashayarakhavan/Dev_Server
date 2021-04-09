@@ -29,8 +29,8 @@ export const Row = styled.div`
   position: absolute;
   bottom: 0;
   width: 70%;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 1vw;
+  margin-top: 1vw;
   ${"" /* margin-top: 5rem; */}
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -96,7 +96,7 @@ export const Content = styled.div`
   height: 100%;
   height: 12vw;
   font-size: 1.4vw;
-  font-weight: 800;
+  font-weight: 200;
   
 
   ${"" /* background: red !important; */}

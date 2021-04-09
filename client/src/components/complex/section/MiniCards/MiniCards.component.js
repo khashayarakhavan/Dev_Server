@@ -7,18 +7,9 @@ class Template extends Component {
         return (
           <MiniCardsContainer>
             <FlexContainer>
-              <MiniCardContainer>
-                {/* <MiniCard>
-                  <i className=" icon-basic-world"></i>
-                  <h3 className="heading-tertiary">Front-End Development</h3>
-                  <span />
-                  <p className="feature-box__text">
-                    is the most supported Framework worldwide. I cannot imagine
-                    a 2021 project without React.
-                  </p>
-                </MiniCard> */}
+              {/* <MiniCardContainer>
                 <TabbedCardNeumorphic />
-              </MiniCardContainer>
+              </MiniCardContainer> */}
 
               <MiniCardContainer>
                 <MiniCard>

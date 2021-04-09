@@ -125,18 +125,18 @@ const fonts = {
         sans-serif;
       line-height: 1.5;
       font-weight: 700;
-      font-size: 1.46484375vw;
+      font-size: 1.5vw;
       -webkit-font-smoothing: antialiased;
     `,
     h3_text: (...args) => css`
       font-family: "Poppins", sans-serif;
-      font-size: 1.09375vw;
+      font-size: 1.1vw;
       font-weight: 800;
       line-height: 1.6;
     `,
     h3_button: (...args) => css`
       font-family: Arial;
-      font-size: 0.9727626vw;
+      font-size: 1vw;
       font-weight: 400;
       font-stretch: normal;
       line-height: normal;
