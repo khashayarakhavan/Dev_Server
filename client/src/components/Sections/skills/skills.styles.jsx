@@ -504,8 +504,9 @@ export const Description = styled.p`
   font-size: 1.5vw !important;
   padding-left: 0;
 
-  text-align: justify;
-  text-justify: distribute;
+  text-align:justify;  
+  ${'' /* text-justify:inter-word !important; */}
+}
   
 `;
 

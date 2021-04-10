@@ -105,12 +105,15 @@ export const Header = (props) => {
                     </TitleBlock>
                   </TitleContainer>
                   <Description>
-                    Ideally, it's the project that dictates the stack. A
-                    developer's job is to identify its basic needs, and use
-                    proper tools to serve them .
+                    Ideally, it's the project that dictates the stack. <br /> A
+                    developer's job is to identify key features, and use proper
+                    tools to serve them .
                     <br />
-                    I'm passionately following Language-Agnostic approach and
-                    extending my toolbox with emerging technologies such as:
+                    <p style={{ lineHeight: "0.5" }}>
+                      <br />
+                    </p>
+                    I'm passionately following Language-Agnostic ideas and
+                    extending my toolset with hot and emerging technologies such as:
                   </Description>
                   <div
                     className={"frontend__icons--container"}
@@ -149,10 +152,13 @@ export const Header = (props) => {
                     technologies. This marked shift will probably forever change
                     the way we build and scale web apps.
                     <br />
-                    Secure authentication, continuous delivery, and instast
-                    access are becoming the industry standard. <br/> I tend to use
-                    a number of different tools and services to meet these
-                    requirements. I adore most of them, namely:
+                    <p style={{ lineHeight: "0.5" }}>
+                      <br />
+                    </p>
+                    Instant access and Secure interactions are the new normals.
+                    Naturally, I need to use a number of different tools and
+                    services to meet this ever-growing industry standard. I
+                    adore most of them, namely:
                     <br />
                   </Description>
                   <div
