@@ -133,7 +133,6 @@ export const VectorBackground = styled(VegeloperContainer)`
 
 export const ViewPort = styled.div`
   position: relative;
-  width: 100vw;
   overflow: hidden;
 
   background: #5a32a0;

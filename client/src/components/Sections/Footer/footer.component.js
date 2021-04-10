@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import "./footer.styles.scss";
 
 // import p1 from "../../res/img/logo-green-2x.png";
@@ -7,6 +8,7 @@ import p1small from "../../../assets/img/nat-1.jpg";
 import p2 from "../../../assets/img/nat-2-large.jpg";
 import p2small from "../../../assets/img/nat-2.jpg";
 import vegeloperSVG from "assets/SVG/Vegeloper.svg";
+import { FlexContainer } from "../Projects/projects.styles";
 
 const Template = () => {
   return (
@@ -14,11 +16,13 @@ const Template = () => {
       <div className="footer">
         <div className="footer__logo-box">
           {/* Art Direction for footer photo, changing size and resolution density based on media queries. */}
-          <img
-            className="footer__logo"
-            srcSet={`${vegeloperSVG} 1x, ${vegeloperSVG} 2x`}
-            alt="Full Logo"
-          />
+          <Link to="/" style={{display: "flex", width: "min-content", justifyContent: "center"}}>
+            <img
+              className="footer__logo"
+              srcSet={`${vegeloperSVG} 1x, ${vegeloperSVG} 2x`}
+              alt="Full Logo"
+            />
+          </Link>
           {/* <picture clanssName="footer__logo">
             <source
               srcSet={`${p2small} 1x, ${p2} 2x`}

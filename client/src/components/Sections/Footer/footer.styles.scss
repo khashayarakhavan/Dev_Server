@@ -5,23 +5,27 @@
 
 .footer {
     background-color: rgba(125,126,127,0.2);
-    padding: 10rem 0;
-    font-size: 1.4rem;
+    padding: 0;
+    font-size: 1vw;
     color:rgba(255, 255, 255, 0.7);
 
     &__logo-box {
         text-align: center;
-        margin-bottom: 8rem;
+        display: flex;
+        justify-content: center;
+        // margin-bottom: 8rem;
+        
     }
 
     &__logo {
-        width: 15rem;
+        width: 8vw;
         height: auto;
+        margin-top: 3vw;
     }
 
     &__navigation {
-        border-top: 1px solid rgba(125, 126, 127, 0.3);
-        padding-top: 2rem;
+        border-top: 0.1vw solid rgba(125, 126, 127, 0.3);
+        padding-top: 2vw;
         display: inline-block;
     }
 
@@ -33,7 +37,7 @@
         display: inline-block;
 
         &:not(:last-child) {
-            margin-right: 1.5rem;
+            margin-right: 1.5vw;
         }
     }
 
@@ -51,14 +55,14 @@
         &:hover,
         &:active {
             color: #143351;
-            box-shadow: 0 1rem 2rem rgba(#102539, .4);
+            box-shadow: 0 1vw 2vw rgba(#102539, .4);
             transform: rotate(5deg) scale(1.3);
         }
     }
 
     &__copyright {
-        border-top: 1px solid rgba(125,126,127,0.4);
-        padding-top: 2rem;
+        border-top: 0.1vw solid rgba(125,126,127,0.4);
+        padding-top: 2vw;
         width: 80%;
         float: right;
     }
