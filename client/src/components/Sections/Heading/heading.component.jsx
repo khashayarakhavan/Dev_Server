@@ -11,8 +11,7 @@ const Template = ({text, subCta, cta, inverted, ...props}) => {
   return (
     <SectionHeading style={props.zeroMarginBottom && { marginBottom: "0" }} zeroMargin={props.zeroMargin}>
       <HeadingContainer>
-        <Heading>
-         
+        <Heading>         
           <h1>{text}</h1>
           {!inverted ? (
             <h4>

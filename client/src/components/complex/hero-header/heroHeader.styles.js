@@ -104,12 +104,14 @@ export const Heading = styled.div`
   color: ${colors.secondary.darkest};
   ${fonts.mixins.heroHeader}
   font-size: 12vw;
+  font-size: 10vw;
   line-height: 1;
   font-style: normal;
   text-rendering: optimizeLegibility;
   letter-spacing: 0px;
 
   padding-top: clamp(30px, 10vw, 10vw);
+  text-align: center;
 
   ${respond.pc.standard`
     font-size: clamp(3.9rem, 3.80859375vw, 3.80859375vw);
@@ -122,12 +124,13 @@ export const Heading = styled.div`
 export const TEXT = styled.span`
   display: block;
   width: 100%;
- 
+
   color: ${colors.neutrals.darkest};
   ${fonts.mixins.text};
 
   font-family: "Poppins", sans-serif;
   font-size: 7.23vw;
+  font-size: 6.23vw;
   line-height: clamp(30px, 10vw, 10vw0);
   font-weight: 200;
   font-style: normal;
@@ -135,8 +138,9 @@ export const TEXT = styled.span`
   overflow-wrap: break-word;
   word-break: break-word;
   text-rendering: optimizeLegibility;
-  
-  padding-left: clamp(3px, 0.01vw, 0.01vw); 
+
+  padding-left: clamp(3px, 0.01vw, 0.01vw);
+  text-align: center;
 
   ${respond.pc.standard`
     font-size: 2vw;
@@ -144,7 +148,7 @@ export const TEXT = styled.span`
    
     padding-left: clamp(3px,0.3vw, 0.3vw);
    
-    ${'' /* line-height: clamp(30px, 2.9296vw, 2.9296vw);   */}
+    ${"" /* line-height: clamp(30px, 2.9296vw, 2.9296vw);   */}
   `}
 
   .love {
@@ -157,10 +161,11 @@ export const HeroHeaderLottie = styled(Lottie)`
   background-color: lightgreen;
 `;
 export const LottieContainer = styled.div`
-  height: 40vw;
+  ${'' /* height: 40vw;
   height: min-content;
   height: 70vw;
-  height: 96vw;
+  height: 96vw; */}
+  height: 80vw;
   width: 100%;
   
   ${respond.mobile.max`
@@ -352,17 +357,22 @@ export const BackgroundFigure = styled.div`
 export const Button = styled.div`
   position: relative;
 
-  justify-self: flex-start;
+  justify-self: center;
   align-self: flex-start;
- 
+
   margin-top: 6.666666vw;
-  ${'' /* margin-bottom: clamp(30px, 3.33333vw, 3.33333vw); */}
-  ${'' /* margin-left: clamp(50px, 16.666666vw, 16.666666vw); */}
+  ${"" /* margin-bottom: clamp(30px, 3.33333vw, 3.33333vw); */}
+  ${"" /* margin-left: clamp(50px, 16.666666vw, 16.666666vw); */}
   margin-left: clamp(3px, 1vw, 1vw);
   width: clamp(129.467px, 43.155666vw, 43.155666vw);
+  width: max-content;
+  width: clamp(150px, 50vw, 50vw);
+  width: clamp(130px, 43.3333vw, 43.3333vw);
+  width: clamp(140px, 46.666vw, 46.666vw);
+
   height: clamp(5.6rem, 18.666vw, 18.666vw);
 
-  ${'' /* transform: scale(1.2); */}
+  ${"" /* transform: scale(1.2); */}
 
   display: flex;
   flex-direction: column;
@@ -371,7 +381,7 @@ export const Button = styled.div`
 
   border: none;
   background: transparent;
-  
+
   transition: all 1s;
 
   text-rendering: optimizeSpeed;
@@ -379,7 +389,8 @@ export const Button = styled.div`
   word-break: break-word;
 
   font-family: "Poppins", sans-serif;
-  font-size: clamp(0.9rem, 3vw, 3vw);
+  font-size: clamp(12px, 4vw, 4vw);
+  font-size: clamp(9px, 3vw, 3vw);
 
   font-weight: 200;
   font-style: normal;
@@ -409,40 +420,43 @@ export const Button = styled.div`
     transform: scale(0.95) translateY(5px);
 
     ${respond.pc.min`
-    transform: scale(1.1) translateY(5px);
+    transform: scale(0.9) translateY(0.5vw);
     `}
 
     outline: none;
   }
 
   ${respond.mobile.max`
-    ${'' /* margin-left: 3px;   
-    margin-left: clamp(35px, 5.833333vw, 5.833333vw);    */}
+    ${
+      "" /* margin-left: 3px;   
+    margin-left: clamp(35px, 5.833333vw, 5.833333vw);    */
+    }
   `}
 
-  ${respond.pc.min`
-  transform: scale(1.2);
+  ${respond.pc.standard`
+  
   width: clamp(129.467px, 12.64326vw, 12.64326vw);
+  width: clamp(140px, 14vw, 14vw);
+
   height: clamp(5.6rem, 5.4687vw, 5.4687vw);
-  ${"" /* padding-left: 0.5vw; */}
-  font-size: clamp(1.56rem, 1.5234375vw, 1.5234375vw);
-  font-size: clamp(0.9rem, 0.87890vw, 0.87890vw);
+ 
+  font-size: clamp(9px, 0.9vw, 0.9vw);
 
   margin-top: clamp(20px, 1.95312vw, 1.95312vw);
   margin-bottom: clamp(10px, 0.97656vw, 0.97656vw);
-  margin-left: clamp(32px, 3.125vw, 3.125vw);
-  margin-left: 15px;
-  margin-left: 16px;
-  margin-left: clamp(16px, 1.5625vw, 1.5625vw);
+  margin-left: clamp(3px, 0.3vw, 0.3vw);
+  
   `}
 
 
   p {
-    padding-left: clamp(0.9rem, 3vw, 3vw);
-    align-self: flex-start;
+    ${"" /* padding-left: clamp(12px, 4vw, 4vw); */}
+    ${"" /* align-self: flex-start; */}
+    padding-right: 6vw;
     background: transparent;
-    ${respond.pc.min`
-       padding-left: clamp(0.9rem, 0.87890vw, 0.87890vw);
+    ${respond.pc.standard`
+       ${"" /* padding-left: clamp(0.9rem, 0.9vw, 0.9vw); */}
+       padding-right: 2vw;
     `}
   }
 
@@ -495,20 +509,20 @@ export const Heart = styled(HeartSVG)`
 export const SvgIcon = styled(MyIcon)`
   position: absolute;
   z-index: 10000000;
+  fill: ${colors.neutrals.lightest};
+
   width: clamp(1.8rem, 6vw, 6vw);
   height: clamp(1.8rem, 6vw, 6vw);
-  ${respond.pc.min`
+  
+  top: clamp(10px, 3.333vw, 3.333vw);
+  right: clamp(7px, 2.333333vw, 2.33333vw);
+
+  ${respond.pc.standard`
     width: clamp(1.8rem, 1.7578vw, 1.7578vw);
     height: clamp(1.8rem, 1.7578vw, 1.7578vw);
+    top: clamp(10px, 1vw, 1vw);
+    right: clamp(8px, 0.8vw, 0.8vw);
   `}
-  ${"" /* right: clamp(0.9rem, 3vw, 3vw); */}
-  top: clamp(1rem, 3.333vw, 3.333vw);
-  right: clamp(0.7rem, 2.333333vw, 2.33333vw);
-  ${respond.pc.min`
-    top: clamp(1rem, 0.97656vw, 0.97656vw);
-    right: clamp(0.5rem, 0.13671875vw, 0.13671875vw);
-  `}
-  fill: ${colors.neutrals.lightest};
 `;
 
 export const CustomSVG = styled.iframe`
@@ -523,4 +537,12 @@ export const NewSVG = styled.svg`
   height: 3px;
   fill: currentColor;
   fill: ${colors.secondary.darkest};
+`;
+export const SmallMargin = styled.span`
+  margin-left: clamp(1px, 0.333vw, 0.333vw);
+
+  ${respond.pc.standard`
+   margin-left: clamp(1px, 0.1vw, 0.1vw);
+
+  `}
 `;

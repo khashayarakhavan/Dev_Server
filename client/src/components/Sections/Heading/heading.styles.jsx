@@ -15,21 +15,25 @@ const zeroMarginStyles = css`
 
 export const SectionHeading = styled(VegeloperContainer)`
   ${(p) => p.zeroMargin && zeroMarginStyles};
+
   grid-column: cover-start / cover-end;
   position: relative;
+  display: grid;
   height: minmax(250px, auto);
   justify-content: center;
   align-content: center;
-  ${"" /**/}
+
   background: transparent !important;
-  ${"" /* background-color: rgba(249, 249, 250, 0.9) !important; */}
 
   margin-top: 5vw;
   margin-bottom: 5vw;
   overflow: hidden;
   z-index: 10000;
 
-  display: grid;
+
+  ${respond.pc.standard`
+  grid-column: cover-start / cover-end;
+  `}
 
   //Rotated Background
   &::after {
@@ -70,13 +74,13 @@ export const HeadingContainer = styled.div`
   ${"" /*  */}
 background: transparent !important;
   position: relative;
-
+${'' /* 
   margin-right: 2rem;
-  margin-left: 2rem;
+  margin-left: 2rem; */}
 
-  display: grid;
+  ${'' /* display: grid;
   justify-content: center;
-  align-content: center;
+  align-content: center; */}
 
   //Design GiantCard
   ${"" /* background: white; */}
@@ -86,14 +90,20 @@ background: transparent !important;
 export const Heading = styled.div`
   position: relative;
   width: 100%;
+  
+  text-align: center;
 
+  padding-top: clamp(30px, 10vw, 10vw);
+  padding-bottom: clamp(30px, 10vw, 10vw);
+
+  ${respond.pc.standard`
   padding: 3rem 5rem 1rem;
-
+  ;`}
 
   h1 {
     ${fonts.mixins.heroHeader}
-    font-size: 15.2360833vw;
-    font-size: 12.2360833vw;
+    font-size: 12vw;
+    font-size: 10vw;
     line-height: 1;
     letter-spacing: 0px;
     text-rendering: optimizeLegibility;
@@ -101,7 +111,7 @@ export const Heading = styled.div`
     color: ${colors.secondary.darkest};
 
     ${respond.pc.min`
-    font-size: clamp(3.9rem, 3.80859375vw, 3.80859375vw);
+    font-size: clamp(3.9rem, 3.9vw, 3.9vw);
     overflow-wrap: normal;
     word-break: break-word;
     line-height: 1;  
@@ -120,7 +130,8 @@ export const Heading = styled.div`
     line-height: clamp(30px, 10vw, 10vw);
     font-family: "Poppins", sans-serif;
     font-weight: 200;
-    font-size: 9.1vw;
+    font-size: 7.23vw;
+    font-size: 6.23vw;
 
     ${respond.pc.min`
     font-size: 2vw;
