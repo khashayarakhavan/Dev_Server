@@ -26,9 +26,7 @@ export const HeroHeaderLeft = styled.div`
   grid-row: 2 / span 1;
   grid-column: center-start / center-end;
   position: relative;
-  margin-top: clamp(30px, 10vw, 10vw);
-  margin-top: clamp(30px, 10vw, 10vw);
-  ${"" /* height: clamp(88.83333vw, 50vh, 50vh); */}
+  margin-top: clamp(60px, 20vw, 20vw);
   max-width: 100%;
   z-index: 100;
 
@@ -38,15 +36,12 @@ export const HeroHeaderLeft = styled.div`
   display: grid;
   grid-template-rows: min-content min-content minmax(min-content, 1fr);
 
-  ${respond.mobile.max`
+  ${respond.tablet.standard`
   margin-top: 0;
-  `}
-
-  ${respond.tablet.large`
-    grid-column: center-start / center-end !important;
-  `}
+   grid-column: center-start / center-end !important;
+  `} 
   
-  ${respond.pc.min`
+  ${respond.pc.standard`
     grid-column: center-start / col-end 4;
     height: 60vh;
     height: 34.375vw;
@@ -105,43 +100,18 @@ export const Heading = styled.div`
   width: 100%;
   overflow-wrap: normal;
   word-break: keep-all;
-  ${respond.pc.min`
-  .verb {
-    display: inline; 
-  }
 
-  .name {
-    ${"" /* display: block; */}
-    display: inline;
-    margin-left: 3.315vw;
-    
-    ${"" /* margin-left: 3.315rem;
-    margin-left: 3.23730468vw; */}
-  }
-  `}
-
-  ${fonts.mixins.heroHeader}
-  font-size: clamp(2.5rem, 8.3vw, 8.3vw);
-  font-size: clamp(4.7rem, 15.666666vw, 15.666666vw);
-  font-size: 12.3333333vw;
-  font-size: 15.2360833vw;
-  font-size: 12.2360833vw;
-  
-  line-height: clamp(3rem, 10vw, 10vw);
-  line-height: 1;
-  letter-spacing: 0px;
-  font-style: normal;
   color: ${colors.secondary.darkest};
-
+  ${fonts.mixins.heroHeader}
+  font-size: 12vw;
+  line-height: 1;
+  font-style: normal;
   text-rendering: optimizeLegibility;
-  padding-top: clamp(6rem, 20vw, 20vw);
-  padding-top: clamp(30px, 10vw, 10vw);
-  padding-left: clamp(30px, 10vw, 10vw);
+  letter-spacing: 0px;
 
-  ${respond.mobile.max`
-    padding-left: 0; 
-  `}
-  ${respond.pc.min`
+  padding-top: clamp(30px, 10vw, 10vw);
+
+  ${respond.pc.standard`
     font-size: clamp(3.9rem, 3.80859375vw, 3.80859375vw);
     line-height: clamp(60px, 5.8593vw, 5.8593vw);  
     line-height: 1;  
@@ -151,48 +121,30 @@ export const Heading = styled.div`
 
 export const TEXT = styled.span`
   display: block;
-  ${"" /* height: clamp(40px, 6.666vw, 16.666vw); */}
-  ${fonts.mixins.text};
   width: 100%;
-
+ 
   color: ${colors.neutrals.darkest};
-  letter-spacing: 0px;
+  ${fonts.mixins.text};
+
+  font-family: "Poppins", sans-serif;
+  font-size: 7.23vw;
+  line-height: clamp(30px, 10vw, 10vw0);
+  font-weight: 200;
   font-style: normal;
+  letter-spacing: 0px;
   overflow-wrap: break-word;
   word-break: break-word;
   text-rendering: optimizeLegibility;
-  ${"" /* line-height: ${sizes.lineHeight.large}; */}
-  line-height: clamp(30px, 10vw, 10vw);
-  font-family: "Lato", sans-serif;
-  font-family: "Open Sans", sans-serif;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-family: "EB Garamond", serif;
-  font-family: "Cabin", sans-serif;
-  font-family: "Roboto Slab", serif;
-  font-family: "Roboto Condensed", sans-serif;
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-size: clamp(10px, 3.333vw, 3.333vw);
-  font-size: 5.9vw;
-  font-size: 9.1vw;
-  font-size: 8vw;
-  font-size: 7.23vw;
-  font-weight: 400;
-  font-weight: 200;
-  ${"" /* margin-top: 20px; */}
-  padding-left: clamp(34px, 10.666vw, 10.666vw);
+  
+  padding-left: clamp(3px, 0.01vw, 0.01vw); 
 
-  ${respond.mobile.max`
-    padding-left: clamp(3px, 0.5vw, 0.5vw);
-    font-size: 7.26vw;
-  `}
-  ${respond.pc.min`
-    padding-left: clamp(3px, 0.5vw, 0.5vw);
-    padding-left: clamp(2px,0.1953125vw, 0.1953125vw);
-    font-size: clamp(1rem, 0.9765625vw, 0.9765625vw);
-    font-size: clamp(1.56rem, 1.5234375vw, 1.5234375vw);
+  ${respond.pc.standard`
     font-size: 2vw;
-    line-height: clamp(30px, 2.9296vw, 2.9296vw);  
+    line-height: 1.9;  
+   
+    padding-left: clamp(3px,0.3vw, 0.3vw);
+   
+    ${'' /* line-height: clamp(30px, 2.9296vw, 2.9296vw);   */}
   `}
 
   .love {
@@ -398,25 +350,19 @@ export const BackgroundFigure = styled.div`
 `;
 
 export const Button = styled.div`
-  transform: scale(1.2);
+  position: relative;
 
   justify-self: flex-start;
   align-self: flex-start;
-  margin-top: clamp(60px, 20vw, 20vw);
-  margin-top: 20px;
+ 
   margin-top: 6.666666vw;
-  margin-bottom: clamp(10px, 3.33333vw, 3.33333vw);
-  margin-bottom: clamp(30px, 3.33333vw, 3.33333vw);
-  ${"" /* margin-left: clamp(32px, 10.666vw, 10.666vw);
-  margin-left: 20px; */}
-  margin-left: clamp(25px, 4.1666666vw, 4.1666666vw);
-  margin-left: clamp(32px, 10.666vw, 10.666vw);
-  margin-left: clamp(50px, 16.666666vw, 16.666666vw);
-  position: relative;
+  ${'' /* margin-bottom: clamp(30px, 3.33333vw, 3.33333vw); */}
+  ${'' /* margin-left: clamp(50px, 16.666666vw, 16.666666vw); */}
+  margin-left: clamp(3px, 1vw, 1vw);
   width: clamp(129.467px, 43.155666vw, 43.155666vw);
   height: clamp(5.6rem, 18.666vw, 18.666vw);
 
-  ${"" /* padding-left: 1vw; */}
+  ${'' /* transform: scale(1.2); */}
 
   display: flex;
   flex-direction: column;
@@ -425,11 +371,7 @@ export const Button = styled.div`
 
   border: none;
   background: transparent;
-  ${
-    "" /* background-color: red;
-  background-color: ${(p) => p.open && "blue"} !important;
-  border-radius: 0 !important; */
-  }
+  
   transition: all 1s;
 
   text-rendering: optimizeSpeed;
@@ -474,8 +416,8 @@ export const Button = styled.div`
   }
 
   ${respond.mobile.max`
-    margin-left: 3px;   
-    margin-left: clamp(35px, 5.833333vw, 5.833333vw);   
+    ${'' /* margin-left: 3px;   
+    margin-left: clamp(35px, 5.833333vw, 5.833333vw);    */}
   `}
 
   ${respond.pc.min`

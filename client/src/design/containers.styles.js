@@ -68,15 +68,16 @@ export const VegeloperContainer = styled(Element)`
     [first-line] repeat(auto-fit, [row-start] min-content [row-end])
     [last-line];
 
-
-
   grid-template-columns:
-    [cover-start leftSide-start] 1vw [leftSide-end full-start] 1vw [center-start] repeat(
+    [cover-start leftSide-start] minmax(
+      1vw,
+      1fr
+    ) [leftSide-end full-start] 1vw [center-start] repeat(
       8,
       [col-start] minmax(min-content, 1fr) [col-end]
     )
     [center-end] 1vw [full-end rightSide-start]
-    1vw
+    minmax(1vw, 1fr)
     [rightSide-end cover-end];
 
   ${respond.mobile.max`

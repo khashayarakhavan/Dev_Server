@@ -33,6 +33,11 @@ export const respond = {
         ${css(...args)};
       }
     `,
+    standard: (...args) => css`
+      @media (min-width: 1000px) and (orientation: landscape) {
+        ${css(...args)};
+      }
+    `,
   },
   tablet: {
     max: (...args) => css`
@@ -56,7 +61,12 @@ export const respond = {
       }
     `,
     min: (...args) => css`
-      @media (min-width: 720px) {
+      @media (min-width: 600px) {
+        ${css(...args)};
+      }
+    `,
+    standard: (...args) => css`
+      @media (min-width: 600px) {
         ${css(...args)};
       }
     `,
@@ -84,6 +94,11 @@ export const respond = {
     `,
     min: (...args) => css`
       @media (min-width: 320px) {
+        ${css(...args)};
+      }
+    `,
+    standard: (...args) => css`
+      @media (min-width: 300px) {
         ${css(...args)};
       }
     `,

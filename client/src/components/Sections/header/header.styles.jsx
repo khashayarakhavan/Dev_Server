@@ -43,29 +43,26 @@ export const HeaderContainer = styled.div`
   grid-row: 1 / span 1;
   z-index: 10000001;
 
-
   top: 0;
   left: 0;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 
   background-color: rgb(242, 243, 247);
   background-color: transparent;
   transform: scale(0.1);
 
-
   //Hiding menu before reaching tablet viewport.
   height: 0vh;
   opacity: 0;
-
 
   ${respond.mobile.max`
     height: clamp(96px, 12vh, 12vh);
     transform: scale(1);
     opacity: 1;
+    grid-column: center-start / center-end;
   `};
   ${respond.pc.min`
     

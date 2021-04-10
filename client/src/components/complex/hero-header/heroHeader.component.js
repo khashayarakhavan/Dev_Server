@@ -80,10 +80,12 @@ export const HeroHeaderLeftContainer = ({ toggleMenuOpen, menuOpen, popUpOpen, t
     <HeroHeaderLeft>
       <Heading>
         <p className="hi">
-          Hi<Accent_fireOrange>.</Accent_fireOrange><br/>
-          I'm<br/> <Accent_fireOrange>K</Accent_fireOrange>hashi
+          <span style={{ marginLeft: "0.333vw" }}>Hi</span>
+          <Accent_fireOrange>.</Accent_fireOrange>
+          <br />
+          I'm
+          <br /> <Accent_fireOrange>K</Accent_fireOrange>hashi
         </p>
-        
       </Heading>
 
       <TEXT>
