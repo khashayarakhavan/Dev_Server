@@ -114,7 +114,11 @@ ${
     color: #F9F9FA !important;
 
     font-family: Raleway, sans-serif;
-    font-size: 1.1vw !important;   
+    font-size: 3vw !important;  
+
+    ${respond.pc.standard`
+    font-size: 1.1vw !important;  
+    `} 
     line-height: 1.2;
     border-radius: 0.3vw !important;
    
@@ -125,7 +129,7 @@ ${
     border-top-color: tomato !important;
     background: transparent;
     color: #102539;    
-     ${'' /* border-bottom: 70px solid pink; */}
+     ${"" /* border-bottom: 70px solid pink; */}
     } 
 
     

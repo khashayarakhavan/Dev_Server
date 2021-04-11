@@ -47,26 +47,16 @@ import {
   TitleBlock,
   Description,
   SubTitle,
-  Picture
+  Picture,
+  Icons,
 } from "./skills.styles";
 
-import design_icons_vert from "assets/img/design-icons-vert.png";
-import dev_icons_vert from "assets/img/dev-icons-vert.png";
-import frontend__icons from "assets/img/frontend__icons.png";
-import frontend__icons__svg from "assets/img/frontend__icons--svg.svg";
-import frontend__icons__svg2 from "assets/img/frontend__icons--svg2.svg";
-import frontend__icons__svg3 from "assets/img/frontend__icons--svg3.svg";
-import frontend__icons__svg4 from "assets/img/frontend__icons--svg4.svg";
-import frontend__icons__svg5 from "assets/img/frontend__icons--svg5.svg";
+
 import frontend__icons__svg6 from "assets/img/frontend__icons--svg6.svg";
 import backend__icons__svg from "assets/img/backend__icons--svg.svg";
 import backend__icons from "assets/img/backend__icons.png";
 
 import {Heading, TEXT} from './skills.styles';
-import {
-  Accent_fireOrange,
-  Accent_mateBlue,
-} from "design/effects.styles";
 
 import {FrontEnd, BackEnd} from "components/Sections/FlexIcons/flexIcons.component";
 
@@ -75,14 +65,12 @@ export const Header = (props) => {
   const { hidden } = props;
 
   return (
-    <SkillsContainer>
-    
-          
-            <DesignRow>
-              <ColMd6>
-                <Deets style={{ textAlign: "Right", marginTop: "2vw" }}>
+    <SkillsContainer className="skills-container">
+            <DesignRow className="DesignRow">
+              <ColMd6 className="tech-stack-container">
+                <Deets className="tech-stack-card" style={{ textAlign: "Right", marginTop: "2vw" }}>
                   <TitleContainer className="titleContainer">
-                    <BubbleRight style={{ flex: "20" }}>
+                    <BubbleRight >
                       {/* <DesignIconVert /> */}
                       <Image
                         className=""
@@ -114,16 +102,13 @@ export const Header = (props) => {
                     I'm passionately following Language-Agnostic ideas and
                     extending my toolset with hot and emerging technologies such as:
                   </Description>
-                  <div
-                    className={"frontend__icons--container"}
-                    style={{ display: "flex", justifyContent: "flex-end" }}
-                  >
+                  <Icons className={"frontend__icons--container"}>
                     <FrontEnd className={"frontend__icons--component"} />
-                  </div>
+                  </Icons>
                 </Deets>
               </ColMd6>
-              <ColMd6>
-                <Deets>
+              <ColMd6 className="cloud-era-container">
+                <Deets className="cloud-era-card">
                   <TitleContainer className="titleContainer">
                     <TitleBlock style={{ alignItems: "flex-start" }}>
                       <h3 className="hi">Cloud Era </h3>{" "}
@@ -137,7 +122,7 @@ export const Header = (props) => {
                         </p>
                       </TEXT>
                     </TitleBlock>
-                    <BubbleRight style={{ flex: "20" }}>
+                    <BubbleRight >
                       {/* <DevIconVert /> */}
                       <Image
                         className=""
@@ -160,17 +145,12 @@ export const Header = (props) => {
                     adore most of them, namely:
                     <br />
                   </Description>
-                  <div
-                    className={"backend__icons--container"}
-                    style={{ display: "flex", justifyContent: "flex-end" }}
-                  >
+                  <Icons className={"backend__icons--container"}>
                     <BackEnd className={"backend__icons--component"} />
-                  </div>
+                  </Icons>
                 </Deets>
               </ColMd6>
-            </DesignRow>
-       
-    
+            </DesignRow>    
     </SkillsContainer>
   );
 };

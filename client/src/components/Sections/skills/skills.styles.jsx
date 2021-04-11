@@ -83,6 +83,7 @@ export const SkillsContainer = styled(VegeloperContainer)`
   grid-column: cover-start / cover-end;
   background: transparent;
   justify-items: center;
+  ${'' /* width: 70%; */}
 
   ${"" /* transition: all 0.5s ease-in-out; */}
   margin-right: auto;
@@ -123,13 +124,26 @@ export const ColMd4 = styled.div`
 `;
 export const ColMd6 = styled.div`
   position: relative;
-  width: min-content;
+  width: 100%;
   flex-flow: no-wrap;
   display: flex;
-  margin-bottom: 3vw;
+  ${'' /* margin-bottom: 3vw; */}
   justify-content: center;
   min-height: 1px;
+  &:last-of-type {
+    ${'' /* background: #ff0000; */}
+  }
 `;
+
+export const Icons = styled.div`
+  display: flex;
+  justify-content: center;
+
+  ${respond.pc.standard`
+  justify-content: flex-end;
+  `}
+`;
+
 export const ColMd7 = styled.div`
   display: flex;
   flex-flow: no-wrap;
@@ -151,6 +165,7 @@ export const DesignRow = styled(Row)`
   flex-direction: column;
   align-items: center;
 
+
   
   width: 100%;
   justify-self: center;
@@ -159,7 +174,11 @@ export const DesignRow = styled(Row)`
   text-align: left;
 
   & ${ColMd6}:not(:last-child) {
-    margin-bottom: 5vw;
+    margin-bottom: 15vw;
+
+    ${respond.pc.standard`
+      margin-bottom: 5vw;
+    `}
   }
 }
  
@@ -185,8 +204,13 @@ export const BubbleRight = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  width: 15vw;
+  height: 15vw;
+
+  ${respond.pc.standard`
   width: 7.7vw;
   height: 7.7vw;
+  `}
 `;
 
 export const BubbleLeft = styled.div`
@@ -353,20 +377,28 @@ export const DevIconVert = styled.div`
   }
 `;
 export const Deets = styled.div`
-
   position: relative;
   justify-content: center;
+  ${"" /* width: 100%; */}
+  ${'' /* width: max-content; */}
   ${'' /* width: 100%; */}
+  width: 100%;
+
+  ${respond.pc.standard`
+      width: 35vw;
+    ;`}
 
   h3 {
     ${"" /* ${fonts.mixins.heroHeader}; */}
     ${fonts.heading.h2};
-    font-size: 4vw;
+    font-size: 7vw;
     ${"" /* line-height: 1; */}
+    line-height: 1;
     margin: 0;
+    ${"" /* line-height: 1.6; */}
 
     ${respond.pc.standard`
-     font-size: 2.8vw;      
+     font-size: 2.8vw;
     ;`}
   }
 `;
@@ -452,7 +484,6 @@ export const TEXT = styled.span`
   word-break: break-word;
   text-rendering: optimizeLegibility;
 
-  ${'' /* line-height: clamp(30px, 10vw, 10vw); */}
   line-height: 1.6;
   font-family: "Lato", sans-serif;
   font-family: "Open Sans", sans-serif;
@@ -470,19 +501,24 @@ export const TEXT = styled.span`
     position: relative;
 
     ${fonts.mixins.text};
-    font-size: 2vw;
+    font-size: 4.5vw;
   }
 
-  font-size: 2vmax;
+  font-size: 2vw;
 
   font-weight: 200;
-  ${'' /* padding-left: clamp(3px, 0.01vw, 0.01vw); */}
+  ${"" /* padding-left: clamp(3px, 0.01vw, 0.01vw); */}
 
   ${respond.pc.standard`
-    ${'' /* padding-left: clamp(3px, 0.5vw, 0.5vw); */}
+    ${"" /* padding-left: clamp(3px, 0.5vw, 0.5vw); */}
     padding-left: clamp(2px, 0.2vw, 0.2vw);
-    font-size: 2vmax !important;
+    font-size: 2vw !important;
     line-height: clamp(30px, 3vw, 3vw);  
+    ${'' /* line-height: 2 ; */}
+
+    p {
+      font-size: 2vw;
+    }
     
 
   `}
@@ -501,17 +537,24 @@ export const TitleContainer = styled.div`
 `;
 
 export const Description = styled.p`
-  margin: 1vw 0 1vw;
+  margin: 4vw 0 4vw;
   width: 35vw;
+  width: 100%;
   font-weight: 200 !important;
   position: relative;
 
   ${fonts.mixins.text};
-  font-size: 1.5vw !important;
+ 
   padding-left: 0;
 
   text-align:justify;  
-  ${'' /* text-justify:inter-word !important; */}
+  font-size: 4vw;
+
+  ${respond.pc.standard`
+    font-size: 1.5vw !important;
+    margin: 1vw 0 1vw;
+  `}
+  ${"" /* text-justify:inter-word !important; */}
 }
 `;
 
@@ -523,6 +566,7 @@ export const TitleBlock = styled.div`
   justify-content: center;
   height: clamp(114px, 38vw, 38vw);
   height: min-content;
+  line-height: 1.6;
 
   ${respond.pc.standard`
   height: clamp(114px, 11.4vw, 11.4vw);

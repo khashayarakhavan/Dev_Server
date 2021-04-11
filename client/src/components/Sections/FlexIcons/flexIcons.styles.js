@@ -1,5 +1,6 @@
 //Libraries
 import styled from "styled-components";
+import {respond} from 'design/responsive';
 import { rgba } from "polished";
 
 export const FeatureContainer = styled.section`
@@ -23,10 +24,12 @@ export const FeatureContainer = styled.section`
   display: inline-flex; // flex lets it to have all items in a single row
   flex-direction: row;
   flex-wrap: wrap; // lets the flex to occupy new row when space is not enough
-  justify-content: flex-end; // Horizontally align items inside the flex container
+  justify-content: center; // Horizontally align items inside the flex container
   align-items: center; // Vertically align items inside the flex container
 
- 
+  ${respond.pc.standard`
+  justify-content: flex-end; // Horizontally align items inside the flex container
+  `}
 `;
 
 export const Feature = styled.div`
@@ -58,14 +61,19 @@ export const Feature = styled.div`
 `;
 
 export const Icon = styled.svg`
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 
-  ${'' /* background: pink; */}
+  ${"" /* background: pink; */}
   margin: 0 auto;
-  width: 2vw;
+  width: 6.6666vw;
+  height: 6.6666vw;
+
+  ${respond.pc.standard`
+    width: 2vw;
   height: 2vw;
-  ${'' /* width: 100%;
+  `}
+  ${"" /* width: 100%;
   height: 100%; */}
   fill: currentColor;
 `;
