@@ -98,25 +98,25 @@ const fonts = {
     h2: (...args) => css`
       font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
         sans-serif;
-      font-size: 2.8vmax;
+      font-size: 2.8vw;
       font-weight: 400;
       line-height: 1;
     `,
     h2_sub: (...args) => css`
       font-family: "Nunito", sans-serif;
-      font-size: 2vmax;
+      font-size: 2vw;
       font-weight: 400;
-      line-height: clamp(30px, 2.9296vw, 2.9296vw);
+      line-height: clamp(30px, 3vw, 3vw);
     `,
     h2_sub_light: (...args) => css`
       font-family: "Nunito", sans-serif;
-      font-size: 2vmax;
+      font-size: 2vw;
       font-weight: 200;
-      line-height: clamp(30px, 2.9296vw, 2.9296vw);
+      line-height: clamp(30px, 3vw, 3vw);
     `,
     h2_text: (...args) => css`
       font-family: "Nunito", sans-serif;
-      font-size: clamp(1.7rem, 1.328125vw, 1.328125vw);
+      font-size: clamp(17px, 1.7vw, 1.7vw);
       font-weight: 200;
       line-height: 1.6;
     `,

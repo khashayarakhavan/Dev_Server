@@ -76,9 +76,8 @@ export const Header = (props) => {
 
   return (
     <SkillsContainer>
-      <Row>
-        <ColMd12>
-          <Article>
+    
+          
             <DesignRow>
               <ColMd6>
                 <Deets style={{ textAlign: "Right", marginTop: "2vw" }}>
@@ -170,9 +169,8 @@ export const Header = (props) => {
                 </Deets>
               </ColMd6>
             </DesignRow>
-          </Article>
-        </ColMd12>
-      </Row>
+       
+    
     </SkillsContainer>
   );
 };

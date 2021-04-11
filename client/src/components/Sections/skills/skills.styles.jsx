@@ -3,15 +3,16 @@ import { Link } from "react-router-dom";
 //Libraries
 import styled , {css , keyframes} from "styled-components";
 //Mixins
-import { mix_containers, mix_flex } from "../../../design/mixins.styles";
+import { mix_containers, mix_flex } from "design/mixins.styles";
 //Responsive
-import { respond } from "../../../design/responsive";
+import { respond } from "design/responsive";
 //Design
-import colors from "../../../design/colors";
-import sizes from "../../../design/sizes";
-import shadows from "../../../design/shadows.styles";
-import fonts from '../../../design/fonts.styles';
-import margins from '../../../design/margins.styles';
+import {VegeloperContainer} from "design/containers.styles";
+import colors from "design/colors";
+import sizes from "design/sizes";
+import shadows from "design/shadows.styles";
+import fonts from 'design/fonts.styles';
+import margins from 'design/margins.styles';
 
 //Assets
 
@@ -35,7 +36,10 @@ export const inheritedHtml = styled.div`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 export const Article = styled.article`
-  display: block;
+  grid-column: center-start/center-end;
+  display: flex;
+  justify-content: center;
+
 
 
   header {
@@ -74,22 +78,17 @@ export const WhatIDo = styled.section`
   padding: 0;
 
 `;
-export const SkillsContainer = styled.div`
+export const SkillsContainer = styled(VegeloperContainer)`
   //Container
-  grid-column: center-start / center-end;
+  grid-column: cover-start / cover-end;
+  background: transparent;
+  justify-items: center;
 
-  transition: all 0.5s ease-in-out;
+  ${"" /* transition: all 0.5s ease-in-out; */}
   margin-right: auto;
   margin-left: auto;
 
   position: relative;
-
-
-  @media (max-width: 1100px) {
-    grid-column: center-start / center-end;
-    
-  }
-
 
   &::selection {
     background: #e0ebe8;
@@ -99,15 +98,7 @@ export const SkillsContainer = styled.div`
 `;
 
 export const Row = styled.div`
-
-  
-  
-
-
-  @media (min-width: 992px) #what-i-do, #design {
-    text-align: left;
-    margin: 3rem 0 6rem;
-  }
+  grid-column: center-start/center-end;
 `;
 export const ColMd12 = styled.div`
   position: relative;
@@ -131,13 +122,13 @@ export const ColMd4 = styled.div`
  
 `;
 export const ColMd6 = styled.div`
-  display: flex;
-  margin-bottom: 3rem;
+  position: relative;
   width: min-content;
   flex-flow: no-wrap;
-  position: relative;
+  display: flex;
+  margin-bottom: 3vw;
+  justify-content: center;
   min-height: 1px;
-
 `;
 export const ColMd7 = styled.div`
   display: flex;
@@ -154,13 +145,25 @@ export const ColMd6_Pull3 = styled(ColMd6)`
 `;
 
 
-export const DesignRow = styled(Row)`  
-  & ${ColMd6}:not(:last-child) {
-    margin-bottom: 5rem;
-  }
+export const DesignRow = styled(Row)`
+  grid-column: center-start/center-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+  width: 100%;
+  justify-self: center;
+  align-self: center;
 
   text-align: left;
 
+  & ${ColMd6}:not(:last-child) {
+    margin-bottom: 5vw;
+  }
+}
+ 
+  
 `;
 
 export const HomeDesign = styled.div`
@@ -350,18 +353,22 @@ export const DevIconVert = styled.div`
   }
 `;
 export const Deets = styled.div`
+
   position: relative;
-  width: min-content;
+  justify-content: center;
+  ${'' /* width: 100%; */}
 
   h3 {
-    ${fonts.mixins.heroHeader};
-    line-height: 1;
+    ${"" /* ${fonts.mixins.heroHeader}; */}
+    ${fonts.heading.h2};
+    font-size: 4vw;
+    ${"" /* line-height: 1; */}
     margin: 0;
 
-    font-size: 2.8vw;
+    ${respond.pc.standard`
+     font-size: 2.8vw;      
+    ;`}
   }
-
- 
 `;
 export const Develop = styled(Row)`
   text-align: left;
@@ -415,7 +422,7 @@ export const Heading = styled.div`
   font-size: 15.2360833vw;
   font-size: 12.2360833vw;
 
-  line-height: clamp(3rem, 10vw, 10vw);
+  ${'' /* line-height: clamp(3rem, 10vw, 10vw); */}
   line-height: 1;
   letter-spacing: 0px;
   font-style: normal;
@@ -445,7 +452,8 @@ export const TEXT = styled.span`
   word-break: break-word;
   text-rendering: optimizeLegibility;
 
-  line-height: clamp(30px, 10vw, 10vw);
+  ${'' /* line-height: clamp(30px, 10vw, 10vw); */}
+  line-height: 1.6;
   font-family: "Lato", sans-serif;
   font-family: "Open Sans", sans-serif;
   font-family: "Open Sans Condensed", sans-serif;
@@ -468,19 +476,15 @@ export const TEXT = styled.span`
   font-size: 2vmax;
 
   font-weight: 200;
-  padding-left: clamp(34px, 10.666vw, 10.666vw);
+  ${'' /* padding-left: clamp(3px, 0.01vw, 0.01vw); */}
 
-  ${respond.mobile.max`
-    padding-left: clamp(3px, 0.5vw, 0.5vw);
-    font-size: 7.26vw;
-  `}
-  ${respond.pc.min`
-    padding-left: clamp(3px, 0.5vw, 0.5vw);
-    padding-left: clamp(2px,0.1953125vw, 0.1953125vw);
+  ${respond.pc.standard`
+    ${'' /* padding-left: clamp(3px, 0.5vw, 0.5vw); */}
+    padding-left: clamp(2px, 0.2vw, 0.2vw);
+    font-size: 2vmax !important;
+    line-height: clamp(30px, 3vw, 3vw);  
     
-     font-size: 2vmax !important;
 
-    line-height: clamp(30px, 2.9296vw, 2.9296vw);  
   `}
 
   .love {
@@ -488,12 +492,14 @@ export const TEXT = styled.span`
   }
 `;
 
-
 export const TitleContainer = styled.div`
-display: flex;
+  display: flex;
   align-items: center;
-  height: 8vw;
+  height: min-content;
+
+ 
 `;
+
 export const Description = styled.p`
   margin: 1vw 0 1vw;
   width: 35vw;
@@ -507,7 +513,6 @@ export const Description = styled.p`
   text-align:justify;  
   ${'' /* text-justify:inter-word !important; */}
 }
-  
 `;
 
 export const TitleBlock = styled.div`
@@ -516,7 +521,12 @@ export const TitleBlock = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  height: 100%;
+  height: clamp(114px, 38vw, 38vw);
+  height: min-content;
+
+  ${respond.pc.standard`
+  height: clamp(114px, 11.4vw, 11.4vw);
+  `}
 `;
 
 const movePicture = keyframes`
