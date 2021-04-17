@@ -1,5 +1,5 @@
 {
-  "name": "weekToLaunch",
+  "name": "vegeloper_client",
   "engines": {
     "node": ">=10.0",
     "npm": "6.x.x"
