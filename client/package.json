@@ -71,8 +71,7 @@
     "css:prefix": "postcss  src/css/compiled/style.compiled.css --use autoprefixer -o src/css/compiled/style.prefix.css",
     "css:compress": "node-sass src/css/compiled/style.prefix.css src/css/compiled/style.compress.css --output-style compressed",
     "css:build": "npm-run-all css:compile css:prefix css:compress",
-    "svgr": "svgr -d src/assets/svgReact/ src/assets/SVG/",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build "
+    "svgr": "svgr -d src/assets/svgReact/ src/assets/SVG/"
   },
   "eslintConfig": {
     "extends": "react-app"
