@@ -70,8 +70,7 @@
     "css:compile": "node-sass src/css/sass/main.scss src/css/compiled/style.compiled.css",
     "css:prefix": "postcss  src/css/compiled/style.compiled.css --use autoprefixer -o src/css/compiled/style.prefix.css",
     "css:compress": "node-sass src/css/compiled/style.prefix.css src/css/compiled/style.compress.css --output-style compressed",
-    "css:build": "npm-run-all css:compile css:prefix css:compress",
-    "svgr": "svgr -d src/assets/svgReact/ src/assets/SVG/"
+    "css:build": "npm-run-all css:compile css:prefix css:compress"
   },
   "eslintConfig": {
     "extends": "react-app"

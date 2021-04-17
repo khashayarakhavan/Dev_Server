@@ -253,3 +253,11 @@ import {
  const scrollToTop = () => {
     scroll.scrollToTop();
   };
+
+
+
+//Heroku Postbuild script 
+"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+
+//SVG script
+"svgr": "svgr -d src/assets/svgReact/ src/assets/SVG/"
