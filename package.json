@@ -14,7 +14,7 @@
     "client": "npm run start --prefix client",
     "install-client": "cd client && npm run install",
     "build-client": "cd client && npm run build",
-    "heroku-postbuild": "npm run build-client && npm run install-client",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "start:prod": "set NODE_ENV=production && nodemon server.js",
     "debug": "ndb server.js",
     "webhook": "./sendgrid_webhook.sh",

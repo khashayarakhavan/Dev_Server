@@ -218,15 +218,24 @@ app.use('/api/v1/bookings', bookingRouter);
 
 
 if (process.env.NODE_ENV === "production") {
-  // Express will serve up production assets and files like main.js & main.css
-  app.use(express.static("client/build"));
-
-  // Express will serve up index.de if route isn't recognized
-  const path = require("path");
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, "client/build")));
+  // Handle React routing, return all requests to React app
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
+
+// if (process.env.NODE_ENV === "production") {
+//   // Express will serve up production assets and files like main.js & main.css
+//   app.use(express.static("client/build"));
+
+//   // Express will serve up index.de if route isn't recognized
+//   const path = require("path");
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
+// }
 
 
 // app.all('*', (req, res, next) => {
