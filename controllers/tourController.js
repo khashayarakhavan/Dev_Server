@@ -1,5 +1,5 @@
 const multer = require('multer');
-const sharp = require('sharp');
+// const sharp = require('sharp');
 const Tour = require('./../models/tourModel');
 const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
@@ -41,11 +41,11 @@ exports.resizeTourImages = catchAsync(async (req, res, next) => {
   // refactor ==>
   req.body.imageCover = `tour-${req.params.id}-${Date.now()}-cover.jpeg`; // directly save imageCover into req.body instead of naming it and then 
   
-  await sharp(req.files.imageCover[0].buffer)
-    .resize(2000, 1333)
-    .toFormat('jpeg')
-    .jpeg({ quality: 90 })
-    .toFile(`public/img/tours/${req.body.imageCover}`);
+  // await sharp(req.files.imageCover[0].buffer)
+  //   .resize(2000, 1333)
+  //   .toFormat('jpeg')
+  //   .jpeg({ quality: 90 })
+  //   .toFile(`public/img/tours/${req.body.imageCover}`);
 
   // 2) Tour Images Process
   req.body.images = []; // our tour DB model needs images array in the req.body 
@@ -54,11 +54,11 @@ exports.resizeTourImages = catchAsync(async (req, res, next) => {
     req.files.images.map(async (file, i) => { // use map to wait for all loops and then store them into an array
       const filename = `tour-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/tours/${filename}`);
+      // await sharp(file.buffer)
+      //   .resize(2000, 1333)
+      //   .toFormat('jpeg')
+      //   .jpeg({ quality: 90 })
+      //   .toFile(`public/img/tours/${filename}`);
 
       req.body.images.push(filename); // save filename in images array in request body/ then saved in UpdateOne() Method.
     })
