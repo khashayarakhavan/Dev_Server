@@ -21,12 +21,16 @@ export const Highlighter = styled.div`
     bottom: 0;
     bottom: -2px;
     width: 100%;
-    height: 0.6vw;
+    height: 1.5vw;
     background: ${colors.accent.ochreFire};
     background: ${colors.accent.darkest};
     background: ${colors.accent.lightest};
     transform-origin: 0% 100%;
     transition: transform 0.25s;
+
+    ${respond.pc.standard`
+    height: 0.6vw;
+    `}
   }
 
   &:hover::after {

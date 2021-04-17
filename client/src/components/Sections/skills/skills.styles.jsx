@@ -547,12 +547,16 @@ export const Description = styled.p`
  
   padding-left: 0;
 
-  text-align:justify;  
+  text-align: left;  
+  ${'' /* text-justify: inter-character; */}
+
   font-size: 4vw;
 
   ${respond.pc.standard`
     font-size: 1.5vw !important;
     margin: 1vw 0 1vw;
+    text-align:justify;  
+  text-justify: inter-character;
   `}
   ${"" /* text-justify:inter-word !important; */}
 }

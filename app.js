@@ -217,7 +217,7 @@ app.use('/api/v1/bookings', bookingRouter);
 // app.use('/api/', APIRouter);
 
 
-if (process.env.NODE_ENV === "developement") {
+if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets and files like main.js & main.css
   app.use(express.static("client/build"));
 

@@ -33,37 +33,35 @@ export const TabbedCard = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <Card>
-      <Content active={active}>
-        <Tab>
+    <Card className="tabbedcard__container">
+      <Content active={active} className="tabbedcard__content">
+        <Tab className="tabbedcard__text--goal">
           This project was an effort to better understand human behaviour.
         </Tab>
-        <Tab>
+        <Tab className="tabbedcard__text--challenge">
           The most challenging part is mapping the real complex cognitive
           problem into a functional code.
         </Tab>
-        <Tab>
+        <Tab className="tabbedcard__text--stack">
           Server-Side:
           <div style={{ display: "flex", marginButtom: "1vw" }}>
-            <img
-              src={reactSVG}
-              style={{ marginRight: "1vw", height: "3vw" }}
-            />
+            <img src={reactSVG} style={{ marginRight: "1vw", height: "3vw" }} />
             <img src={nodeSVG} style={{ marginRight: "1vw", height: "3vw" }} />
             <img src={mongoSVG} style={{ marginRight: "1vw", height: "3vw" }} />
           </div>
           Logic:
           <div style={{ display: "flex" }}>
-            <img
-              src={reactSVG}
-              style={{ marginRight: "1vw", height: "3vw" }}
-            />
+            <img src={reactSVG} style={{ marginRight: "1vw", height: "3vw" }} />
             <img src={nodeSVG} style={{ marginRight: "1vw", height: "3vw" }} />
             <img src={mongoSVG} style={{ marginRight: "1vw", height: "3vw" }} />
           </div>
         </Tab>
       </Content>
-      <Tabs active={active} setActive={setActive} />
+      <Tabs
+        active={active}
+        setActive={setActive}
+        className="tabbedcard__tabs"
+      />
     </Card>
   );
 };

@@ -1,19 +1,20 @@
 //Libraries
 import styled from "styled-components";
 //Design
-import fonts from '../../../design/fonts.styles';
-import shadows from '../../../design/shadows.styles';
-import colors from '../../../design/colors';
-import {respond} from '../../../design/responsive';
-import {ReactComponent as Icon_Framework_React} from '../../../assets/SVG/frameworkReact.svg';
-import {ReactComponent as Icon_Cognitive_Science} from '../../../assets/SVG/cognitiveScience.svg';
-import {ReactComponent as Icon_Cognitive_Science_Brain} from '../../../assets/SVG/cognitiveScience_brain.svg';
-import {ReactComponent as Icon_Cognitive_Science_NanoBot} from '../../../assets/SVG/cognitiveScience_nanobot.svg';
-import {ReactComponent as Icon_Cyber_Security} from '../../../assets/SVG/cyberSecurity2.svg';
-import {ReactComponent as Icon_Cyber_Security_Cloud} from '../../../assets/SVG/cyberSecurity_cloud.svg';
-import {ReactComponent as Icon_Cyber_Security_Trojan} from '../../../assets/SVG/cyberSecurity_trojan.svg';
-import {ReactComponent as Icon_Cyber_Security_Shield} from '../../../assets/SVG/cyberSecurity_shield.svg';
-import {ReactComponent as Icon_Cyber_Security_Verified} from '../../../assets/SVG/cyberSecurity_verified.svg';
+import fonts from 'design/fonts.styles';
+import shadows from 'design/shadows.styles';
+import colors from 'design/colors';
+import {respond} from 'design/responsive';
+//Assets
+import {ReactComponent as Icon_Framework_React} from 'assets/SVG/frameworkReact.svg';
+import {ReactComponent as Icon_Cognitive_Science} from 'assets/SVG/cognitiveScience.svg';
+import {ReactComponent as Icon_Cognitive_Science_Brain} from 'assets/SVG/cognitiveScience_brain.svg';
+import {ReactComponent as Icon_Cognitive_Science_NanoBot} from 'assets/SVG/cognitiveScience_nanobot.svg';
+import {ReactComponent as Icon_Cyber_Security} from 'assets/SVG/cyberSecurity2.svg';
+import {ReactComponent as Icon_Cyber_Security_Cloud} from 'assets/SVG/cyberSecurity_cloud.svg';
+import {ReactComponent as Icon_Cyber_Security_Trojan} from 'assets/SVG/cyberSecurity_trojan.svg';
+import {ReactComponent as Icon_Cyber_Security_Shield} from 'assets/SVG/cyberSecurity_shield.svg';
+import {ReactComponent as Icon_Cyber_Security_Verified} from 'assets/SVG/cyberSecurity_verified.svg';
 
 export const Highlighter = styled.div`
   position: relative;
@@ -52,6 +53,8 @@ export const CardScroll = styled.div`
   
   width: 12rem;
   width: 65.33333vw;
+  width: 50vw;
+  ${'' /* width: 76.666vw; */}
 
   padding: 2rem 1rem 3rem;
   padding: 5.5555555vw 2.7777777vw 5.5555555vw;
@@ -87,7 +90,7 @@ export const CardScroll = styled.div`
     box-shadow: ${shadows.neumorphic.original};
   }
 
-  ${respond.pc.min`
+  ${respond.pc.standard`
     padding: 2rem 1rem 3rem;
     padding: 1.953125vw 0.9765625vw 0.9296875vw;
     width: clamp(15rem, 14.6484375vw, 14.6484375vw);
@@ -109,18 +112,18 @@ export const CardScroll = styled.div`
     padding: 0.4rem 0;
     padding: 1.3333333vw 0;
 
-    ${respond.pc.min`
+    ${respond.pc.standard`
       margin-top: 1rem;
-      margin-top: 0.9765625vw;
+      margin-top: 1vw;
     `}
 
     & > * {
       font-size: 12px;
       font-size: 4vw;
       margin: 0 0.3333333333vw;
-      ${respond.pc.min`
+      ${respond.pc.standard`
         font-size: 20px;
-        font-size: 1.953125vw;
+        font-size: 2vw;
         margin: 0 0.1333333333vw;
       `}
     }
@@ -188,13 +191,13 @@ export const CardScroll = styled.div`
   h3 {
     font-size: clamp(10px, 3vw, 3vw);
     font-size: 15px;
-    font-size: 6vw;
+    font-size: 3.5vw;
     font-family: "Rubik Mono One", Cambria, "Times New Roman", Times, sans-serif;
     line-height: 1.5;
     margin-bottom: 0.4rem;
     margin-bottom: 0.390625vw;
 
-    ${respond.pc.min`
+    ${respond.pc.standard`
     font-size: 15px;
     font-size: 1.46484375vw;
     `}
@@ -217,37 +220,52 @@ export const CardScroll = styled.div`
 
 
 export const SvgIcon = styled(Icon_Framework_React)`
-  width: clamp(1.8rem, 6vw, 6vw);
-  height: clamp(1.8rem, 6vw, 6vw);
+  width: 14vw;
+  height: 14vw;
+  margin-bottom: 3vw;
   fill: ${colors.accent.ochreFire};
   fill: ${colors.neutrals.darkest};
   fill: ${colors.accent.darkest};
   fill: ${colors.accent.lightest};
-  margin-bottom: 1rem;
+
+  ${respond.pc.standard`
+  width: clamp(1.8rem, 6vw, 6vw);
+  height: clamp(1.8rem, 6vw, 6vw);
+  margin-bottom: 1vw;
+  `}
 `;
 
 export const Icon_cognitiveScience = styled(Icon_Cognitive_Science_NanoBot)`
-  width: clamp(1.8rem, 6vw, 6vw);
-  height: clamp(1.8rem, 6vw, 6vw);
+  width: 14vw;
+  height: 14vw;
+  margin-bottom: 3vw;
   fill: ${colors.accent.ochreFire};
   fill: ${colors.neutrals.darkest};
   fill: ${colors.accent.darkest};
   fill: ${colors.accent.lightest};
-  margin-bottom: 1rem;
+
+  ${respond.pc.standard`
   width: clamp(1.8rem, 6vw, 6vw);
   height: clamp(1.8rem, 6vw, 6vw);
+  margin-bottom: 1vw;
+  `}
 `;
 
 export const Icon_cyberSecurity = styled(Icon_Cyber_Security_Verified)`
-  width: clamp(1.8rem, 6vw, 6vw);
-  height: clamp(1.8rem, 6vw, 6vw);
+  width: 14vw;
+  height: 14vw;
+  margin-bottom: 3vw;
+
   fill: ${colors.accent.ochreFire};
   fill: ${colors.neutrals.darkest};
   fill: ${colors.accent.darkest};
   fill: ${colors.accent.lightest};
-  margin-bottom: 1rem;
+
+  ${respond.pc.standard`
   width: clamp(1.8rem, 6vw, 6vw);
   height: clamp(1.8rem, 6vw, 6vw);
+  margin-bottom: 1vw;
+  `}
 `;
 
 

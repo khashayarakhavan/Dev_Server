@@ -3,8 +3,9 @@ import styled, {css} from "styled-components";
 
 import { rgba } from "polished";
 //Design
-import colors from '../../design/colors';
-import shadows from '../../design/shadows.styles';
+import colors from 'design/colors';
+import {respond} from 'design/responsive';
+import shadows from 'design/shadows.styles';
 
 const duration ={
   transtion:'0.45s',
@@ -18,9 +19,15 @@ export const transition = css`
 export const Card = styled.div`
   overflow: hidden;
   position: relative;
-  ${'' /* width: 200px; */}
+  ${"" /* width: 200px; */}
+
   width: 100%;
-  height: 17vw;
+
+  height: 35vw;
+
+  ${respond.pc.standard`
+  height: 20vw;
+  `}
   background: transparent;
 `;
 
@@ -29,6 +36,7 @@ export const Row = styled.div`
   position: absolute;
   bottom: 0;
   width: 70%;
+  height: 15%;
   margin-bottom: 1vw;
   margin-top: 1vw;
   ${"" /* margin-top: 5rem; */}
@@ -45,7 +53,11 @@ export const Underline = styled.div`
   left: 0;
   bottom: 0;
   width: 33.333%;
+
+  height: 1.2vw;
+  ${respond.pc.standard`
   height: 0.6vw;
+  `}
   background: #6b44a9;
   background: ${colors.neutrals.lightest};
   background: ${colors.accent.ochreFire};
@@ -60,6 +72,7 @@ export const Button = styled.button`
   flex: 1 1 33.3333%;
   width: 100%;
   height: 3vw;
+  height: 100%;
   align-items: start;
   overflow: hidden;
 
@@ -73,7 +86,11 @@ export const Button = styled.button`
   ${"" /* border-radius: 50%; */}
   ${"" /* border-radius: 6px; */}
   
-  font-size: 1vw;
+  font-size: 2.3vw;
+
+  ${respond.pc.standard`
+    font-size: 1vw;
+  `}
   border: none;
   border-bottom: 0.1vw solid ${rgba("white", 0.25)};
   background-color: ${(p) =>
@@ -95,17 +112,35 @@ export const Content = styled.div`
   content: "";
   height: 100%;
   height: 12vw;
-  font-size: 1.4vw;
+  height: 85%;
+
+  padding-top: 2vw;
+
+  font-size: 3vw;
   font-weight: 200;
-  
+
+  ${respond.pc.standard`
+  font-size: 1.4vw;  
+  padding-top: 1vw;
+  `}
 
   ${"" /* background: red !important; */}
   display: flex;
   //roll content based on active index
   transform: translateX(
-    ${'' /* ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}px`)} */}
-    ${(p) => (p.active === 0 ? 0 : `-${p.active * 30}vw`)}
+    ${"" /* ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}px`)} */}
+      ${(p) => (p.active === 0 ? 0 : `-${p.active * 50}vw`)}
   );
+
+  ${respond.pc.standard`
+ 
+   transform: translateX(
+    ${"" /* ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}px`)} */}
+      ${(p) => (p.active === 0 ? 0 : `-${p.active * 30}vw`)}
+  );
+ 
+  `}
+
   ${transition};
 
   &:hover {
@@ -116,7 +151,14 @@ export const Content = styled.div`
 export const Tab = styled.div`
   width: 300%;
   width: 300px;
+  width: 50vw;
+
+  ${respond.pc.standard`
   width: 30vw;
+  `}
+
+
+  
   padding-right: 8vw;
   padding-top: 1vw;
   align-items: center;
