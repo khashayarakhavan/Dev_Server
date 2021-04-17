@@ -258,6 +258,6 @@ import {
 
 //Heroku Postbuild script 
 "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-
+"heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
 //SVG script
 "svgr": "svgr -d src/assets/svgReact/ src/assets/SVG/"
