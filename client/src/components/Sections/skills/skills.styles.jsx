@@ -499,9 +499,9 @@ export const TEXT = styled.span`
     width: min-content;
     ${"" /* margin-top: 1vw; */}
     position: relative;
-
-    ${fonts.mixins.text};
-    font-size: 4.5vw;
+    font-family: inherit;
+    ${'' /* ${fonts.mixins.text}; */}
+    font-size: 4vw;
   }
 
   font-size: 2vw;
@@ -514,10 +514,10 @@ export const TEXT = styled.span`
     padding-left: clamp(2px, 0.2vw, 0.2vw);
     font-size: 2vw !important;
     line-height: clamp(30px, 3vw, 3vw);  
-    ${'' /* line-height: 2 ; */}
+    ${"" /* line-height: 2 ; */}
 
     p {
-      font-size: 2vw;
+      font-size: 1.5vw;
     }
     
 
@@ -542,21 +542,26 @@ export const Description = styled.p`
   width: 100%;
   font-weight: 200 !important;
   position: relative;
-
   ${fonts.mixins.text};
+  
  
   padding-left: 0;
 
   text-align: left;  
-  ${'' /* text-justify: inter-character; */}
+  ${"" /* text-justify: inter-character; */}
 
-  font-size: 4vw;
+ 
+  font-family: "Poppins", sans-serif;
+  font-size: 3.8vw;
+  font-weight: 200;
+  text-align: justify;
+  
 
   ${respond.pc.standard`
     font-size: 1.5vw !important;
     margin: 1vw 0 1vw;
     text-align:justify;  
-  text-justify: inter-character;
+    ${'' /* text-justify: inter-character; */}
   `}
   ${"" /* text-justify:inter-word !important; */}
 }

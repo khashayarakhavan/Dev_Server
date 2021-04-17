@@ -53,7 +53,7 @@ export const CardScroll = styled.div`
   
   width: 12rem;
   width: 65.33333vw;
-  width: 50vw;
+  width: 55vw;
   ${'' /* width: 76.666vw; */}
 
   padding: 2rem 1rem 3rem;
@@ -75,6 +75,9 @@ export const CardScroll = styled.div`
   border-radius: clamp(15px, 5vw, 20px);
   ${shadows.mixins.neumorphic.original}
   transition: all 0.4s; 
+
+  background: transparent !important;
+  
 
   &:hover {
     background: ${colors.neutrals.lighter};
@@ -191,7 +194,7 @@ export const CardScroll = styled.div`
   h3 {
     font-size: clamp(10px, 3vw, 3vw);
     font-size: 15px;
-    font-size: 3.5vw;
+    font-size: 4vw;
     font-family: "Rubik Mono One", Cambria, "Times New Roman", Times, sans-serif;
     line-height: 1.5;
     margin-bottom: 0.4rem;

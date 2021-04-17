@@ -92,14 +92,14 @@ export const Header = (props) => {
                     </TitleBlock>
                   </TitleContainer>
                   <Description>
-                    Ideally, it's the project that dictates the stack. <br /> A
-                    developer's job is to identify key features, and use proper
+                    Ideally, it's the project that dictates the stack. A
+                    developer's job is to identify its fundamental needs and use proper
                     tools to serve them .
                     <br />
                     <p style={{ lineHeight: "0.5" }}>
                       <br />
                     </p>
-                    I'm passionately following Language-Agnostic ideas and
+                    These days, I'm passionately following Language-Agnostic ideas and
                     extending my toolset with hot and emerging technologies such as:
                   </Description>
                   <Icons className={"frontend__icons--container"}>

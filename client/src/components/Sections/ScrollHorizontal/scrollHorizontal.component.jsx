@@ -2,10 +2,10 @@
 import React from 'react';
 //Components
 import CardScroll from 'components/atomic/cardScroll/cardScroll.component';
-import TabbedCard from '../../../interactions/TabbedCard/tabbedCard.component';
-import TabbedCardNeumorphic from '../../../interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
-import FrontEndEssentials from '../../../assets/img/frontEndEssentials.jpg';
-import DisneyPhoto from '../../../assets/img/Disney.jpg';
+import TabbedCard from 'interactions/TabbedCard/tabbedCard.component';
+import TabbedCardNeumorphic from 'interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
+import FrontEndEssentials from 'assets/img/frontEndEssentials.jpg';
+import DisneyPhoto from 'assets/img/Disney.jpg';
 import h2 from 'assets/img/h2.jpg';
 //Style
 import {

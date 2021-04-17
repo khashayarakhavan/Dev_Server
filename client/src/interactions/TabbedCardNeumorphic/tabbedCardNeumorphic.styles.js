@@ -23,7 +23,7 @@ export const Card = styled.div`
 
   width: 100%;
 
-  height: 35vw;
+  height: 45vw;
 
   ${respond.pc.standard`
   height: 20vw;
@@ -35,7 +35,7 @@ export const Row = styled.div`
   position: relative;
   position: absolute;
   bottom: 0;
-  width: 70%;
+  width: 74%;
   height: 15%;
   margin-bottom: 1vw;
   margin-top: 1vw;
@@ -75,6 +75,7 @@ export const Button = styled.button`
   height: 100%;
   align-items: start;
   overflow: hidden;
+  
 
   &:first-of-type {
     border-top-left-radius: 0.8vw;
@@ -86,11 +87,15 @@ export const Button = styled.button`
   ${"" /* border-radius: 50%; */}
   ${"" /* border-radius: 6px; */}
   
+  font-size: 3.8vw;
   font-size: 2.3vw;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
 
   ${respond.pc.standard`
     font-size: 1vw;
   `}
+
   border: none;
   border-bottom: 0.1vw solid ${rgba("white", 0.25)};
   background-color: ${(p) =>
@@ -116,7 +121,7 @@ export const Content = styled.div`
 
   padding-top: 2vw;
 
-  font-size: 3vw;
+  font-size: 3.8vw;
   font-weight: 200;
 
   ${respond.pc.standard`
@@ -155,13 +160,19 @@ export const Tab = styled.div`
 
   ${respond.pc.standard`
   width: 30vw;
+  padding-right: 8vw;
   `}
 
-
-  
-  padding-right: 8vw;
+  padding-right: 0vw;
   padding-top: 1vw;
   align-items: center;
-  
-  
+`;
+export const Image = styled.img`
+  margin-right: 3vw;
+  height: 7vw;
+
+  ${respond.pc.standard`
+    height: 3vw;
+    margin-right: 1vw;
+  `}
 `;

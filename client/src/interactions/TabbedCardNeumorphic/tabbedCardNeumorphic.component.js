@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 //Styles
-import { Row, Underline, Button, Content, Card, Tab } from "./tabbedCardNeumorphic.styles";
+import { Row, Underline, Button, Content, Card, Tab, Image } from "./tabbedCardNeumorphic.styles";
 
 
 import mongoSVG from 'assets/Logos/mongodb.svg';
@@ -45,15 +45,15 @@ export const TabbedCard = () => {
         <Tab className="tabbedcard__text--stack">
           Server-Side:
           <div style={{ display: "flex", marginButtom: "1vw" }}>
-            <img src={reactSVG} style={{ marginRight: "1vw", height: "3vw" }} />
-            <img src={nodeSVG} style={{ marginRight: "1vw", height: "3vw" }} />
-            <img src={mongoSVG} style={{ marginRight: "1vw", height: "3vw" }} />
+            <Image src={reactSVG} />
+            <Image src={nodeSVG} />
+            <Image src={mongoSVG} />
           </div>
           Logic:
           <div style={{ display: "flex" }}>
-            <img src={reactSVG} style={{ marginRight: "1vw", height: "3vw" }} />
-            <img src={nodeSVG} style={{ marginRight: "1vw", height: "3vw" }} />
-            <img src={mongoSVG} style={{ marginRight: "1vw", height: "3vw" }} />
+            <Image src={reactSVG} />
+            <Image src={nodeSVG} />
+            <Image src={mongoSVG} />
           </div>
         </Tab>
       </Content>

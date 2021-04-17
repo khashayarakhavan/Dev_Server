@@ -186,9 +186,9 @@ const fonts = {
       font-weight: 800;
     `,
     text: (...args) => css`
-      font-family: "Nunito", sans-serif;
-      font-size: 2vw;
-      font-weight: 400;
+      font-family: "Poppins", sans-serif;
+      font-size: 4.2vw;
+      font-weight: 200;
     `,
     heroHeader: (...args) => css`
       font-family: "Rubik Mono One", Cambria, "Times New Roman", Times,
