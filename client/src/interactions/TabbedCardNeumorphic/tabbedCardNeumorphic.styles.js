@@ -134,7 +134,7 @@ export const Content = styled.div`
   //roll content based on active index
   transform: translateX(
     ${"" /* ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}px`)} */}
-      ${(p) => (p.active === 0 ? 0 : `-${p.active * 50}vw`)}
+      ${(p) => (p.active === 0 ? 0 : `-${p.active * 60}vw`)}
   );
 
   ${respond.pc.standard`
@@ -157,6 +157,7 @@ export const Tab = styled.div`
   width: 300%;
   width: 300px;
   width: 50vw;
+  width: 60vw;
 
   ${respond.pc.standard`
   width: 30vw;

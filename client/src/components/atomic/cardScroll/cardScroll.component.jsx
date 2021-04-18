@@ -3,7 +3,7 @@ import React from 'react';
 //Images
 
 //Style
-import { CardScroll } from "./cardScroll.styles";
+import { CardScroll, Header3 } from "./cardScroll.styles";
 import { Highlighter } from 'interactions/HighLighter/highlighter.styles';
 import TabbedCardNeumorphic from 'interactions/TabbedCardNeumorphic/tabbedCardNeumorphic.component';
 import { SvgIcon, Icon_cognitiveScience, Icon_cyberSecurity } from "./cardScroll.styles";
@@ -13,9 +13,9 @@ const Template = ({project, projectSub, photo}) => {
     <CardScroll>
       {photo === "react" ? <SvgIcon /> : photo==="cognitive" ? <Icon_cognitiveScience /> : <Icon_cyberSecurity />}
 
-      <h3 className="heading-tertiary">
+      <Header3 >
         {project} <Highlighter> {projectSub}</Highlighter>
-      </h3>   
+      </Header3>   
       <TabbedCardNeumorphic />
     </CardScroll>
   );

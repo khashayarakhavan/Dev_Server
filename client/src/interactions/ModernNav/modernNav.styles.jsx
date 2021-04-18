@@ -465,7 +465,7 @@ export const Burger = styled.button`
 `;
 
 export const Nav = styled.nav`
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -483,6 +483,12 @@ export const NavButton = styled.button`
   height: 44px;
   background: transparent;
   color: ${rgba("white", 0.5)};
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+
   &:focus,
   &:hover,
   &:active {
@@ -512,6 +518,11 @@ export const NavText = styled.span`
   color: ${colors.secondary.darkest};
   color: ${colors.neutrals.light};
   color: white;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 `;
 
 {

@@ -16,6 +16,8 @@ import {ReactComponent as Icon_Cyber_Security_Trojan} from 'assets/SVG/cyberSecu
 import {ReactComponent as Icon_Cyber_Security_Shield} from 'assets/SVG/cyberSecurity_shield.svg';
 import {ReactComponent as Icon_Cyber_Security_Verified} from 'assets/SVG/cyberSecurity_verified.svg';
 
+const ratioMobile = 10/3;
+
 export const Highlighter = styled.div`
   position: relative;
   width: min-content;
@@ -53,7 +55,7 @@ export const CardScroll = styled.div`
   
   width: 12rem;
   width: 65.33333vw;
-  width: 55vw;
+  width: 65vw;
   ${'' /* width: 76.666vw; */}
 
   padding: 2rem 1rem 3rem;
@@ -272,6 +274,20 @@ export const Icon_cyberSecurity = styled(Icon_Cyber_Security_Verified)`
 `;
 
 
+export const Header3 = styled.h3`
+  font-size: clamp(10px, 3vw, 3vw);
+  font-size: 15px;
+  font-size: 4.6vw !important;
+  font-family: "Rubik Mono One", Cambria, "Times New Roman", Times, sans-serif;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.390625vw;
+
+  ${respond.pc.standard`
+    font-size: 15px;
+    font-size: 1.5vw;
+    `}
+`;
 
 
 
