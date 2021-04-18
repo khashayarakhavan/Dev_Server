@@ -35,7 +35,7 @@ export const Row = styled.div`
   position: relative;
   position: absolute;
   bottom: 0;
-  width: 74%;
+  width: 78%;
   height: 15%;
   margin-bottom: 1vw;
   margin-top: 1vw;
@@ -87,8 +87,8 @@ export const Button = styled.button`
   ${"" /* border-radius: 50%; */}
   ${"" /* border-radius: 6px; */}
   
-  font-size: 3.8vw;
   font-size: 2.3vw;
+  font-size: 2.8vw;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 
