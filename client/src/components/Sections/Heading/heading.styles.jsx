@@ -87,10 +87,18 @@ ${'' /*
   ${"" /* border-radius: 40px; */}
 `;
 
+const extraStyles = css`
+  font-size: 7vw;
+
+  ${'' /* ${respond.pc.standard`
+    font-size: 3vw !important;
+  `} */}
+`;
+
 export const Heading = styled.div`
   position: relative;
   width: 100%;
-  
+
   text-align: center;
 
   padding-top: clamp(30px, 10vw, 10vw);
@@ -130,13 +138,18 @@ export const Heading = styled.div`
     line-height: clamp(30px, 10vw, 10vw);
     font-family: "Poppins", sans-serif;
     font-weight: 200;
-    font-size: 7.23vw;
+    ${"" /* font-size: 7.23vw; */}
     font-size: 6.23vw;
+    font-size: ${(p) => (p.extra ? `7vw` : `6.23vw`)} !important;
 
-    ${respond.pc.min`
-    font-size: 2vw;
+    ${respond.pc.standard`
+    ${"" /* font-size: 2.5vw; */}
+    font-size: ${(p) => (p.extra ? `2.8vw` : `2.5vw`)} !important;
+    ${"" /* ${(p) => p.extra && extraStyles}; */}
     text-align: center;
     line-height: clamp(30px, 2.9296vw, 2.9296vw);  
   `}
+
+    ${(p) => (p.extra = "yes" && extraStyles)};
   }
 `;

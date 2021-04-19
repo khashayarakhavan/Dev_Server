@@ -7,11 +7,11 @@ import colors from 'design/colors';
 import { SectionHeading, HeadingContainer, Heading } from "./heading.styles";
 
 //Code
-const Template = ({text, subCta, cta, inverted, ...props}) => {
+const Template = ({text, subCta, cta, inverted, extra, ...props}) => {
   return (
     <SectionHeading style={props.zeroMarginBottom && { marginBottom: "0" }} zeroMargin={props.zeroMargin}>
       <HeadingContainer>
-        <Heading>         
+        <Heading extra={extra}>         
           <h1>{text}</h1>
           {!inverted ? (
             <h4>

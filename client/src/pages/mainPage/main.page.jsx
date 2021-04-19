@@ -81,6 +81,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp, pageA
             text=""
             inverted
             zeroMargin
+            extra="yes"
           />
           <MiniCards />
           <Footer />

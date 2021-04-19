@@ -285,7 +285,7 @@ export const Header3 = styled.h3`
 
   ${respond.pc.standard`
     font-size: 15px;
-    font-size: 1.5vw;
+    font-size: 1.5vw !important;
     `}
 `;
 
