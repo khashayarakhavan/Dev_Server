@@ -461,7 +461,8 @@ export const Burger = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  transition: color ease-out 0.3s;
+  color: ${(p) => (p.open ? "#F9F9FA" : "#EB5E28")};
 `;
 
 export const Nav = styled.nav`
@@ -484,6 +485,7 @@ export const NavButton = styled.button`
   background: transparent;
   color: ${rgba("white", 0.5)};
 
+
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -503,6 +505,11 @@ export const NavIcon = styled.span`
   color: ${colors.secondary.darkest};
   color: ${colors.neutrals.light};
   color: white;
+  color: #f9f9fa;
+  color: #d65522;
+  color: ${colors.accent.new3};
+  color: ${colors.accent.new3};
+  color: #102539;
   border: none;
   outline: none;
 
@@ -518,6 +525,7 @@ export const NavText = styled.span`
   color: ${colors.secondary.darkest};
   color: ${colors.neutrals.light};
   color: white;
+  color: #F0F0F3;
 
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */

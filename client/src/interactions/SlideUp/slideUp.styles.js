@@ -38,13 +38,11 @@ export const Button = styled.button`
   outline: none;
   cursor: pointer;
   color: ${rgba("white", 0.85)};
-  ${"" /* top: 50%; */};
-  ${"" /* left: 50%; */};
-  ${"" /* transform: translate(-50%, -50%); */};
+
 `;
 
 export const ButtonIcon = styled.div`
-  ${"" /* font-size: 19px; */}
+
   margin-right: 0.625rem;
 `;
 
@@ -65,39 +63,39 @@ export const Overlay = styled.div`
 `;
 
 export const DialogOpenStyles = css`
-  ${respond.pc.min`
-  transform: translateX(-50%) translateY(-20vw);
+  ${respond.pc.standard`
+  transform: translateX(-50%) translateY(-20vw) !important;
   `};
-  transform: translateX(-50%) translateY(-20vh);
-  ${"" /* display: block; */}
-  visibility: visible;
+  
+  transform: translateX(-50%) translateY(-81vw);
   opacity: 1;
+  visibility: visible;
+
 `;
 
 export const Dialog = styled.div`
-  ${"" /* display: none; */}
   visibility: hidden;
   opacity: 0;
   position: fixed;
   z-index: 101;
-  ${"" /* bottom: 0;
-  left: 0; */}
 
   left: 50%;
   top: 100vh;
-  font-size: 14px;
+  font-size: 4vw;
   width: min-content;
   height: 300px;
-  height: 20vh;
-  width: 60vw;
-  ${respond.pc.min`
-   height: 20vw;
-  width: 40vw;
+  height: 80vw;
+  width: 80vw;
+  border-radius: 5vw;
+
+  ${respond.pc.standard`
+    height: 20vw;
+    width: 40vw;
+    border-radius: 2vw;
+    font-size: 1.4vw;
   `};
 
-  border-radius: 2vw;
   background: ${colors.neutrals.light};
-  ${"" /* transform: translateY(${(p) => (p.isOpen ? 0 : "100%")}); */}
 
   transform: translateX(-50%) translateY(0);
   ${(p) => p.isOpen && DialogOpenStyles};
@@ -105,49 +103,56 @@ export const Dialog = styled.div`
 `;
 
 export const DialogContent = styled.div`
-  padding: 2rem;
+  ${respond.pc.standard`
+    padding: 2vw;
+  `}
+  padding: 2vw;
+  padding-bottom: 1vw;
 `;
 export const GridContainerWrapper = styled.div`
-margin-top: 2rem;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-rows: 20vw 30vw 14vw;
+  grid-template-rows: 25% 60% 15%;
   width: 100%;
-  ${'' /* background: pink; */}
+  height: 70vw;
+
+  ${respond.pc.standard`
+    grid-template-columns: 50% 50%;
+    margin-top: 2vw;
+  `}
 `;
 
 export const GridContainer = styled.div`
-grid-column: 2/ span 1;
-  ${'' /* background: grey; */}
+  grid-row: 2 / span 1;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  ${'' /* grid-template-rows: 1fr 100px; */}
-  ${'' /* margin-top: 1rem; */}
+  grid-gap: 1vw;
+  padding-top: 3vw;
+
+  ${respond.pc.standard`
+    grid-column: 2/ span 1;
+  `}
 
   & > * {
     display: flex;
-    ${'' /* justify-content: center; */}
+
     align-items: center;
-    ${'' /* height: 3rem; */}
-    ${'' /* background: transparent !important; */}
-    font-size: 16px;
-    font-weight: 200;
+
+    ${'' /* font-size: 16px;
+    font-weight: 200; */}
   }
-  
-  ${'' /* box-shadow: ${shadows.neumorphic.original}; */}
-  ${'' /* background: #1234F1; */}
 `;
 
 export const LocalLeft = styled(ScrollLink)`
   grid-row: 1 / span 1;
-
+  justify-content: left;
   background: transparent;
   border-radius: 6px;
 `;
 
 export const LocalCenter = styled.a`
   grid-row: 2 / span 1;
-
+  justify-content: left;
   background: transparent;
   border-radius: 6px;
 `;
@@ -156,49 +161,85 @@ export const LocalCenter = styled.a`
 
 export const LocalRight = styled(RouterLink)`
   grid-row: 3 / span 1;
+  justify-content: left;
   background: transparent;
   border-radius: 6px;
 `;
 
 export const ReadMore = styled.div`
+  grid-row: 3 / span 1;
   margin-top: "0.2rem";
   color: red;
-  color: #EB5E28;
+  color: #eb5e28;
   font-size: 10px;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2vw;
+
+  div {
+    line-height: 1.2;
+    justify-self: flex-end;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const SubLocal = styled.div`
   box-shadow: ${shadows.neumorphic.original};
-  width: min-content;
-  width: 17rem;
+  width: 40vw;
+  height: 10vw;
+
+  margin-left: 6vw;
+
   border-radius: 6px;
   background: white;
-  height: 2rem;
-  margin-left: 2rem;
+  padding: 1vw;
 
-  padding: 2rem;
   display: flex;
-  justify-content: left;
+  ${'' /* justify-content: left; */}
   align-items: center;
+  justify-content: flex-end;
+  justify-content: center;
+
+  div {
+    width: 80%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+  }
+
+  span {
+    margin-left: 2vw;
+
+    ${respond.pc.standard`
+      margin-left: 2vw;
+    `}
+  }
+
+  ${respond.pc.standard`
+    width: 17vw;
+    padding: 2rem;  
+    margin-left: 2rem;
+    
+  `}
 
   :hover {
     background: orange;
     color: white;
   }
-
- 
 `;
 
 export const Header = styled.div`
-  ${'' /* display: grid;
-  grid-template-columns: 1fr  1fr 25px ; */}
+
   display: flex;
   
   align-items: center;
   justify-content: space-between;
   justify-content: flex-end;
-  ${'' /* margin-bottom: 1.75rem; */}
+
 
   & > .material-icons {
     color: ${rgba("#10132F", 0.38)};
@@ -212,22 +253,28 @@ export const Title = styled.div`
 `;
 
 export const Message = styled.div`
-  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
   font-size: 1.2875rem;
   font-size: 2rem;
+  line-height: 1.1;
   font-family: "Rubik Mono One", Cambria, "Times New Roman", Times, sans-serif;
   font-weight: 400;
   color: rgba("#10132F", 0.38);
-  ${"" /* margin-bottom: 1.75rem; */}
+
+  ${respond.pc.standard`
+    grid-column: 1 / span 1;
+  `}
 `;
 
 export const SubMessage = styled.div`
-  font-size: 1.2rem;
+  font-size: 2.5vw;
   font-weight: 200;
   color: ${colors.primary};
-  margin-top: 6rem;
-  ${'' /* margin-bottom: 1.75rem; */}
-  margin-left: 2px;
+
+  ${respond.pc.standard`
+    margin-top: 6vw;
+    margin-left: 0.2vw;
+  `}
 `;
 
 
@@ -235,12 +282,12 @@ const colorChange4 = (backColor) => keyframes`
   0% { background:  transparent;}
   40% { background:  ${backColor}; }
   100% { background:  ${backColor}; color: black; }
-  ${"" /* 100% { background:  transparent; } */}
+
 `;
 const colorChange3 = (backColor) => keyframes`
   from { background:  transparent;}
   to { background:  ${backColor};  }
-  ${'' /* 100% { background:  transparent; } */}
+
 `;
 const colorChange2 = (color) => keyframes`
   0% { background:  transparent;}
@@ -249,7 +296,7 @@ const colorChange2 = (color) => keyframes`
 `;
 const colorChange = keyframes`
   0% { background:  blue;}
-  ${'' /* 50% { background:  red;  } */}
+
   100% { background:  red; }
 `;
 
@@ -287,27 +334,19 @@ export const Circle = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 14px;
+  font-size: 4.6vw;
   font-weight: 800;
   color: ${colors.primary};
   font-family: "Poppins", sans-serif;
   height: 25px;
+  height: 8.333vw;
   width: 25px;
+  width: 8.333vw;
   border-radius: 50%;
 
-  ${"" /* animation: ${breatheAnimation} 8s infinite; */}
-  ${"" /* animation: ${spinMotion} 8s infinite; */}
   animation: ${colorChange} 0.8s infinite;
 
   animation: ${colorChange2()} 1s ease infinite;
-
-  ${"" /* animation: name time func delay iteration dir fill play; */}
-  ${
-    "" /* animation: ${colorChange3(
-    "plum"
-  )} 2s ease-in-out 0.5s infinite alternate none running;
-  animation: ${colorChange3("plum")} ${(props) => props.duration} ease-in-out
-    ${(props) => props.delay} infinite alternate none running; */
-  }
 
   animation: ${(props) => colorChange3(props.backColor)} ${(props) =>
     props.duration}
@@ -319,15 +358,14 @@ export const Circle = styled.div`
 
 
 export const NumberCircle = styled.div`
-  ${"" /* border-radius: 50%; */}
-  ${"" /* grid-column: 1/ span 1; */}
+
   width: 150px;
   height: 15px;
-  ${"" /* height: 15px; */}
+
   
   background: red !important;
   transition: all 1s;
-  ${"" /* animation: ${colorChange("red")} 2s ease-in-out infinite linear; */}
+  
   animation: ${colorChange} 1s linear;
 `;
 

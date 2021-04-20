@@ -46,7 +46,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp, pageA
 
   return (
     <ViewPort>
-      <ModernNav toggleMenuOpen={toggleMenuOpen} />
+      <ModernNav open={menuOpen} toggleMenuOpen={toggleMenuOpen} />
       <SlideUpButtonJelly popUpOpen={popUpOpen} togglePopUp={togglePopUp} />
 
       <ContentView className="main_page-content" open={menuOpen}>
@@ -84,7 +84,7 @@ const VegeloperPage = ({ menuOpen, toggleMenuOpen, popUpOpen, togglePopUp, pageA
             extra="yes"
           />
           <MiniCards />
-          <Footer />
+          {/* <Footer /> */}
           {/* <Footer />
           <Projects /> */}
         </VectorBackground>

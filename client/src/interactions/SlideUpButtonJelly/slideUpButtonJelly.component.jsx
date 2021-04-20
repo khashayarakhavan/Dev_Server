@@ -74,22 +74,20 @@ import {
   NumberCircle,
   Circle,
   ReadMore
-} from "../SlideUp/slideUp.styles";
+} from "interactions/SlideUp/slideUp.styles";
 
 
 export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
   return (
     <>
-      <Overlay isOpen={popUpOpen} onClick={togglePopUp} />
-      <Dialog isOpen={popUpOpen}>
-        <DialogContent>
-          <Header>
-            {/* <Title style={{ gridColumn: "1/2" }}>
-              Need to know more about me? headphones on ! 🎧
-            </Title> */}
-            {/* <Title style={{ gridColumn: "2/3" }}>
-              or have an awesome project!?✨🚀
-            </Title> */}
+      <Overlay
+        className="slide-up-overlay"
+        isOpen={popUpOpen}
+        onClick={togglePopUp}
+      />
+      <Dialog className="slide-up-dialog" isOpen={popUpOpen}>
+        <DialogContent className="slide-up-dialog-content">
+          <Header className="slide-up-header">
             <span
               style={{
                 gridColumn: "3/4",
@@ -103,27 +101,18 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
             </span>
           </Header>
 
-          {/*
-           */}
-
-          <GridContainerWrapper>
-            <Message>
+          <GridContainerWrapper className="grid-container-wrapper">
+            <Message className="slide-up-message">
               No Waffles<span style={{ color: "#EB5E28", margin: 0 }}>.</span>
-              {/* <span style={{ fontSize: "3.5rem" }}>ASAP?</span>{" "} */}
               <span style={{ fontSize: "1.5rem", fontFamily: "Poppins" }}>
                 <br />
                 Just follow these steps . . .
               </span>
-              <SubMessage>Need more info?</SubMessage>
-              <ReadMore>
-                <Link to="/aboutMe" onClick={() => togglePopUp(false)}>
-                  Read more
-                </Link>
-              </ReadMore>
             </Message>
 
-            <GridContainer style={{ gridRow: "1/-1" }}>
+            <GridContainer className="grid-container">
               <LocalLeft
+                className="grid-local-left"
                 style={{ marginBottom: "1rem" }}
                 onClick={() => togglePopUp(false)}
                 activeClass="active"
@@ -137,17 +126,18 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                   1
                 </Circle>
                 <SubLocal>
-                  {" "}
-                  <FontAwesomeIcon
-                    icon={faPlayCircle}
-                    style={{ color: "orange", marginRight: "2rem" }}
-                  />
-                  videoResume
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faPlayCircle}
+                      style={{ color: "orange" }}
+                    />
+                    <span>1min-video</span>
+                  </div>
                 </SubLocal>
-                {/* <NumberCircle>hi</NumberCircle> */}
               </LocalLeft>
 
               <LocalCenter
+                className="grid-local-center"
                 style={{ marginBottom: "1rem" }}
                 href="https://storage.googleapis.com/shaja-267509.appspot.com/ReactDeveloper_Canada.pdf"
                 target="_newtab"
@@ -156,35 +146,56 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                   2
                 </Circle>
                 <SubLocal>
-                  <FontAwesomeIcon
-                    icon={faDownload}
-                    style={{ color: "pink", marginRight: "2rem" }}
-                  />
-                  pdfCV
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faDownload}
+                      style={{ color: "pink" }}
+                    />
+                    <span>PDF Resume</span>
+                  </div>
                 </SubLocal>
               </LocalCenter>
 
-              <LocalRight to="/hiPal" onClick={() => togglePopUp(false)}>
-                <Circle backColor="coral" delay="0.4s" duration="3s">
+              <LocalRight
+                className="grid-local-right"
+                to="/hiPal"
+                onClick={() => togglePopUp(false)}
+              >
+                <Circle
+                  className="local-right-circle"
+                  backColor="coral"
+                  delay="0.4s"
+                  duration="3s"
+                >
                   3
                 </Circle>
-                <SubLocal style={{ marginBottom: "0rem" }}>
-                  <FontAwesomeIcon
-                    icon={faPaperPlane}
-                    style={{ color: "plum", marginRight: "2rem" }}
-                  />
-                  directMe
+
+                <SubLocal
+                  className="local-right--sub"
+                  style={{ marginBottom: "0rem" }}
+                >
+                  <div>
+                    <FontAwesomeIcon
+                      className="local-right-faIcon"
+                      icon={faPaperPlane}
+                      style={{ color: "plum" }}
+                    />
+                    <span>directMe</span>
+                  </div>
                 </SubLocal>
               </LocalRight>
             </GridContainer>
+            <ReadMore className="slide-up-read-more">
+              <div>
+                <SubMessage className="slide-up-message--sub">
+                  Need more info?
+                </SubMessage>
+                <Link to="/aboutMe" onClick={() => togglePopUp(false)}>
+                  Read more
+                </Link>
+              </div>
+            </ReadMore>
           </GridContainerWrapper>
-
-          {/* <CodeRow>
-            <CodeInput placeholder="0" />
-            <CodeDash>-</CodeDash>
-            
-          </CodeRow> */}
-          {/* <GradientButton onClick={togglePopUp}>Submit</GradientButton> */}
         </DialogContent>
       </Dialog>
     </>
