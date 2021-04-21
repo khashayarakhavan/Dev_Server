@@ -452,8 +452,14 @@ export const Burger = styled.button`
     border: none;
     outline: none;
   }
-  top: 2rem;
-  left: 2rem;
+  top: 2vw;
+  left: 2vw;
+
+  ${respond.pc.standard`
+    top: 2.5vw;
+    left: 2vw;  
+  `}
+
   z-index: 100;
   background: transparent;
   border: 0;
@@ -482,9 +488,14 @@ export const NavButton = styled.button`
   align-items: center;
   justify-content: flex-start;
   height: 44px;
+  height: 14.666666vw;
+
   background: transparent;
   color: ${rgba("white", 0.5)};
 
+  ${respond.pc.standard`
+  height: 4.4vw;
+  `}
 
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
@@ -501,6 +512,12 @@ export const NavButton = styled.button`
 
 export const NavIcon = styled.span`
   font-size: 3.5rem;
+  font-size: 11.666666vw;
+
+  ${respond.pc.standard`
+    font-size: 3.5vw;
+  `}
+
   color: ${colors.accent.new3};
   color: ${colors.secondary.darkest};
   color: ${colors.neutrals.light};
@@ -521,11 +538,16 @@ export const NavIcon = styled.span`
 
 export const NavText = styled.span`
   font-size: 2.5rem;
+  font-size: 8.3333333vw;
+
+  ${respond.pc.standard`
+    font-size: 2.5vw;
+  `}
   font-weight: 800;
   color: ${colors.secondary.darkest};
   color: ${colors.neutrals.light};
   color: white;
-  color: #F0F0F3;
+  color: #f0f0f3;
 
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
@@ -533,12 +555,104 @@ export const NavText = styled.span`
   user-select: none; /* Standard */
 `;
 
-{
-  /* <link
-  rel="stylesheet"
-  href="https://unicons.iconscout.com/release/v3.0.3/css/line.css"
-/>; */
-}
+export const NavLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+
+  width: 70px;
+  width: 23vw;
+  cursor: pointer;
+
+  position: fixed;
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+  }
+  top: 1vw;
+  left: 0.5vw !important;
+  z-index: 100;
+
+  background: transparent;
+  border: 0;
+
+  ${respond.pc.standard`
+    width: 7vw;
+    top: 3vw;
+    left: 2vw;  
+    transform-origin: top;
+    transform: scale(0.6);
+  `}
+
+  transform: scale(0.5);
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+    transform-origin: bottom;
+    align-self: flex-start;
+    width: 50%;
+    transform: rotatez(45deg) translate(8px, 0px);
+    transform: rotatez(45deg) translate(2.66666vw, 0px);
+
+    ${respond.pc.standard`
+    transform: rotatez(45deg) translate(0.8vw, 0px);
+    `}
+  }
+
+  input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg);
+  }
+
+  input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+    transform-origin: bottom;
+    width: 50%;
+    align-self: flex-start;
+    transform: translate(30px, -11px) rotatez(45deg);
+    transform: translate(10vw, -3.6666666vw) rotatez(45deg);
+
+    ${respond.pc.standard`
+    transform: translate(3vw, -1.1vw) rotatez(45deg);
+    `}
+  }
+
+  span {
+    background: ${(p) => (p.open ? "#102539" : "#EB5E28")};
+
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    border-radius: 10px;
+    border-radius: 1vw;
+    height: 7px;
+    height: 2.3333333vw;
+    margin: 7px 0;
+    margin: 2.3333333vw 0;
+
+    ${respond.pc.standard`
+      height: 0.7vw;
+      margin: 0.7vw 0;
+    `}
+  }
+
+  span:nth-of-type(1) {
+    width: 50%;
+    align-self: flex-end;
+    width: 30%;
+  }
+
+  span:nth-of-type(2) {
+    width: 10%;
+    width: 100%;
+  }
+
+  span:nth-of-type(3) {
+    width: 75%;
+    width: 45%;
+    align-self: flex-end;
+  }
+`;
 
 
 

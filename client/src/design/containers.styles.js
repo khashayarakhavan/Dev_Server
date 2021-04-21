@@ -144,7 +144,12 @@ export const ViewPort = styled.div`
 
 const contentViewOpenStyles = css`
   transform: translateX(150px) translateY(100px);
+  transform: translateX(50vw) translateY(33.333333vw);
   border-radius: 10vw;
+
+  ${respond.pc.standard`
+    transform: translateX(15vw) translateY(10vw);
+  `}
 `;
 
 export const ContentView = styled.div`

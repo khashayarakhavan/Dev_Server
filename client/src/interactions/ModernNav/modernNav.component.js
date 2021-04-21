@@ -7,6 +7,7 @@ import {
   NavButton,
   NavIcon,
   NavText,
+  NavLabel,
   Burger,
 } from "./modernNav.styles";
 
@@ -27,7 +28,17 @@ export const ModernNav = ({open, toggleMenuOpen}) => {
             <NavText>Message</NavText>
           </Link>
         </Nav>
-        <Burger open={open} onClick={toggleMenuOpen} className="burger uil uil-bars" />
+        {/* <Burger
+          open={open}
+          onClick={toggleMenuOpen}
+          className="burger uil uil-bars"
+        /> */}
+        <NavLabel for="check" open={open}>
+          <input type="checkbox" id="check" onClick={toggleMenuOpen} />
+          <span></span>
+          <span></span>
+          <span></span>
+        </NavLabel>
       </>
     );
 };
