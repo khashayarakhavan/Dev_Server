@@ -58,15 +58,13 @@ export const HeaderContainer = styled.div`
   height: 0vh;
   opacity: 0;
 
-  ${respond.mobile.max`
-    height: clamp(96px, 9.6vw, 9.6vw);
-    transform: scale(1);
-    opacity: 1;
-    grid-column: center-start / center-end;
-  `};
+ 
   ${respond.pc.min`
     
     grid-column: center-start / center-end;
+       height: clamp(96px, 9.6vw, 9.6vw);
+    transform: scale(1);
+    opacity: 1;
   `};
 `;
 

@@ -23,7 +23,7 @@ export const FeatureContainer = styled.section`
   ${"" /* padding-left: 3rem; */}
   display: inline-flex; // flex lets it to have all items in a single row
   flex-direction: row;
-  flex-wrap: wrap; // lets the flex to occupy new row when space is not enough
+  flex-wrap: nowrap; // lets the flex to occupy new row when space is not enough
   justify-content: center; // Horizontally align items inside the flex container
   align-items: center; // Vertically align items inside the flex container
 

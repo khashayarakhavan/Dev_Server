@@ -70,14 +70,14 @@ export const VegeloperContainer = styled(Element)`
     1vw
     [rightSide-end cover-end];
 
-  ${respond.mobile.max`
+  ${'' /* ${respond.mobile.max`
     grid-template-columns: [cover-start leftSide-start] 1vw [leftSide-end full-start] 9vw [center-start] repeat(
       8,
       [col-start] minmax(min-content, 1fr) [col-end]
     ) [center-end] 9vw [full-end rightSide-start]
     1vw
     [rightSide-end cover-end];
-  `}
+  `} */}
 
   ${respond.pc.min`
     grid-template-columns: [cover-start leftSide-start] minmax(1vw, 1fr) [leftSide-end full-start] 9vw [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 9vw [full-end rightSide-start]

@@ -49,6 +49,7 @@ import {
   SubTitle,
   Picture,
   Icons,
+  Header3,
 } from "./skills.styles";
 
 

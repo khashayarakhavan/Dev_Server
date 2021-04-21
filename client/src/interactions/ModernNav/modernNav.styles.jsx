@@ -67,14 +67,14 @@ export const VegeloperContainer = styled(Element)`
     1vw
     [rightSide-end cover-end];
 
-  ${respond.mobile.max`
+  ${'' /* ${respond.mobile.max`
     grid-template-columns: [cover-start leftSide-start] 1vw [leftSide-end full-start] 9vw [center-start] repeat(
       8,
       [col-start] minmax(min-content, 1fr) [col-end]
     ) [center-end] 9vw [full-end rightSide-start]
     1vw
     [rightSide-end cover-end];
-  `}
+  `} */}
 
   ${respond.pc.min`
     grid-template-columns: [cover-start leftSide-start] minmax(1vw, 1fr) [leftSide-end full-start] 9vw [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 9vw [full-end rightSide-start]
@@ -563,14 +563,21 @@ export const NavLabelContainer = styled.div`
 `;
 const inputOpenStyles = css`
   span:nth-of-type(1) {
+    transform-origin: top;
     transform-origin: bottom;
     align-self: flex-start;
+    align-self: flex-end;
     width: 50%;
+    ${'' /* background: lime; */}
     transform: rotatez(45deg) translate(8px, 0px);
     transform: rotatez(45deg) translate(2.66666vw, 0px);
+    transform: rotatez(45deg) translate(-5vw, 7.8vw);
+    transform: rotatez(45deg) translate(-6vw, 7.8vw);
+    transform: rotatez(45deg) translate(-3vw, 7.3vw);
 
     ${respond.pc.standard`
     transform: rotatez(45deg) translate(0.8vw, 0px);
+    transform: rotatez(45deg) translate(-1.2vw, 2vw);
     `}
   }
 
@@ -581,13 +588,22 @@ const inputOpenStyles = css`
 
   span:nth-of-type(3) {
     transform-origin: bottom;
+    transform-origin: top;
+    width: 40%;
     width: 50%;
+    ${'' /* background: red; */}
     align-self: flex-start;
+    align-self: flex-end;
     transform: translate(30px, -11px) rotatez(45deg);
     transform: translate(10vw, -3.6666666vw) rotatez(45deg);
+    transform: translate(0vw, -3.6666666vw) rotatez(45deg);
+    transform: translate(-2vw, -5.1vw) rotatez(45deg);
+    transform: translate(-1.5vw, -6vw) rotatez(45deg);
+    transform: translate(0vw, -5vw) rotatez(45deg);
 
     ${respond.pc.standard`
     transform: translate(3vw, -1.1vw) rotatez(45deg);
+      transform: translate(0vw, -1.6666666vw) rotatez(45deg);
     `}
   }
 `;

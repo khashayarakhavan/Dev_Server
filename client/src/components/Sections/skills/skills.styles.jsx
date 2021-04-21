@@ -376,6 +376,22 @@ export const DevIconVert = styled.div`
     }
   }
 `;
+
+export const Header3 = styled.h3`
+  ${fonts.heading.h2};
+  font-size: 7vw;
+  line-height: 1;
+  margin: 0;
+  
+  ${respond.tablet.standard`
+     font-size: 6vw;
+    ;`}
+  
+  ${respond.pc.standard`
+     font-size: 2.8vw;
+    ;`}
+`;
+
 export const Deets = styled.div`
   position: relative;
   justify-content: center;
@@ -397,6 +413,9 @@ export const Deets = styled.div`
     margin: 0;
     ${"" /* line-height: 1.6; */}
 
+    ${respond.tablet.standard`
+     font-size: 6vw;
+    ;`}
     ${respond.pc.standard`
      font-size: 2.8vw;
     ;`}
@@ -500,7 +519,7 @@ export const TEXT = styled.span`
     ${"" /* margin-top: 1vw; */}
     position: relative;
     font-family: inherit;
-    ${'' /* ${fonts.mixins.text}; */}
+    ${"" /* ${fonts.mixins.text}; */}
     font-size: 4vw;
   }
 
@@ -508,7 +527,13 @@ export const TEXT = styled.span`
 
   font-weight: 200;
   ${"" /* padding-left: clamp(3px, 0.01vw, 0.01vw); */}
-
+  ${respond.tablet.standard`
+    p {
+   
+    font-size: 3.5vw;
+  }
+  `}
+  
   ${respond.pc.standard`
     ${"" /* padding-left: clamp(3px, 0.5vw, 0.5vw); */}
     padding-left: clamp(2px, 0.2vw, 0.2vw);

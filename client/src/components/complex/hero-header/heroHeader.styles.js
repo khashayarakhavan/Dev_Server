@@ -37,7 +37,7 @@ export const HeroHeaderLeft = styled.div`
   grid-template-rows: min-content min-content minmax(min-content, 1fr);
 
   ${respond.tablet.standard`
-  margin-top: 0;
+  
    grid-column: center-start / center-end !important;
   `} 
   
@@ -159,16 +159,20 @@ export const HeroHeaderLottie = styled(Lottie)`
   background-color: lightgreen;
 `;
 export const LottieContainer = styled.div`
-  
   height: 80vw;
   width: 100%;
-  
-  ${respond.mobile.max`
+
+  ${respond.tablet.standard`
+  height: 70vw !important;
+  `}
+  ${
+    "" /* ${respond.mobile.max`
     height: 80vw;
   `}
   ${respond.tablet.large`
     height: 70vw !important;
-  `}
+  `} */
+  }
   ${respond.pc.min`
     height: 32.5vw; 
   `}
