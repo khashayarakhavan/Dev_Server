@@ -555,7 +555,49 @@ export const NavText = styled.span`
   user-select: none; /* Standard */
 `;
 
+export const NavLabelContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+`;
+
 export const NavLabel = styled.label`
+  &:hover::before {
+    background: rgba(125, 126, 127, 0.1);
+  }
+  
+  &:focus::before {
+    background: rgba(125, 126, 127, 0.1);
+  }
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 120%;
+    height: 120%;
+    ${"" /* transform-origin: center; */}
+    top: 0px;
+    top: 50%;
+    left: 0px;
+    left: 55%;
+    transition: 0.3s ease-out;
+    transform: translate(-50%, -50%);
+
+    ${
+      "" /* right: 0px;
+    
+    transform: translate(-50%, -50%);
+    bottom: 0; */
+    }
+
+    border-radius: 50%;
+  }
+
+  tranision: 0.2s ease-out;
   display: flex;
   flex-direction: column;
 
