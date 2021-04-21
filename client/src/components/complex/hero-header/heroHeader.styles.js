@@ -39,9 +39,10 @@ export const HeroHeaderLeft = styled.div`
   ${respond.tablet.standard`
   
    grid-column: center-start / center-end !important;
-  `} 
-  
+  `}
+
   ${respond.pc.standard`
+  margin-top: 0;
     grid-column: center-start / col-end 4;
     height: 60vh;
     height: 34.375vw;
@@ -111,6 +112,13 @@ export const Heading = styled.div`
   padding-top: clamp(30px, 10vw, 10vw);
   text-align: center;
 
+  ${respond.mobile.landscape`
+   font-size: 8vw;
+  `}
+  ${respond.tablet.standard`
+   font-size: 8vw;
+  `}
+
   ${respond.pc.standard`
     font-size: clamp(3.9rem, 3.80859375vw, 3.80859375vw);
     line-height: clamp(60px, 5.8593vw, 5.8593vw);  
@@ -141,6 +149,13 @@ export const TEXT = styled.span`
   padding-left: clamp(3px, 0.01vw, 0.01vw);
   text-align: center;
 
+  ${respond.mobile.landscape`
+   font-size: 5vw;
+  `}
+  ${respond.tablet.standard`
+   font-size: 5vw;
+  `}
+
   ${respond.pc.standard`
     font-size: 2vw;
     line-height: 1.9;  
@@ -163,7 +178,7 @@ export const LottieContainer = styled.div`
   width: 100%;
 
   ${respond.tablet.standard`
-  height: 70vw !important;
+  height: 70vw ;
   `}
   ${
     "" /* ${respond.mobile.max`
@@ -173,7 +188,7 @@ export const LottieContainer = styled.div`
     height: 70vw !important;
   `} */
   }
-  ${respond.pc.min`
+  ${respond.pc.standard`
     height: 32.5vw; 
   `}
 `;
@@ -349,7 +364,15 @@ export const Button = styled.div`
     outline: none;
   }
 
+  ${respond.mobile.landscape`
+   transform: scale(0.8);
+  `}
+  ${respond.tablet.standard`
+ transform: scale(0.8);
+  `}
+
   ${respond.pc.standard`
+   transform: scale(1);
   justify-self: left;
   width: clamp(140px, 14vw, 14vw);
   height: clamp(5.6rem, 5.4687vw, 5.4687vw);

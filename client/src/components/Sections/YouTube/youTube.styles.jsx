@@ -51,7 +51,10 @@ export const SectionYoutube = styled(VegeloperContainer)`
 
 export const YTContainer = styled.div`
   grid-column: full-start / full-end;
-  ${respond.pc.min`
+  ${respond.tablet.standard`
+     grid-column: center-start / center-end;
+  `}
+  ${respond.pc.standard`
      grid-column: center-start / center-end;
   `}
 
@@ -69,10 +72,17 @@ export const YTContainer = styled.div`
 export const YT = styled.div`
   width: 100%;
   height: 50vh;
-  height: 46vh;
+  height: 70vw;
 
-  ${respond.pc.min`
-    height: 70vh;
+  ${respond.mobile.landscape`
+   height: 60vw;
+  `}
+
+  ${respond.tablet.standard`
+    height: 60vw;
+  `}
+  ${respond.pc.standard`
+    height: 50vw;
   `}
 
   background: transparent;

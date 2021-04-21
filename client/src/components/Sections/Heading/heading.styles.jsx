@@ -118,7 +118,15 @@ export const Heading = styled.div`
     font-style: normal;
     color: ${colors.secondary.darkest};
 
-    ${respond.pc.min`
+    ${respond.mobile.landscape`
+      font-size: 7vw;
+    `}
+
+    ${respond.tablet.standard`
+      font-size: 7vw;
+    `}
+
+    ${respond.pc.standard`
     font-size: clamp(3.9rem, 3.9vw, 3.9vw);
     overflow-wrap: normal;
     word-break: break-word;
@@ -141,6 +149,8 @@ export const Heading = styled.div`
     ${"" /* font-size: 7.23vw; */}
     font-size: 6.23vw;
     font-size: ${(p) => (p.extra ? `7vw` : `6.23vw`)} !important;
+
+   
 
     ${respond.pc.standard`
     ${"" /* font-size: 2.5vw; */}

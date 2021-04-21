@@ -4,27 +4,27 @@ import { css } from "styled-components";
 export const respond = {
   pc: {
     max_4k: (...args) => css`
-      @media (min-width: 3800px)  and (orientation: landscape) {
+      @media (min-width: 3800px) and (orientation: landscape) {
         ${css(...args)};
       }
     `,
     max: (...args) => css`
-      @media (min-width: 2000px)  and (orientation: landscape){
+      @media (min-width: 2000px) and (orientation: landscape) {
         ${css(...args)};
       }
     `,
     large: (...args) => css`
-      @media (min-width: 1600px)  and (orientation: landscape){
+      @media (min-width: 1600px) and (orientation: landscape) {
         ${css(...args)};
       }
     `,
     medium: (...args) => css`
-      @media (min-width: 1400px)  and (orientation: landscape){
+      @media (min-width: 1400px) and (orientation: landscape) {
         ${css(...args)};
       }
     `,
     small: (...args) => css`
-      @media (min-width: 1350px)  and (orientation: landscape){
+      @media (min-width: 1350px) and (orientation: landscape) {
         ${css(...args)};
       }
     `,
@@ -99,6 +99,11 @@ export const respond = {
     `,
     standard: (...args) => css`
       @media (min-width: 300px) {
+        ${css(...args)};
+      }
+    `,
+    landscape: (...args) => css`
+      @media (min-width: 300px) and (orientation: landscape) {
         ${css(...args)};
       }
     `,
