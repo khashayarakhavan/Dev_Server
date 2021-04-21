@@ -67,7 +67,7 @@ export const DialogOpenStyles = css`
   transform: translateX(-50%) translateY(-20vw) !important;
   `};
   
-  transform: translateX(-50%) translateY(-81vw);
+  transform: translateX(-50%) translateY(-95vw);
   opacity: 1;
   visibility: visible;
 
@@ -144,6 +144,11 @@ export const GridContainer = styled.div`
 `;
 
 export const LocalLeft = styled(ScrollLink)`
+  &,
+  &:link,
+  &:visited {
+    color: ${colors.secondary.darkest};
+  }
   grid-row: 1 / span 1;
   justify-content: left;
   background: transparent;
@@ -164,6 +169,11 @@ export const LocalRight = styled(RouterLink)`
   justify-content: left;
   background: transparent;
   border-radius: 6px;
+  &,
+  &:link,
+  &:visited {
+    color: ${colors.secondary.darkest};
+  }
 `;
 
 export const ReadMore = styled.div`
@@ -188,6 +198,11 @@ export const ReadMore = styled.div`
 `;
 
 export const SubLocal = styled.div`
+  &,
+  &:link,
+  &:visited {
+    color: ${colors.secondary.darkest};
+  }
   box-shadow: ${shadows.neumorphic.original};
   width: 40vw;
   height: 10vw;
@@ -199,7 +214,7 @@ export const SubLocal = styled.div`
   padding: 1vw;
 
   display: flex;
-  ${'' /* justify-content: left; */}
+  ${"" /* justify-content: left; */}
   align-items: center;
   justify-content: flex-end;
   justify-content: center;
@@ -213,6 +228,12 @@ export const SubLocal = styled.div`
 
   span {
     margin-left: 2vw;
+
+    &,
+    &:link,
+    &:visited {
+      color: ${colors.secondary.darkest};
+    }
 
     ${respond.pc.standard`
       margin-left: 2vw;

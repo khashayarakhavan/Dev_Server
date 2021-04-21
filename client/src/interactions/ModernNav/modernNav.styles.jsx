@@ -561,12 +561,42 @@ export const NavLabelContainer = styled.div`
   align-items: center;
   position: relative;
 `;
+const inputOpenStyles = css`
+  span:nth-of-type(1) {
+    transform-origin: bottom;
+    align-self: flex-start;
+    width: 50%;
+    transform: rotatez(45deg) translate(8px, 0px);
+    transform: rotatez(45deg) translate(2.66666vw, 0px);
+
+    ${respond.pc.standard`
+    transform: rotatez(45deg) translate(0.8vw, 0px);
+    `}
+  }
+
+  span:nth-of-type(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg);
+  }
+
+  span:nth-of-type(3) {
+    transform-origin: bottom;
+    width: 50%;
+    align-self: flex-start;
+    transform: translate(30px, -11px) rotatez(45deg);
+    transform: translate(10vw, -3.6666666vw) rotatez(45deg);
+
+    ${respond.pc.standard`
+    transform: translate(3vw, -1.1vw) rotatez(45deg);
+    `}
+  }
+`;
 
 export const NavLabel = styled.label`
   &:hover::before {
     background: rgba(125, 126, 127, 0.1);
   }
-  
+
   &:focus::before {
     background: rgba(125, 126, 127, 0.1);
   }
@@ -632,35 +662,6 @@ export const NavLabel = styled.label`
     display: none;
   }
 
-  input[type="checkbox"]:checked ~ span:nth-of-type(1) {
-    transform-origin: bottom;
-    align-self: flex-start;
-    width: 50%;
-    transform: rotatez(45deg) translate(8px, 0px);
-    transform: rotatez(45deg) translate(2.66666vw, 0px);
-
-    ${respond.pc.standard`
-    transform: rotatez(45deg) translate(0.8vw, 0px);
-    `}
-  }
-
-  input[type="checkbox"]:checked ~ span:nth-of-type(2) {
-    transform-origin: top;
-    transform: rotatez(-45deg);
-  }
-
-  input[type="checkbox"]:checked ~ span:nth-of-type(3) {
-    transform-origin: bottom;
-    width: 50%;
-    align-self: flex-start;
-    transform: translate(30px, -11px) rotatez(45deg);
-    transform: translate(10vw, -3.6666666vw) rotatez(45deg);
-
-    ${respond.pc.standard`
-    transform: translate(3vw, -1.1vw) rotatez(45deg);
-    `}
-  }
-
   span {
     background: ${(p) => (p.open ? "#102539" : "#EB5E28")};
 
@@ -693,6 +694,39 @@ export const NavLabel = styled.label`
     width: 75%;
     width: 45%;
     align-self: flex-end;
+  }
+
+  ${(p) => p.open && inputOpenStyles};
+  ${
+    "" /* 
+  input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+    transform-origin: bottom;
+    align-self: flex-start;
+    width: 50%;
+    transform: rotatez(45deg) translate(8px, 0px);
+    transform: rotatez(45deg) translate(2.66666vw, 0px);
+
+    ${respond.pc.standard`
+    transform: rotatez(45deg) translate(0.8vw, 0px);
+    `}
+  }
+
+  input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg);
+  }
+
+  input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+    transform-origin: bottom;
+    width: 50%;
+    align-self: flex-start;
+    transform: translate(30px, -11px) rotatez(45deg);
+    transform: translate(10vw, -3.6666666vw) rotatez(45deg);
+
+    ${respond.pc.standard`
+    transform: translate(3vw, -1.1vw) rotatez(45deg);
+    `}
+  } */
   }
 `;
 
