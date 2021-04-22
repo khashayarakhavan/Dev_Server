@@ -63,9 +63,15 @@ export const Overlay = styled.div`
 `;
 
 export const DialogOpenStyles = css`
+ 
   ${respond.pc.standard`
   transform: translateX(-50%) translateY(-20vw) !important;
   `};
+  ${respond.tablet.standard`
+  transform: translateX(-50%) translateY(-80vw) !important;
+  `};
+
+
   
   transform: translateX(-50%) translateY(-95vw);
   opacity: 1;
@@ -88,11 +94,17 @@ export const Dialog = styled.div`
   width: 80vw;
   border-radius: 5vw;
 
+  ${respond.tablet.standard`
+    height: 75vw;
+  width: 75vw;
+  `}
+
   ${respond.pc.standard`
     height: 20vw;
     width: 40vw;
     border-radius: 2vw;
     font-size: 1.4vw;
+
   `};
 
   background: ${colors.neutrals.light};
@@ -103,8 +115,12 @@ export const Dialog = styled.div`
 `;
 
 export const DialogContent = styled.div`
+  ${respond.tablet.standard`
+  transform: scale(1);
+  `}
   ${respond.pc.standard`
     padding: 2vw;
+      transform: scale(1);
   `}
   padding: 2vw;
   padding-bottom: 1vw;
@@ -182,11 +198,20 @@ export const ReadMore = styled.div`
   color: red;
   color: #eb5e28;
   font-size: 10px;
+  font-size: 3vw;
   font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: flex-end;
   padding-right: 2vw;
 
+  .slide-up-read-more--link {
+    &,
+    &:link,
+    &:visited {
+      color: #eb5e28;
+      font-size: 3.3vw;
+    }
+  }
   div {
     line-height: 1.2;
     justify-self: flex-end;
@@ -228,6 +253,8 @@ export const SubLocal = styled.div`
 
   span {
     margin-left: 2vw;
+    font-family: "Poppins", sans-serif;
+    font-size: 4vw;
 
     &,
     &:link,
@@ -276,11 +303,16 @@ export const Title = styled.div`
 export const Message = styled.div`
   grid-row: 1 / span 1;
   font-size: 1.2875rem;
-  font-size: 2rem;
+  font-size: 5vw;
   line-height: 1.1;
   font-family: "Rubik Mono One", Cambria, "Times New Roman", Times, sans-serif;
   font-weight: 400;
   color: rgba("#10132F", 0.38);
+
+  .slide-up-sub-message {
+    font-size: 3.55vw;
+    font-family: "Poppins", sans-serif;
+  }
 
   ${respond.pc.standard`
     grid-column: 1 / span 1;

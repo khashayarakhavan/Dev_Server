@@ -104,7 +104,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
           <GridContainerWrapper className="grid-container-wrapper">
             <Message className="slide-up-message">
               No Waffles<span style={{ color: "#EB5E28", margin: 0 }}>.</span>
-              <span style={{ fontSize: "1.5rem", fontFamily: "Poppins" }}>
+              <span className="slide-up-sub-message">
                 <br />
                 Just follow these steps . . .
               </span>
@@ -131,7 +131,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                       icon={faPlayCircle}
                       style={{ color: "orange" }}
                     />
-                    <span>1min-video</span>
+                    <span>1MinVideo</span>
                   </div>
                 </SubLocal>
               </LocalLeft>
@@ -151,7 +151,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                       icon={faDownload}
                       style={{ color: "pink" }}
                     />
-                    <span>PDF Resume</span>
+                    <span>resumePdf</span>
                   </div>
                 </SubLocal>
               </LocalCenter>
@@ -190,7 +190,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                 <SubMessage className="slide-up-message--sub">
                   Need more info?
                 </SubMessage>
-                <Link to="/aboutMe" onClick={() => togglePopUp(false)}>
+                <Link className="slide-up-read-more--link" to="/aboutMe" onClick={() => togglePopUp(false)}>
                   Read more
                 </Link>
               </div>

@@ -60,6 +60,7 @@ export const CardScroll = styled.div`
 
   padding: 2rem 1rem 3rem;
   padding: 5.5555555vw 2.7777777vw 5.5555555vw;
+  
 
   overflow: hidden;
   overflow-wrap: normal;

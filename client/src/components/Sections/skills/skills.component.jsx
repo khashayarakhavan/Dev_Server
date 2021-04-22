@@ -93,7 +93,7 @@ export const Header = (props) => {
                     </TitleBlock>
                   </TitleContainer>
                   <Description>
-                    Ideally, it's the project that dictates the stack. A
+                    Ideally, it's the project that dictates the stack. <br/>A
                     developer's job is to identify its fundamental needs and use proper
                     tools to serve them .
                     <br />

@@ -35,6 +35,8 @@ export const ScrollContainerFlex = styled.div`
   width: 100vw;
   height: 100px;
   height: min-content;
+  height: 100vw;
+
   grid-column: full-start/ full-end;
   grid-column: cover-start/ cover-end;
   font-size: 20px;
@@ -44,7 +46,12 @@ export const ScrollContainerFlex = styled.div`
   white-space: nowrap; // Allow continuing into the white space.
   overflow: auto;
 
-  ${respond.pc.min`
+  ${respond.tablet.standard`
+    height: 90vw;
+  `}
+
+  ${respond.pc.standard`
+  height: min-content;
   grid-column: full-start/ full-end;
   width: 100%;
   padding: 5vw 1vw; 
@@ -385,9 +392,11 @@ export const ScrollCardContainer = styled.div`
   margin: 4rem 6rem 4rem 2rem;
   margin: 4rem 2rem 4rem 2rem;
   margin: 13.333333vw 6.6666666vw;
+  margin: 0vw 6.6666666vw;
 
   ${respond.mobile.landscape`
     ${"" /* transform: scale(0.8) !important; */}
+    transform: scale(0.8);
   `}
 
   ${respond.tablet.standard`

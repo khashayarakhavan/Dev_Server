@@ -180,6 +180,11 @@ export const DesignRow = styled(Row)`
       margin-bottom: 5vw;
     `}
   }
+
+
+  ${respond.tablet.standard`
+    transform: scale(0.8);
+  `}
 }
  
   
@@ -578,14 +583,15 @@ export const Description = styled.p`
  
   font-family: "Poppins", sans-serif;
   font-size: 3.8vw;
+  font-size: 3.4vw;
   font-weight: 200;
-  text-align: justify;
+  text-align: left;
   
 
   ${respond.pc.standard`
     font-size: 1.2vw !important;
     margin: 1vw 0 1vw;
-    text-align:justify;  
+    text-align:left;  
     ${'' /* text-justify: inter-character; */}
   `}
   ${"" /* text-justify:inter-word !important; */}

@@ -10,8 +10,18 @@ import {bubbleGumScale, MiniCardHover, neon} from '../../../../design/motions.st
 export const MiniCardsContainer = styled.header`
   grid-column: center-start / center-end;
   grid-column: full-start / full-end;
-  ${'' /* background: red; */}
-  ${'' /* padding: 5rem 1rem;  */}
+
+  ${respond.tablet.standard`
+    transform: scale(0.8);
+    margin-top: -10vw;
+  `}
+  ${respond.pc.standard`
+    transform: scale(1);
+    margin-top: 0;
+    
+  `}
+  ${"" /* background: red; */}
+  ${"" /* padding: 5rem 1rem;  */}
 `;
 
 export const FlexContainer = styled.div`
