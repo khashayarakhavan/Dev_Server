@@ -583,7 +583,7 @@ export const Description = styled.p`
   
 
   ${respond.pc.standard`
-    font-size: 1.5vw !important;
+    font-size: 1.2vw !important;
     margin: 1vw 0 1vw;
     text-align:justify;  
     ${'' /* text-justify: inter-character; */}

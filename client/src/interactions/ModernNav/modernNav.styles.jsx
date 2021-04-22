@@ -561,14 +561,31 @@ export const NavLabelContainer = styled.div`
   align-items: center;
   position: relative;
 `;
+
+
+
 const inputOpenStyles = css`
+  &:hover span:nth-of-type(1) {
+    transform: rotatez(45deg) translate(-3vw, 7.3vw);
+
+    ${respond.pc.standard`
+    transform: rotatez(45deg) translate(-1.2vw, 2vw);
+    `}
+  }
+  &:hover span:nth-of-type(3) {
+    transform: translate(0vw, -5vw) rotatez(45deg);
+
+    ${respond.pc.standard`
+      transform: translate(0vw, -1.6666666vw) rotatez(45deg);
+    `}
+  }
   span:nth-of-type(1) {
     transform-origin: top;
     transform-origin: bottom;
     align-self: flex-start;
     align-self: flex-end;
     width: 50%;
-    ${'' /* background: lime; */}
+    ${"" /* background: lime; */}
     transform: rotatez(45deg) translate(8px, 0px);
     transform: rotatez(45deg) translate(2.66666vw, 0px);
     transform: rotatez(45deg) translate(-5vw, 7.8vw);
@@ -591,7 +608,7 @@ const inputOpenStyles = css`
     transform-origin: top;
     width: 40%;
     width: 50%;
-    ${'' /* background: red; */}
+    ${"" /* background: red; */}
     align-self: flex-start;
     align-self: flex-end;
     transform: translate(30px, -11px) rotatez(45deg);
@@ -712,9 +729,30 @@ export const NavLabel = styled.label`
     align-self: flex-end;
   }
 
+  &:hover span:nth-of-type(1) {
+    transform: rotatez(-15deg);
+  }
+  &:hover span:nth-of-type(3) {
+    transform: rotatez(15deg);
+  }
+
   ${(p) => p.open && inputOpenStyles};
-  ${
-    "" /* 
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ /* 
   input[type="checkbox"]:checked ~ span:nth-of-type(1) {
     transform-origin: bottom;
     align-self: flex-start;
@@ -743,17 +781,6 @@ export const NavLabel = styled.label`
     transform: translate(3vw, -1.1vw) rotatez(45deg);
     `}
   } */
-  }
-`;
-
-
-
-
-
-
-
-
-
 
 
 

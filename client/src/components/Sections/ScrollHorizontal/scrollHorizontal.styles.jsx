@@ -386,13 +386,23 @@ export const ScrollCardContainer = styled.div`
   margin: 4rem 2rem 4rem 2rem;
   margin: 13.333333vw 6.6666666vw;
 
-  ${respond.pc.min`
+  ${respond.mobile.landscape`
+    ${"" /* transform: scale(0.8) !important; */}
+  `}
+
+  ${respond.tablet.standard`
+    transform: scale(0.8);
+  `}
+
+  ${respond.pc.standard`
+  transform: scale(1);
    margin: 4rem 2rem;
    margin: 3.90625vw 1.953125vw;
    margin: clamp(2rem,1.953125vw,1.953125vw);
   `}
 
   transition: all 0.8s ease;
+
   &:last-child {
     padding-right: clamp(5rem, 16.5555vw, 16.66666vw);
     padding-right: clamp(4rem, 12vw, 12vw);
@@ -401,6 +411,7 @@ export const ScrollCardContainer = styled.div`
     padding-right: 0;
     `}
   }
+
   &:first-child {
     margin-left: clamp(2.5rem, 8vw, 8vw);
     margin-left: clamp(4rem, 12vw, 12vw);
@@ -425,7 +436,7 @@ export const ScrollCardContainer = styled.div`
 //   :hover ${ScrollCardItem} {
 //     transform: rotateY(-180deg);
 //   }
-//   :hover ${ScrollCardItemBack} {
+//   :hover ${scCardItemBack} {
 //     transform: rotateY(0deg);
 //   }
 // `;

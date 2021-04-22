@@ -26,7 +26,7 @@ export const Card = styled.div`
   height: 45vw;
 
   ${respond.pc.standard`
-  height: 20vw;
+  height: 18vw;
   `}
   background: transparent;
 `;
@@ -125,8 +125,8 @@ export const Content = styled.div`
   font-weight: 200;
 
   ${respond.pc.standard`
-  font-size: 1.4vw;  
-  padding-top: 1vw;
+  font-size: 1.2vw;  
+  padding-top: 0;
   `}
 
   ${"" /* background: red !important; */}
@@ -161,7 +161,7 @@ export const Tab = styled.div`
 
   ${respond.pc.standard`
   width: 30vw;
-  padding-right: 8vw;
+  padding-right: 9vw;
   `}
 
   padding-right: 0vw;

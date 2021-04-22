@@ -70,6 +70,11 @@ export const respond = {
         ${css(...args)};
       }
     `,
+    landscape: (...args) => css`
+      @media (min-width: 600px) and (orientation: landscape) {
+        ${css(...args)};
+      }
+    `,
   },
   mobile: {
     max: (...args) => css`
