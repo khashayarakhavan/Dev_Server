@@ -126,7 +126,7 @@ export const Content = styled.div`
   font-weight: 200;
 
   ${respond.pc.standard`
-  font-size: 1.2vw;  
+  font-size: 1.3vw;  
   padding-top: 0;
   `}
 

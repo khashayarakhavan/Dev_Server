@@ -154,6 +154,8 @@ export const ViewPort = styled.div`
   background-color: ${colors.accent.ochreFire};
   background-color: ${colors.accent.ochreOxide};
   background-color: ${colors.accent.ochrePale};
+
+
 `;
 
 const contentViewOpenStyles = css`
@@ -161,6 +163,8 @@ const contentViewOpenStyles = css`
   transform: translateX(50vw) translateY(33.333333vw);
   border-radius: 10vw;
 
+  
+ 
   ${respond.pc.standard`
     transform: translateX(15vw) translateY(10vw);
   `}
@@ -173,4 +177,7 @@ export const ContentView = styled.div`
   border-radius: 0px;
   transform: translateX(0) scale(1);
   transition: 0.45s ${(p) => p.open && contentViewOpenStyles};
+
+ 
+  
 `;

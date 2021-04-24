@@ -336,9 +336,7 @@ export const RichTextCard = ({
             </span>
             project ?
           </Text>
-          <SubText>
-            Tell me about it . . .
-          </SubText>
+          <SubText>Tell me about it . . .</SubText>
         </Wrapper_Text>
       </Header>
       {/* <button

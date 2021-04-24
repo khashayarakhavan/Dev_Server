@@ -7,69 +7,35 @@ import { createStructuredSelector } from "reselect";
 import {
   selectMenuOpen,
   selectPopUpOpen,
-} from "../../redux/vegeloperPage/vegeloperPage.selectors";
+} from "redux/vegeloperPage/vegeloperPage.selectors";
 import {
   selectRichTextMessageAsHTML,
   selectCustomerCountry,
-} from "../../redux/messageMe/messageMe.selectors";
+} from "redux/messageMe/messageMe.selectors";
 //Actions
 import {
   toggleMenuOpen,
   togglePopUp,
-} from "../../redux/vegeloperPage/vegeloperPage.actions";
-//Libraries
-import {
-  Link as ScrollLink,
-  Element,
-  animateScroll as scroll,
-} from "react-scroll";
+} from "redux/vegeloperPage/vegeloperPage.actions";
 //Containers
 import { HiPalContainer } from "./hiPal.styles";
 //Sections
-import {YouTube} from '../../components/Sections/YouTube/youTube.component';
-import Projects from '../../components/Sections/Projects/projects.component';
-//Components
-import SignInUp from '../../components/Sections/emailMe/emailMe.component';
-// import RichTextSection from '../../components/Sections/richText/richText.component';
-import MessageMe from '../../components/Sections/messageMe/messageMe.component';
-import MiniCards from "../../components/complex/section/MiniCards/MiniCards.component";
-import TopMenu from 'components/Sections/header/header.component';
-import Heading from '../../components/Sections/Heading/heading.component';
-import ScrollHorizontal from '../../components/Sections/ScrollHorizontal/scrollHorizontal.component';
-import HeroHeader from "../../components/complex/hero-header/heroHeader.component";
-import ScrollDownCTA from '../../components/Sections/ScrollDown/ScrollDown.component';
-import PasswordValidator from '../../interactions/passwordValidator/passwordValidator.component';
+import MessageMe from "components/Sections/messageMe/messageMe.component";
+import TopMenu from "components/Sections/header/header.component";
+import Heading from "components/Sections/Heading/heading.component";
+
+
+
+
+
 
 //Code
-const HiPalContent = ({richTextMessageAsHTML, customerCountry, menuOpen, toggleMenuOpen, popUpOpen, togglePopUp }) => {
-  
-  const handleSubmit = async () => {
-    //Test
-    console.log('IT WORKS');
-  }
-
+const HiPalContent = () => {
   return (
     <HiPalContainer className="HiPalContainer" id="test">
       <TopMenu />
       <Heading text="I believe in myself." />
       <MessageMe />
-      {/* <PasswordValidator /> */}
-      {/* <button onClick={handleSubmit}>CLICK TO LOG</button> */}
-      <SignInUp />
-      {/*
-      <Projects />
-      <Heading /> */}
-
-      {/* <HeroHeader.LeftContainer name="firstInsideContainer" />
-      <HeroHeader.RightContainer />
-      <ScrollDownCTA />
-      
-      <Element name="test1" className="element" />
-      <YouTube />
-      <Element name="test2" className="element" />
-      <ScrollHorizontal />
-      
-      <MiniCards /> */}
     </HiPalContainer>
   );
 };

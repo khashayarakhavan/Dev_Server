@@ -176,15 +176,16 @@ export const DesignRow = styled(Row)`
   & ${ColMd6}:not(:last-child) {
     margin-bottom: 15vw;
 
+   
+    
     ${respond.pc.standard`
-      margin-bottom: 5vw;
+        margin-bottom: 5vw;
+        transform: scale(1);
     `}
+  
   }
 
 
-  ${respond.tablet.standard`
-    transform: scale(0.8);
-  `}
 }
  
   
@@ -589,7 +590,7 @@ export const Description = styled.p`
   
 
   ${respond.pc.standard`
-    font-size: 1.2vw !important;
+    font-size: 1.3vw !important;
     margin: 1vw 0 1vw;
     text-align:left;  
     ${'' /* text-justify: inter-character; */}

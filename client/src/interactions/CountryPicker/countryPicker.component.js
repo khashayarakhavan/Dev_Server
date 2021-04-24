@@ -9,8 +9,8 @@ import InputMaterial from '../InputMaterial/inputMaterial.component';
 
 import MaskedInput from '../InputMaterial/MaskedInput';
 import {Skeleton, SkeletonRow} from './countryPicker.styles';
-// import InputDropDown from "../interactions/InputDropDown/inputDropDown.component";
-import InputDropDown from "../InputDropDown/inputDropDown.component";
+
+import InputDropDown from "interactions/InputDropDown/inputDropDown.component";
 import { Textfit } from "react-textfit";
 
 

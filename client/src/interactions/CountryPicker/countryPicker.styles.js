@@ -55,8 +55,11 @@ export const Card = styled.div`
   position: relative;
 
   width: 400px;
-  width: 80%;
-  width: min-content;
+  width: 100%;
+
+  ${respond.pc.standard`
+    width: min-content;  
+  `}
   border-radius: 3rem;
   border-radius: inherit;
   margin: 1rem;

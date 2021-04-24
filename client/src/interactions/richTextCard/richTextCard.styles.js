@@ -4,6 +4,7 @@ import { rgba } from "polished";
 //Design
 import colors from '../../design/colors';
 import shadows from "../../design/shadows.styles";
+import {respond} from 'design/responsive';
 
 const duration ={
   transtion:'0.45s',
@@ -13,7 +14,12 @@ const duration ={
 
 export const Card = styled.div`
   ${"" /* grid-row: 1/-1; */}
-  margin: 1rem;
+
+  ${respond.pc.standard`
+    margin: 1rem;
+    padding: 1rem;
+  `}
+  
   position: absolute;
   position: relative;
   width: 250px;
@@ -24,7 +30,7 @@ export const Card = styled.div`
   ${"" /* border-radius: inherit; */}
   background: inherit;
   overflow: hidden;
-  padding: 1rem;
+
   ${"" /* border-radius: 0.5rem; */}
   ${"" /* background: white; */}
   ${"" /* box-shadow: 0 4px 15px ${rgba("black", 0.05)}; */}
@@ -72,7 +78,7 @@ export const Card = styled.div`
 
   & .rdw-editor-main {
     transition: all 0.35s;
-    padding: 1rem;
+    
    
     color: #565360;
     color: ${colors.neutrals.darkest};
@@ -103,7 +109,11 @@ export const Card = styled.div`
     
 
     padding: 0.5rem;
-     padding-left: 2rem;
+    ${respond.pc.standard`
+      padding-left: 2rem;    
+    `}
+
+
 
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -181,6 +191,7 @@ export const Card = styled.div`
 `;
 
 export const Header = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -207,6 +218,11 @@ export const Text = styled.span`
   color: #acaab7;
   color: ${colors.neutrals.darkest};
   font-size: 20px;
+  font-size: 4vw;
+
+  ${respond.pc.standard`
+  font-size: 2vw;
+  `}
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   padding-left: 1rem;
@@ -222,6 +238,11 @@ export const SubText = styled.span`
   color: #acaab7;
   color: ${colors.neutrals.darkest};
   font-size: 15px;
+  font-size: 3.3vw;
+
+  ${respond.pc.standard`
+  font-size: 1.5vw;
+  `}
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   padding-left: 1rem;

@@ -29,8 +29,9 @@
 	 background: #5380f7;
 	 background: #003153;
 	 color: #fff;
-	 min-width: 260px;
+	 
 	 width: 260px;
+	 width: 100%;
 	 height: 60px;
 	 border: 0;
 	 border-radius: 8px;

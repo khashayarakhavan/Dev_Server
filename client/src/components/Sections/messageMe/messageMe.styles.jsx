@@ -1,49 +1,46 @@
 import styled from 'styled-components';
 import colors from '../../../design/colors';
 import shadows from '../../../design/shadows.styles';
+import {respond} from 'design/responsive';
 
 
 export const MessageMeContainer = styled.div`
   grid-column: center-start / center-end;
   position: relative;
-  
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
   box-shadow: ${shadows.neumorphic.orangeOld};
   box-shadow: ${shadows.neumorphic.button};
   box-shadow: ${shadows.neumorphic.extra};
   box-shadow: ${shadows.neumorphic.original};
-  margin: 30px auto;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
 
   border-radius: 3vw;
   overflow: hidden;
 
   position: relative;
-  width: 75%;
-  width: 55vw;
-  ${'' /* width: 850px;
-  width: min-content;
-  width: 50vw; */}
-
-  background: transparent ;
+  background: transparent;
   background: ${colors.neutrals.lighter};
-  ${"" /* background: rgba(white, 0.9); */}
-  ${"" /* opacity: 0.8; */}
-  font-size: 14px;
 
-  display: grid;
-  grid-template-rows: min-content;
-  grid-template-columns: 60% 40%; 
-  justify-content: space-between;
+  font-size: 3.3vw;
+
+  ${respond.pc.standard`
+    width: 55vw;
+    margin: 30px auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 1.4vw;
+
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: 60% 40%;
+    justify-content: space-between;
+  `}
 
   @media screen and (max-width: 800px) {
-    flex-direction: column;
-    width: unset;
-    align-items: center;
-
-    > *:first-child {
-      margin-bottom: 50px;
-    }
   }
 `;
 export const RightSide = styled.div`
@@ -53,12 +50,17 @@ export const RightSide = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  ${'' /* background: lightblue; */}
+  
+  
+  ${respond.pc.standard`
+    margin-right: 2vw;
+  `}
 `;
 
 export const LeftSide = styled.div`
   grid-column: 1/2;
   grid-row: 1/-1;
+  width: 100%;
 `;
 
 export const SendButton = styled.button`

@@ -10,7 +10,7 @@ import {
   selectIsComplete,
   selectIsError,
   selectIsLoading,
-} from "../../../redux/messageMe/messageMe.selectors";
+} from "redux/messageMe/messageMe.selectors";
 //Actions
 import {
   updateCustomerCountry,
@@ -18,22 +18,22 @@ import {
   sendDataToServer,
   updateIsLoading,
   toggleIsComplete,
-} from "../../../redux/messageMe/messageMe.actions";
+} from "redux/messageMe/messageMe.actions";
 //Components
-import InputDropDown from '../../../interactions/InputDropDown/inputDropDown.component';
-import PasswordValidator2 from '../../../interactions/passwordValidator/passwordValidator2.component';
+import InputDropDown from 'interactions/InputDropDown/inputDropDown.component';
+import PasswordValidator2 from 'interactions/passwordValidator/passwordValidator2.component';
 // import SignIn from '../../components/sign-in/sign-in.component';
 import SignIn from '../../sign-in/sign-in.component';
 // import SignUp from '../../components/sign-up/sign-up.component';
 import SignUp from '../../sign-up/sign-up.component';
-import RichText from '../../../interactions/richTextCard/richTextCard.component';
-import CountryPicker from '../../../interactions/CountryPicker/countryPicker.component';
-import InputMaterial from '../../../interactions/InputMaterial/inputMaterial.component';
-import LoadingButton from "../../../interactions/loadingButton/loadingButton.component";
-import LoadingButtonBlobs from "../../../interactions/loadingButton/loadingButtonBlobs.component";
+import RichText from 'interactions/richTextCard/richTextCard.component';
+import CountryPicker from 'interactions/CountryPicker/countryPicker.component';
+import InputMaterial from 'interactions/InputMaterial/inputMaterial.component';
+import LoadingButton from "interactions/loadingButton/loadingButton.component";
+import LoadingButtonBlobs from "interactions/loadingButton/loadingButtonBlobs.component";
 
-// import PasswordValidator from '../../../interactions/passwordValidator/passwordValidator.component';
-import PasswordValidator3 from '../../../interactions/passwordValidator/passwordValidator3.component';
+// import PasswordValidator from 'interactions/passwordValidator/passwordValidator.component';
+import PasswordValidator3 from 'interactions/passwordValidator/passwordValidator3.component';
 
 import { MessageMeContainer, SendButton , RightSide, LeftSide} from "./messageMe.styles";
 
@@ -145,7 +145,7 @@ const MessageMeSection = ({
         />
       </LeftSide>
 
-      <RightSide style={{ marginRight: "2rem" }}>
+      <RightSide >
         <CountryPicker
           customerCountry={customerCountry}
           updateCustomerCountry={updateCustomerCountry}
@@ -200,9 +200,6 @@ const MessageMeSection = ({
         {/* <InputDropDown /> */}
       </RightSide>
 
-      {/* <PasswordValidator2 /> */}
-      {/* <PasswordValidator3 /> */}
-      {/* <SendButton onClick={handleSubmit}>Send Your Message</SendButton> */}
     </MessageMeContainer>
   );
 };
