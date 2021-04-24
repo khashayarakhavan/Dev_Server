@@ -37,7 +37,18 @@ import {
 
 
 //Code
-export const getFlag = (code) => `https://countryflags.io/${code}/flat/64.png`;
+export const getFlag = (code) => {
+  let ApiReadyCode = code.toLowerCase(); 
+  // return `https://flagcdn.com/64x48/${ApiReadyCode}.png`;
+  // return `https://flagcdn.com/h40/${ApiReadyCode}.png`;
+  // return `https://flagcdn.com/${ApiReadyCode}.svg`;
+  // return `https://flagcdn.com/w80/${ApiReadyCode}.png`;
+  // return `https://flagcdn.com/h80/${ApiReadyCode}.png`;
+  return `https://flagcdn.com/${ApiReadyCode}.svg`;
+  // return `https://restcountries.eu/rest/v2/alpha/${ApiReadyCode}`;
+};
+export const getFlag2 = (code) => `https://countryflags.io/${code}/flat/64.png`;
+export const getFlagNew = (code) => `https://flagcdn.com/64x48/za.png`;
 
 // export const CountryDialog = ({ open, setOpen, setCountry }) => (
 //   <Dialog open={open}>
@@ -86,6 +97,7 @@ export const LazyLoadRow = ({
   //  
   return (
   <>
+    {/* Here is the loading section, Absolute positioned */}
     <SkeletonRow className="SkeletonRow">
       <Skeleton
         width="30px"
@@ -98,7 +110,7 @@ export const LazyLoadRow = ({
         <Skeleton margin="1rem 0 0 .5rem" width="80px" />
       </div>
     </SkeletonRow>
-
+    {/* Here is the loaded section, Relative positioned */}
     <LazyLoad
       className="LazyLoad"
       height={50}

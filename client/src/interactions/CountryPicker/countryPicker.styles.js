@@ -8,8 +8,11 @@ import respond from '../../design/responsive';
 //Code
 
 export const List = styled.div`
-  padding: 1rem 0.5rem;
-  padding-right: 2.5rem;
+  padding-right: 0.5rem;
+  ${respond.pc.standard`
+    padding: 1rem 0.5rem;
+    padding-right: 2.5rem;
+  `}
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -57,9 +60,7 @@ export const Card = styled.div`
   width: 400px;
   width: 100%;
 
-  ${respond.pc.standard`
-    width: min-content;  
-  `}
+  
   border-radius: 3rem;
   border-radius: inherit;
   margin: 1rem;
@@ -115,7 +116,11 @@ export const FlagContainer = styled.div`
 export const Flag = styled.img`
   width: 30px;
   height: 30px;
-  transform: scaleY(1.6) scaleX(1.4);
+  transform: scale(1.3);
+  ${'' /* height: 30px; */}
+  ${respond.pc.standard`
+    transform: scaleY(1.6) scaleX(1.4);  
+  `}
   justify-self: center;
   align-self: center;
 `;
@@ -405,7 +410,7 @@ export const Overlay = styled.div`
   ${'' /* transform: ${(p) => (p.isOpen ? 'translate3d(0, 0, 0)' : 'unset')}; */}
   z-index: 0;
   width: 100vw;
-  height: 100vh;
+  ${'' /* height: 100vh; */}
   top: 0;
   bottom: 0;
   left: 0;
@@ -418,10 +423,14 @@ export const Overlay = styled.div`
 `;
 
 export const CountryName = styled.span`
-  width:130px;
+  width: 130px;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
-  margin-left: 1.4rem;
+  margin-left: 1rem;
+  ${respond.pc.standard`
+    margin-left: 1.4rem;  
+  `}
+
   white-space: nowrap;
   text-align: left;
 `;
