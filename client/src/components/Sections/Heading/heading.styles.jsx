@@ -69,16 +69,19 @@ export const SectionHeading = styled(VegeloperContainer)`
 `;
 
 export const HeadingContainer = styled.div`
-  grid-column: center-start / center-end;
+  grid-column: full-start / full-end;
+  ${respond.pc.standard`
+    grid-column: center-start / center-end;
+  `}
   ${"" /* height: 40vh; */}
   ${"" /*  */}
 background: transparent !important;
   position: relative;
-${'' /* 
+  ${"" /* 
   margin-right: 2rem;
   margin-left: 2rem; */}
 
-  ${'' /* display: grid;
+  ${"" /* display: grid;
   justify-content: center;
   align-content: center; */}
 
@@ -112,19 +115,15 @@ export const Heading = styled.div`
     ${fonts.mixins.heroHeader}
     font-size: 12vw;
     font-size: 10vw;
+    font-size: 7vw;
+
     line-height: 1;
     letter-spacing: 0px;
     text-rendering: optimizeLegibility;
     font-style: normal;
     color: ${colors.secondary.darkest};
 
-    ${respond.mobile.landscape`
-      font-size: 7vw;
-    `}
-
-    ${respond.tablet.standard`
-      font-size: 7vw;
-    `}
+  
 
     ${respond.pc.standard`
     font-size: clamp(3.9rem, 3.9vw, 3.9vw);
@@ -149,8 +148,6 @@ export const Heading = styled.div`
     ${"" /* font-size: 7.23vw; */}
     font-size: 6.23vw;
     font-size: ${(p) => (p.extra ? `7vw` : `6.23vw`)} !important;
-
-   
 
     ${respond.pc.standard`
     ${"" /* font-size: 2.5vw; */}
