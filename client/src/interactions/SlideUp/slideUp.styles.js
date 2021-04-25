@@ -65,10 +65,10 @@ export const Overlay = styled.div`
 export const DialogOpenStyles = css`
  
   ${respond.pc.standard`
-  transform: translateX(-50%) translateY(-20vw) !important;
+    transform: translateX(-50%) translateY(-20vw) !important;
   `};
   ${respond.tablet.standard`
-  transform: translateX(-50%) translateY(-80vw) !important;
+    transform: translateX(-50%) translateY(-80vw) !important;
   `};
 
 
@@ -96,7 +96,7 @@ export const Dialog = styled.div`
 
   ${respond.tablet.standard`
     height: 75vw;
-  width: 75vw;
+    width: 75vw;
   `}
 
   ${respond.pc.standard`
@@ -115,13 +115,7 @@ export const Dialog = styled.div`
 `;
 
 export const DialogContent = styled.div`
-  ${respond.tablet.standard`
-  transform: scale(1);
-  `}
-  ${respond.pc.standard`
-    padding: 2vw;
-      transform: scale(1);
-  `}
+  
   padding: 2vw;
   padding-bottom: 1vw;
 `;

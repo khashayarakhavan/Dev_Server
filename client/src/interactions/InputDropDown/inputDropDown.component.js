@@ -20,7 +20,7 @@ let rand = getRandomNumberBetween(1, 3);
       >
         <div className="innerFrame">
           <div style={{ width: `85%`, textAlign: "left" }}>
-            <Textfit mode="multi" forceSingleModeWidth={false} max={"12"}>
+            <Textfit mode="multi" forceSingleModeWidth={false} max={"10"}>
               <span>
                 {country === "" ? (
                   `your project helps ...`

@@ -12,7 +12,7 @@ import SectionHome from "../../components/complex/section/landing.home/landing.h
 import Cards from "../../components/Sections/Cards/Cards.component";
 import Skills from "../../components/Sections/skills/skills.component";
 import SectionStoriesPicture from "../../components/complex/section/stories-picture/stories-picture.component";
-import { LandingPageContainer } from "./slideUpButtonJelly.styles";
+
 import TopMenu from '../../components/Sections/header/header.component';
 import Heading from '../../components/Sections/Heading/heading.component';
 import ScrollHorizontal from '../../components/Sections/ScrollHorizontal/scrollHorizontal.component';
@@ -29,12 +29,8 @@ import {YouTube} from '../../components/Sections/YouTube/youTube.component';
 import Projects from '../../components/Sections/Projects/projects.component';
 
 //Styles
-import {
-  MainContainer,
-} from "./slideUpButtonJelly.styles";
 
-import ScrollDownCTA from '../../components/Sections/ScrollDown/ScrollDown.component';
-import {Phone, Nav, NavButton, NavIcon, NavText, Burger, Content} from './slideUpButtonJelly.styles';
+
 //State Mangement
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -70,13 +66,13 @@ import {
   LocalLeft,
   LocalRight,
   LocalCenter,
-  SubLocal,
+  SubCard,
   NumberCircle,
   Circle,
   ReadMore
-} from "interactions/SlideUp/slideUp.styles";
+} from "./slideUpButtonJelly.styles";
 
-
+// interactions/SlideUp/slideUp.styles
 export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
   return (
     <>
@@ -125,7 +121,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                 <Circle backColor="#f4cbbd" delay="0s" duration="3s">
                   1
                 </Circle>
-                <SubLocal>
+                <SubCard>
                   <div>
                     <FontAwesomeIcon
                       icon={faPlayCircle}
@@ -133,7 +129,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                     />
                     <span>1MinVideo</span>
                   </div>
-                </SubLocal>
+                </SubCard>
               </LocalLeft>
 
               <LocalCenter
@@ -145,7 +141,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                 <Circle backColor="darksalmon" delay="0.2s" duration="3s">
                   2
                 </Circle>
-                <SubLocal>
+                <SubCard>
                   <div>
                     <FontAwesomeIcon
                       icon={faDownload}
@@ -153,7 +149,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                     />
                     <span>resumePdf</span>
                   </div>
-                </SubLocal>
+                </SubCard>
               </LocalCenter>
 
               <LocalRight
@@ -170,7 +166,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                   3
                 </Circle>
 
-                <SubLocal
+                <SubCard
                   className="local-right--sub"
                   style={{ marginBottom: "0rem" }}
                 >
@@ -182,7 +178,7 @@ export const SlideUpButtonJelly = ({ popUpOpen, togglePopUp }) => {
                     />
                     <span>directMe</span>
                   </div>
-                </SubLocal>
+                </SubCard>
               </LocalRight>
             </GridContainer>
             <ReadMore className="slide-up-read-more">

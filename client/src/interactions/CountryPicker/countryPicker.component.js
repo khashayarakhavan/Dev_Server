@@ -96,52 +96,53 @@ export const LazyLoadRow = ({
 }) => {
   //  
   return (
-  <>
-    {/* Here is the loading section, Absolute positioned */}
-    <SkeletonRow className="SkeletonRow">
-      <Skeleton
-        width="30px"
-        height="30px"
-        borderRadius="50%"
-        margin="1rem 1rem 0 2rem"
-      />
-      <div>
-        {/* <Skeleton width="130px" margin="0 0 0.6rem" /> */}
-        <Skeleton margin="1rem 0 0 .5rem" width="80px" />
-      </div>
-    </SkeletonRow>
-    {/* Here is the loaded section, Relative positioned */}
-    <LazyLoad
-      className="LazyLoad"
-      height={50}
-      // onContentVisible={() => console.log("look ma I have been lazyloaded!")}
-      onContentVisible={handleVisible}
-    >
-      <RowLazy
-        className="RowLazy"
-        onClick={() => {
-          setOpen(false);
-          setCountry(name);
-          updateCustomerCountry({ name, dialCode, code });
-        }}
+    <>
+      {/* Here is the loading section, Absolute positioned */}
+      <SkeletonRow className="SkeletonRow">
+        <Skeleton
+          width="30px"
+          height="30px"
+          borderRadius="50%"
+          margin="1rem 1rem 0 2rem"
+          style={{ boxSizing: "content-box", border: "4px solid #F9F9FA" }}
+        />
+        <div>
+          {/* <Skeleton width="130px" margin="0 0 0.6rem" /> */}
+          <Skeleton margin="1rem 0 0 .5rem" width="80px" />
+        </div>
+      </SkeletonRow>
+      {/* Here is the loaded section, Relative positioned */}
+      <LazyLoad
+        className="LazyLoad"
+        height={50}
+        // onContentVisible={() => console.log("look ma I have been lazyloaded!")}
+        onContentVisible={handleVisible}
       >
-        {/* <Image style={{ background: `url(${getFlag(code)})` }} /> */}
-        <FlagContainer>
-          <Flag src={getFlag(code)} />
-        </FlagContainer>
+        <RowLazy
+          className="RowLazy"
+          onClick={() => {
+            setOpen(false);
+            setCountry(name);
+            updateCustomerCountry({ name, dialCode, code });
+          }}
+        >
+          {/* <Image style={{ background: `url(${getFlag(code)})` }} /> */}
+          <FlagContainer>
+            <Flag src={getFlag(code)} />
+          </FlagContainer>
 
-        <CountryName>
-          {/* {name.length >= 15 ? name.substring(0, 15) + " . . ." : name} */}
-          <Textfit mode="single" forceSingleModeWidth={true} max={"12"}>
-            {name.split(',')[0]}
+          <CountryName>
             {/* {name.length >= 15 ? name.substring(0, 15) + " . . ." : name} */}
-          </Textfit>
-        </CountryName>
-        <CountryCode>{code}</CountryCode>
-      </RowLazy>
-    </LazyLoad>
-  </>
-)};
+            <Textfit mode="single" forceSingleModeWidth={true} max={"12"}>
+              {name.split(",")[0]}
+              {/* {name.length >= 15 ? name.substring(0, 15) + " . . ." : name} */}
+            </Textfit>
+          </CountryName>
+          <CountryCode>{code}</CountryCode>
+        </RowLazy>
+      </LazyLoad>
+    </>
+  );};
 
 export const HashGenerator = (key) => {
   let hash = 0;

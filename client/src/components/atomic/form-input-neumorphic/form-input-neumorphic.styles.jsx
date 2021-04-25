@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import {respond} from 'design/responsive';
 
 const subColor = 'grey';
 const mainColor = "#143351";
@@ -16,6 +17,14 @@ const shrinkLabelStyles = css`
 export const GroupContainer = styled.div`
   position: relative;
   margin: 45px 0;
+
+  margin-left: 4vw;
+  width: 90%;
+
+  ${respond.pc.standard`
+    width: 100%;
+    margin-left: 0;
+  `}
 
   input[type='password'] {
     letter-spacing: 0.3em;
@@ -81,7 +90,9 @@ FormInputContainer.displayName = 'FormInputContainer';
 
 export const FormInputLabel = styled.label`
   color: ${subColor};
-  font-size: 16px;
+  
+  
+  font-size: 14px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;

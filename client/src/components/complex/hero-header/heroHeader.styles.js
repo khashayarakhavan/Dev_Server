@@ -78,16 +78,16 @@ export const HeroHeaderRight = styled.div`
     overflow: visible !important;
   }
 
-  ${respond.tablet.large`
+  ${'' /* ${respond.tablet.large`
     grid-column: center-start / center-end !important;
-  `}
-  ${respond.pc.min`
+  `} */}
+  ${respond.pc.standard`
     grid-row: 2 / span 1;
     grid-column: col-start 5 / center-end;
     
-    height: 50vh;
-    height: 60vh;
     height: 34.375vw;
+    height: 60vh;
+    
     padding-bottom: 5vh;   
 
   `}
@@ -180,14 +180,7 @@ export const LottieContainer = styled.div`
   ${respond.tablet.standard`
   height: 70vw ;
   `}
-  ${
-    "" /* ${respond.mobile.max`
-    height: 80vw;
-  `}
-  ${respond.tablet.large`
-    height: 70vw !important;
-  `} */
-  }
+ 
   ${respond.pc.standard`
     height: 32.5vw; 
   `}
@@ -342,46 +335,36 @@ export const Button = styled.div`
 
   &:hover {
     & ${BackgroundFigure} {
-      ${"" /* animation: ${bubbleGumScale} 2.5s infinite linear; */}
-      animation: ${bubbleGumScale} 2.5s infinite linear;
-      background-color: ${colors.secondary.darkest};
+        animation: ${bubbleGumScale} 2.5s infinite linear;
+        background-color: ${colors.secondary.darkest};
     }
   }
 
   &:active {
     & ${BackgroundFigure} {
-      ${"" /* animation: ${bubbleGum} 2.5s infinite linear; */}
-      ${"" /* animation: ${bubbleGumScale} 2.5s infinite linear; */}
-      ${"" /* animation-time: 2.5s; */}
-      background-color: ${colors.secondary.darkest};
+        background-color: ${colors.secondary.darkest};
     }
     transform: scale(0.95) translateY(1.6666vw);
+    outline: none;
 
-    ${respond.pc.min`
-    transform: scale(0.9) translateY(0.5vw);
+    ${respond.pc.standard`
+      transform: scale(0.9) translateY(0.5vw);
     `}
 
-    outline: none;
   }
 
-  ${respond.mobile.landscape`
-   transform: scale(0.8);
-  `}
-  ${respond.tablet.standard`
- transform: scale(0.8);
-  `}
+  
 
   ${respond.pc.standard`
-   transform: scale(1);
-  justify-self: left;
-  width: clamp(140px, 14vw, 14vw);
-  height: clamp(5.6rem, 5.4687vw, 5.4687vw);
- 
-  font-size: clamp(9px, 0.9vw, 0.9vw);
+    justify-self: left;
+    width: clamp(140px, 14vw, 14vw);
+    height: clamp(5.6rem, 5.4687vw, 5.4687vw);
+  
+    font-size: clamp(9px, 0.9vw, 0.9vw);
 
-  margin-top: clamp(20px, 1.95312vw, 1.95312vw);
-  margin-bottom: clamp(10px, 0.97656vw, 0.97656vw);
-  margin-left: clamp(3px, 0.3vw, 0.3vw);  
+    margin-top: clamp(20px, 1.95312vw, 1.95312vw);
+    margin-bottom: clamp(10px, 0.97656vw, 0.97656vw);
+    margin-left: clamp(3px, 0.3vw, 0.3vw);  
   `}
 
   p {

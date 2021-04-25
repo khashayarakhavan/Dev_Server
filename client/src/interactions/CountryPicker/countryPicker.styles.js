@@ -108,19 +108,18 @@ export const Row = styled.button`
 export const FlagContainer = styled.div`
   width: 30px;
   height: 30px;
+  border: 4px solid #f9f9fa;
+  box-sizing: content-box;
   overflow: hidden;
   border-radius: 50%;
   display: grid;
-  ${'' /* background: red; */}
+  ${"" /* background: red; */}
 `;
 export const Flag = styled.img`
   width: 30px;
   height: 30px;
   transform: scale(1.3);
-  ${'' /* height: 30px; */}
-  ${respond.pc.standard`
-    transform: scaleY(1.6) scaleX(1.4);  
-  `}
+
   justify-self: center;
   align-self: center;
 `;
@@ -379,6 +378,7 @@ export const skeletonShimmer = css`
 `;
 
 export const Skeleton = styled.div`
+  margin: 1rem 1rem 0 2rem;
   position: relative;
   z-index: 0;
   overflow: hidden;
@@ -391,6 +391,8 @@ export const Skeleton = styled.div`
   &::before {
     ${skeletonShimmer};
   }
+
+
 `;
 
 export const SkeletonRow = styled.div`
